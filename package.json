@@ -1,0 +1,27 @@
+{
+  "name": "@luce/ui-kit",
+  "version": "0.1.0",
+  "description": "Luce UI Kit library",
+  "license": "ISC",
+  "main": "index.js",
+  "author": "team@luce.com",
+  "homepage": "https://luce.com",
+  "private": true,
+  "scripts": {
+    "compile": "tsc && copyfiles -u 4 \"../src/stories/assets/**/*.svg\" ./stories/assets/"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "react": "~16.14.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "~7.13.5",
+    "@types/node": "~14.14.31",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "~16.9.9",
+    "@typescript-eslint/parser": "~4.15.2",
+    "copyfiles": "^2.4.1",
+    "dotenv": "~8.2.0"
+  }
+}
