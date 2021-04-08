@@ -49,7 +49,7 @@ var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
 var TextField_1 = __importDefault(require("@material-ui/core/TextField"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var search_svg_1 = require("../../stories/assets/search.svg");
+var Icons_1 = __importDefault(require("../icons/Icons"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         muiInputRoot: {
@@ -89,7 +89,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 var TextField = function (props) {
     var theme = styles_1.useTheme();
     var classes = useStyles(props);
-    var customSize = props.customSize, readOnly = props.readOnly, withIcon = props.withIcon, defaultValue = props.defaultValue, data = props.data, select = props.select, InputProps = props.InputProps, rest = __rest(props, ["customSize", "readOnly", "withIcon", "defaultValue", "data", "select", "InputProps"]);
+    var customSize = props.customSize, readOnly = props.readOnly, icon = props.icon, defaultValue = props.defaultValue, _a = props.data, data = _a === void 0 ? {} : _a, select = props.select, InputProps = props.InputProps, rest = __rest(props, ["customSize", "readOnly", "icon", "defaultValue", "data", "select", "InputProps"]);
     var getSizeInputRoot = function () {
         if (customSize === 'small') {
             return classes.muiInputRootSmall;
@@ -108,14 +108,14 @@ var TextField = function (props) {
         }
         return theme.typography.body2;
     };
-    var inputProps = __assign(__assign(__assign({}, InputProps), { classes: {
+    var inputProps = __assign(__assign(__assign({ readOnly: readOnly }, InputProps), { classes: {
             root: classes.muiInputRoot + " " + getSizeInputRoot(),
             input: classes.muiInputInput + " " + getSizeInputInput(),
             focused: classes.muiInputFocus,
             formControl: classes.muiFormControl
-        }, disableUnderline: true }), (withIcon && {
+        }, disableUnderline: true }), (icon && {
         startAdornment: (React.createElement(InputAdornment_1.default, { position: "start" },
-            React.createElement(search_svg_1.ReactComponent, null)))
+            React.createElement(Icons_1.default, { iconName: icon, size: "small" })))
     }));
     var inputLabelProps = {
         classes: {
@@ -130,7 +130,7 @@ var TextField = function (props) {
             root: classes.MuiFormHelperTextRoot
         }
     };
-    var _a = React.useState(defaultValue), selectValue = _a[0], setSelectValue = _a[1];
+    var _b = React.useState(defaultValue), selectValue = _b[0], setSelectValue = _b[1];
     var handleChange = function (event) {
         setSelectValue(event.target.value);
     };
@@ -141,7 +141,7 @@ var TextField = function (props) {
                 value: selectValue
             } }), Object.keys(data).map(function (key) { return (React.createElement(MenuItem_1.default, { value: key }, data[key])); })));
     }
-    return (React.createElement(TextField_1.default, __assign({}, rest, { InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps })));
+    return (React.createElement(TextField_1.default, __assign({ rows: 4 }, rest, { InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps })));
 };
 exports.default = TextField;
 //# sourceMappingURL=Input.js.map

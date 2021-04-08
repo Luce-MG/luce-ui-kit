@@ -8,7 +8,8 @@
   "homepage": "https://luce.com",
   "private": true,
   "scripts": {
-    "compile": "tsc && copyfiles -u 4 \"../src/stories/assets/**/*.svg\" ./stories/assets/"
+    "compile": "tsc && copyfiles -u 4 \"../src/stories/assets/**/*.svg\" ./stories/assets/",
+    "copy-ui-kit": "copyfiles \"./**/*\" -e \"./node_modules/**/*\" ../../luce-ui-kit/"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.3",
