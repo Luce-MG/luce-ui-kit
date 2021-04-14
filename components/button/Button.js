@@ -45,8 +45,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Button_1 = __importDefault(require("@material-ui/core/Button"));
+var grey_1 = __importDefault(require("@material-ui/core/colors/grey"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var BaseColor_1 = __importDefault(require("../base/BaseColor"));
 var smTypography = {
     fontSize: 13,
     lineHeight: '20px',
@@ -58,6 +60,12 @@ var mdTypography = {
     lineHeight: '20px',
     letterSpacing: '-0.02em',
     fontWeight: 500
+};
+var Disabled = {
+    '&.Mui-disabled': {
+        background: BaseColor_1.default.primaryColor[400],
+        color: grey_1.default[500]
+    }
 };
 var AllSizes = {
     XS: __assign({ paddingTop: 6, paddingBottom: 6, paddingRight: 8, paddingLeft: 8 }, smTypography),
@@ -81,22 +89,18 @@ var getSize = function (size) {
 };
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        Primary: function (props) { return (__assign({ background: theme.palette.primary.main, color: theme.palette.common.white, '&:hover': {
-                background: '#12354a'
-            } }, getSize(props.customSize))); },
-        CallToAction: function (props) { return (__assign({ background: '#32C27D', color: theme.palette.common.white, '&:hover': {
-                background: '#238757'
-            } }, getSize(props.customSize))); },
-        Ghost: function (props) { return (__assign({ background: '#EDF1F4', color: theme.palette.primary.main, '&:hover': {
-                background: '#a5a8aa'
-            } }, getSize(props.customSize))); },
-        Basic: {
-            background: 'transparent',
-            color: theme.palette.primary.main
-        },
-        Text: {
-            fontWeight: 500
-        }
+        Primary: function (props) { return (__assign(__assign({ background: theme.palette.primary.main, color: theme.palette.common.white, '&:hover': {
+                background: theme.palette.primary.main
+            } }, getSize(props.customSize)), Disabled)); },
+        CallToAction: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.colorCta, color: theme.palette.common.white, '&:hover': {
+                background: BaseColor_1.default.baseColor.colorCta
+            } }, getSize(props.customSize)), Disabled)); },
+        Ghost: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[400], color: theme.palette.primary.main, '&:hover': {
+                background: BaseColor_1.default.primaryColor[400]
+            } }, getSize(props.customSize)), Disabled)); },
+        Basic: function (props) { return (__assign(__assign({ background: 'transparent', color: theme.palette.primary.main, '&:hover': {
+                backgroundColor: 'transparent'
+            } }, getSize(props.customSize)), Disabled)); }
     });
 });
 var Button = function (props) {
@@ -111,9 +115,9 @@ var Button = function (props) {
             case 'ghost':
                 return { root: classes.Ghost };
             case 'basic':
-                return { root: classes.Basic, text: classes.Text };
+                return { root: classes.Basic };
             default:
-                return { root: classes.Primary };
+                return { root: classes.Basic };
         }
     };
     return (React.createElement(Button_1.default, __assign({ classes: getClasses() }, rest), children));

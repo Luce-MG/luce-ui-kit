@@ -61,7 +61,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             background: BaseColor_1.default.baseColor.modalOverlay
         },
         paper: {
-            width: 320,
+            width: 308,
             padding: theme.spacing(5),
             position: 'relative'
         },
@@ -78,7 +78,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             padding: 0
         },
         actionBtn: {
-            width: '50%'
+            width: '100%'
         },
         closeBtn: {
             position: 'absolute',
@@ -87,21 +87,20 @@ var useStyles = styles_1.makeStyles(function (theme) {
         }
     });
 });
-var DialogConfirmation = function (props) {
-    var children = props.children, title = props.title, content = props.content, cancelLabel = props.cancelLabel, confirmLabel = props.confirmLabel, _a = props.onCancel, onCancel = _a === void 0 ? function () { } : _a, _b = props.onConfirm, onConfirm = _b === void 0 ? function () { } : _b, btnVariantConfirm = props.btnVariantConfirm, btnVariantCancel = props.btnVariantCancel, rest = __rest(props, ["children", "title", "content", "cancelLabel", "confirmLabel", "onCancel", "onConfirm", "btnVariantConfirm", "btnVariantCancel"]);
+var DialogInfo = function (props) {
     var classes = useStyles();
+    var children = props.children, onConfirm = props.onConfirm, onCancel = props.onCancel, title = props.title, content = props.content, btnLabel = props.btnLabel, btnVariant = props.btnVariant, rest = __rest(props, ["children", "onConfirm", "onCancel", "title", "content", "btnLabel", "btnVariant"]);
     return (React.createElement("div", null,
         children,
         React.createElement(Dialog_1.default, __assign({ classes: { root: classes.root, paper: classes.paper }, onClose: function () { return onCancel(); } }, rest),
             React.createElement(DialogTitle_1.default, { classes: { root: classes.title } },
                 React.createElement(IconButton_1.default, { onClick: function () { return onCancel(); }, className: classes.closeBtn },
                     React.createElement(Icons_1.default, { iconName: "CloseIcon", size: "small" })),
-                title),
+                title ? title : 'No Title'),
             React.createElement(DialogContent_1.default, { classes: { root: classes.content } },
-                React.createElement(DialogContentText_1.default, { variant: "body2" }, content)),
+                React.createElement(DialogContentText_1.default, { variant: "body2" }, content ? content : 'No Description Content')),
             React.createElement(DialogActions_1.default, { classes: { root: classes.action } },
-                React.createElement(Button_1.default, { onClick: function () { return onCancel(); }, variants: btnVariantCancel ? btnVariantCancel.variants : 'ghost', customSize: "medium", children: cancelLabel ? cancelLabel : 'No', className: classes.actionBtn }),
-                React.createElement(Button_1.default, { onClick: function () { return onConfirm(); }, variants: btnVariantConfirm ? btnVariantConfirm.variants : 'primary', customSize: "medium", children: confirmLabel ? confirmLabel : 'Yes', size: "medium", className: classes.actionBtn })))));
+                React.createElement(Button_1.default, { onClick: function () { return onConfirm(); }, variants: btnVariant ? btnVariant.variants : 'primary', customSize: "medium", children: btnLabel ? btnLabel : 'Ok', size: "medium", className: classes.actionBtn })))));
 };
-exports.default = DialogConfirmation;
-//# sourceMappingURL=DialogConfirmation.js.map
+exports.default = DialogInfo;
+//# sourceMappingURL=DialogInfo.js.map

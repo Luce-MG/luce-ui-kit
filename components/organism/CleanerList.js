@@ -18,12 +18,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -45,7 +43,7 @@ var CleanerList = function (props) {
     };
     return (React.createElement(Box_1.default, { padding: 2, bgcolor: "#fff" },
         React.createElement(Box_1.default, { marginBottom: 4 },
-            React.createElement(CleanerSearch_1.default, { loading: true, dataCleaner: allCleaners, onSelect: function (props) { return setList(__spreadArrays([props], list)); } })),
+            React.createElement(CleanerSearch_1.default, { loading: true, dataCleaner: allCleaners, onSelect: function (props) { return setList(__spreadArray([props], list)); } })),
         React.createElement(Typography_1.default, { children: "List Cleaner" }),
         React.createElement(Box_1.default, { marginTop: 2 }, list.map(function (cleaner, index) { return (React.createElement(Box_1.default, { key: "card-" + index, marginBottom: index === cleaners.length - 1 ? 0 : 2, width: "100%" },
             React.createElement(CardCleaner_1.default, { key: "card-" + index, cleanerData: {

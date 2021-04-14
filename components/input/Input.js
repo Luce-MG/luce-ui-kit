@@ -54,7 +54,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         muiInputRoot: {
             border: "1px solid " + theme.palette.grey[600],
-            borderRadius: 3
+            borderRadius: 3,
+            '& > svg': {
+                marginLeft: theme.spacing(-1.5),
+                pointerEvents: 'none'
+            }
         },
         muiInputRootSmall: {
             padding: theme.spacing(1.125) + "px " + theme.spacing(1.5) + "px"
@@ -90,6 +94,10 @@ var TextField = function (props) {
     var theme = styles_1.useTheme();
     var classes = useStyles(props);
     var customSize = props.customSize, readOnly = props.readOnly, icon = props.icon, defaultValue = props.defaultValue, _a = props.data, data = _a === void 0 ? {} : _a, select = props.select, InputProps = props.InputProps, rest = __rest(props, ["customSize", "readOnly", "icon", "defaultValue", "data", "select", "InputProps"]);
+    var _b = React.useState(defaultValue), selectValue = _b[0], setSelectValue = _b[1];
+    var handleChange = function (event) {
+        setSelectValue(event.target.value);
+    };
     var getSizeInputRoot = function () {
         if (customSize === 'small') {
             return classes.muiInputRootSmall;
@@ -113,7 +121,8 @@ var TextField = function (props) {
             input: classes.muiInputInput + " " + getSizeInputInput(),
             focused: classes.muiInputFocus,
             formControl: classes.muiFormControl
-        }, disableUnderline: true }), (icon && {
+        }, disableUnderline: true }), (icon &&
+        !select && {
         startAdornment: (React.createElement(InputAdornment_1.default, { position: "start" },
             React.createElement(Icons_1.default, { iconName: icon, size: "small" })))
     }));
@@ -130,16 +139,11 @@ var TextField = function (props) {
             root: classes.MuiFormHelperTextRoot
         }
     };
-    var _b = React.useState(defaultValue), selectValue = _b[0], setSelectValue = _b[1];
-    var handleChange = function (event) {
-        setSelectValue(event.target.value);
-    };
+    var selectProps = __assign({ displayEmpty: true, onChange: handleChange, value: selectValue }, (icon && {
+        IconComponent: function () { return (React.createElement(Icons_1.default, { iconName: icon, size: "small" })); }
+    }));
     if (select) {
-        return (React.createElement(TextField_1.default, __assign({}, rest, { select: true, InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps, SelectProps: {
-                displayEmpty: true,
-                onChange: handleChange,
-                value: selectValue
-            } }), Object.keys(data).map(function (key) { return (React.createElement(MenuItem_1.default, { value: key }, data[key])); })));
+        return (React.createElement(TextField_1.default, __assign({}, rest, { select: true, InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps, SelectProps: selectProps }), Object.keys(data).map(function (key) { return (React.createElement(MenuItem_1.default, { value: key }, data[key])); })));
     }
     return (React.createElement(TextField_1.default, __assign({ rows: 4 }, rest, { InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps })));
 };

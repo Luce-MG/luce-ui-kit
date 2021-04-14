@@ -54,47 +54,41 @@ var useStyles = styles_1.makeStyles(function (theme) {
         root: {
             '&:hover': {
                 backgroundColor: 'transparent'
+            },
+            '&.Mui-disabled': {
+                background: theme.palette.grey[500],
+                borderRadius: 0,
+                width: 18,
+                height: 18
             }
         },
         icon: {
             borderRadius: 2,
-            width: 16,
-            height: 16,
-            boxShadow: 'inset 0 0 0 1px #DBDBDB, inset 0 -1px 0 #DBDBDB',
-            backgroundColor: theme.palette.common.white,
-            backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
-            '$root.Mui-focusVisible &': {
-                outline: '2px auto rgba(19,124,189,.6)',
-                outlineOffset: 2
-            },
-            'input:disabled ~ &': {
-                boxShadow: 'none',
-                background: theme.palette.grey[500]
-            }
+            width: 18,
+            height: 18,
+            boxShadow: "inset 0 0 0 1px " + theme.palette.grey[600] + ", inset 0 -1px 0 " + theme.palette.grey[600],
+            backgroundColor: theme.palette.common.white
         },
         checkedIcon: {
             borderRadius: 2,
             backgroundColor: theme.palette.primary.main,
             '&:before': {
                 display: 'block',
-                width: 16,
-                height: 16,
+                width: 18,
+                height: 18,
                 backgroundImage: "url(" + check_svg_1.default + ")",
-                content: '""'
+                content: '""',
+                backgroundPosition: '50% 20%'
             }
         },
-        label: {
-            fontSize: '14px',
-            lineHeight: '24px',
-            color: theme.palette.grey[900]
-        }
+        label: __assign(__assign({}, theme.typography.body2), { color: theme.palette.grey[900] })
     });
 });
 var Checkbox = function (props) {
     var classes = useStyles();
     var label = props.label, rest = __rest(props, ["label"]);
     return (React.createElement("div", null,
-        React.createElement(core_1.FormControlLabel, { classes: { label: classes.label }, control: React.createElement(Checkbox_1.default, __assign({ className: classes.root, checkedIcon: React.createElement("span", { className: classes.checkedIcon }), icon: React.createElement("span", { className: classes.icon }) }, rest)), label: label })));
+        React.createElement(core_1.FormControlLabel, { classes: { label: classes.label }, control: React.createElement(Checkbox_1.default, __assign({ classes: { root: classes.root }, checkedIcon: rest.disabled ? (React.createElement("span", null)) : (React.createElement("span", { className: classes.checkedIcon })), icon: React.createElement("span", { className: classes.icon }) }, rest)), label: label })));
 };
 exports.default = Checkbox;
 //# sourceMappingURL=Checkbox.js.map

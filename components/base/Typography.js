@@ -54,49 +54,28 @@ var bodyLargeStyle = {
 };
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        bodyLarge: __assign({}, bodyLargeStyle),
-        bodyLgMedium: __assign(__assign({}, bodyLargeStyle), { fontWeight: 500 }),
-        bodyLgBold: __assign(__assign({}, bodyLargeStyle), { fontWeight: 700 }),
-        bodyMdBold: __assign(__assign({}, theme.typography.body1), { fontWeight: 700 }),
-        bodySmBold: __assign(__assign({}, theme.typography.body2), { fontWeight: 700 }),
-        bodyXsMedium: __assign(__assign({}, theme.typography.overline), { fontWeight: 500 }),
-        bodyXsBold: __assign(__assign({}, theme.typography.overline), { fontWeight: 700 }),
-        bodyXxsMedium: __assign(__assign({}, theme.typography.caption), { fontWeight: 500 }),
+        lg: __assign({}, bodyLargeStyle),
+        lgMedium: __assign(__assign({}, bodyLargeStyle), { fontWeight: 500 }),
+        lgBold: __assign(__assign({}, bodyLargeStyle), { fontWeight: 700 }),
+        mdBold: __assign(__assign({}, theme.typography.body1), { fontWeight: 700 }),
+        smBold: __assign(__assign({}, theme.typography.body2), { fontWeight: 700 }),
+        xsMedium: __assign(__assign({}, theme.typography.overline), { fontWeight: 500 }),
+        xsBold: __assign(__assign({}, theme.typography.overline), { fontWeight: 700 }),
+        xxsMedium: __assign(__assign({}, theme.typography.caption), { fontWeight: 500 })
     });
 });
 var Typography = function (props) {
     var classes = useStyles();
     var bodyVariants = props.bodyVariants, children = props.children, rest = __rest(props, ["bodyVariants", "children"]);
-    var getClasses = function () {
-        if (bodyVariants === 'lg') {
-            return { root: classes.bodyLarge };
-        }
-        else if (bodyVariants === 'lgMedium') {
-            return { root: classes.bodyLgMedium };
-        }
-        else if (bodyVariants === 'lgBold') {
-            return { root: classes.bodyLgBold };
-        }
-        else if (bodyVariants === 'mdBold') {
-            return { root: classes.bodyMdBold };
-        }
-        else if (bodyVariants === 'smBold') {
-            return { root: classes.bodySmBold };
-        }
-        else if (bodyVariants === 'xsMedium') {
-            return { root: classes.bodyXsMedium };
-        }
-        else if (bodyVariants === 'xsBold') {
-            return { root: classes.bodyXsBold };
-        }
-        else if (bodyVariants === 'xxsMedium') {
-            return { root: classes.bodyXxsMedium };
+    var getClasses = function (variant) {
+        if (bodyVariants === variant) {
+            return { root: classes[variant] };
         }
     };
-    return (React.createElement(Typography_1.default, __assign({ classes: getClasses() }, rest),
-        " ",
+    return (React.createElement(Typography_1.default, __assign({ classes: getClasses(bodyVariants) }, rest),
+        ' ',
         children,
-        " "));
+        ' '));
 };
 exports.default = Typography;
 //# sourceMappingURL=Typography.js.map
