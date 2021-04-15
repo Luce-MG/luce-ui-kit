@@ -63,7 +63,8 @@ var CardCleanerContract = function (props) {
     var classes = useStyles();
     var _a = React.useState(false), expanded = _a[0], setExpanded = _a[1];
     var accordionOpen = function (event) {
-        setExpanded(!expanded), event.stopPropagation();
+        setExpanded(!expanded);
+        event.stopPropagation();
     };
     return (React.createElement(core_1.CardActionArea, { onClick: function () { return onClick(contracts.id); }, className: classes.root },
         React.createElement(core_1.Card, { className: expanded ? classes.verticalLine : '', elevation: 0 },

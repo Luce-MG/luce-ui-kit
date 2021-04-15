@@ -48,6 +48,10 @@ var core_1 = require("@material-ui/core");
 var Radio_1 = __importDefault(require("@material-ui/core/Radio"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var Size = {
+    width: 20,
+    height: 20
+};
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
@@ -56,40 +60,25 @@ var useStyles = styles_1.makeStyles(function (theme) {
                 backgroundColor: 'transparent'
             }
         },
-        icon: {
-            borderRadius: 50,
-            width: 20,
-            height: 20,
-            boxShadow: 'inset 0 0 0 1px #DBDBDB, inset 0 -1px 0 #DBDBDB',
-            'input:disabled ~ &': {
+        icon: __assign(__assign({ borderRadius: 50 }, Size), { boxShadow: "inset 0 0 0 1px " + theme.palette.grey[600] + ", inset 0 -1px 0 " + theme.palette.grey[600], 'input:disabled ~ &': {
                 boxShadow: 'none',
                 background: theme.palette.grey[500]
-            }
-        },
+            } }),
         checkedIcon: {
             backgroundColor: theme.palette.common.white,
-            boxShadow: 'inset 0 0 0 1px #DBDBDB, inset 0 -1px 0 #DBDBDB',
+            boxShadow: "inset 0 0 0 1px " + theme.palette.grey[600] + ", inset 0 -1px 0 " + theme.palette.grey[600],
             borderRadius: 50,
-            '&:before': {
-                display: 'block',
-                width: 20,
-                height: 20,
-                backgroundImage: 'radial-gradient(#1A4D6A,#1A4D6A 42%,transparent 42%)',
-                content: '""'
-            }
+            '&:before': __assign(__assign({ display: 'block' }, Size), { backgroundImage: "radial-gradient(" + theme.palette.primary.main + ", " + theme.palette.primary.main + " 38%, transparent 48%)", content: '""' })
         },
-        label: {
-            fontSize: '14px',
-            lineHeight: '24px',
-            color: theme.palette.grey[900]
-        }
+        disabled: __assign(__assign({ borderRadius: 50 }, Size), { background: theme.palette.grey[500] }),
+        label: __assign(__assign({}, theme.typography.body2), { color: theme.palette.grey[900] })
     });
 });
 var Radio = function (props) {
     var classes = useStyles();
     var label = props.label, rest = __rest(props, ["label"]);
     return (React.createElement("div", null,
-        React.createElement(core_1.FormControlLabel, { classes: { label: classes.label }, control: React.createElement(Radio_1.default, __assign({ className: classes.root, checkedIcon: React.createElement("span", { className: classes.checkedIcon }), icon: React.createElement("span", { className: classes.icon }) }, rest)), label: label })));
+        React.createElement(core_1.FormControlLabel, { classes: { label: classes.label }, control: React.createElement(Radio_1.default, __assign({ className: classes.root, checkedIcon: rest.disabled ? (React.createElement("span", { className: classes.disabled })) : (React.createElement("span", { className: classes.checkedIcon })), icon: React.createElement("span", { className: classes.icon }) }, rest)), label: label })));
 };
 exports.default = Radio;
 //# sourceMappingURL=RadioButton.js.map

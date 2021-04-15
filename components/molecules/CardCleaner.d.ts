@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TagInterface as Tag } from '../tags/Tags';
-export interface CardCleaner {
+export interface CleanerData {
     id: number;
     name: string;
     rating: number;
@@ -9,12 +9,11 @@ export interface CardCleaner {
     afterTime: string;
     beforeAfterLabel: boolean;
 }
-export declare type StyledCardCleaner = {
-    cleanerData: CardCleaner;
+export declare type CardCleanerProps = {
+    cleanerData: CleanerData;
     tags: Tag[];
     onClick(cleanerId: number): void;
     isSelected: boolean;
 };
-export declare type CardCleanerProps = StyledCardCleaner;
 declare const CardCleaner: React.FC<CardCleanerProps>;
 export default CardCleaner;

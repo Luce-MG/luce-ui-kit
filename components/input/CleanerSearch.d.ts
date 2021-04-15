@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { CardCleaner } from '../molecules/CardCleaner';
+import { CleanerData } from '../molecules/CardCleaner';
 export declare type StyledCleaner = {
-    dataCleaner: CardCleaner[];
+    dataCleaner: CleanerData[];
     loading: boolean;
-    onSelect: (value: CardCleaner) => void;
+    onSelect: (value: CleanerData) => void;
 };
 export declare type CleanerSearchProps = StyledCleaner;
 declare const CleanerSearch: React.FC<CleanerSearchProps>;

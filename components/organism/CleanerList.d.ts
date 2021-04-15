@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { CardCleaner } from '../molecules/CardCleaner';
+import { CleanerData } from '../molecules/CardCleaner';
 import { TagInterface } from '../tags/Tags';
 export declare type StyledCleanerList = {
-    allCleaners: CardCleaner[];
-    cleaners: CardCleaner[];
+    allCleaners: CleanerData[];
+    cleaners: CleanerData[];
     tags: TagInterface[];
 };
 export declare type CleanerListProps = StyledCleanerList;
