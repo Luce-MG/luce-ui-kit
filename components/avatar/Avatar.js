@@ -44,47 +44,48 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var styles_1 = require("@material-ui/core/styles");
 var Avatar_1 = __importDefault(require("@material-ui/core/Avatar"));
+var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var avatar_icon_svg_1 = __importDefault(require("../../stories/assets/avatar-icon.svg"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        iconAvatar: {
-            background: theme.palette.primary.main,
-        },
+        iconAvatar: __assign({ background: theme.palette.primary.main }, theme.typography.overline),
         imgAvatar: {
-            background: theme.palette.grey[400],
+            background: theme.palette.grey[400]
         },
-        avatarSmall: __assign({ width: 24, height: 24 }, theme.typography.caption),
-        avatarMedium: __assign({ width: 32, height: 32 }, theme.typography.overline),
-        avatarLarge: __assign({ width: 40, height: 40 }, theme.typography.overline),
-        avatarExtraLarge: __assign({ width: 128, height: 128 }, theme.typography.overline),
+        small: __assign({ width: 24, height: 24 }, theme.typography.caption),
+        medium: {
+            width: 32,
+            height: 32
+        },
+        large: {
+            width: 40,
+            height: 40
+        },
+        xl: {
+            width: 128,
+            height: 128
+        }
     });
 });
 var Avatar = function (props) {
     var classes = useStyles();
     var imageAvatar = props.imageAvatar, customSize = props.customSize, children = props.children, rest = __rest(props, ["imageAvatar", "customSize", "children"]);
-    var getSize = function () {
-        if (customSize === 'small') {
-            return { root: classes.avatarSmall };
-        }
-        else if (customSize === 'medium') {
-            return { root: classes.avatarMedium };
-        }
-        else if (customSize === 'large') {
-            return { root: classes.avatarLarge };
-        }
-        else if (customSize === 'xl') {
-            return { root: classes.avatarExtraLarge };
-        }
-        else {
-            return { root: classes.avatarMedium };
+    var getSize = function (size) {
+        if (size === customSize) {
+            return { root: classes[size] };
         }
     };
-    return React.createElement(Avatar_1.default, __assign({ classes: getSize(), className: imageAvatar ? classes.imgAvatar : classes.iconAvatar }, rest),
-        " ",
-        children,
-        " ");
+    var avatar = function () {
+        if (imageAvatar) {
+            return rest.src ? rest.src : avatar_icon_svg_1.default;
+        }
+        else {
+            return '';
+        }
+    };
+    return (React.createElement(Avatar_1.default, __assign({ classes: getSize(customSize), className: imageAvatar ? classes.imgAvatar : classes.iconAvatar, src: avatar() }, rest), children));
 };
 exports.default = Avatar;
 //# sourceMappingURL=Avatar.js.map

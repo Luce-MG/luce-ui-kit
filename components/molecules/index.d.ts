@@ -3,6 +3,7 @@ export * from './CardCleaner';
 export * from './CardCleanerContract';
 export * from './CardDocument';
 export * from './CardJobAssignment';
+export * from './CardNotification';
 export * from './CardPopover';
 export * from './ClientContractCard';
 export * from './ClientPackageCard';

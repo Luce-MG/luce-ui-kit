@@ -66,6 +66,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
         },
         scheduleLabel: {
             marginRight: 12
+        },
+        tag: {
+            padding: '3px 0px',
+            width: '34px'
         }
     });
 });
@@ -84,7 +88,7 @@ var Accordion = function (props) {
         React.createElement(AccordionDetails_1.default, { className: classes.accordionDetail },
             React.createElement(core_1.Grid, { container: true, direction: "column", justify: "flex-start", alignItems: "flex-start" }, schedule.map(function (days, index) {
                 return (React.createElement(core_1.Box, { key: "scheduleDay-" + index, marginTop: index === 0 ? marginTop : 0, marginBottom: index === schedule.length - 1 ? -5 : marginBottom },
-                    React.createElement(Tags_1.default, { customVariant: "secondary", sizes: sizes ? sizes : 'xs', label: days.day }),
+                    React.createElement(Tags_1.default, { customVariant: "secondary", sizes: sizes ? sizes : 'xs', label: days.day, className: classes.tag }),
                     React.createElement(Typography_1.default, { className: classes.spaceLeft, variant: labelVariant ? labelVariant : 'caption', children: days.startTime + " - " + days.endTime })));
             })))));
 };

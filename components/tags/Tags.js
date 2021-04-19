@@ -29,6 +29,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -37,104 +48,79 @@ exports.TagsChip = void 0;
 var Chip_1 = __importDefault(require("@material-ui/core/Chip"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var XS = {
-    height: 'auto',
-    fontWeight: 700,
-    fontSize: '0.5rem',
-    lineHeight: '1.5em',
-    alignItems: 'center',
-    padding: '3px 6px'
+var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var typography = {
+    xsMedium: {
+        fontSize: 13,
+        lineHeight: 1.38,
+        fontWeight: 500,
+        alignItems: 'center'
+    },
+    xxsBold: {
+        fontSize: 11,
+        lineHeight: 1.45,
+        fontWeight: 700,
+        alignItems: 'center'
+    },
+    tagsXs: {
+        fontWeight: 700,
+        fontSize: 8,
+        lineHeight: 1.5,
+        alignItems: 'center'
+    }
 };
-var Small = {
-    height: 'auto',
-    fontWeight: 700,
-    fontSize: '0.7rem',
-    lineHeight: '1.45em',
-    alignItems: 'center',
-    padding: '3px 12px'
+var LabelStyle = {
+    '& .MuiChip-label': {
+        padding: 0
+    },
+    '& .MuiChip-deleteIcon': {
+        display: 'none'
+    }
 };
-var Medium = {
-    height: 'auto',
-    fontWeight: 700,
-    fontSize: '0.7rem',
-    lineHeight: '1.45em',
-    alignItems: 'center',
-    padding: '6px 12px'
-};
-var Large = {
-    height: 'auto',
-    fontWeight: 500,
-    fontSize: '0.8rem',
-    lineHeight: '1.38em',
-    alignItems: 'center',
-    padding: '7px 16px'
-};
+var XS = __assign({ height: 'auto', padding: '3px 6px', borderRadius: 2 }, typography.tagsXs);
+var Small = __assign({ height: 'auto', padding: '3px 12px', borderRadius: 4 }, typography.xxsBold);
+var Medium = __assign({ height: 'auto', padding: '6px 12px', borderRadius: 4 }, typography.xxsBold);
+var Large = __assign({ height: 'auto', padding: '7px 16px', borderRadius: 4 }, typography.xsMedium);
 var getSize = function (sizes) {
     if (sizes === 'xs') {
         return XS;
     }
-    if (sizes === 'small') {
+    else if (sizes === 'small') {
         return Small;
     }
-    if (sizes === 'medium') {
+    else if (sizes === 'medium') {
         return Medium;
     }
-    if (sizes === 'large') {
+    else if (sizes === 'large') {
         return Large;
+    }
+    else {
+        return Medium;
     }
 };
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        Primary: function (props) { return (__assign({ background: '#829AEE', color: theme.palette.primary.main, borderRadius: 4, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        Secondary: function (props) { return (__assign({ background: '#EDF1F4', color: theme.palette.primary.main, borderRadius: 4, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        OfficeCleaning: function (props) { return (__assign({ background: '#2D9CDB', color: theme.palette.common.white, borderRadius: 2, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        HomeCleaning: function (props) { return (__assign({ background: '#27AE60', color: theme.palette.common.white, borderRadius: 2, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        Percentage: function (props) { return (__assign({ background: '#E8ECFA', color: '#52798F', borderRadius: 2, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        HourlyRate: function (props) { return (__assign({ background: '#7A98AA', color: theme.palette.common.white, borderRadius: 2, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); },
-        Casual: function (props) { return (__assign({ background: theme.palette.grey[800], color: theme.palette.common.white, borderRadius: 2, '& .MuiChip-label': {
-                padding: 0
-            } }, getSize(props.sizes))); }
+        primary: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.firstBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        secondary: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[400], color: theme.palette.primary.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        officeCleaning: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.secondBlue, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        homeCleaning: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.secondGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        percentage: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.firstTint, color: BaseColor_1.default.primaryColor[800] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        hourlyRate: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[700], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        casual: function (props) { return (__assign(__assign({ background: theme.palette.grey[800], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
     });
 });
 var TagsChip = function (props) {
     var classes = useStyles(props);
-    var label = props.label, customVariant = props.customVariant;
-    var getClasses = function () {
-        if (customVariant === 'primary') {
-            return { root: classes.Primary };
+    var label = props.label, customVariant = props.customVariant, rest = __rest(props, ["label", "customVariant"]);
+    var getClasses = function (variant) {
+        if (customVariant === undefined) {
+            return { root: classes.primary };
         }
-        if (customVariant === 'secondary') {
-            return { root: classes.Secondary };
-        }
-        if (customVariant === 'officeCleaning') {
-            return { root: classes.OfficeCleaning };
-        }
-        if (customVariant === 'homeCleaning') {
-            return { root: classes.HomeCleaning };
-        }
-        if (customVariant === 'percentage') {
-            return { root: classes.Percentage };
-        }
-        if (customVariant === 'hourlyRate') {
-            return { root: classes.HourlyRate };
-        }
-        if (customVariant === 'casual') {
-            return { root: classes.Casual };
+        else if (customVariant === variant) {
+            return { root: classes[variant] };
         }
     };
-    return React.createElement(Chip_1.default, { classes: getClasses(), label: label });
+    return (React.createElement(Chip_1.default, __assign({}, rest, { classes: getClasses(customVariant), label: label })));
 };
 exports.TagsChip = TagsChip;
 exports.default = exports.TagsChip;

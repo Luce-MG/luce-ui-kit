@@ -57,9 +57,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
             },
             '&.Mui-disabled': {
                 background: theme.palette.grey[500],
-                borderRadius: 0,
+                borderRadius: 2,
                 width: 18,
-                height: 18
+                height: 18,
+                margin: 9
             }
         },
         icon: {
@@ -81,6 +82,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
                 backgroundPosition: '50% 20%'
             }
         },
+        boxDisabled: {},
         label: __assign(__assign({}, theme.typography.body2), { color: theme.palette.grey[900] })
     });
 });

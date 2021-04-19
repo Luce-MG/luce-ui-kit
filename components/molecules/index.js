@@ -15,7 +15,7 @@ __exportStar(require("./CardCleaner"), exports);
 __exportStar(require("./CardCleanerContract"), exports);
 __exportStar(require("./CardDocument"), exports);
 __exportStar(require("./CardJobAssignment"), exports);
-// export * from './CardNotification'
+__exportStar(require("./CardNotification"), exports);
 __exportStar(require("./CardPopover"), exports);
 __exportStar(require("./ClientContractCard"), exports);
 __exportStar(require("./ClientPackageCard"), exports);
