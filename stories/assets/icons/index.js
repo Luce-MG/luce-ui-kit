@@ -7,6 +7,7 @@ var aircon_svg_1 = require("./aircon.svg");
 var alert_svg_1 = require("./alert.svg");
 var all_services_svg_1 = require("./all-services.svg");
 var arrow_bottom_svg_1 = require("./arrow-bottom.svg");
+var arrow_fill_right_svg_1 = require("./arrow-fill-right.svg");
 var arrow_left_svg_1 = require("./arrow-left.svg");
 var arrow_right_svg_1 = require("./arrow-right.svg");
 var arrow_top_svg_1 = require("./arrow-top.svg");
@@ -54,6 +55,7 @@ var loader_svg_1 = require("./loader.svg");
 var location_svg_1 = require("./location.svg");
 var lock_svg_1 = require("./lock.svg");
 var log_out_svg_1 = require("./log_out.svg");
+var menu_svg_1 = require("./menu.svg");
 var minus_svg_1 = require("./minus.svg");
 var notification_svg_1 = require("./notification.svg");
 var office_svg_1 = require("./office.svg");
@@ -164,6 +166,8 @@ exports.default = {
     UploadIcon: upload_svg_1.ReactComponent,
     WalletIcon: wallet_svg_1.ReactComponent,
     WarningIcon: warning_svg_1.ReactComponent,
-    DocumentIcon: document_svg_1.ReactComponent
+    DocumentIcon: document_svg_1.ReactComponent,
+    ArrowFillRightIcon: arrow_fill_right_svg_1.ReactComponent,
+    MenuIcon: menu_svg_1.ReactComponent
 };
 //# sourceMappingURL=index.js.map
