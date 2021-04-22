@@ -17,4 +17,5 @@ exports.default = void 0;
 var Button_1 = require("./Button");
 Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Button_1).default; } });
 __exportStar(require("./Button"), exports);
+__exportStar(require("./MenuButton"), exports);
 //# sourceMappingURL=index.js.map

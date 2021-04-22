@@ -1,13 +1,14 @@
 import { ChipProps as Props } from '@material-ui/core/Chip';
 import * as React from 'react';
+export declare type CustomVariant = 'primary' | 'secondary' | 'officeCleaning' | 'homeCleaning' | 'percentage' | 'hourlyRate' | 'casual';
+export declare type SizeTags = 'xs' | 'small' | 'medium' | 'large';
 export interface TagInterface {
-    label: string;
-    variant: any;
+    label?: string;
+    variant?: CustomVariant;
 }
-export declare type StyledTag = {
-    customVariant: 'primary' | 'secondary' | 'officeCleaning' | 'homeCleaning' | 'percentage' | 'hourlyRate' | 'casual';
-    sizes: 'xs' | 'small' | 'medium' | 'large';
-};
-export declare type ChipProps = Props & StyledTag;
-export declare const TagsChip: React.FC<ChipProps>;
+export declare type TagProps = {
+    customVariant?: CustomVariant;
+    sizes?: SizeTags;
+} & Props;
+export declare const TagsChip: React.FC<TagProps>;
 export default TagsChip;

@@ -68,7 +68,7 @@ var ServiceTypeCard = function (props) {
     var classes = useStyles();
     var Button;
     if (isSelected) {
-        Button = (React.createElement(Avatar_1.default, { className: classes.avatarRoot, imageAvatar: true, customSize: "small" },
+        Button = (React.createElement(Avatar_1.default, { className: classes.avatarRoot, customSize: "small" },
             React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" })));
     }
     return (React.createElement(Card_1.default, { classes: { root: classes.cardRoot }, className: isSelected ? classes.selected : classes.default },

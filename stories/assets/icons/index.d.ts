@@ -81,5 +81,7 @@ declare const _default: {
     WalletIcon: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
     WarningIcon: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
     DocumentIcon: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
+    ArrowFillRightIcon: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
+    MenuIcon: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
 };
 export default _default;

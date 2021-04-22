@@ -69,7 +69,7 @@ var AppendixCard = function (props) {
         React.createElement(CardActionArea_1.default, { classes: { root: classes.cardActionArea }, href: url },
             React.createElement(Typography_1.default, { variant: "overline", children: title }),
             React.createElement(Box_1.default, { className: classes.cardActionAreaBox },
-                React.createElement(Avatar_1.default, { className: classes.cardAvatar, imageAvatar: true, customSize: "medium" },
+                React.createElement(Avatar_1.default, { className: classes.cardAvatar, customSize: "medium" },
                     React.createElement(Icons_1.default, { iconName: "InvoiceIcon", size: "small" })),
                 React.createElement(Box_1.default, { className: classes.cardActionAreaBoxLabel },
                     React.createElement(Typography_1.default, { variant: "body2", children: label }),

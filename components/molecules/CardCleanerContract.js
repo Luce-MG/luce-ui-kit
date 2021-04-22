@@ -79,7 +79,7 @@ var CardCleanerContract = function (props) {
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary })),
                 React.createElement(core_1.Box, { onClick: accordionOpen },
-                    React.createElement(AccordionScheduleDay_1.default, { customVariant: "secondary", children: "", marginTop: 1, marginBottom: 0.5, sizes: "small", labelVariant: "overline", schedule: schedule }))))));
+                    React.createElement(AccordionScheduleDay_1.default, { children: "", marginTop: 1, marginBottom: 0.5, sizes: "small", labelVariant: "overline", schedule: schedule }))))));
 };
 exports.default = CardCleanerContract;
 //# sourceMappingURL=CardCleanerContract.js.map
