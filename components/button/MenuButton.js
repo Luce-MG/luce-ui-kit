@@ -49,12 +49,20 @@ var useStyles = styles_1.makeStyles(function (theme) {
             background: theme.palette.common.white,
             paddingTop: theme.spacing(1.5),
             paddingBottom: theme.spacing(1.5),
-            minWidth: 204,
-            position: 'relative'
+            paddingRight: theme.spacing(3),
+            marginLeft: theme.spacing(3),
+            width: 232,
+            position: 'relative',
+            '&:hover': {
+                background: 'transparent'
+            }
         },
         itemSelected: {
             '&.Mui-selected': {
-                backgroundColor: theme.palette.common.white
+                backgroundColor: theme.palette.common.white,
+                '&:hover': {
+                    background: 'transparent'
+                }
             }
         },
         iconStyle: {
@@ -78,7 +86,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
             color: theme.palette.common.black,
             borderBottom: "1px solid " + BaseColor_1.default.primaryColor[500],
             paddingTop: theme.spacing(1.5),
-            paddingBottom: theme.spacing(1.5)
+            paddingBottom: theme.spacing(1.5),
+            paddingLeft: theme.spacing(5.25),
+            '&:hover': {
+                background: 'transparent'
+            }
         }
     });
 });
@@ -94,7 +106,7 @@ var MenuButton = function (props) {
                         setOpen(!open);
                     }
                     onClick(event, index), setMenuIndex(index);
-                }, selected: menuIndex === index, button: true, classes: { root: classes.root, selected: classes.itemSelected } },
+                }, selected: menuIndex === index, button: true, disableRipple: true, classes: { root: classes.root, selected: classes.itemSelected } },
                 React.createElement(core_1.Box, { className: menuIndex === index ? classes.lineSelected : '' }),
                 React.createElement(ListItemIcon_1.default, { classes: { root: classes.iconStyle } },
                     React.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon.iconName : 'ArrowRightIcon' })),
