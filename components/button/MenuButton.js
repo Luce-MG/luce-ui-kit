@@ -40,7 +40,7 @@ var ListItemIcon_1 = __importDefault(require("@material-ui/core/ListItemIcon"));
 var ListItemText_1 = __importDefault(require("@material-ui/core/ListItemText"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
@@ -80,11 +80,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
             borderRadius: theme.spacing(1)
         },
         collpase: {
-            background: BaseColor_1.default.primaryColor[300]
+            background: Color_1.default.primary[300]
         },
         collapseItem: {
             color: theme.palette.common.black,
-            borderBottom: "1px solid " + BaseColor_1.default.primaryColor[500],
+            borderBottom: "1px solid " + Color_1.default.primary[500],
             paddingTop: theme.spacing(1.5),
             paddingBottom: theme.spacing(1.5),
             paddingLeft: theme.spacing(5.25),

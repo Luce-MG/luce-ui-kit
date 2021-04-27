@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { DialogProps } from './Dialog';
+import { DialogConfirmationProps } from './DialogConfirmation';
 export declare type DialogDurationChangeProps = {
     billing?: number;
     payroll?: number;
-} & DialogProps;
+} & DialogConfirmationProps;
 declare const DialogDurationChange: React.FC<DialogDurationChangeProps>;
 export default DialogDurationChange;

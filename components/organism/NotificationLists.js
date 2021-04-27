@@ -26,7 +26,7 @@ var core_1 = require("@material-ui/core");
 var Popover_1 = __importDefault(require("@material-ui/core/Popover"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var CardNotification_1 = __importDefault(require("../molecules/CardNotification"));
 var useStyles = styles_1.makeStyles(function (theme) {
@@ -89,7 +89,7 @@ var NotificationLists = function (props) {
                 horizontal: 'right'
             } },
             React.createElement(core_1.Box, { overflow: "auto", maxHeight: 340 }, notifications ? (notifications.map(function (notif, index) {
-                return (React.createElement(core_1.Box, { key: "notif-" + index, borderBottom: "1px solid " + BaseColor_1.default.primaryColor[500], className: "\n              " + classes.notif + " \n              " + (index === notifications.length - 1 ? classes.lastStyle : '') + "\n              " },
+                return (React.createElement(core_1.Box, { key: "notif-" + index, borderBottom: "1px solid " + Color_1.default.primary[500], className: "\n              " + classes.notif + " \n              " + (index === notifications.length - 1 ? classes.lastStyle : '') + "\n              " },
                     React.createElement(CardNotification_1.default, { notification: {
                             id: notif.id,
                             date: notif.date,

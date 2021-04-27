@@ -47,11 +47,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Box_1 = __importDefault(require("@material-ui/core/Box"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("./BaseColor"));
+var Color_1 = __importDefault(require("./Color"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         modalOverlay: {
-            background: BaseColor_1.default.baseColor.modalOverlay
+            background: Color_1.default.base.modalOverlay
         },
         colorPrimary: {
             background: theme.palette.primary.main
@@ -60,7 +60,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             background: theme.palette.secondary.main
         },
         colorCta: {
-            background: BaseColor_1.default.baseColor.colorCta
+            background: Color_1.default.base.cta
         },
         colorBlack: {
             background: theme.palette.common.black
@@ -78,28 +78,28 @@ var useStyles = styles_1.makeStyles(function (theme) {
             background: theme.palette.info.main
         },
         colorAdditionall: {
-            background: BaseColor_1.default.baseColor.firstAdditional
+            background: Color_1.default.base.firstAdditional
         },
         colorAdditional2: {
-            background: BaseColor_1.default.baseColor.secondAdditional
+            background: Color_1.default.base.secondAdditional
         },
         colorBase1: {
-            background: BaseColor_1.default.baseColor.firstBase
+            background: Color_1.default.base.firstBase
         },
         colorBase2: {
-            background: BaseColor_1.default.baseColor.secondBase
+            background: Color_1.default.base.secondBase
         },
         colorBase3: {
-            background: BaseColor_1.default.baseColor.thirdBase
+            background: Color_1.default.base.thirdBase
         },
         colorTint1: {
-            background: BaseColor_1.default.baseColor.firstTint
+            background: Color_1.default.base.firstTint
         },
         colorTint2: {
-            background: BaseColor_1.default.baseColor.secondTint
+            background: Color_1.default.base.secondTint
         },
         colorTint3: {
-            background: BaseColor_1.default.baseColor.thirdTint
+            background: Color_1.default.base.thirdTint
         }
     });
 });

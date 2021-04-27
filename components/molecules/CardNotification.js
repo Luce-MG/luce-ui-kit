@@ -25,7 +25,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
@@ -48,7 +48,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 var CardNotification = function (props) {
     var classes = useStyles();
     var notification = props.notification, onRead = props.onRead, isRead = props.isRead;
-    return (React.createElement(core_1.Box, { className: classes.notif, bgcolor: isRead ? BaseColor_1.default.primaryColor[300] : 'white' },
+    return (React.createElement(core_1.Box, { className: classes.notif, bgcolor: isRead ? Color_1.default.primary[300] : 'white' },
         React.createElement(core_1.Badge, { anchorOrigin: {
                 vertical: 'top',
                 horizontal: 'left'

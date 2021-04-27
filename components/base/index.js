@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = void 0;
-__exportStar(require("./Typography"), exports);
-__exportStar(require("./GrayscaleBox"), exports);
 __exportStar(require("./Box"), exports);
-var BaseColor_1 = require("./BaseColor");
-Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(BaseColor_1).default; } });
-__exportStar(require("./grids/Grids"), exports);
+var Color_1 = require("./Color");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Color_1).default; } });
+__exportStar(require("./GrayscaleBox"), exports);
+__exportStar(require("./Grid"), exports);
+__exportStar(require("./Typography"), exports);
 //# sourceMappingURL=index.js.map

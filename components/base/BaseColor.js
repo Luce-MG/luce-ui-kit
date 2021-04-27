@@ -10,9 +10,7 @@ var baseColor = {
     thirdBase: '#F96B6B',
     firstTint: '#E8ECFA',
     secondTint: '#DFFAED',
-    thirdTint: '#FFE1E1',
-    secondBlue: '#2D9CDB',
-    secondGreen: '#27AE60'
+    thirdTint: '#FFE1E1'
 };
 var primaryColor = {
     300: '#F8FAFB',

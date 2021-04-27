@@ -48,7 +48,7 @@ exports.TagsChip = void 0;
 var Chip_1 = __importDefault(require("@material-ui/core/Chip"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var typography = {
     xsMedium: {
         fontSize: 13,
@@ -100,12 +100,12 @@ var getSize = function (sizes) {
 };
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        primary: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.firstBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        secondary: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[400], color: theme.palette.primary.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        officeCleaning: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.secondBlue, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        homeCleaning: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.secondGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        percentage: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.firstTint, color: BaseColor_1.default.primaryColor[800] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        hourlyRate: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[700], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        primary: function (props) { return (__assign(__assign({ background: Color_1.default.base.firstBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        secondary: function (props) { return (__assign(__assign({ background: Color_1.default.primary[400], color: theme.palette.primary.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        officeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondBlue, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        homeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        percentage: function (props) { return (__assign(__assign({ background: Color_1.default.base.firstTint, color: Color_1.default.primary[800] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        hourlyRate: function (props) { return (__assign(__assign({ background: Color_1.default.primary[700], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         casual: function (props) { return (__assign(__assign({ background: theme.palette.grey[800], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
     });
 });

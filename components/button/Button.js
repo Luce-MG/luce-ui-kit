@@ -48,7 +48,7 @@ var Button_1 = __importDefault(require("@material-ui/core/Button"));
 var grey_1 = __importDefault(require("@material-ui/core/colors/grey"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var smTypography = {
     fontSize: 13,
     lineHeight: '20px',
@@ -63,7 +63,7 @@ var mdTypography = {
 };
 var Disabled = {
     '&.Mui-disabled': {
-        background: BaseColor_1.default.primaryColor[400],
+        background: Color_1.default.primary[400],
         color: grey_1.default[500]
     }
 };
@@ -92,11 +92,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
         Primary: function (props) { return (__assign(__assign({ background: theme.palette.primary.main, color: theme.palette.common.white, '&:hover': {
                 background: theme.palette.primary.main
             } }, getSize(props.customSize)), Disabled)); },
-        CallToAction: function (props) { return (__assign(__assign({ background: BaseColor_1.default.baseColor.colorCta, color: theme.palette.common.white, '&:hover': {
-                background: BaseColor_1.default.baseColor.colorCta
+        CallToAction: function (props) { return (__assign(__assign({ background: Color_1.default.base.cta, color: theme.palette.common.white, '&:hover': {
+                background: Color_1.default.base.cta
             } }, getSize(props.customSize)), Disabled)); },
-        Ghost: function (props) { return (__assign(__assign({ background: BaseColor_1.default.primaryColor[400], color: theme.palette.primary.main, '&:hover': {
-                background: BaseColor_1.default.primaryColor[400]
+        Ghost: function (props) { return (__assign(__assign({ background: Color_1.default.primary[400], color: theme.palette.primary.main, '&:hover': {
+                background: Color_1.default.primary[400]
             } }, getSize(props.customSize)), Disabled)); },
         Basic: function (props) { return (__assign(__assign({ background: 'transparent', color: theme.palette.primary.main, '&:hover': {
                 backgroundColor: 'transparent'

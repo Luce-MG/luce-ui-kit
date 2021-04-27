@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -18,37 +29,36 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
-var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var Button_1 = __importDefault(require("../button/Button"));
 var Checkbox_1 = __importDefault(require("../controls/Checkbox"));
-var Dialog_1 = __importDefault(require("./Dialog"));
-var useStyles = styles_1.makeStyles(function (theme) {
-    return styles_1.createStyles({
-        actionBtn: {
-            width: '50%'
-        }
-    });
-});
+var DialogConfirmation_1 = __importDefault(require("./DialogConfirmation"));
 var DialogAddNewDays = function (props) {
-    var children = props.children, title = props.title, _a = props.onCancel, onCancel = _a === void 0 ? function () { } : _a, _b = props.onConfirm, onConfirm = _b === void 0 ? function () { } : _b, onChange = props.onChange, days = props.days, open = props.open;
-    var classes = useStyles();
-    return (React.createElement(Dialog_1.default, { open: open, title: title, onCancel: function () { return onCancel(); }, children: children, content: React.createElement(core_1.Box, null,
-            React.createElement(core_1.DialogContentText, { variant: "subtitle1" }, "Choose Day:"),
+    var onChange = props.onChange, days = props.days, contentText = props.contentText, rest = __rest(props, ["onChange", "days", "contentText"]);
+    return (React.createElement(DialogConfirmation_1.default, __assign({ content: React.createElement(core_1.Box, null,
+            React.createElement(core_1.DialogContentText, { variant: "subtitle1" }, contentText ? contentText : 'Choose Day:'),
             React.createElement(core_1.Box, { marginLeft: 0.4 },
                 React.createElement(core_1.FormControl, null, days
                     ? days.map(function (day, index) {
                         return (React.createElement(core_1.Box, { key: "day-" + index },
                             React.createElement(Checkbox_1.default, { label: day.label, name: day.name, value: day.name, disabled: day.disabled, onChange: function (event) { return onChange(event, index); } })));
                     })
-                    : 'No Days'))), action: React.createElement(React.Fragment, null,
-            React.createElement(Button_1.default, { onClick: function () { return onCancel(); }, variants: "ghost", customSize: "medium", children: "Cancel", className: classes.actionBtn }),
-            React.createElement(Button_1.default, { onClick: function () { return onConfirm(); }, variants: "cta", customSize: "medium", children: "Confirm", size: "medium", className: classes.actionBtn })) }));
+                    : 'No Days'))) }, rest)));
 };
 exports.default = DialogAddNewDays;
 //# sourceMappingURL=DialogAddNewDays.js.map

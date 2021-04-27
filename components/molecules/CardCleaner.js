@@ -33,13 +33,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@material-ui/core");
-var grey_1 = __importDefault(require("@material-ui/core/colors/grey"));
 var styles_1 = require("@material-ui/core/styles");
 var Rating_1 = __importDefault(require("@material-ui/lab/Rating"));
 var React = __importStar(require("react"));
 var avatar_icon_svg_1 = __importDefault(require("../../stories/assets/avatar-icon.svg"));
+var Card_1 = require("../atom/Card");
 var Avatar_1 = __importDefault(require("../avatar/Avatar"));
+var Box_1 = __importDefault(require("../base/Box"));
+var Grid_1 = __importDefault(require("../base/Grid"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Tags_1 = __importDefault(require("../tags/Tags"));
 var BeforeAfterStyle = {
@@ -81,7 +82,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             fontSize: '15px'
         },
         IconEmpty: {
-            color: grey_1.default[400]
+            color: theme.palette.grey[400]
         },
         IconFilled: {
             color: '#FFAF52'
@@ -103,13 +104,13 @@ var useStyles = styles_1.makeStyles(function (theme) {
 var CardCleaner = function (props) {
     var classes = useStyles();
     var cleanerData = props.cleanerData, isSelected = props.isSelected, onClick = props.onClick, tags = props.tags;
-    return (React.createElement(core_1.Card, { elevation: 0 },
-        React.createElement(core_1.CardActionArea, { onClick: function () { return onClick(cleanerData.id); }, classes: { root: classes.card }, className: isSelected ? classes.selected : classes.default },
-            React.createElement(core_1.Box, { className: classes.cardPadding },
-                React.createElement(core_1.CardHeader, { className: isSelected ? classes.selectColor : 'null', classes: { root: classes.cardHeader }, avatar: React.createElement(Avatar_1.default, { src: cleanerData.imgUrl ? cleanerData.imgUrl : avatar_icon_svg_1.default, imageAvatar: true, customSize: "large" }), title: React.createElement(Typography_1.default, { children: cleanerData.name ? cleanerData.name : 'Cleaner Name', bodyVariants: "xsMedium" }), subheader: React.createElement(core_1.Grid, { container: true, item: true },
-                        React.createElement(core_1.Box, { className: classes.ratingNumber },
+    return (React.createElement(Card_1.Card, { elevation: 0 },
+        React.createElement(Card_1.CardActionArea, { onClick: function () { return onClick(cleanerData.id); }, classes: { root: classes.card }, className: isSelected ? classes.selected : classes.default },
+            React.createElement(Box_1.default, { className: classes.cardPadding },
+                React.createElement(Card_1.CardHeader, { className: isSelected ? classes.selectColor : 'null', classes: { root: classes.cardHeader }, avatar: React.createElement(Avatar_1.default, { src: cleanerData.imgUrl ? cleanerData.imgUrl : avatar_icon_svg_1.default, imageAvatar: true, customSize: "large" }), headTitle: React.createElement(Typography_1.default, { children: cleanerData.name ? cleanerData.name : 'Cleaner Name', bodyVariants: "xsMedium" }), subheader: React.createElement(Grid_1.default, { container: true, item: true },
+                        React.createElement(Box_1.default, { className: classes.ratingNumber },
                             React.createElement(Typography_1.default, { className: isSelected ? classes.selectColor : 'null', children: cleanerData.rating ? cleanerData.rating : 0, variant: "overline" })),
-                        React.createElement(core_1.Box, { className: classes.ratingContainer },
+                        React.createElement(Box_1.default, { className: classes.ratingContainer },
                             React.createElement(Rating_1.default, { classes: {
                                     icon: classes.Icon,
                                     iconEmpty: isSelected
@@ -117,10 +118,10 @@ var CardCleaner = function (props) {
                                         : classes.IconEmpty,
                                     iconFilled: classes.IconFilled
                                 }, precision: 0.5, value: cleanerData.rating ? cleanerData.rating : 0, readOnly: true }))) }),
-                React.createElement(core_1.Grid, { classes: { root: classes.cardTag } },
-                    React.createElement(core_1.Box, { display: "flex" }, tags.map(function (tag, index) { return (React.createElement(core_1.Box, { key: "tag-" + index, className: classes.Tag },
+                React.createElement(Grid_1.default, { classes: { root: classes.cardTag } },
+                    React.createElement(Box_1.default, { display: "flex" }, tags.map(function (tag, index) { return (React.createElement(Box_1.default, { key: "tag-" + index, className: classes.Tag },
                         React.createElement(Tags_1.default, { label: tag.label, customVariant: tag.variant, sizes: "xs" }))); })))),
-            React.createElement(core_1.Box, { display: cleanerData.beforeAfterLabel ? 'none' : 'null', className: isSelected
+            React.createElement(Box_1.default, { display: cleanerData.beforeAfterLabel ? 'none' : 'null', className: isSelected
                     ? classes.labelBeforeAfterSelected
                     : classes.labelBeforeAfter },
                 React.createElement(Typography_1.default, { children: "Before", variant: "caption" }),

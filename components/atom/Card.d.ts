@@ -1,0 +1,21 @@
+import { CardProps as Props } from '@material-ui/core/Card';
+import { CardActionAreaProps as PropsCardActionArea } from '@material-ui/core/CardActionArea';
+import { CardActionsProps as PropsCardActions } from '@material-ui/core/CardActions';
+import { CardContentProps as PropsCardContent } from '@material-ui/core/CardContent';
+import { CardHeaderProps as PropsCardHeader } from '@material-ui/core/CardHeader';
+import { CardMediaProps as PropsCardMedia } from '@material-ui/core/CardMedia';
+import * as React from 'react';
+export declare type CardProps = Props;
+export declare type CardActionsProps = PropsCardActions;
+export declare type CardActionAreaProps = PropsCardActionArea;
+export declare type CardContentProps = PropsCardContent;
+export declare type CardMediaProps = PropsCardMedia;
+export declare type CardHeaderProps = {
+    headTitle?: React.ReactNode;
+} & PropsCardHeader;
+export declare const Card: React.FC<CardProps>;
+export declare const CardActions: React.FC<CardActionsProps>;
+export declare const CardActionArea: React.FC<CardActionAreaProps>;
+export declare const CardContent: React.FC<CardContentProps>;
+export declare const CardMedia: React.FC<CardMediaProps>;
+export declare const CardHeader: React.FC<CardHeaderProps>;

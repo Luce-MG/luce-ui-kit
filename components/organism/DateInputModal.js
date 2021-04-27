@@ -51,7 +51,7 @@ var DialogTitle_1 = __importDefault(require("@material-ui/core/DialogTitle"));
 var IconButton_1 = __importDefault(require("@material-ui/core/IconButton"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../base/BaseColor"));
+var Color_1 = __importDefault(require("../base/Color"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Button_1 = __importDefault(require("../button/Button"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
@@ -59,7 +59,7 @@ var input_1 = __importDefault(require("../input"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
-            background: BaseColor_1.default.baseColor.modalOverlay
+            background: Color_1.default.base.modalOverlay
         },
         paper: {
             padding: theme.spacing(5),

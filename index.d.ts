@@ -1,4 +1,5 @@
 export * from './components/accordion';
+export * from './components/atom';
 export * from './components/avatar';
 export * from './components/base';
 export * from './components/button';

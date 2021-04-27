@@ -25,8 +25,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Grid_1 = __importDefault(require("@material-ui/core/Grid"));
 var grey_1 = __importDefault(require("@material-ui/core/colors/grey"));
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("./BaseColor"));
 var Box_1 = __importDefault(require("./Box"));
+var Color_1 = __importDefault(require("./Color"));
 var grayColor = [
     {
         name: 'Gray 300',
@@ -67,37 +67,37 @@ var grayColor = [
 var primaryColor = [
     {
         name: 'Primary 300',
-        color: BaseColor_1.default.primaryColor[300],
+        color: Color_1.default.primary[300],
         textColor: '#222'
     },
     {
         name: 'Primary 400',
-        color: BaseColor_1.default.primaryColor[400],
+        color: Color_1.default.primary[400],
         textColor: '#222'
     },
     {
         name: 'Primary 500',
-        color: BaseColor_1.default.primaryColor[500],
+        color: Color_1.default.primary[500],
         textColor: '#222'
     },
     {
         name: 'Primary 600',
-        color: BaseColor_1.default.primaryColor[600],
+        color: Color_1.default.primary[600],
         textColor: '#222'
     },
     {
         name: 'Primary 700',
-        color: BaseColor_1.default.primaryColor[700],
+        color: Color_1.default.primary[700],
         textColor: '#222'
     },
     {
         name: 'Primary 800',
-        color: BaseColor_1.default.primaryColor[800],
+        color: Color_1.default.primary[800],
         textColor: '#fff'
     },
     {
         name: 'Primary 900',
-        color: BaseColor_1.default.primaryColor[900],
+        color: Color_1.default.primary[900],
         textColor: '#fff'
     }
 ];

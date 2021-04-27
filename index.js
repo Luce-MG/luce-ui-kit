@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemeProvider = void 0;
 __exportStar(require("./components/accordion"), exports);
+__exportStar(require("./components/atom"), exports);
 __exportStar(require("./components/avatar"), exports);
 __exportStar(require("./components/base"), exports);
 __exportStar(require("./components/button"), exports);

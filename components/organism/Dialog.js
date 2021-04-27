@@ -44,20 +44,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@material-ui/core");
+exports.DialogTitle = exports.DialogContentText = exports.DialogContent = exports.DialogActions = void 0;
 var Dialog_1 = __importDefault(require("@material-ui/core/Dialog"));
 var DialogActions_1 = __importDefault(require("@material-ui/core/DialogActions"));
 var DialogContent_1 = __importDefault(require("@material-ui/core/DialogContent"));
+var DialogContentText_1 = __importDefault(require("@material-ui/core/DialogContentText"));
 var DialogTitle_1 = __importDefault(require("@material-ui/core/DialogTitle"));
-var IconButton_1 = __importDefault(require("@material-ui/core/IconButton"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var BaseColor_1 = __importDefault(require("../../components/base/BaseColor"));
-var Icons_1 = __importDefault(require("../icons/Icons"));
+var Color_1 = __importDefault(require("../../components/base/Color"));
+var Box_1 = __importDefault(require("../base/Box"));
+var IconButton_1 = __importDefault(require("../button/IconButton"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
-            background: BaseColor_1.default.baseColor.modalOverlay
+            background: Color_1.default.base.modalOverlay
         },
         paper: {
             width: 365,
@@ -85,18 +86,22 @@ var useStyles = styles_1.makeStyles(function (theme) {
         titleText: __assign({}, theme.typography.h4)
     });
 });
+exports.DialogActions = DialogActions_1.default;
+exports.DialogContent = DialogContent_1.default;
+exports.DialogContentText = DialogContentText_1.default;
+exports.DialogTitle = DialogTitle_1.default;
 var Dialog = function (props) {
-    var children = props.children, title = props.title, content = props.content, action = props.action, open = props.open, _a = props.onCancel, onCancel = _a === void 0 ? function () { } : _a, rest = __rest(props, ["children", "title", "content", "action", "open", "onCancel"]);
+    var _a = props.showCloseIcon, showCloseIcon = _a === void 0 ? true : _a, _b = props.title, title = _b === void 0 ? 'Title' : _b, content = props.content, action = props.action, _c = props.onClose, onClose = _c === void 0 ? function () { } : _c, children = props.children, rest = __rest(props, ["showCloseIcon", "title", "content", "action", "onClose", "children"]);
     var classes = useStyles();
-    return (React.createElement(core_1.Box, null,
+    return (React.createElement(Dialog_1.default, __assign({}, rest, { onClose: onClose, classes: { root: classes.root, paper: classes.paper } }),
+        React.createElement(exports.DialogTitle, { classes: { root: classes.title } },
+            showCloseIcon && (React.createElement(IconButton_1.default, { onClick: function (e) {
+                    onClose(e, 'backdropClick');
+                }, className: classes.closeIcon, iconName: "CloseIcon", size: "small" })),
+            React.createElement(Box_1.default, { className: classes.titleText }, title)),
         children,
-        React.createElement(Dialog_1.default, __assign({}, rest, { open: open ? open : false, classes: { root: classes.root, paper: classes.paper }, onClose: function () { return onCancel(); } }),
-            React.createElement(DialogTitle_1.default, { classes: { root: classes.title } },
-                React.createElement(IconButton_1.default, { onClick: function () { return onCancel(); }, className: classes.closeIcon },
-                    React.createElement(Icons_1.default, { iconName: "CloseIcon", size: "small" })),
-                React.createElement(core_1.Box, { className: classes.titleText }, title ? title : 'No Title')),
-            React.createElement(DialogContent_1.default, { classes: { root: classes.content } }, content ? content : 'No Content'),
-            React.createElement(DialogActions_1.default, { classes: { root: classes.action } }, action ? action : 'No Actions'))));
+        content && (React.createElement(exports.DialogContent, { classes: { root: classes.content } }, content)),
+        action && (React.createElement(exports.DialogActions, { classes: { root: classes.action } }, action))));
 };
 exports.default = Dialog;
 //# sourceMappingURL=Dialog.js.map
