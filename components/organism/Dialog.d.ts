@@ -9,7 +9,7 @@ export declare type DialogContentProps = MuiDialogContentProps;
 export declare type DialogContentTextProps = MuiDialogContentTextProps;
 export declare type DialogTitleProps = MuiDialogTitleProps;
 export declare type DialogProps = {
-    showCloseIcon?: boolean;
+    hideCloseIcon?: boolean;
     title?: string;
     content?: React.ReactNode;
     action?: React.ReactNode;

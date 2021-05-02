@@ -10,5 +10,7 @@ export * from './components/molecules';
 export * from './components/organism';
 export * from './components/tags';
 export * from './components/tooltips';
+export * from './components/alert';
+export * from './components/snackbar';
 export * as ThemeProvider from './themes/ThemeProvider';
 export * from './themes/default';

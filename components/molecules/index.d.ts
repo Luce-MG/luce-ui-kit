@@ -16,3 +16,6 @@ export * from './VisitAssignmentCard';
 export * from './VisitCard';
 export * from './CardVisitDetail';
 export * from './AppBar';
+export * from './SideNav';
+export * from './CardNoteClient';
+export * from './TableList';

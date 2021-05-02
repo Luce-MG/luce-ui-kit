@@ -1,10 +1,10 @@
 import { TextFieldProps as Props } from '@material-ui/core/TextField';
 import * as React from 'react';
-import Icons from '../../stories/assets/icons';
+import { IconList } from '../icons/Icons';
 export declare type customProps = {
     customSize?: 'small' | 'medium' | 'large';
     readOnly?: boolean;
-    icon?: keyof typeof Icons;
+    icon?: keyof typeof IconList;
     data?: {
         [key: string]: string;
     };
