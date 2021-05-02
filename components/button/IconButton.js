@@ -48,9 +48,9 @@ var IconButton_1 = __importDefault(require("@material-ui/core/IconButton"));
 var React = __importStar(require("react"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var IconButton = function (props) {
-    var iconName = props.iconName, size = props.size, btnSize = props.btnSize, rest = __rest(props, ["iconName", "size", "btnSize"]);
-    return (React.createElement(IconButton_1.default, __assign({ size: btnSize ? btnSize : 'medium' }, rest),
-        React.createElement(Icons_1.default, { iconName: iconName ? iconName : 'StarIcon', size: size })));
+    var iconName = props.iconName, iconSize = props.iconSize, rest = __rest(props, ["iconName", "iconSize"]);
+    return (React.createElement(IconButton_1.default, __assign({}, rest),
+        React.createElement(Icons_1.default, { iconName: iconName ? iconName : 'StarIcon', size: iconSize })));
 };
 exports.default = IconButton;
 //# sourceMappingURL=IconButton.js.map

@@ -15,4 +15,5 @@ __exportStar(require("./FormControl"), exports);
 __exportStar(require("./InputAdornment"), exports);
 __exportStar(require("./RadioButton"), exports);
 __exportStar(require("./Tabs"), exports);
+__exportStar(require("./RadioGroup"), exports);
 //# sourceMappingURL=index.js.map

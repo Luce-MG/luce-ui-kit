@@ -66,11 +66,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var Tabs = function (props) {
     var classes = useStyles();
-    var tabs = props.tabs;
-    var _a = React.useState(0), selectedTab = _a[0], setSelectedTab = _a[1];
-    var handleChange = function (e, newValue) {
-        setSelectedTab(newValue);
-    };
+    var tabs = props.tabs, setSelected = props.setSelected, value = props.value;
     var getTabStyle = function (index) {
         var style = { selected: classes.selected };
         if (index === 0) {
@@ -83,8 +79,11 @@ var Tabs = function (props) {
             return __assign(__assign({}, style), { root: classes.tab });
         }
     };
+    var handleChange = function (event, newValue) {
+        setSelected(newValue);
+    };
     return (React.createElement("div", null,
-        React.createElement(Tabs_1.default, { className: classes.tabs, classes: { indicator: classes.indicator }, value: selectedTab, onChange: handleChange }, tabs.map(function (tab, index) { return (React.createElement(Tab_1.default, { key: "tab-" + index, classes: getTabStyle(index), label: tab })); }))));
+        React.createElement(Tabs_1.default, { className: classes.tabs, classes: { indicator: classes.indicator }, value: value ? value : 0, onChange: handleChange }, tabs.map(function (tab, index) { return (React.createElement(Tab_1.default, { key: "tab-" + index, classes: getTabStyle(index), label: tab, value: index })); }))));
 };
 exports.default = Tabs;
 //# sourceMappingURL=Tabs.js.map

@@ -1,7 +1,7 @@
 import { DialogProps } from '@material-ui/core/Dialog';
 import * as React from 'react';
-import Icons from '../../stories/assets/icons';
 import { StyledButton } from '../button/Button';
+import { IconList } from '../icons/Icons';
 export declare type ChooseServiceModalProps = {
     title?: string;
     cancelLabel?: string;
@@ -11,7 +11,7 @@ export declare type ChooseServiceModalProps = {
     onCancel(): void;
     onConfirm(): void;
     data?: {
-        iconName: keyof typeof Icons;
+        iconName: keyof typeof IconList;
         label: string;
     }[];
 } & DialogProps;

@@ -1,173 +1,178 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var accessinfo_svg_1 = require("./accessinfo.svg");
-var add_svg_1 = require("./add.svg");
-var address_svg_1 = require("./address.svg");
-var aircon_svg_1 = require("./aircon.svg");
-var alert_svg_1 = require("./alert.svg");
-var all_services_svg_1 = require("./all-services.svg");
-var arrow_bottom_svg_1 = require("./arrow-bottom.svg");
-var arrow_fill_right_svg_1 = require("./arrow-fill-right.svg");
-var arrow_left_svg_1 = require("./arrow-left.svg");
-var arrow_right_svg_1 = require("./arrow-right.svg");
-var arrow_top_svg_1 = require("./arrow-top.svg");
-var badexpirience_svg_1 = require("./badexpirience.svg");
-var blog_svg_1 = require("./blog.svg");
-var book_svg_1 = require("./book.svg");
-var briefcase_svg_1 = require("./briefcase.svg");
-var building_svg_1 = require("./building.svg");
-var calendar_off_svg_1 = require("./calendar off.svg");
-var calendar_svg_1 = require("./calendar.svg");
-var carpet_svg_1 = require("./carpet.svg");
-var cleaning_svg_1 = require("./cleaning.svg");
-var clock_svg_1 = require("./clock.svg");
-var close_svg_1 = require("./close.svg");
-var comment_svg_1 = require("./comment.svg");
-var condominium_svg_1 = require("./condominium.svg");
-var contact_info_svg_1 = require("./contact info.svg");
-var cooperation_svg_1 = require("./cooperation.svg");
-var coupon_svg_1 = require("./coupon.svg");
-var discount_svg_1 = require("./discount.svg");
-var document_svg_1 = require("./document.svg");
-var duration_svg_1 = require("./duration.svg");
-var edits_svg_1 = require("./edits.svg");
-var email_svg_1 = require("./email.svg");
-var filter_svg_1 = require("./filter.svg");
-var flash_svg_1 = require("./flash.svg");
-var flexibility_svg_1 = require("./flexibility.svg");
-var frequency_svg_1 = require("./frequency.svg");
-var fresh_svg_1 = require("./fresh.svg");
-var full_time_svg_1 = require("./full-time.svg");
-var guarantee_svg_1 = require("./guarantee.svg");
-var hdb_svg_1 = require("./hdb.svg");
-var help_svg_1 = require("./help.svg");
-var hide_left_svg_1 = require("./hide-left.svg");
-var hide_right_svg_1 = require("./hide-right.svg");
-var house_svg_1 = require("./house.svg");
-var info_svg_1 = require("./info.svg");
-var insights_svg_1 = require("./insights.svg");
-var invoice_svg_1 = require("./invoice.svg");
-var key_svg_1 = require("./key.svg");
-var line_chart_up_1_svg_1 = require("./line_chart_up-1.svg");
-var line_chart_up_svg_1 = require("./line_chart_up.svg");
-var loader_1_svg_1 = require("./loader-1.svg");
-var loader_svg_1 = require("./loader.svg");
-var location_svg_1 = require("./location.svg");
-var lock_svg_1 = require("./lock.svg");
-var log_out_svg_1 = require("./log_out.svg");
-var menu_svg_1 = require("./menu.svg");
-var minus_svg_1 = require("./minus.svg");
-var notification_svg_1 = require("./notification.svg");
-var office_svg_1 = require("./office.svg");
-var oneface_svg_1 = require("./oneface.svg");
-var onetime_svg_1 = require("./onetime.svg");
-var options_svg_1 = require("./options.svg");
-var payment_svg_1 = require("./payment.svg");
-var phone_svg_1 = require("./phone.svg");
-var plans_svg_1 = require("./plans.svg");
-var plus_svg_1 = require("./plus.svg");
-var polishing_svg_1 = require("./polishing.svg");
-var profile_edit_svg_1 = require("./profile-edit.svg");
-var profile_svg_1 = require("./profile.svg");
-var quote_svg_1 = require("./quote.svg");
-var receipt_svg_1 = require("./receipt.svg");
-var reset_svg_1 = require("./reset.svg");
-var search_svg_1 = require("./search.svg");
-var star_2_svg_1 = require("./star-2.svg");
-var star_svg_1 = require("./star.svg");
-var success_svg_1 = require("./success.svg");
-var tick_svg_1 = require("./tick.svg");
-var time_off_svg_1 = require("./time-off.svg");
-var toomany_svg_1 = require("./toomany.svg");
-var trash_svg_1 = require("./trash.svg");
-var up_down_arrow_svg_1 = require("./up-down-arrow.svg");
-var upload_svg_1 = require("./upload.svg");
-var wallet_svg_1 = require("./wallet.svg");
-var warning_svg_1 = require("./warning.svg");
-exports.default = {
-    AccessInfoIcon: accessinfo_svg_1.ReactComponent,
-    AddIcon: add_svg_1.ReactComponent,
-    AddressIcon: address_svg_1.ReactComponent,
-    AirConIcon: aircon_svg_1.ReactComponent,
-    AlertIcon: alert_svg_1.ReactComponent,
-    AllServicesIcon: all_services_svg_1.ReactComponent,
-    ArrowBottomIcon: arrow_bottom_svg_1.ReactComponent,
-    ArrowLeftIcon: arrow_left_svg_1.ReactComponent,
-    ArrowRightIcon: arrow_right_svg_1.ReactComponent,
-    ArrowTopIcon: arrow_top_svg_1.ReactComponent,
-    BadExperienceIcon: badexpirience_svg_1.ReactComponent,
-    BlogIcon: blog_svg_1.ReactComponent,
-    BookIcon: book_svg_1.ReactComponent,
-    BriefcaseIcon: briefcase_svg_1.ReactComponent,
-    BuildingIcon: building_svg_1.ReactComponent,
-    CalendarIcon: calendar_svg_1.ReactComponent,
-    CalendarOffIcon: calendar_off_svg_1.ReactComponent,
-    CarpetIcon: carpet_svg_1.ReactComponent,
-    CleaningIcon: cleaning_svg_1.ReactComponent,
-    ClockIcon: clock_svg_1.ReactComponent,
-    CloseIcon: close_svg_1.ReactComponent,
-    CommentIcon: comment_svg_1.ReactComponent,
-    CondominiumIcon: condominium_svg_1.ReactComponent,
-    ContactInfoIcon: contact_info_svg_1.ReactComponent,
-    CooperationIcon: cooperation_svg_1.ReactComponent,
-    CouponIcon: coupon_svg_1.ReactComponent,
-    DiscountIcon: discount_svg_1.ReactComponent,
-    DurationIcon: duration_svg_1.ReactComponent,
-    EditsIcon: edits_svg_1.ReactComponent,
-    EmailIcon: email_svg_1.ReactComponent,
-    FilterIcon: filter_svg_1.ReactComponent,
-    FlashIcon: flash_svg_1.ReactComponent,
-    FlexibilityIcon: flexibility_svg_1.ReactComponent,
-    FrequencyIcon: frequency_svg_1.ReactComponent,
-    FreshIcon: fresh_svg_1.ReactComponent,
-    FulltimeIcon: full_time_svg_1.ReactComponent,
-    GuaranteeIcon: guarantee_svg_1.ReactComponent,
-    HdbIcon: hdb_svg_1.ReactComponent,
-    HelpIcon: help_svg_1.ReactComponent,
-    HideLeftIcon: hide_left_svg_1.ReactComponent,
-    HideRightIcon: hide_right_svg_1.ReactComponent,
-    HouseIcon: house_svg_1.ReactComponent,
-    InfoIcon: info_svg_1.ReactComponent,
-    InsightsIcon: insights_svg_1.ReactComponent,
-    InvoiceIcon: invoice_svg_1.ReactComponent,
-    KeyIcon: key_svg_1.ReactComponent,
-    LineChartUpIcon: line_chart_up_svg_1.ReactComponent,
-    LineChartUpOneIcon: line_chart_up_1_svg_1.ReactComponent,
-    LoaderIcon: loader_svg_1.ReactComponent,
-    LoaderOneIcon: loader_1_svg_1.ReactComponent,
-    LocationIcon: location_svg_1.ReactComponent,
-    LockIcon: lock_svg_1.ReactComponent,
-    LogoutIcon: log_out_svg_1.ReactComponent,
-    MinusIcon: minus_svg_1.ReactComponent,
-    NotificationIcon: notification_svg_1.ReactComponent,
-    OfficeIcon: office_svg_1.ReactComponent,
-    OnefaceIcon: oneface_svg_1.ReactComponent,
-    OnetimeIcon: onetime_svg_1.ReactComponent,
-    OptionsIcon: options_svg_1.ReactComponent,
-    PaymentIcon: payment_svg_1.ReactComponent,
-    PhoneIcon: phone_svg_1.ReactComponent,
-    PlansIcon: plans_svg_1.ReactComponent,
-    PlusIcon: plus_svg_1.ReactComponent,
-    PolishingIcon: polishing_svg_1.ReactComponent,
-    ProfileIcon: profile_svg_1.ReactComponent,
-    ProfileEditIcon: profile_edit_svg_1.ReactComponent,
-    QuoteIcon: quote_svg_1.ReactComponent,
-    ReceiptIcon: receipt_svg_1.ReactComponent,
-    ResetIcon: reset_svg_1.ReactComponent,
-    SearchIcon: search_svg_1.ReactComponent,
-    StarIcon: star_svg_1.ReactComponent,
-    StarTwoIcon: star_2_svg_1.ReactComponent,
-    SuccessIcon: success_svg_1.ReactComponent,
-    TickIcon: tick_svg_1.ReactComponent,
-    TimeOffIcon: time_off_svg_1.ReactComponent,
-    TooManyIcon: toomany_svg_1.ReactComponent,
-    TrashIcon: trash_svg_1.ReactComponent,
-    UpDownArrowIcon: up_down_arrow_svg_1.ReactComponent,
-    UploadIcon: upload_svg_1.ReactComponent,
-    WalletIcon: wallet_svg_1.ReactComponent,
-    WarningIcon: warning_svg_1.ReactComponent,
-    DocumentIcon: document_svg_1.ReactComponent,
-    ArrowFillRightIcon: arrow_fill_right_svg_1.ReactComponent,
-    MenuIcon: menu_svg_1.ReactComponent
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LineChartUpIcon = exports.KeyIcon = exports.InvoiceIcon = exports.InsightsIcon = exports.InfoIcon = exports.HouseIcon = exports.HideRightIcon = exports.HideLeftIcon = exports.HelpIcon = exports.HdbIcon = exports.GuaranteeIcon = exports.FulltimeIcon = exports.FreshIcon = exports.FrequencyIcon = exports.FlexibilityIcon = exports.FlashIcon = exports.FilterIcon = exports.EmailIcon = exports.EditsIcon = exports.DurationIcon = exports.DocumentIcon = exports.DiscountIcon = exports.CouponIcon = exports.CooperationIcon = exports.ContactInfoIcon = exports.CondominiumIcon = exports.CommentIcon = exports.CloseIcon = exports.ClockIcon = exports.CleaningIcon = exports.CarpetIcon = exports.CalendarOffIcon = exports.CalendarIcon = exports.BuildingIcon = exports.BriefcaseIcon = exports.BookIcon = exports.BlogIcon = exports.BadExperienceIcon = exports.ArrowTopIcon = exports.ArrowRightLongIcon = exports.ArrowRightIcon = exports.ArrowLeftIcon = exports.ArrowFillRightIcon = exports.ArrowBottomIcon = exports.AllServicesIcon = exports.AlertIcon = exports.AirConIcon = exports.AddressIcon = exports.AddIcon = exports.AccessInfoIcon = void 0;
+exports.WarningIcon = exports.WalletIcon = exports.UploadIcon = exports.UpDownArrowIcon = exports.TrashIcon = exports.TooManyIcon = exports.TimeOffIcon = exports.TickIcon = exports.SuccessIcon = exports.StarTwoIcon = exports.StarIcon = exports.SearchIcon = exports.ResetIcon = exports.ReceiptIcon = exports.QuoteIcon = exports.ProfileIcon = exports.ProfileEditIcon = exports.PolishingIcon = exports.PlusIcon = exports.PlansIcon = exports.PhoneIcon = exports.PaymentIcon = exports.OptionsIcon = exports.OnetimeIcon = exports.OnefaceIcon = exports.OfficeIcon = exports.NotificationIcon = exports.MinusIcon = exports.MenuIcon = exports.LogoutIcon = exports.LockIcon = exports.LocationIcon = exports.LoaderOneIcon = exports.LoaderIcon = exports.LineChartUpOneIcon = void 0;
+var AccessInfoIcon_1 = require("./AccessInfoIcon");
+Object.defineProperty(exports, "AccessInfoIcon", { enumerable: true, get: function () { return __importDefault(AccessInfoIcon_1).default; } });
+var AddIcon_1 = require("./AddIcon");
+Object.defineProperty(exports, "AddIcon", { enumerable: true, get: function () { return __importDefault(AddIcon_1).default; } });
+var AddressIcon_1 = require("./AddressIcon");
+Object.defineProperty(exports, "AddressIcon", { enumerable: true, get: function () { return __importDefault(AddressIcon_1).default; } });
+var AirConIcon_1 = require("./AirConIcon");
+Object.defineProperty(exports, "AirConIcon", { enumerable: true, get: function () { return __importDefault(AirConIcon_1).default; } });
+var AlertIcon_1 = require("./AlertIcon");
+Object.defineProperty(exports, "AlertIcon", { enumerable: true, get: function () { return __importDefault(AlertIcon_1).default; } });
+var AllServicesIcon_1 = require("./AllServicesIcon");
+Object.defineProperty(exports, "AllServicesIcon", { enumerable: true, get: function () { return __importDefault(AllServicesIcon_1).default; } });
+var ArrowBottomIcon_1 = require("./ArrowBottomIcon");
+Object.defineProperty(exports, "ArrowBottomIcon", { enumerable: true, get: function () { return __importDefault(ArrowBottomIcon_1).default; } });
+var ArrowFillRightIcon_1 = require("./ArrowFillRightIcon");
+Object.defineProperty(exports, "ArrowFillRightIcon", { enumerable: true, get: function () { return __importDefault(ArrowFillRightIcon_1).default; } });
+var ArrowLeftIcon_1 = require("./ArrowLeftIcon");
+Object.defineProperty(exports, "ArrowLeftIcon", { enumerable: true, get: function () { return __importDefault(ArrowLeftIcon_1).default; } });
+var ArrowRightIcon_1 = require("./ArrowRightIcon");
+Object.defineProperty(exports, "ArrowRightIcon", { enumerable: true, get: function () { return __importDefault(ArrowRightIcon_1).default; } });
+var ArrowRightLongIcon_1 = require("./ArrowRightLongIcon");
+Object.defineProperty(exports, "ArrowRightLongIcon", { enumerable: true, get: function () { return __importDefault(ArrowRightLongIcon_1).default; } });
+var ArrowTopIcon_1 = require("./ArrowTopIcon");
+Object.defineProperty(exports, "ArrowTopIcon", { enumerable: true, get: function () { return __importDefault(ArrowTopIcon_1).default; } });
+var BadExperienceIcon_1 = require("./BadExperienceIcon");
+Object.defineProperty(exports, "BadExperienceIcon", { enumerable: true, get: function () { return __importDefault(BadExperienceIcon_1).default; } });
+var BlogIcon_1 = require("./BlogIcon");
+Object.defineProperty(exports, "BlogIcon", { enumerable: true, get: function () { return __importDefault(BlogIcon_1).default; } });
+var BookIcon_1 = require("./BookIcon");
+Object.defineProperty(exports, "BookIcon", { enumerable: true, get: function () { return __importDefault(BookIcon_1).default; } });
+var BriefcaseIcon_1 = require("./BriefcaseIcon");
+Object.defineProperty(exports, "BriefcaseIcon", { enumerable: true, get: function () { return __importDefault(BriefcaseIcon_1).default; } });
+var BuildingIcon_1 = require("./BuildingIcon");
+Object.defineProperty(exports, "BuildingIcon", { enumerable: true, get: function () { return __importDefault(BuildingIcon_1).default; } });
+var CalendarIcon_1 = require("./CalendarIcon");
+Object.defineProperty(exports, "CalendarIcon", { enumerable: true, get: function () { return __importDefault(CalendarIcon_1).default; } });
+var CalendarOffIcon_1 = require("./CalendarOffIcon");
+Object.defineProperty(exports, "CalendarOffIcon", { enumerable: true, get: function () { return __importDefault(CalendarOffIcon_1).default; } });
+var CarpetIcon_1 = require("./CarpetIcon");
+Object.defineProperty(exports, "CarpetIcon", { enumerable: true, get: function () { return __importDefault(CarpetIcon_1).default; } });
+var CleaningIcon_1 = require("./CleaningIcon");
+Object.defineProperty(exports, "CleaningIcon", { enumerable: true, get: function () { return __importDefault(CleaningIcon_1).default; } });
+var ClockIcon_1 = require("./ClockIcon");
+Object.defineProperty(exports, "ClockIcon", { enumerable: true, get: function () { return __importDefault(ClockIcon_1).default; } });
+var CloseIcon_1 = require("./CloseIcon");
+Object.defineProperty(exports, "CloseIcon", { enumerable: true, get: function () { return __importDefault(CloseIcon_1).default; } });
+var CommentIcon_1 = require("./CommentIcon");
+Object.defineProperty(exports, "CommentIcon", { enumerable: true, get: function () { return __importDefault(CommentIcon_1).default; } });
+var CondominiumIcon_1 = require("./CondominiumIcon");
+Object.defineProperty(exports, "CondominiumIcon", { enumerable: true, get: function () { return __importDefault(CondominiumIcon_1).default; } });
+var ContactInfoIcon_1 = require("./ContactInfoIcon");
+Object.defineProperty(exports, "ContactInfoIcon", { enumerable: true, get: function () { return __importDefault(ContactInfoIcon_1).default; } });
+var CooperationIcon_1 = require("./CooperationIcon");
+Object.defineProperty(exports, "CooperationIcon", { enumerable: true, get: function () { return __importDefault(CooperationIcon_1).default; } });
+var CouponIcon_1 = require("./CouponIcon");
+Object.defineProperty(exports, "CouponIcon", { enumerable: true, get: function () { return __importDefault(CouponIcon_1).default; } });
+var DiscountIcon_1 = require("./DiscountIcon");
+Object.defineProperty(exports, "DiscountIcon", { enumerable: true, get: function () { return __importDefault(DiscountIcon_1).default; } });
+var DocumentIcon_1 = require("./DocumentIcon");
+Object.defineProperty(exports, "DocumentIcon", { enumerable: true, get: function () { return __importDefault(DocumentIcon_1).default; } });
+var DurationIcon_1 = require("./DurationIcon");
+Object.defineProperty(exports, "DurationIcon", { enumerable: true, get: function () { return __importDefault(DurationIcon_1).default; } });
+var EditsIcon_1 = require("./EditsIcon");
+Object.defineProperty(exports, "EditsIcon", { enumerable: true, get: function () { return __importDefault(EditsIcon_1).default; } });
+var EmailIcon_1 = require("./EmailIcon");
+Object.defineProperty(exports, "EmailIcon", { enumerable: true, get: function () { return __importDefault(EmailIcon_1).default; } });
+var FilterIcon_1 = require("./FilterIcon");
+Object.defineProperty(exports, "FilterIcon", { enumerable: true, get: function () { return __importDefault(FilterIcon_1).default; } });
+var FlashIcon_1 = require("./FlashIcon");
+Object.defineProperty(exports, "FlashIcon", { enumerable: true, get: function () { return __importDefault(FlashIcon_1).default; } });
+var FlexibilityIcon_1 = require("./FlexibilityIcon");
+Object.defineProperty(exports, "FlexibilityIcon", { enumerable: true, get: function () { return __importDefault(FlexibilityIcon_1).default; } });
+var FrequencyIcon_1 = require("./FrequencyIcon");
+Object.defineProperty(exports, "FrequencyIcon", { enumerable: true, get: function () { return __importDefault(FrequencyIcon_1).default; } });
+var FreshIcon_1 = require("./FreshIcon");
+Object.defineProperty(exports, "FreshIcon", { enumerable: true, get: function () { return __importDefault(FreshIcon_1).default; } });
+var FulltimeIcon_1 = require("./FulltimeIcon");
+Object.defineProperty(exports, "FulltimeIcon", { enumerable: true, get: function () { return __importDefault(FulltimeIcon_1).default; } });
+var GuaranteeIcon_1 = require("./GuaranteeIcon");
+Object.defineProperty(exports, "GuaranteeIcon", { enumerable: true, get: function () { return __importDefault(GuaranteeIcon_1).default; } });
+var HdbIcon_1 = require("./HdbIcon");
+Object.defineProperty(exports, "HdbIcon", { enumerable: true, get: function () { return __importDefault(HdbIcon_1).default; } });
+var HelpIcon_1 = require("./HelpIcon");
+Object.defineProperty(exports, "HelpIcon", { enumerable: true, get: function () { return __importDefault(HelpIcon_1).default; } });
+var HideLeftIcon_1 = require("./HideLeftIcon");
+Object.defineProperty(exports, "HideLeftIcon", { enumerable: true, get: function () { return __importDefault(HideLeftIcon_1).default; } });
+var HideRightIcon_1 = require("./HideRightIcon");
+Object.defineProperty(exports, "HideRightIcon", { enumerable: true, get: function () { return __importDefault(HideRightIcon_1).default; } });
+var HouseIcon_1 = require("./HouseIcon");
+Object.defineProperty(exports, "HouseIcon", { enumerable: true, get: function () { return __importDefault(HouseIcon_1).default; } });
+var InfoIcon_1 = require("./InfoIcon");
+Object.defineProperty(exports, "InfoIcon", { enumerable: true, get: function () { return __importDefault(InfoIcon_1).default; } });
+var InsightsIcon_1 = require("./InsightsIcon");
+Object.defineProperty(exports, "InsightsIcon", { enumerable: true, get: function () { return __importDefault(InsightsIcon_1).default; } });
+var InvoiceIcon_1 = require("./InvoiceIcon");
+Object.defineProperty(exports, "InvoiceIcon", { enumerable: true, get: function () { return __importDefault(InvoiceIcon_1).default; } });
+var KeyIcon_1 = require("./KeyIcon");
+Object.defineProperty(exports, "KeyIcon", { enumerable: true, get: function () { return __importDefault(KeyIcon_1).default; } });
+var LineChartUpIcon_1 = require("./LineChartUpIcon");
+Object.defineProperty(exports, "LineChartUpIcon", { enumerable: true, get: function () { return __importDefault(LineChartUpIcon_1).default; } });
+var LineChartUpOneIcon_1 = require("./LineChartUpOneIcon");
+Object.defineProperty(exports, "LineChartUpOneIcon", { enumerable: true, get: function () { return __importDefault(LineChartUpOneIcon_1).default; } });
+var LoaderIcon_1 = require("./LoaderIcon");
+Object.defineProperty(exports, "LoaderIcon", { enumerable: true, get: function () { return __importDefault(LoaderIcon_1).default; } });
+var LoaderOneIcon_1 = require("./LoaderOneIcon");
+Object.defineProperty(exports, "LoaderOneIcon", { enumerable: true, get: function () { return __importDefault(LoaderOneIcon_1).default; } });
+var LocationIcon_1 = require("./LocationIcon");
+Object.defineProperty(exports, "LocationIcon", { enumerable: true, get: function () { return __importDefault(LocationIcon_1).default; } });
+var LockIcon_1 = require("./LockIcon");
+Object.defineProperty(exports, "LockIcon", { enumerable: true, get: function () { return __importDefault(LockIcon_1).default; } });
+var LogoutIcon_1 = require("./LogoutIcon");
+Object.defineProperty(exports, "LogoutIcon", { enumerable: true, get: function () { return __importDefault(LogoutIcon_1).default; } });
+var MenuIcon_1 = require("./MenuIcon");
+Object.defineProperty(exports, "MenuIcon", { enumerable: true, get: function () { return __importDefault(MenuIcon_1).default; } });
+var MinusIcon_1 = require("./MinusIcon");
+Object.defineProperty(exports, "MinusIcon", { enumerable: true, get: function () { return __importDefault(MinusIcon_1).default; } });
+var NotificationIcon_1 = require("./NotificationIcon");
+Object.defineProperty(exports, "NotificationIcon", { enumerable: true, get: function () { return __importDefault(NotificationIcon_1).default; } });
+var OfficeIcon_1 = require("./OfficeIcon");
+Object.defineProperty(exports, "OfficeIcon", { enumerable: true, get: function () { return __importDefault(OfficeIcon_1).default; } });
+var OnefaceIcon_1 = require("./OnefaceIcon");
+Object.defineProperty(exports, "OnefaceIcon", { enumerable: true, get: function () { return __importDefault(OnefaceIcon_1).default; } });
+var OnetimeIcon_1 = require("./OnetimeIcon");
+Object.defineProperty(exports, "OnetimeIcon", { enumerable: true, get: function () { return __importDefault(OnetimeIcon_1).default; } });
+var OptionsIcon_1 = require("./OptionsIcon");
+Object.defineProperty(exports, "OptionsIcon", { enumerable: true, get: function () { return __importDefault(OptionsIcon_1).default; } });
+var PaymentIcon_1 = require("./PaymentIcon");
+Object.defineProperty(exports, "PaymentIcon", { enumerable: true, get: function () { return __importDefault(PaymentIcon_1).default; } });
+var PhoneIcon_1 = require("./PhoneIcon");
+Object.defineProperty(exports, "PhoneIcon", { enumerable: true, get: function () { return __importDefault(PhoneIcon_1).default; } });
+var PlansIcon_1 = require("./PlansIcon");
+Object.defineProperty(exports, "PlansIcon", { enumerable: true, get: function () { return __importDefault(PlansIcon_1).default; } });
+var PlusIcon_1 = require("./PlusIcon");
+Object.defineProperty(exports, "PlusIcon", { enumerable: true, get: function () { return __importDefault(PlusIcon_1).default; } });
+var PolishingIcon_1 = require("./PolishingIcon");
+Object.defineProperty(exports, "PolishingIcon", { enumerable: true, get: function () { return __importDefault(PolishingIcon_1).default; } });
+var ProfileEditIcon_1 = require("./ProfileEditIcon");
+Object.defineProperty(exports, "ProfileEditIcon", { enumerable: true, get: function () { return __importDefault(ProfileEditIcon_1).default; } });
+var ProfileIcon_1 = require("./ProfileIcon");
+Object.defineProperty(exports, "ProfileIcon", { enumerable: true, get: function () { return __importDefault(ProfileIcon_1).default; } });
+var QuoteIcon_1 = require("./QuoteIcon");
+Object.defineProperty(exports, "QuoteIcon", { enumerable: true, get: function () { return __importDefault(QuoteIcon_1).default; } });
+var ReceiptIcon_1 = require("./ReceiptIcon");
+Object.defineProperty(exports, "ReceiptIcon", { enumerable: true, get: function () { return __importDefault(ReceiptIcon_1).default; } });
+var ResetIcon_1 = require("./ResetIcon");
+Object.defineProperty(exports, "ResetIcon", { enumerable: true, get: function () { return __importDefault(ResetIcon_1).default; } });
+var SearchIcon_1 = require("./SearchIcon");
+Object.defineProperty(exports, "SearchIcon", { enumerable: true, get: function () { return __importDefault(SearchIcon_1).default; } });
+var StarIcon_1 = require("./StarIcon");
+Object.defineProperty(exports, "StarIcon", { enumerable: true, get: function () { return __importDefault(StarIcon_1).default; } });
+var StarTwoIcon_1 = require("./StarTwoIcon");
+Object.defineProperty(exports, "StarTwoIcon", { enumerable: true, get: function () { return __importDefault(StarTwoIcon_1).default; } });
+var SuccessIcon_1 = require("./SuccessIcon");
+Object.defineProperty(exports, "SuccessIcon", { enumerable: true, get: function () { return __importDefault(SuccessIcon_1).default; } });
+var TickIcon_1 = require("./TickIcon");
+Object.defineProperty(exports, "TickIcon", { enumerable: true, get: function () { return __importDefault(TickIcon_1).default; } });
+var TimeOffIcon_1 = require("./TimeOffIcon");
+Object.defineProperty(exports, "TimeOffIcon", { enumerable: true, get: function () { return __importDefault(TimeOffIcon_1).default; } });
+var TooManyIcon_1 = require("./TooManyIcon");
+Object.defineProperty(exports, "TooManyIcon", { enumerable: true, get: function () { return __importDefault(TooManyIcon_1).default; } });
+var TrashIcon_1 = require("./TrashIcon");
+Object.defineProperty(exports, "TrashIcon", { enumerable: true, get: function () { return __importDefault(TrashIcon_1).default; } });
+var UpDownArrowIcon_1 = require("./UpDownArrowIcon");
+Object.defineProperty(exports, "UpDownArrowIcon", { enumerable: true, get: function () { return __importDefault(UpDownArrowIcon_1).default; } });
+var UploadIcon_1 = require("./UploadIcon");
+Object.defineProperty(exports, "UploadIcon", { enumerable: true, get: function () { return __importDefault(UploadIcon_1).default; } });
+var WalletIcon_1 = require("./WalletIcon");
+Object.defineProperty(exports, "WalletIcon", { enumerable: true, get: function () { return __importDefault(WalletIcon_1).default; } });
+var WarningIcon_1 = require("./WarningIcon");
+Object.defineProperty(exports, "WarningIcon", { enumerable: true, get: function () { return __importDefault(WarningIcon_1).default; } });
 //# sourceMappingURL=index.js.map
