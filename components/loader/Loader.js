@@ -46,24 +46,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var CircularProgress_1 = __importDefault(require("../atom/CircularProgress"));
 var Box_1 = __importDefault(require("../base/Box"));
-var Typography_1 = __importDefault(require("../base/Typography"));
-var IconButton_1 = __importDefault(require("../button/IconButton"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        icon: {
-            transform: 'rotate(180deg)',
-            color: theme.palette.common.black
+        root: {
+            color: theme.palette.primary.main
         }
     });
 });
-var HistoryBack = function (props) {
+var Loader = function (props) {
     var classes = useStyles();
-    var _a = props.goBack, goBack = _a === void 0 ? function () { } : _a, label = props.label, iconSize = props.iconSize, size = props.size, variant = props.variant, space = props.space, rest = __rest(props, ["goBack", "label", "iconSize", "size", "variant", "space"]);
-    return (React.createElement(Box_1.default, __assign({ display: "flex", alignItems: "center" }, rest),
-        React.createElement(Box_1.default, { marginRight: space ? space : 2 },
-            React.createElement(IconButton_1.default, { onClick: function () { return goBack(); }, className: classes.icon, iconSize: iconSize ? iconSize : 'large', size: size ? size : 'small', iconName: "ArrowRightLongIcon" })),
-        React.createElement(Typography_1.default, { children: label ? label : 'Label', variant: variant ? variant : 'h4' })));
+    var children = props.children, size = props.size, thickness = props.thickness, rest = __rest(props, ["children", "size", "thickness"]);
+    return (React.createElement(Box_1.default, { textAlign: "center" },
+        React.createElement(CircularProgress_1.default, __assign({ className: classes.root, size: size ? size : 30, thickness: thickness ? thickness : 5.5 }, rest)),
+        React.createElement("br", null),
+        children));
 };
-exports.default = HistoryBack;
-//# sourceMappingURL=HistoryBack.js.map
+exports.default = Loader;
+//# sourceMappingURL=Loader.js.map

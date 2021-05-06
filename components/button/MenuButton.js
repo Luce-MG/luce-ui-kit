@@ -51,7 +51,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             paddingBottom: theme.spacing(1.5),
             paddingRight: theme.spacing(3),
             marginLeft: theme.spacing(3),
-            width: 232,
+            width: 290,
             position: 'relative',
             '&:hover': {
                 background: 'transparent'
@@ -91,31 +91,49 @@ var useStyles = styles_1.makeStyles(function (theme) {
             '&:hover': {
                 background: 'transparent'
             }
+        },
+        linkColor: {
+            color: theme.palette.info.main
         }
     });
 });
 var MenuButton = function (props) {
-    var menus = props.menus, onClick = props.onClick;
+    var menus = props.menus, onClick = props.onClick, urlOnClick = props.urlOnClick, activeRoute = props.activeRoute;
     var classes = useStyles();
     var _a = React.useState(0), menuIndex = _a[0], setMenuIndex = _a[1];
     var _b = React.useState(false), open = _b[0], setOpen = _b[1];
+    React.useEffect(function () {
+        console.log(activeRoute);
+        if (activeRoute === 'daily' || activeRoute === 'weekly') {
+            setOpen(true);
+        }
+        else {
+            setOpen(false);
+        }
+    }, [activeRoute]);
     return (React.createElement("div", null, menus.map(function (menu, index) {
         return (React.createElement(core_1.Box, { key: "menu-button-" + index },
             React.createElement(ListItem_1.default, { onClick: function (event) {
                     if (menu.isExpand) {
                         setOpen(!open);
                     }
-                    onClick(event, index), setMenuIndex(index);
+                    onClick(event, index),
+                        setMenuIndex(index),
+                        urlOnClick(event, menu.url, menu.isExpand);
                 }, selected: menuIndex === index, button: true, disableRipple: true, classes: { root: classes.root, selected: classes.itemSelected } },
-                React.createElement(core_1.Box, { className: menuIndex === index ? classes.lineSelected : '' }),
+                React.createElement(core_1.Box, { className: (activeRoute === menu.url && !open) || (open && menu.isExpand)
+                        ? classes.lineSelected
+                        : '' }),
                 React.createElement(ListItemIcon_1.default, { classes: { root: classes.iconStyle } },
-                    React.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon.iconName : 'ArrowRightIcon' })),
+                    React.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon : 'ArrowRightIcon' })),
                 React.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menus ? menu.label : 'Menu' }),
                 menu.isExpand ? (open && menuIndex === index ? (React.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (React.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" }))) : ('')),
             menu.isExpand && menuIndex === index ? (React.createElement(Collapse_1.default, { in: open, className: classes.collpase }, menu.subMenu
                 ? menu.subMenu.map(function (menuSub, indexSub) {
                     return (React.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, component: "a", href: menu.subMenu ? menuSub.url : '#', classes: { root: classes.collapseItem } },
-                        React.createElement(ListItemText_1.default, { primary: menu.subMenu ? menuSub.label : 'Sub Menu' })));
+                        React.createElement(ListItemText_1.default, { className: "/" + activeRoute === menuSub.url
+                                ? classes.linkColor
+                                : '', primary: menu.subMenu ? menuSub.label : 'Sub Menu' })));
                 })
                 : null)) : ('')));
     })));

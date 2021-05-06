@@ -14,10 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = void 0;
-__exportStar(require("./CleanerSearch"), exports);
-var Input_1 = require("./Input");
-Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Input_1).default; } });
-__exportStar(require("./Input"), exports);
-__exportStar(require("./TextareaAutosize"), exports);
-__exportStar(require("./Select"), exports);
+var Loader_1 = require("./Loader");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Loader_1).default; } });
+__exportStar(require("./Loader"), exports);
 //# sourceMappingURL=index.js.map
