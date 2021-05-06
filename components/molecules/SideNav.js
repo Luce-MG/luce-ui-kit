@@ -48,23 +48,53 @@ var core_1 = require("@material-ui/core");
 var Drawer_1 = __importDefault(require("@material-ui/core/Drawer"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var Color_1 = __importDefault(require("../base/Color"));
+var Typography_1 = __importDefault(require("../base/Typography"));
 var MenuButton_1 = __importDefault(require("../button/MenuButton"));
+var Icons_1 = __importDefault(require("../icons/Icons"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
+            height: '100%',
             '& .MuiBackdrop-root': {
-                background: 'transparent'
+                background: 'transparent',
+                paddingTop: theme.spacing(10)
+            }
+        },
+        paper: {
+            justifyContent: 'space-between',
+            top: 0,
+            flex: '1 0 auto',
+            height: '100%',
+            display: 'flex',
+            outline: 0,
+            zIndex: 1200,
+            position: 'fixed',
+            overflowY: 'auto',
+            flexDirection: 'column'
+        },
+        logOut: {
+            backgroundColor: Color_1.default.primary[400],
+            padding: theme.spacing(2),
+            color: theme.palette.primary.main,
+            '&:hover': {
+                cursor: 'pointer'
             }
         }
     });
 });
 var SideNav = function (props) {
     var classes = useStyles();
-    var toggleClick = props.toggleClick, menus = props.menus, isOpen = props.isOpen, onClick = props.onClick, children = props.children, rest = __rest(props, ["toggleClick", "menus", "isOpen", "onClick", "children"]);
+    var toggleClick = props.toggleClick, menus = props.menus, isOpen = props.isOpen, onClick = props.onClick, children = props.children, linkOnClick = props.linkOnClick, activeRoute = props.activeRoute, logOut = props.logOut, rest = __rest(props, ["toggleClick", "menus", "isOpen", "onClick", "children", "linkOnClick", "activeRoute", "logOut"]);
     return (React.createElement(core_1.Box, null,
         children,
-        React.createElement(Drawer_1.default, __assign({ elevation: 2, className: classes.root, open: isOpen, onClose: function () { return toggleClick(isOpen); } }, rest),
-            React.createElement(MenuButton_1.default, { menus: menus, onClick: function () { return onClick; } }))));
+        React.createElement(Drawer_1.default, __assign({ elevation: 2, classes: { paper: classes.paper }, className: classes.root, open: isOpen, onClose: function () { return toggleClick(isOpen); } }, rest),
+            React.createElement(MenuButton_1.default, { menus: menus, onClick: function () { return onClick; }, urlOnClick: linkOnClick, activeRoute: activeRoute }),
+            React.createElement(core_1.Box, null,
+                React.createElement(core_1.Box, { display: "flex", justifyContent: "center", alignItems: "center", className: classes.logOut, onClick: function () { return logOut(); } },
+                    React.createElement(Icons_1.default, { iconName: "LogoutIcon" }),
+                    React.createElement(core_1.Box, { ml: 1 },
+                        React.createElement(Typography_1.default, { variant: "subtitle1", children: "Logout" })))))));
 };
 exports.default = SideNav;
 //# sourceMappingURL=SideNav.js.map
