@@ -44,34 +44,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MenuItem = exports.Select = void 0;
-var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
-exports.MenuItem = MenuItem_1.default;
-var Select_1 = __importDefault(require("@material-ui/core/Select"));
-var styles_1 = require("@material-ui/core/styles");
+var InputLabel_1 = __importDefault(require("@material-ui/core/InputLabel"));
 var React = __importStar(require("react"));
-var Icons_1 = __importDefault(require("../icons/Icons"));
-var useStyles = styles_1.makeStyles(function (theme) {
-    return styles_1.createStyles({
-        root: {
-            padding: theme.spacing(1, 1.5),
-            border: "1px solid " + theme.palette.grey[600],
-            borderRadius: 3
-        },
-        svg: {
-            '& > svg': {
-                marginLeft: theme.spacing(-3),
-                pointerEvents: 'none'
-            }
-        }
-    });
-});
-var Select = function (props) {
-    var classes = useStyles(props);
-    var icon = props.icon, rest = __rest(props, ["icon"]);
-    var iconComponent = React.createElement(Icons_1.default, { iconName: icon ? icon : 'ArrowBottomIcon' });
-    return (React.createElement(Select_1.default, __assign({ disableUnderline: true, classes: { root: classes.root }, className: classes.svg, IconComponent: function () { return iconComponent; } }, rest)));
+var InputLabel = function (props) {
+    var children = props.children, rest = __rest(props, ["children"]);
+    return React.createElement(InputLabel_1.default, __assign({}, rest), children);
 };
-exports.Select = Select;
-exports.default = Select;
-//# sourceMappingURL=Select.js.map
+exports.default = InputLabel;
+//# sourceMappingURL=InputLabel.js.map

@@ -18,6 +18,8 @@ __exportStar(require("./CleanerSearch"), exports);
 var Input_1 = require("./Input");
 Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Input_1).default; } });
 __exportStar(require("./Input"), exports);
+__exportStar(require("./InputBase"), exports);
+__exportStar(require("./InputLabel"), exports);
 __exportStar(require("./TextareaAutosize"), exports);
 __exportStar(require("./Select"), exports);
 //# sourceMappingURL=index.js.map
