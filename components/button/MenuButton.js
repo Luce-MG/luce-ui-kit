@@ -98,10 +98,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var MenuButton = function (props) {
-    var menus = props.menus, onClick = props.onClick, urlOnClick = props.urlOnClick, activeRoute = props.activeRoute;
+    var menus = props.menus, _a = props.onClick, onClick = _a === void 0 ? function () { } : _a, _b = props.urlOnClick, urlOnClick = _b === void 0 ? function () { } : _b, activeRoute = props.activeRoute;
     var classes = useStyles();
-    var _a = React.useState(0), menuIndex = _a[0], setMenuIndex = _a[1];
-    var _b = React.useState(false), open = _b[0], setOpen = _b[1];
+    var _c = React.useState(0), menuIndex = _c[0], setMenuIndex = _c[1];
+    var _d = React.useState(false), open = _d[0], setOpen = _d[1];
     React.useEffect(function () {
         console.log(activeRoute);
         if (activeRoute === 'daily' || activeRoute === 'weekly') {

@@ -85,11 +85,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var SideNav = function (props) {
     var classes = useStyles();
-    var toggleClick = props.toggleClick, menus = props.menus, isOpen = props.isOpen, onClick = props.onClick, children = props.children, linkOnClick = props.linkOnClick, activeRoute = props.activeRoute, logOut = props.logOut, rest = __rest(props, ["toggleClick", "menus", "isOpen", "onClick", "children", "linkOnClick", "activeRoute", "logOut"]);
+    var toggleClick = props.toggleClick, menus = props.menus, isOpen = props.isOpen, onClick = props.onClick, urlOnClick = props.urlOnClick, children = props.children, activeRoute = props.activeRoute, logOut = props.logOut, rest = __rest(props, ["toggleClick", "menus", "isOpen", "onClick", "urlOnClick", "children", "activeRoute", "logOut"]);
     return (React.createElement(core_1.Box, null,
         children,
         React.createElement(Drawer_1.default, __assign({ elevation: 2, classes: { paper: classes.paper }, className: classes.root, open: isOpen, onClose: function () { return toggleClick(isOpen); } }, rest),
-            React.createElement(MenuButton_1.default, { menus: menus, onClick: function () { return onClick; }, urlOnClick: linkOnClick, activeRoute: activeRoute }),
+            React.createElement(MenuButton_1.default, { menus: menus, onClick: function () { return onClick; }, urlOnClick: urlOnClick, activeRoute: activeRoute }),
             React.createElement(core_1.Box, null,
                 React.createElement(core_1.Box, { display: "flex", justifyContent: "center", alignItems: "center", className: classes.logOut, onClick: function () { return logOut(); } },
                     React.createElement(Icons_1.default, { iconName: "LogoutIcon" }),
