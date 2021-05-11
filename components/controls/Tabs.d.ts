@@ -1,7 +1,8 @@
 import { TabProps as PropsTab } from '@material-ui/core/Tab';
 import * as React from 'react';
 export declare type TabProps = {
-    tabs: string[];
+    customSize?: 'medium' | 'small';
+    tabs?: string[];
     setSelected: (value: number) => void;
 } & PropsTab;
 declare const Tabs: React.FC<TabProps>;

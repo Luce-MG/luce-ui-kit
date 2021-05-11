@@ -9,8 +9,8 @@ export interface MenuButton {
 }
 export declare type MenuButtonsProps = {
     menus: MenuButton[];
-    onClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>, index: number): void;
-    urlOnClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>, url?: string, expand?: boolean): void;
+    onClick?(event: React.MouseEvent<HTMLDivElement, MouseEvent>, index: number): void;
+    urlOnClick?(event: React.MouseEvent<HTMLDivElement, MouseEvent>, url?: string, expand?: boolean): void;
     activeRoute?: string;
 };
 declare const MenuButton: React.FC<MenuButtonsProps>;

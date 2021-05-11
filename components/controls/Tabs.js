@@ -50,7 +50,17 @@ var tabsStyle = {
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         tabs: {
-            height: '40px'
+            '& .MuiTab-root': {
+                minHeight: 48,
+                minWidth: 142
+            }
+        },
+        tabSmall: {
+            '& .MuiTab-root': {
+                minHeight: 34,
+                minWidth: 138,
+                fontSize: 13
+            }
         },
         first: __assign({ borderRadius: '4px 0px 0px 4px' }, tabsStyle),
         last: __assign({ borderRadius: '0px 4px 4px 0px' }, tabsStyle),
@@ -66,7 +76,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var Tabs = function (props) {
     var classes = useStyles();
-    var tabs = props.tabs, setSelected = props.setSelected, value = props.value;
+    var _a = props.tabs, tabs = _a === void 0 ? [] : _a, setSelected = props.setSelected, value = props.value, customSize = props.customSize;
     var getTabStyle = function (index) {
         var style = { selected: classes.selected };
         if (index === 0) {
@@ -83,7 +93,7 @@ var Tabs = function (props) {
         setSelected(newValue);
     };
     return (React.createElement("div", null,
-        React.createElement(Tabs_1.default, { className: classes.tabs, classes: { indicator: classes.indicator }, value: value ? value : 0, onChange: handleChange }, tabs.map(function (tab, index) { return (React.createElement(Tab_1.default, { key: "tab-" + index, classes: getTabStyle(index), label: tab, value: index })); }))));
+        React.createElement(Tabs_1.default, { className: customSize === 'small' ? classes.tabSmall : classes.tabs, classes: { indicator: classes.indicator }, value: value ? value : 0, onChange: handleChange }, tabs.map(function (tab, index) { return (React.createElement(Tab_1.default, { key: "tab-" + index, classes: getTabStyle(index), label: tab, value: index })); }))));
 };
 exports.default = Tabs;
 //# sourceMappingURL=Tabs.js.map
