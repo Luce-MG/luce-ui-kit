@@ -51,15 +51,22 @@ var useStyles = styles_1.makeStyles(function (theme) {
         link: {
             color: theme.palette.common.black
         },
-        icon: {
+        iconRow: {
             padding: theme.spacing(0.5),
             marginRight: theme.spacing(0.5),
             color: theme.palette.grey[700]
+        },
+        iconColumn: {
+            padding: theme.spacing(0.5),
+            marginRight: theme.spacing(0.5),
+            color: theme.palette.grey[700],
+            transform: 'rotate(-90deg)',
+            transformOrigin: '100% 50%'
         }
     });
 });
 var PayrollCard = function (props) {
-    var data = props.data;
+    var data = props.data, direction = props.direction;
     var classes = useStyles();
     var _a = React.useState(null), anchorEl = _a[0], setAnchorEl = _a[1];
     var handleClick = function (event) {
@@ -71,7 +78,9 @@ var PayrollCard = function (props) {
     var open = Boolean(anchorEl);
     var id = open ? 'simple-popover' : undefined;
     return (React.createElement(Box_1.default, null,
-        React.createElement(IconButton_1.default, __assign({ classes: { root: classes.icon }, color: "primary", component: "small", onClick: handleClick }, props),
+        React.createElement(IconButton_1.default, __assign({ classes: direction === 'column'
+                ? { root: classes.iconColumn }
+                : { root: classes.iconRow }, color: "primary", component: "small", onClick: handleClick }, props),
             React.createElement(Icons_1.default, { iconName: "OptionsIcon", size: "medium" })),
         React.createElement(Popover_1.default, { classes: { paper: classes.popover }, id: id, open: open, anchorEl: anchorEl, onClose: handleClose, anchorOrigin: {
                 vertical: 'bottom',
@@ -79,8 +88,11 @@ var PayrollCard = function (props) {
             }, transformOrigin: {
                 vertical: 'top',
                 horizontal: 'right'
-            }, elevation: 3 }, data.map(function (item) { return (React.createElement(Typography_1.default, { variant: "body2" },
-            React.createElement(Link_1.default, { classes: { root: classes.link }, href: item.url }, item.label))); }))));
+            }, elevation: 3 }, data.map(function (item) { return (React.createElement(Typography_1.default, { key: item.label, variant: "body2" },
+            React.createElement(Link_1.default, { classes: { root: classes.link }, onClick: function () {
+                    item.onPress();
+                    handleClose();
+                } }, item.label))); }))));
 };
 exports.default = PayrollCard;
 //# sourceMappingURL=CardPopover.js.map
