@@ -69,7 +69,7 @@ var CleanerSearch = function (props) {
     };
     return (React.createElement(Autocomplete_1.default, { freeSolo: true, disableClearable: true, classes: { root: classes.root }, options: dataCleaner, getOptionLabel: function (option) { return option.name; }, onChange: onChange, loading: loading, renderOption: function (option) { return (React.createElement(Box_1.default, { display: "flex", alignItems: "center", color: "#222", padding: 1 },
             React.createElement(Avatar_1.default, { className: classes.avatar, imageAvatar: true, customSize: "medium", src: option.imgUrl ? option.imgUrl : avatar_icon_svg_1.default }),
-            React.createElement(Typography_1.default, { variant: "body2", children: option.name }))); }, renderInput: function (params) { return (React.createElement(Input_1.default, __assign({}, params, { data: { test: '' }, className: classes.placeholder, customSize: "medium", placeholder: "Add another cleaner to the list", readOnly: false, icon: "SearchIcon", InputProps: __assign(__assign({}, params.InputProps), { type: 'search' }) }))); } }));
+            React.createElement(Typography_1.default, { variant: "body2", children: option.name }))); }, renderInput: function (params) { return (React.createElement(Input_1.default, __assign({}, params, { className: classes.placeholder, customSize: "medium", placeholder: "Add another cleaner to the list", readOnly: false, icon: "SearchIcon", InputProps: __assign(__assign({}, params.InputProps), { type: 'search' }) }))); } }));
 };
 exports.default = CleanerSearch;
 //# sourceMappingURL=CleanerSearch.js.map

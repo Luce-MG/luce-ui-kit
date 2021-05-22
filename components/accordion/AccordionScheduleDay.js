@@ -73,7 +73,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
         }
     });
 });
-var Accordion = function (props) {
+var AccordionSchedule = function (props) {
     var schedule = props.schedule, sizes = props.sizes, marginBottom = props.marginBottom, marginTop = props.marginTop, labelVariant = props.labelVariant;
     var classes = useStyles();
     return (React.createElement(Accordion_1.default, { square: true, className: classes.root },
@@ -92,5 +92,5 @@ var Accordion = function (props) {
                     React.createElement(Typography_1.default, { className: classes.spaceLeft, variant: labelVariant ? labelVariant : 'caption', children: days.startTime + " - " + days.endTime })));
             })))));
 };
-exports.default = Accordion;
+exports.default = AccordionSchedule;
 //# sourceMappingURL=AccordionScheduleDay.js.map

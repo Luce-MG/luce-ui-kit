@@ -44,7 +44,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DateFnsUtils = exports.PickersUtilsProvider = exports.KeyboardDatePicker = exports.TimePicker = void 0;
+exports.DateFnsUtils = exports.PickersUtilsProvider = exports.KeyboardTimePicker = exports.KeyboardDatePicker = exports.TimePicker = void 0;
 var date_fns_1 = __importDefault(require("@date-io/date-fns"));
 exports.DateFnsUtils = date_fns_1.default;
 var styles_1 = require("@material-ui/core/styles");
@@ -54,29 +54,33 @@ var React = __importStar(require("react"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
-            padding: theme.spacing(1, 1.5),
-            border: "1px solid " + theme.palette.grey[600],
             borderRadius: 3,
-            minWidth: 86,
-            maxWidth: '100%'
+            padding: 0,
+            '& > .MuiInputAdornment-positionEnd': {
+                padding: theme.spacing(2.5),
+                margin: 0
+            },
+            '& button': {
+                padding: theme.spacing(1),
+                position: 'absolute',
+                right: theme.spacing(1)
+            },
+            '& svg': {
+                width: theme.spacing(2.5),
+                height: theme.spacing(2.5)
+            }
         },
-        input: __assign({ padding: 0 }, theme.typography.body2),
+        input: __assign({ padding: theme.spacing(1, 1.5) }, theme.typography.body2),
         muiInputInput: {
             padding: 0
         },
         muiInputFocus: {
             border: 'inherits'
         },
-        muiFormControl: {
-            'label + &': {
-                marginTop: 0
-            }
-        },
-        muiInputLabelRoot: __assign(__assign({}, theme.typography.overline), { marginBottom: theme.spacing(0.5) }),
+        muiInputLabelRoot: __assign(__assign({}, theme.typography.overline), { marginBottom: theme.spacing(0.5), '&.shrink': {
+                transform: 'inherit'
+            } }),
         MuiFormHelperTextRoot: __assign(__assign({}, theme.typography.caption), { marginTop: theme.spacing(0.5) }),
-        muiInputLabelShrink: {
-            transform: 'scale(1)'
-        },
         muiInputLabelFormControl: {
             position: 'static'
         },
@@ -91,35 +95,39 @@ var useStyles = styles_1.makeStyles(function (theme) {
 var inputProps = function (classes) { return ({
     classes: {
         root: classes.root,
-        input: classes.input,
-        formControl: classes.muiFormControl
+        input: classes.input
     },
-    disableUnderline: true
+    notched: false
 }); };
 var inputLabelProps = function (classes) { return ({
     classes: {
         root: classes.muiInputLabelRoot,
-        shrink: classes.muiInputLabelShrink,
-        formControl: classes.muiInputLabelFormControl
+        formControl: classes.muiInputLabelFormControl,
+        shrink: 'shrink'
     },
     shrink: true
 }); };
-var formHelperTextProps = function (classes) { return ({
-    classes: {
-        root: classes.MuiFormHelperTextRoot
-    }
-}); };
+var formHelperTextProps = function (classes, FormHelperTextProps) {
+    var formHelperTextPropsClasses = FormHelperTextProps.classes;
+    return __assign(__assign({}, FormHelperTextProps), { classes: __assign({ root: classes.MuiFormHelperTextRoot }, formHelperTextPropsClasses) });
+};
 var TimePicker = function (props) {
     var classes = useStyles();
-    var children = props.children, rest = __rest(props, ["children"]);
-    return (React.createElement(pickers_1.TimePicker, __assign({ InputProps: inputProps(classes), InputLabelProps: inputLabelProps(classes), FormHelperTextProps: formHelperTextProps(classes) }, rest), children));
+    var _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, children = props.children, rest = __rest(props, ["FormHelperTextProps", "children"]);
+    return (React.createElement(pickers_1.TimePicker, __assign({ InputProps: inputProps(classes), InputLabelProps: inputLabelProps(classes), FormHelperTextProps: formHelperTextProps(classes, FormHelperTextProps), inputVariant: "outlined" }, rest), children));
 };
 exports.TimePicker = TimePicker;
 var KeyboardDatePicker = function (props) {
-    var children = props.children, rest = __rest(props, ["children"]);
+    var _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, children = props.children, rest = __rest(props, ["FormHelperTextProps", "children"]);
     var classes = useStyles();
-    return (React.createElement(pickers_1.KeyboardDatePicker, __assign({ InputProps: inputProps(classes), InputLabelProps: inputLabelProps(classes), FormHelperTextProps: formHelperTextProps(classes), className: classes.iconButton }, rest), children));
+    return (React.createElement(pickers_1.KeyboardDatePicker, __assign({ InputProps: inputProps(classes), InputLabelProps: inputLabelProps(classes), FormHelperTextProps: formHelperTextProps(classes, FormHelperTextProps), className: classes.iconButton, inputVariant: "outlined" }, rest), children));
 };
 exports.KeyboardDatePicker = KeyboardDatePicker;
+var KeyboardTimePicker = function (props) {
+    var _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, children = props.children, rest = __rest(props, ["FormHelperTextProps", "children"]);
+    var classes = useStyles();
+    return (React.createElement(pickers_1.KeyboardTimePicker, __assign({ InputProps: inputProps(classes), InputLabelProps: inputLabelProps(classes), FormHelperTextProps: formHelperTextProps(classes, FormHelperTextProps), className: classes.iconButton, inputVariant: "outlined" }, rest), children));
+};
+exports.KeyboardTimePicker = KeyboardTimePicker;
 exports.default = TimePicker;
 //# sourceMappingURL=Pickers.js.map
