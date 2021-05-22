@@ -45,7 +45,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var InputAdornment_1 = __importDefault(require("@material-ui/core/InputAdornment"));
-var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
 var TextField_1 = __importDefault(require("@material-ui/core/TextField"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
@@ -53,37 +52,34 @@ var Icons_1 = __importDefault(require("../icons/Icons"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         muiInputRoot: {
-            border: "1px solid " + theme.palette.grey[600],
             borderRadius: 3,
             '& > svg': {
-                marginLeft: theme.spacing(-1.5),
+                position: 'absolute',
+                right: theme.spacing(1),
                 pointerEvents: 'none'
             }
         },
         muiInputRootSmall: {
-            padding: theme.spacing(1.125) + "px " + theme.spacing(1.5) + "px"
+            padding: theme.spacing(1.125, 1.5)
         },
         muiInputRootMedium: {
-            padding: theme.spacing(1) + "px " + theme.spacing(1.5) + "px"
+            padding: theme.spacing(1, 1.5)
         },
         muiInputRootLarge: {
-            padding: theme.spacing(1.5) + "px " + theme.spacing(1.875) + "px"
-        },
-        muiInputInput: {
-            padding: 0
+            padding: theme.spacing(1.5, 1.875)
         },
         muiInputFocus: {
             border: 'inherits'
         },
-        muiFormControl: {
-            'label + &': {
-                marginTop: 0
-            }
+        muiInputmultiline: {
+            padding: 0
         },
-        muiInputLabelRoot: __assign(__assign({}, theme.typography.overline), { marginBottom: theme.spacing(0.5) }),
+        muiInputLabelRoot: __assign(__assign({}, theme.typography.overline), { marginBottom: theme.spacing(0.5), '&.shrink': {
+                transform: 'inherit'
+            } }),
         MuiFormHelperTextRoot: __assign(__assign({}, theme.typography.caption), { marginTop: theme.spacing(0.5) }),
-        muiInputLabelShrink: {
-            transform: 'scale(1)'
+        MuiFormHelperTextContained: {
+            marginLeft: 0
         },
         muiInputLabelFormControl: {
             position: 'static'
@@ -93,11 +89,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 var TextField = function (props) {
     var theme = styles_1.useTheme();
     var classes = useStyles(props);
-    var customSize = props.customSize, readOnly = props.readOnly, icon = props.icon, defaultValue = props.defaultValue, _a = props.data, data = _a === void 0 ? {} : _a, select = props.select, InputProps = props.InputProps, rest = __rest(props, ["customSize", "readOnly", "icon", "defaultValue", "data", "select", "InputProps"]);
-    var _b = React.useState(defaultValue), selectValue = _b[0], setSelectValue = _b[1];
-    var handleChange = function (event) {
-        setSelectValue(event.target.value);
-    };
+    var customSize = props.customSize, readOnly = props.readOnly, icon = props.icon, select = props.select, InputProps = props.InputProps, SelectProps = props.SelectProps, _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, rest = __rest(props, ["customSize", "readOnly", "icon", "select", "InputProps", "SelectProps", "FormHelperTextProps"]);
     var getSizeInputRoot = function () {
         if (customSize === 'small') {
             return classes.muiInputRootSmall;
@@ -117,11 +109,11 @@ var TextField = function (props) {
         return theme.typography.body2;
     };
     var inputProps = __assign(__assign(__assign({ readOnly: readOnly }, InputProps), { classes: {
-            root: classes.muiInputRoot + " " + getSizeInputRoot(),
-            input: classes.muiInputInput + " " + getSizeInputInput(),
+            root: classes.muiInputRoot,
+            input: getSizeInputRoot() + " " + getSizeInputInput(),
             focused: classes.muiInputFocus,
-            formControl: classes.muiFormControl
-        }, disableUnderline: true }), (icon &&
+            multiline: classes.muiInputmultiline
+        }, notched: false }), (icon &&
         !select && {
         startAdornment: (React.createElement(InputAdornment_1.default, { position: "start" },
             React.createElement(Icons_1.default, { iconName: icon, size: "small" })))
@@ -129,23 +121,15 @@ var TextField = function (props) {
     var inputLabelProps = {
         classes: {
             root: classes.muiInputLabelRoot,
-            shrink: classes.muiInputLabelShrink,
-            formControl: classes.muiInputLabelFormControl
+            formControl: classes.muiInputLabelFormControl,
+            shrink: 'shrink'
         },
         shrink: true
     };
-    var formHelperTextProps = {
-        classes: {
-            root: classes.MuiFormHelperTextRoot
-        }
-    };
-    var selectProps = __assign({ displayEmpty: true, onChange: handleChange, value: selectValue }, (icon && {
-        IconComponent: function () { return (React.createElement(Icons_1.default, { iconName: icon, size: "small" })); }
-    }));
-    if (select) {
-        return (React.createElement(TextField_1.default, __assign({}, rest, { select: true, InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps, SelectProps: selectProps }), Object.keys(data).map(function (key) { return (React.createElement(MenuItem_1.default, { value: key }, data[key])); })));
-    }
-    return (React.createElement(TextField_1.default, __assign({ rows: 4 }, rest, { InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps })));
+    var formHelperTextPropsClasses = FormHelperTextProps.classes;
+    var formHelperTextProps = __assign(__assign({}, FormHelperTextProps), { classes: __assign({ root: classes.MuiFormHelperTextRoot, contained: classes.MuiFormHelperTextContained }, formHelperTextPropsClasses) });
+    var selectProps = __assign({ displayEmpty: true, IconComponent: function () { return (React.createElement(Icons_1.default, { iconName: icon ? icon : 'ArrowBottomIcon', size: "small" })); } }, SelectProps);
+    return (React.createElement(TextField_1.default, __assign({ rows: 4, select: select, InputProps: inputProps, InputLabelProps: inputLabelProps, FormHelperTextProps: formHelperTextProps, SelectProps: selectProps, variant: "outlined" }, rest)));
 };
 exports.default = TextField;
 //# sourceMappingURL=Input.js.map

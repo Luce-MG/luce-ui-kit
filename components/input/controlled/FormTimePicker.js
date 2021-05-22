@@ -40,38 +40,37 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MenuItem = exports.Select = void 0;
-var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
-exports.MenuItem = MenuItem_1.default;
-var Select_1 = __importDefault(require("@material-ui/core/Select"));
-var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var Icons_1 = __importDefault(require("../icons/Icons"));
-var useStyles = styles_1.makeStyles(function (theme) {
-    return styles_1.createStyles({
+var react_hook_form_1 = require("react-hook-form");
+var ThemeProvider_1 = require("../../../themes/ThemeProvider");
+var Pickers_1 = require("../../atom/Pickers");
+var useStyles = ThemeProvider_1.makeStyles(function (theme) {
+    return ThemeProvider_1.createStyles({
         root: {
-            borderRadius: 3,
-            padding: theme.spacing(1, 1.5)
+            marginBottom: theme.spacing(2.5)
         },
-        svg: {
-            '& > svg': {
-                position: 'absolute',
-                right: theme.spacing(1),
-                pointerEvents: 'none'
-            }
+        MuiFormHelperTextContained: {
+            marginLeft: 0,
+            position: 'absolute',
+            bottom: theme.spacing(-2.5)
         }
     });
 });
-var Select = function (props) {
+var FormTimePicker = function (props) {
     var classes = useStyles(props);
-    var icon = props.icon, rest = __rest(props, ["icon"]);
-    var iconComponent = (React.createElement(Icons_1.default, { iconName: icon ? icon : 'ArrowBottomIcon', size: "small" }));
-    return (React.createElement(Select_1.default, __assign({ classes: { root: classes.root }, className: classes.svg, IconComponent: function () { return iconComponent; }, variant: "outlined" }, rest)));
+    var _a = react_hook_form_1.useFormContext(), control = _a.control, errors = _a.errors;
+    var name = props.name, label = props.label, rest = __rest(props, ["name", "label"]);
+    var formHelperTextProps = {
+        classes: {
+            contained: classes.MuiFormHelperTextContained
+        }
+    };
+    return (React.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: null, render: function (_a) {
+            var _b;
+            var onChange = _a.onChange, value = _a.value;
+            return (React.createElement(Pickers_1.KeyboardTimePicker, __assign({ autoOk: true, value: value, label: label, minutesStep: 5 }, rest, { onChange: onChange, fullWidth: true, variant: "inline", InputAdornmentProps: { position: 'end' }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root })));
+        } }));
 };
-exports.Select = Select;
-exports.default = Select;
-//# sourceMappingURL=Select.js.map
+exports.default = FormTimePicker;
+//# sourceMappingURL=FormTimePicker.js.map

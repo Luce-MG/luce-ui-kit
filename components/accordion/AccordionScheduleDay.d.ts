@@ -7,13 +7,12 @@ export interface Schedule {
     startTime: string;
     endTime: string;
 }
-export declare type StyledAccordion = {
+export declare type AccordionScheduleProps = {
     schedule: Schedule[];
     labelVariant?: TypographyVariant;
     marginBottom?: number;
     marginTop?: number;
     sizes?: SizeTags;
-};
-export declare type AccordionProps = Props & StyledAccordion;
-declare const Accordion: React.FC<AccordionProps>;
-export default Accordion;
+} & Props;
+declare const AccordionSchedule: React.FC<AccordionScheduleProps>;
+export default AccordionSchedule;

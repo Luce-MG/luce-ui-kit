@@ -5,9 +5,6 @@ export declare type customProps = {
     customSize?: 'small' | 'medium' | 'large';
     readOnly?: boolean;
     icon?: keyof typeof IconList;
-    data?: {
-        [key: string]: string;
-    };
 };
 export declare type TextFieldProps = Props & customProps;
 declare const TextField: React.FC<TextFieldProps>;

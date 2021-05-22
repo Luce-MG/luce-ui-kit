@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AccordionProps } from '../accordion/AccordionScheduleDay';
+import { AccordionScheduleProps } from '../accordion/AccordionScheduleDay';
 interface CleanerContract {
     id: number;
     startDate: string;
@@ -10,6 +10,6 @@ interface CleanerContract {
 export declare type CardCleanerContractProps = {
     contracts: CleanerContract;
     onClick(id: number): void;
-} & AccordionProps;
+} & AccordionScheduleProps;
 declare const CardCleanerContract: React.FC<CardCleanerContractProps>;
 export default CardCleanerContract;
