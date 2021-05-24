@@ -4,5 +4,5 @@ declare type ReactHookFormProps = {
     name: string;
 };
 export declare type FormTextFieldProps = Props & ReactHookFormProps;
-export declare const FormTextField: React.FC<FormTextFieldProps>;
-export {};
+declare const FormTextField: React.FC<FormTextFieldProps>;
+export default FormTextField;

@@ -25,7 +25,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormMultiSelect = void 0;
 var core_1 = require("@material-ui/core");
 var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
 var react_1 = __importDefault(require("react"));
@@ -70,5 +69,5 @@ var FormMultiSelect = function (props) {
                     react_1.default.createElement(core_1.ListItemText, { primary: item.label }))); })));
             } })));
 };
-exports.FormMultiSelect = FormMultiSelect;
+exports.default = FormMultiSelect;
 //# sourceMappingURL=FormMultiSelect.js.map

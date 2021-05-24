@@ -10,5 +10,5 @@ declare type ReactHookSelectProps = {
     options: SelectOptions;
 };
 export declare type FormSelectProps = Props & ReactHookSelectProps;
-export declare const FormSelect: React.FC<FormSelectProps>;
-export {};
+declare const FormSelect: React.FC<FormSelectProps>;
+export default FormSelect;

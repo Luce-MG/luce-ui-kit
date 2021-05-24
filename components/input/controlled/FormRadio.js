@@ -25,7 +25,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormRadio = void 0;
 var RadioGroup_1 = __importDefault(require("@material-ui/core/RadioGroup"));
 var react_1 = __importDefault(require("react"));
 var react_hook_form_1 = require("react-hook-form");
@@ -40,5 +39,5 @@ var FormRadio = function (props) {
                 return (react_1.default.createElement(RadioGroup_1.default, __assign({ onChange: onChange, value: value, onBlur: onBlur }, rest), children));
             } })));
 };
-exports.FormRadio = FormRadio;
+exports.default = FormRadio;
 //# sourceMappingURL=FormRadio.js.map
