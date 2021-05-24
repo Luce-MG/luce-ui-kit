@@ -3,6 +3,6 @@ import { KeyboardTimePickerProps as MuiKeyboardTimePickerProps } from '../../ato
 declare type ReactHookTimePickerProps = {
     name: string;
 };
-export declare type FormTimePickerProps = MuiKeyboardTimePickerProps & ReactHookTimePickerProps;
+export declare type FormTimePickerProps = ReactHookTimePickerProps & Omit<MuiKeyboardTimePickerProps, 'value' | 'onChange'>;
 declare const FormTimePicker: React.FC<FormTimePickerProps>;
 export default FormTimePicker;

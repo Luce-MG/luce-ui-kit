@@ -61,7 +61,6 @@ var useStyles = styles_1.makeStyles(function (theme) {
             background: Color_1.default.base.modalOverlay
         },
         paper: {
-            width: 365,
             padding: theme.spacing(5),
             position: 'relative'
         },
@@ -91,14 +90,14 @@ exports.DialogContent = DialogContent_1.default;
 exports.DialogContentText = DialogContentText_1.default;
 exports.DialogTitle = DialogTitle_1.default;
 var Dialog = function (props) {
-    var hideCloseIcon = props.hideCloseIcon, _a = props.title, title = _a === void 0 ? 'Title' : _a, content = props.content, action = props.action, _b = props.onClose, onClose = _b === void 0 ? function () { } : _b, children = props.children, rest = __rest(props, ["hideCloseIcon", "title", "content", "action", "onClose", "children"]);
+    var hideCloseIcon = props.hideCloseIcon, title = props.title, content = props.content, action = props.action, _a = props.onClose, onClose = _a === void 0 ? function () { } : _a, children = props.children, rest = __rest(props, ["hideCloseIcon", "title", "content", "action", "onClose", "children"]);
     var classes = useStyles();
     return (React.createElement(Dialog_1.default, __assign({}, rest, { onClose: onClose, classes: { root: classes.root, paper: classes.paper } }),
-        React.createElement(exports.DialogTitle, { classes: { root: classes.title } },
+        title && (React.createElement(exports.DialogTitle, { classes: { root: classes.title } },
             !hideCloseIcon && (React.createElement(IconButton_1.default, { onClick: function (e) {
                     onClose(e, 'backdropClick');
                 }, className: classes.closeIcon, iconName: "CloseIcon", iconSize: "small" })),
-            React.createElement(Box_1.default, { className: classes.titleText }, title)),
+            React.createElement(Box_1.default, { className: classes.titleText }, title))),
         children,
         content && (React.createElement(exports.DialogContent, { classes: { root: classes.content } }, content)),
         action && (React.createElement(exports.DialogActions, { classes: { root: classes.action } }, action))));

@@ -25,7 +25,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormSelect = void 0;
 var MenuItem_1 = __importDefault(require("@material-ui/core/MenuItem"));
 var react_1 = __importDefault(require("react"));
 var react_hook_form_1 = require("react-hook-form");
@@ -59,5 +58,5 @@ var FormSelect = function (props) {
                 return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, placeholder: "Enter " + label, label: label, SelectProps: { value: value, onChange: onChange }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest), options.map(function (item) { return (react_1.default.createElement(MenuItem_1.default, { key: item.value, value: item.value }, item.label)); })));
             } })));
 };
-exports.FormSelect = FormSelect;
+exports.default = FormSelect;
 //# sourceMappingURL=FormSelect.js.map

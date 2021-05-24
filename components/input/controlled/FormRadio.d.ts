@@ -5,5 +5,5 @@ declare type ReactHookRadioProps = {
     label: string;
 };
 export declare type FormRadioProps = Props & ReactHookRadioProps;
-export declare const FormRadio: React.FC<FormRadioProps>;
-export {};
+declare const FormRadio: React.FC<FormRadioProps>;
+export default FormRadio;

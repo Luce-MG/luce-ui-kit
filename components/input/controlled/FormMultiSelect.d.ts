@@ -10,5 +10,5 @@ declare type ReactHookMultiSelectProps = {
     options: MultiSelectOptions;
 };
 export declare type FormMultiSelectProps = Props & ReactHookMultiSelectProps;
-export declare const FormMultiSelect: React.FC<FormMultiSelectProps>;
-export {};
+declare const FormMultiSelect: React.FC<FormMultiSelectProps>;
+export default FormMultiSelect;

@@ -126,7 +126,7 @@ var ClientPackageCards = function (props) {
                         React.createElement(Typography_1.default, { className: classes.packageID, bodyVariants: "xsMedium" }, "Package #" + props.id)),
                     React.createElement(core_1.Chip, { className: classes.packageTags, label: props.status })),
                 React.createElement(core_1.Box, null,
-                    React.createElement(core_1.Link, { underline: "always", href: "#" },
+                    React.createElement(core_1.Link, { underline: "always", href: pageLink },
                         React.createElement(Typography_1.default, { className: classes.linkStyle, variant: "overline" }, "View Details")))),
             React.createElement(core_1.Divider, { className: classes.divider }),
             React.createElement(core_1.Box, { display: "flex", className: classes.tableHeader },

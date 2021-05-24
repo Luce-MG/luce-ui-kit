@@ -3,6 +3,6 @@ import { KeyboardDatePickerProps as MuiKeyboardDatePickerProps } from '../../ato
 declare type ReactHookDatePickerProps = {
     name: string;
 };
-export declare type FormDatePickerProps = MuiKeyboardDatePickerProps & ReactHookDatePickerProps;
+export declare type FormDatePickerProps = ReactHookDatePickerProps & Omit<MuiKeyboardDatePickerProps, 'value' | 'onChange'>;
 declare const FormDatePicker: React.FC<FormDatePickerProps>;
 export default FormDatePicker;
