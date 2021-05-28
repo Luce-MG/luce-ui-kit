@@ -31,10 +31,10 @@ var react_hook_form_1 = require("react-hook-form");
 var Typography_1 = __importDefault(require("../../base/Typography"));
 var FormRadio = function (props) {
     var control = react_hook_form_1.useFormContext().control;
-    var name = props.name, label = props.label, children = props.children, rest = __rest(props, ["name", "label", "children"]);
+    var name = props.name, label = props.label, children = props.children, defaultValue = props.defaultValue, rest = __rest(props, ["name", "label", "children", "defaultValue"]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, label),
-        react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: "", render: function (_a) {
+        react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : '', render: function (_a) {
                 var onBlur = _a.onBlur, onChange = _a.onChange, value = _a.value;
                 return (react_1.default.createElement(RadioGroup_1.default, __assign({ onChange: onChange, value: value, onBlur: onBlur }, rest), children));
             } })));
