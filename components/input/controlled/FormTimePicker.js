@@ -60,13 +60,13 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) {
 var FormTimePicker = function (props) {
     var classes = useStyles(props);
     var _a = react_hook_form_1.useFormContext(), control = _a.control, errors = _a.errors;
-    var name = props.name, label = props.label, rest = __rest(props, ["name", "label"]);
+    var name = props.name, label = props.label, defaultValue = props.defaultValue, rest = __rest(props, ["name", "label", "defaultValue"]);
     var formHelperTextProps = {
         classes: {
             contained: classes.MuiFormHelperTextContained
         }
     };
-    return (React.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: null, render: function (_a) {
+    return (React.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : null, render: function (_a) {
             var _b;
             var onChange = _a.onChange, value = _a.value;
             return (React.createElement(Pickers_1.KeyboardTimePicker, __assign({ autoOk: true, value: value, label: label, minutesStep: 5 }, rest, { onChange: onChange, fullWidth: true, variant: "inline", InputAdornmentProps: { position: 'end' }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root })));

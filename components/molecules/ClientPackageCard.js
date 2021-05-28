@@ -110,13 +110,14 @@ var useStyles = styles_1.makeStyles(function (theme) {
             }, color: theme.palette.common.white, borderRadius: '2px', height: 'auto', fontWeight: 700, fontSize: '0.5rem', lineHeight: '1.5em', alignItems: 'center', padding: '3px 6px', margin: '0 0 0 15px' }, getPackageTag(props.status))); },
         linkStyle: {
             color: '#3384FD',
+            cursor: 'pointer',
             margin: '0 16px 0 0',
             textAlign: 'right'
         }
     });
 });
 var ClientPackageCards = function (props) {
-    var data = props.data, id = props.id, status = props.status, invisible = props.invisible, pageLink = props.pageLink, children = props.children, rest = __rest(props, ["data", "id", "status", "invisible", "pageLink", "children"]);
+    var data = props.data, id = props.id, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, rest = __rest(props, ["data", "id", "status", "invisible", "onViewDetailsClick", "children"]);
     var classes = useStyles(props);
     return (React.createElement(core_1.Card, __assign({ className: classes.card }, rest),
         React.createElement(core_1.CardContent, { className: classes.cardBody },
@@ -126,7 +127,7 @@ var ClientPackageCards = function (props) {
                         React.createElement(Typography_1.default, { className: classes.packageID, bodyVariants: "xsMedium" }, "Package #" + props.id)),
                     React.createElement(core_1.Chip, { className: classes.packageTags, label: props.status })),
                 React.createElement(core_1.Box, null,
-                    React.createElement(core_1.Link, { underline: "always", href: "#" },
+                    React.createElement(core_1.Link, { underline: "always", onClick: onViewDetailsClick },
                         React.createElement(Typography_1.default, { className: classes.linkStyle, variant: "overline" }, "View Details")))),
             React.createElement(core_1.Divider, { className: classes.divider }),
             React.createElement(core_1.Box, { display: "flex", className: classes.tableHeader },

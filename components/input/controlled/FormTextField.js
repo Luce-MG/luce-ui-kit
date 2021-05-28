@@ -25,7 +25,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormTextField = void 0;
 var react_1 = __importDefault(require("react"));
 var react_hook_form_1 = require("react-hook-form");
 var ThemeProvider_1 = require("../../../themes/ThemeProvider");
@@ -45,17 +44,17 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) {
 var FormTextField = function (props) {
     var classes = useStyles(props);
     var _a = react_hook_form_1.useFormContext(), control = _a.control, errors = _a.errors;
-    var name = props.name, label = props.label, rest = __rest(props, ["name", "label"]);
+    var name = props.name, label = props.label, defaultValue = props.defaultValue, rest = __rest(props, ["name", "label", "defaultValue"]);
     var formHelperTextProps = {
         classes: {
             contained: classes.MuiFormHelperTextContained
         }
     };
-    return (react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: "", render: function (_a) {
+    return (react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : '', render: function (_a) {
             var _b;
             var onChange = _a.onChange, value = _a.value;
             return (react_1.default.createElement(Input_1.default, __assign({ fullWidth: true, value: value, onChange: onChange, label: label, placeholder: "Enter " + label, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest)));
         } }));
 };
-exports.FormTextField = FormTextField;
+exports.default = FormTextField;
 //# sourceMappingURL=FormTextField.js.map

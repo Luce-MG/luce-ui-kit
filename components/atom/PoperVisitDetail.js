@@ -40,37 +40,37 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var Popper_1 = __importDefault(require("@material-ui/core/Popper"));
+var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var react_hook_form_1 = require("react-hook-form");
-var ThemeProvider_1 = require("../../../themes/ThemeProvider");
-var Pickers_1 = require("../../atom/Pickers");
-var useStyles = ThemeProvider_1.makeStyles(function (theme) {
-    return ThemeProvider_1.createStyles({
+var useStyles = styles_1.makeStyles(function (theme) {
+    return styles_1.createStyles({
         root: {
-            marginBottom: theme.spacing(2.5)
+            background: theme.palette.common.white,
+            boxShadow: theme.shadows[1],
+            borderRadius: theme.spacing(1),
+            position: 'relative'
         },
-        MuiFormHelperTextContained: {
-            marginLeft: 0,
+        closeIcon: {
             position: 'absolute',
-            bottom: theme.spacing(-2.5)
+            right: 0
+        },
+        arow: {
+            position: 'absolute',
+            right: '-12px',
+            top: '47%',
+            color: theme.palette.common.white
         }
     });
 });
-var FormDatePicker = function (props) {
-    var classes = useStyles(props);
-    var _a = react_hook_form_1.useFormContext(), control = _a.control, errors = _a.errors;
-    var name = props.name, label = props.label, defaultValue = props.defaultValue, rest = __rest(props, ["name", "label", "defaultValue"]);
-    var formHelperTextProps = {
-        classes: {
-            contained: classes.MuiFormHelperTextContained
-        }
-    };
-    return (React.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : null, render: function (_a) {
-            var _b;
-            var onChange = _a.onChange, value = _a.value;
-            return (React.createElement(Pickers_1.KeyboardDatePicker, __assign({ autoOk: true, value: value, label: label }, rest, { onChange: onChange, fullWidth: true, variant: "inline", InputAdornmentProps: { position: 'end' }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root })));
-        } }));
+var CardVisitDetail = function (props) {
+    var classes = useStyles();
+    var children = props.children, rest = __rest(props, ["children"]);
+    return (React.createElement(Popper_1.default, __assign({}, rest, { className: classes.root }), children));
 };
-exports.default = FormDatePicker;
-//# sourceMappingURL=FormDatePicker.js.map
+exports.default = CardVisitDetail;
+//# sourceMappingURL=PoperVisitDetail.js.map
