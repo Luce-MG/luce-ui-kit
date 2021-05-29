@@ -7,7 +7,7 @@ export interface DocumentInterface {
 }
 export declare type StyledDocCard = {
     author: DocumentInterface;
-    onCLick(docId: number): void;
+    onClick(docId: number): void;
     onDelete(id: number): void;
     mandatory: boolean;
     hideIdAuthor: boolean;
