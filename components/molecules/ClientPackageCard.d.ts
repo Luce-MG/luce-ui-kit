@@ -8,7 +8,7 @@ export declare type ClientPackageCardProps = {
     id: number;
     status: string;
     invisible: boolean;
-    pageLink: string;
+    onViewDetailsClick(): void;
 };
 declare const ClientPackageCards: React.FC<ClientPackageCardProps>;
 export default ClientPackageCards;
