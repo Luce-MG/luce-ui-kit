@@ -22,16 +22,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Card_1 = __importDefault(require("@material-ui/core/Card"));
-var CardActions_1 = __importDefault(require("@material-ui/core/CardActions"));
-var CardContent_1 = __importDefault(require("@material-ui/core/CardContent"));
-var IconButton_1 = __importDefault(require("@material-ui/core/IconButton"));
-var Popover_1 = __importDefault(require("@material-ui/core/Popover"));
 var styles_1 = require("@material-ui/core/styles");
 var colorManipulator_1 = require("@material-ui/core/styles/colorManipulator");
 var React = __importStar(require("react"));
+var Card_1 = require("../atom/Card");
+var Box_1 = __importDefault(require("../base/Box"));
 var Typography_1 = __importDefault(require("../base/Typography"));
-var Icons_1 = __importDefault(require("../icons/Icons"));
+var CardPopover_1 = __importDefault(require("./CardPopover"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
@@ -58,38 +55,25 @@ var useStyles = styles_1.makeStyles(function (theme) {
             padding: theme.spacing(0.5),
             marginRight: theme.spacing(0.5),
             color: theme.palette.grey[700]
+        },
+        spacingRight: {
+            marginRight: theme.spacing(0.5)
         }
     });
 });
 var PayrollCard = function (props) {
-    var month = props.month, amount = props.amount;
+    var id = props.id, year = props.year, month = props.month, amount = props.amount, menuPopover = props.menuPopover;
     var classes = useStyles();
-    var _a = React.useState(null), anchorEl = _a[0], setAnchorEl = _a[1];
-    var handleClick = function (event) {
-        setAnchorEl(event.currentTarget);
-    };
-    var handleClose = function () {
-        setAnchorEl(null);
-    };
-    var open = Boolean(anchorEl);
-    var id = open ? 'simple-popover' : undefined;
-    return (React.createElement(Card_1.default, { classes: { root: classes.root } },
-        React.createElement(CardContent_1.default, { classes: { root: classes.content } },
-            React.createElement(Typography_1.default, { variant: "subtitle2" }, month),
+    return (React.createElement(Card_1.Card, { "aria-label": "card-payroll-" + id, classes: { root: classes.root } },
+        React.createElement(Card_1.CardContent, { classes: { root: classes.content } },
+            React.createElement(Box_1.default, { display: "flex" },
+                React.createElement(Typography_1.default, { className: classes.spacingRight, variant: "subtitle2" }, month),
+                React.createElement(Typography_1.default, { variant: "subtitle2" }, year)),
             React.createElement(Typography_1.default, { classes: { root: classes.typography }, variant: "h3" },
                 "$",
                 amount)),
-        React.createElement(CardActions_1.default, { classes: { root: classes.action } },
-            React.createElement(IconButton_1.default, { classes: { root: classes.icon }, color: "primary", component: "small", onClick: handleClick },
-                React.createElement(Icons_1.default, { iconName: "OptionsIcon", size: "medium" }))),
-        React.createElement(Popover_1.default, { id: id, open: open, anchorEl: anchorEl, onClose: handleClose, anchorOrigin: {
-                vertical: 'bottom',
-                horizontal: 'right'
-            }, transformOrigin: {
-                vertical: 'top',
-                horizontal: 'right'
-            }, elevation: 3 },
-            React.createElement(Typography_1.default, null, "Should create an atom for Popover element"))));
+        React.createElement(Box_1.default, { display: "flex", justifyContent: "flex-end" },
+            React.createElement(CardPopover_1.default, { direction: "row", data: menuPopover }))));
 };
 exports.default = PayrollCard;
 //# sourceMappingURL=PayrollCard.js.map

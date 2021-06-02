@@ -13,4 +13,5 @@ export * from './Link';
 export * from './List';
 export * from './Pickers';
 export * from './Table';
-export * from './PoperVisitDetail';
+export * from './PopperVisitDetail';
+export * from './Popover';

@@ -49,7 +49,8 @@ var useStyles = styles_1.makeStyles(function (theme) {
             gridGap: theme.spacing(2)
         },
         link: {
-            color: theme.palette.common.black
+            color: theme.palette.common.black,
+            cursor: 'pointer'
         },
         iconRow: {
             padding: theme.spacing(0.5),

@@ -28,6 +28,7 @@ var CardActions_1 = __importDefault(require("@material-ui/core/CardActions"));
 var CardContent_1 = __importDefault(require("@material-ui/core/CardContent"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var Card_2 = require("../atom/Card");
 var Typography_1 = __importDefault(require("../base/Typography"));
 var CardPopover_1 = __importDefault(require("../molecules/CardPopover"));
 var Tags_1 = __importDefault(require("../tags/Tags"));
@@ -56,8 +57,8 @@ var useStyles = styles_1.makeStyles(function (theme) {
             display: 'grid',
             gridRowGap: theme.spacing(0.5)
         },
-        cardAction: {
-            paddingTop: 0,
+        cardActionRoot: {
+            padding: 0,
             justifyContent: 'flex-end'
         },
         textColor: {
@@ -66,25 +67,31 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var ResignationCard = function (props) {
-    var cleaner = props.cleaner, tag = props.tag, data = props.data;
+    var cleaner = props.cleaner, data = props.data, hidePopover = props.hidePopover, viewCleanerDetail = props.viewCleanerDetail;
     var classes = useStyles();
-    return (React.createElement(Card_1.default, { elevation: 1, classes: { root: classes.card } },
-        React.createElement(CardContent_1.default, { className: classes.cardContent },
-            React.createElement(Box_1.default, { className: classes.cardContentHeader },
-                React.createElement(Typography_1.default, { variant: "subtitle2", children: cleaner.name }),
-                React.createElement(Tags_1.default, { customVariant: tag.variant, label: tag.label, sizes: "xs" })),
-            React.createElement(Box_1.default, { className: classes.cardContentBody },
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Phone:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: cleaner.phone }),
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Type:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: cleaner.type }),
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Nationality:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: cleaner.nationality })),
-            React.createElement(Box_1.default, { className: classes.cardContentFooter },
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: cleaner.offboardedDate ? 'Off-Boarded Date' : 'Last Day' }),
-                React.createElement(Typography_1.default, { variant: "caption", children: cleaner.offboardedDate ? cleaner.offboardedDate : cleaner.lastDay }))),
-        React.createElement(CardActions_1.default, { className: classes.cardAction },
-            React.createElement(CardPopover_1.default, { data: data }))));
+    var menuOpenPopover = function (event) {
+        event.stopPropagation();
+    };
+    return (React.createElement(Card_2.CardActionArea, { onClick: function () { return viewCleanerDetail(cleaner.id); }, className: classes.card },
+        React.createElement(Card_1.default, { elevation: 1 },
+            React.createElement(CardContent_1.default, { className: classes.cardContent },
+                React.createElement(Box_1.default, { className: classes.cardContentHeader },
+                    React.createElement(Typography_1.default, { variant: "subtitle2", children: cleaner.name }),
+                    React.createElement(Tags_1.default, { customVariant: cleaner.tag, label: cleaner.tagLabel, sizes: "xs" })),
+                React.createElement(Box_1.default, { className: classes.cardContentBody },
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Phone:" }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.phone }),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Type:" }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.type }),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Nationality:" }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.nationality })),
+                React.createElement(Box_1.default, { className: classes.cardContentFooter },
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: cleaner.offboardedDate ? 'Off-Boarded Date' : 'Last Day' }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.offboardedDate
+                            ? cleaner.offboardedDate
+                            : cleaner.lastDay }))),
+            !hidePopover && (React.createElement(CardActions_1.default, { onClick: menuOpenPopover, classes: { root: classes.cardActionRoot } },
+                React.createElement(CardPopover_1.default, { data: data }))))));
 };
 exports.default = ResignationCard;
 //# sourceMappingURL=ResignationCard.js.map

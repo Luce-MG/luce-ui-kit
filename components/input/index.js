@@ -28,4 +28,5 @@ __exportStar(require("./controlled/FormMultiSelect"), exports);
 __exportStar(require("./controlled/FormRadio"), exports);
 __exportStar(require("./controlled/FormDatePicker"), exports);
 __exportStar(require("./controlled/FormTimePicker"), exports);
+__exportStar(require("./controlled/FormCheckbox"), exports);
 //# sourceMappingURL=index.js.map
