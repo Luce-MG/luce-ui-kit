@@ -1,18 +1,22 @@
 import * as React from 'react';
 import { CardPopoverProps } from '../molecules/CardPopover';
-import { TagInterface } from '../tags/Tags';
-export interface Cleaner {
+import { CustomVariant } from '../tags/Tags';
+export interface CleanerReasignation {
+    id: number;
     name: string;
     phone: string;
     type: string;
     nationality: string;
-    lastDay: string;
-    offboardedDate: string;
+    lastDay?: string;
+    offboardedDate?: string;
+    tag: CustomVariant;
+    tagLabel: string;
 }
 export declare type ResignationCardProps = {
-    cleaner: Cleaner;
-    tag: TagInterface;
+    cleaner: CleanerReasignation;
     data: CardPopoverProps['data'];
+    hidePopover?: boolean;
+    viewCleanerDetail(id: number): void;
 };
 declare const ResignationCard: React.FC<ResignationCardProps>;
 export default ResignationCard;

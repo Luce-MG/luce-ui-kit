@@ -63,10 +63,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var AppendixCard = function (props) {
-    var _a = props.title, title = _a === void 0 ? 'For More Information' : _a, _b = props.label, label = _b === void 0 ? 'View Appendix' : _b, _c = props.url, url = _c === void 0 ? '#appendix' : _c;
+    var _a = props.title, title = _a === void 0 ? 'For More Information' : _a, _b = props.label, label = _b === void 0 ? 'View Appendix' : _b, _c = props.onPress, onPress = _c === void 0 ? function () { } : _c;
     var classes = useStyles();
     return (React.createElement(Card_1.default, { elevation: 0, classes: { root: classes.card } },
-        React.createElement(CardActionArea_1.default, { classes: { root: classes.cardActionArea }, href: url },
+        React.createElement(CardActionArea_1.default, { classes: { root: classes.cardActionArea }, onClick: onPress },
             React.createElement(Typography_1.default, { variant: "overline", children: title }),
             React.createElement(Box_1.default, { className: classes.cardActionAreaBox },
                 React.createElement(Avatar_1.default, { className: classes.cardAvatar, customSize: "medium" },

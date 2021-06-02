@@ -30,4 +30,6 @@ __exportStar(require("./Link"), exports);
 __exportStar(require("./List"), exports);
 __exportStar(require("./Pickers"), exports);
 __exportStar(require("./Table"), exports);
+__exportStar(require("./PopperVisitDetail"), exports);
+__exportStar(require("./Popover"), exports);
 //# sourceMappingURL=index.js.map

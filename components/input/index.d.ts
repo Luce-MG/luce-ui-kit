@@ -11,3 +11,4 @@ export * from './controlled/FormMultiSelect';
 export * from './controlled/FormRadio';
 export * from './controlled/FormDatePicker';
 export * from './controlled/FormTimePicker';
+export * from './controlled/FormCheckbox';

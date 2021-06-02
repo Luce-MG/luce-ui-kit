@@ -16,5 +16,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = void 0;
 var AccordionScheduleDay_1 = require("./AccordionScheduleDay");
 Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(AccordionScheduleDay_1).default; } });
+__exportStar(require("./Accordion"), exports);
 __exportStar(require("./AccordionScheduleDay"), exports);
 //# sourceMappingURL=index.js.map

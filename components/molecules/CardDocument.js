@@ -41,7 +41,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             justifyContent: 'flex-end',
             right: 0,
             position: 'absolute',
-            zIndex: 999,
+            zIndex: 2,
             color: '#32607A'
         },
         cardIconDoc: {
@@ -59,13 +59,13 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var DocumentCard = function (props) {
-    var author = props.author, hideIdAuthor = props.hideIdAuthor, mandatory = props.mandatory, onCLick = props.onCLick, onDelete = props.onDelete;
+    var author = props.author, hideIdAuthor = props.hideIdAuthor, mandatory = props.mandatory, onClick = props.onClick, onDelete = props.onDelete;
     var classes = useStyles();
     return (React.createElement(core_1.Card, { classes: { root: classes.root }, elevation: 0 },
         React.createElement(core_1.Box, { className: classes.deleteIcon },
             React.createElement(core_1.IconButton, { size: "medium", onClick: function () { return (author ? onDelete(author.id) : ''); } },
                 React.createElement(Icons_1.default, { size: "small", iconName: "TrashIcon" }))),
-        React.createElement(core_1.CardActionArea, { onClick: function () { return (author ? onCLick(author.id) : ''); } },
+        React.createElement(core_1.CardActionArea, { onClick: function () { return (author ? onClick(author.id) : ''); } },
             React.createElement(core_1.Box, { display: "flex", justifyContent: "center", alignItems: "center" },
                 React.createElement(core_1.Box, { className: classes.cardIconDoc },
                     React.createElement(Icons_1.default, { size: "medium", iconName: mandatory ? 'PlusIcon' : 'DocumentIcon' }))),
