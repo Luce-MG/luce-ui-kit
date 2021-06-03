@@ -67,30 +67,30 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var ResignationCard = function (props) {
-    var cleaner = props.cleaner, data = props.data, hidePopover = props.hidePopover, viewCleanerDetail = props.viewCleanerDetail;
+    var resignedCleaner = props.resignedCleaner, data = props.data, tagLabel = props.tagLabel, labelVariant = props.labelVariant, onClick = props.onClick;
     var classes = useStyles();
     var menuOpenPopover = function (event) {
         event.stopPropagation();
     };
-    return (React.createElement(Card_2.CardActionArea, { onClick: function () { return viewCleanerDetail(cleaner.id); }, className: classes.card },
+    return (React.createElement(Card_2.CardActionArea, { onClick: onClick, className: classes.card },
         React.createElement(Card_1.default, { elevation: 1 },
             React.createElement(CardContent_1.default, { className: classes.cardContent },
                 React.createElement(Box_1.default, { className: classes.cardContentHeader },
-                    React.createElement(Typography_1.default, { variant: "subtitle2", children: cleaner.name }),
-                    React.createElement(Tags_1.default, { customVariant: cleaner.tag, label: cleaner.tagLabel, sizes: "xs" })),
+                    React.createElement(Typography_1.default, { variant: "subtitle2", children: resignedCleaner.name }),
+                    React.createElement(Tags_1.default, { customVariant: labelVariant, label: tagLabel, sizes: "xs" })),
                 React.createElement(Box_1.default, { className: classes.cardContentBody },
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Phone:" }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.phone }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.phone }),
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Type:" }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.type }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.type }),
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Nationality:" }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.nationality })),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.nationality })),
                 React.createElement(Box_1.default, { className: classes.cardContentFooter },
-                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: cleaner.offboardedDate ? 'Off-Boarded Date' : 'Last Day' }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: cleaner.offboardedDate
-                            ? cleaner.offboardedDate
-                            : cleaner.lastDay }))),
-            !hidePopover && (React.createElement(CardActions_1.default, { onClick: menuOpenPopover, classes: { root: classes.cardActionRoot } },
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: resignedCleaner.offboardedDate ? 'Off-Boarded Date' : 'Last Day' }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.offboardedDate
+                            ? resignedCleaner.offboardedDate
+                            : resignedCleaner.lastDay }))),
+            data && (React.createElement(CardActions_1.default, { onClick: menuOpenPopover, classes: { root: classes.cardActionRoot } },
                 React.createElement(CardPopover_1.default, { data: data }))))));
 };
 exports.default = ResignationCard;
