@@ -12,7 +12,9 @@ var base = {
     secondTint: '#DFFAED',
     thirdTint: '#FFE1E1',
     secondBlue: '#2D9CDB',
-    secondGreen: '#27AE60'
+    secondGreen: '#27AE60',
+    thirdGreen: '#6FCF97',
+    secondPurple: '#BB6BD9'
 };
 var primary = {
     300: '#F8FAFB',

@@ -12,6 +12,8 @@ declare const _default: {
         thirdTint: string;
         secondBlue: string;
         secondGreen: string;
+        thirdGreen: string;
+        secondPurple: string;
     };
     primary: any;
 };
