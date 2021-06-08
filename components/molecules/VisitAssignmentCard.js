@@ -26,9 +26,9 @@ var Box_1 = __importDefault(require("@material-ui/core/Box"));
 var Card_1 = __importDefault(require("@material-ui/core/Card"));
 var CardActions_1 = __importDefault(require("@material-ui/core/CardActions"));
 var CardContent_1 = __importDefault(require("@material-ui/core/CardContent"));
-var Link_1 = __importDefault(require("@material-ui/core/Link"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var Card_2 = require("../atom/Card");
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var CardPopover_1 = __importDefault(require("../molecules/CardPopover"));
@@ -75,30 +75,39 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var VisitAssignmentCard = function (props) {
-    var visit = props.visit, tag = props.tag, data = props.data;
+    var visit = props.visit, tags = props.tags, data = props.data, onClick = props.onClick;
     var classes = useStyles();
-    return (React.createElement(Card_1.default, { elevation: 1, classes: { root: classes.card } },
-        React.createElement(CardContent_1.default, { className: classes.cardContent },
-            React.createElement(Box_1.default, { className: classes.cardContentHeader },
-                React.createElement(Typography_1.default, { variant: "subtitle2", children: "Visit Details" }),
-                React.createElement(Typography_1.default, { variant: "caption" },
-                    React.createElement(Link_1.default, { href: '#' + visit.id }, '#' + visit.id),
-                    ' | ' + visit.packageCode)),
-            visit.cleaner ? (React.createElement(Box_1.default, { className: classes.cardContentCleaner },
-                React.createElement(Icons_1.default, { iconName: "CleaningIcon", size: "small" }),
-                React.createElement(Typography_1.default, { variant: "overline", children: visit.cleaner }))) : (false),
-            React.createElement(Box_1.default, { className: classes.cardContentBody },
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Client:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: visit.client }),
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Address:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: visit.address }),
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Date:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: visit.date }),
-                React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Time:" }),
-                React.createElement(Typography_1.default, { variant: "caption", children: visit.time }))),
-        React.createElement(CardActions_1.default, { className: classes.cardAction },
-            React.createElement(Tags_1.default, { customVariant: tag.variant, label: tag.label, sizes: "xs" }),
-            React.createElement(CardPopover_1.default, { data: data }))));
+    var menuOpenPopover = function (event) {
+        event.stopPropagation();
+    };
+    return (React.createElement(Card_2.CardActionArea, { onClick: onClick, classes: { root: classes.card } },
+        React.createElement(Card_1.default, { elevation: 1 },
+            React.createElement(CardContent_1.default, { className: classes.cardContent },
+                React.createElement(Box_1.default, { className: classes.cardContentHeader },
+                    React.createElement(Typography_1.default, { variant: "subtitle2" }, " Visit Details "),
+                    React.createElement(Typography_1.default, { variant: "caption" }, visit.id + ' | ' + visit.packageCode)),
+                visit.cleaner ? (React.createElement(Box_1.default, { className: classes.cardContentCleaner },
+                    React.createElement(Icons_1.default, { iconName: "CleaningIcon", size: "small" }),
+                    React.createElement(Typography_1.default, { variant: "overline", children: visit.cleaner }))) : (false),
+                React.createElement(Box_1.default, { className: classes.cardContentBody },
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption" }, "Client:"),
+                    React.createElement(Typography_1.default, { variant: "caption" }, visit.client),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption" }, "Address:"),
+                    React.createElement(Typography_1.default, { variant: "caption" }, visit.address),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption" }, "Date:"),
+                    React.createElement(Typography_1.default, { variant: "caption" },
+                        " ",
+                        visit.date,
+                        " "),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption" }, "Time:"),
+                    React.createElement(Typography_1.default, { variant: "caption" }, visit.time))),
+            React.createElement(CardActions_1.default, { className: classes.cardAction },
+                React.createElement(Box_1.default, { display: "flex", gridGap: 4 }, tags.map(function (tag, index) {
+                    return (React.createElement(Box_1.default, { key: "tag-" + index },
+                        React.createElement(Tags_1.default, { customVariant: tag ? tag.variant : 'homeCleaning', label: tag.label, sizes: "xs" })));
+                })),
+                React.createElement(Box_1.default, { onClick: menuOpenPopover },
+                    React.createElement(CardPopover_1.default, { data: data }))))));
 };
 exports.default = VisitAssignmentCard;
 //# sourceMappingURL=VisitAssignmentCard.js.map

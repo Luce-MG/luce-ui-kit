@@ -12,7 +12,8 @@ export interface Visit {
 }
 export declare type VisitAssignmentCardProps = {
     visit: Visit;
-    tag: TagInterface;
+    tags: TagInterface[];
+    onClick(): void;
     data: CardPopoverProps['data'];
 };
 declare const VisitAssignmentCard: React.FC<VisitAssignmentCardProps>;
