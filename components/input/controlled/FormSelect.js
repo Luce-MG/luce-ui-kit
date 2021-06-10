@@ -55,7 +55,7 @@ var FormSelect = function (props) {
         react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : '', render: function (_a) {
                 var _b;
                 var onChange = _a.onChange, value = _a.value;
-                return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, placeholder: "Enter " + label, label: label, SelectProps: { value: value, onChange: onChange }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest), options.map(function (item) { return (react_1.default.createElement(MenuItem_1.default, { key: item.value, value: item.value }, item.label)); })));
+                return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, placeholder: "Enter " + label, label: label, value: value, onChange: onChange, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest), options.map(function (item) { return (react_1.default.createElement(MenuItem_1.default, { key: item.value, value: item.value }, item.label)); })));
             } })));
 };
 exports.default = FormSelect;
