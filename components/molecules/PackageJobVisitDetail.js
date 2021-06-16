@@ -39,6 +39,7 @@ var React = __importStar(require("react"));
 var Box_1 = __importDefault(require("../base/Box"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Button_1 = __importDefault(require("../button/Button"));
+var PackageJobVisitLink_1 = __importDefault(require("../button/PackageJobVisitLink"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var TextareaAutosize_1 = __importDefault(require("../input/TextareaAutosize"));
 var Tags_1 = __importDefault(require("../tags/Tags"));
@@ -64,7 +65,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             position: 'absolute',
             right: 0
         },
-        arow: {
+        arrow: {
             position: 'absolute',
             right: '-12px',
             top: '47%',
@@ -75,9 +76,9 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var PackageJobVisitDetail = function (props) {
     var classes = useStyles();
-    var detailsValues = props.detailsValues, onClickVisitId = props.onClickVisitId, onClickJobId = props.onClickJobId, onClickPackageId = props.onClickPackageId, onClose = props.onClose;
+    var detailsValues = props.detailsValues, onClose = props.onClose, packageJobVisit = props.packageJobVisit, _a = props.packageJobVisit, visitId = _a.visitId, onClickVisit = _a.onClickVisit;
     return (React.createElement(Box_1.default, null,
-        React.createElement(Box_1.default, { className: classes.arow },
+        React.createElement(Box_1.default, { className: classes.arrow },
             React.createElement(Icons_1.default, { iconName: "ArrowFillRightIcon", size: "small" })),
         React.createElement(core_1.IconButton, { onClick: function (event) { return onClose(event); }, className: classes.closeIcon },
             React.createElement(Icons_1.default, { iconName: "CloseIcon", size: "small" })),
@@ -87,11 +88,7 @@ var PackageJobVisitDetail = function (props) {
                     React.createElement(Typography_1.default, { bodyVariants: "smBold", children: detailsValues ? detailsValues.name : 'No Name' }),
                     React.createElement(core_1.Grid, { container: true, direction: "row" },
                         React.createElement(Box_1.default, { marginRight: 3, display: "flex", alignItems: "center", gridGap: 8 },
-                            React.createElement(core_1.Link, { className: classes.linkStyle, onClick: function () { return onClickPackageId(detailsValues.packageId); } }, detailsValues.packageId),
-                            "-",
-                            React.createElement(core_1.Link, { className: classes.linkStyle, onClick: function () { return onClickJobId(detailsValues.jobId); } }, detailsValues.jobId),
-                            "-",
-                            React.createElement(core_1.Link, { className: classes.linkStyle, onClick: function () { return onClickVisitId(detailsValues.visitId); } }, detailsValues.visitId)),
+                            React.createElement(PackageJobVisitLink_1.default, __assign({}, packageJobVisit))),
                         React.createElement(Tags_1.default, { customVariant: "secondary", sizes: "small", label: detailsValues ? detailsValues.addressCode : 'Empty' }))),
                 React.createElement(core_1.Grid, { container: true, direction: "column", justify: "flex-start", alignItems: "baseline" },
                     React.createElement(Box_1.default, null,
@@ -108,7 +105,7 @@ var PackageJobVisitDetail = function (props) {
                         React.createElement(Typography_1.default, { variant: "caption", children: detailsValues ? detailsValues.contact : 'No Contact' })))),
             React.createElement(core_1.Grid, { container: true, direction: "row", justify: "space-between", alignItems: "center" },
                 React.createElement(TextareaAutosize_1.default, { rows: 4, readOnly: true, className: classes.textArea, value: detailsValues ? detailsValues.note : 'Note Empty' }),
-                React.createElement(Button_1.default, { onClick: function () { return onClickVisitId(detailsValues.visitId); }, customSize: "xs", variants: "ghost", children: "View Detail" })))));
+                visitId && onClickVisit && (React.createElement(Button_1.default, { onClick: function (e) { return onClickVisit(e, visitId); }, customSize: "xs", variants: "ghost", children: "View Detail" }))))));
 };
 exports.default = PackageJobVisitDetail;
 //# sourceMappingURL=PackageJobVisitDetail.js.map

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { PackageJobVisitProps } from '../button/PackageJobVisitLink';
 import { CardPopoverProps } from '../molecules/CardPopover';
 import { TagInterface } from '../tags/Tags';
 export interface Visit {
@@ -15,6 +16,6 @@ export declare type VisitAssignmentCardProps = {
     tags: TagInterface[];
     onClick(): void;
     data: CardPopoverProps['data'];
-};
+} & PackageJobVisitProps;
 declare const VisitAssignmentCard: React.FC<VisitAssignmentCardProps>;
 export default VisitAssignmentCard;
