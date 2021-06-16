@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { AccordionScheduleProps } from '../accordion/AccordionScheduleDay';
+import { PackageJobVisitProps } from '../button/PackageJobVisitLink';
 import { TagInterface } from '../tags/Tags';
 import { CardPopoverProps } from './CardPopover';
 export interface JobAssignment {
-    id: number;
+    id: string;
     packageCode: string;
     cleaner?: string;
     client: string;
@@ -13,6 +14,6 @@ export interface JobAssignment {
 export declare type CardJobAssignmentProps = {
     job: JobAssignment;
     tags: TagInterface[];
-} & AccordionScheduleProps & CardPopoverProps;
+} & AccordionScheduleProps & CardPopoverProps & PackageJobVisitProps;
 declare const CardJobAssignment: React.FC<CardJobAssignmentProps>;
 export default CardJobAssignment;

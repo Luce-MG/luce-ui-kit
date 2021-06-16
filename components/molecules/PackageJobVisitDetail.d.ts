@@ -1,23 +1,17 @@
 import * as React from 'react';
+import { PackageJobVisitProps } from '../button/PackageJobVisitLink';
 export interface PackageJobVisitDetail {
-    id: number;
-    packageId: number;
-    visitId: number;
-    jobId: number;
     name: string;
     addressCode: string;
     address: string;
     phone: string;
-    postalCode: number;
+    postalCode: string;
     contact: string;
     note?: string;
 }
 export declare type PackageJobVisitDetailProps = {
     detailsValues: PackageJobVisitDetail;
-    onClickJobId(id: number): void;
-    onClickPackageId(id: number): void;
-    onClickVisitId(id: number): void;
     onClose(event: React.MouseEvent<HTMLElement>): void;
-};
+} & PackageJobVisitProps;
 declare const PackageJobVisitDetail: React.FC<PackageJobVisitDetailProps>;
 export default PackageJobVisitDetail;

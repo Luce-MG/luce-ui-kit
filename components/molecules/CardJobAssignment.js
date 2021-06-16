@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -27,6 +38,7 @@ var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
 var AccordionScheduleDay_1 = __importDefault(require("../accordion/AccordionScheduleDay"));
 var Typography_1 = __importDefault(require("../base/Typography"));
+var PackageJobVisitLink_1 = __importDefault(require("../button/PackageJobVisitLink"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
 var Tags_1 = __importDefault(require("../tags/Tags"));
 var CardPopover_1 = __importDefault(require("./CardPopover"));
@@ -69,15 +81,13 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var CardJobAssignment = function (props) {
-    var schedule = props.schedule, job = props.job, tags = props.tags, data = props.data;
+    var schedule = props.schedule, job = props.job, tags = props.tags, data = props.data, packageJobVisit = props.packageJobVisit;
     var classes = useStyles();
     return (React.createElement(core_1.Card, { elevation: 1, classes: { root: classes.root } },
         React.createElement(core_1.CardHeader, { className: classes.cardHeader, title: React.createElement(core_1.Box, { display: "flex", justifyContent: "space-between", alignItems: "center" },
                 React.createElement(Typography_1.default, { variant: "subtitle2", children: "Job Details" }),
-                React.createElement(core_1.Box, null,
-                    React.createElement(core_1.Link, { className: classes.linkColor, underline: "always", variant: "caption", href: "#" },
-                        "#",
-                        job ? job.id : 'Missing'),
+                React.createElement(core_1.Box, { display: "flex", alignItems: "center" },
+                    React.createElement(PackageJobVisitLink_1.default, __assign({}, packageJobVisit, { jobId: job === null || job === void 0 ? void 0 : job.id })),
                     React.createElement(Typography_1.default, { variant: "caption", children: "| " + (job ? job.packageCode : 'Missing') }))) }),
         React.createElement(core_1.Box, { className: job.cleaner ? classes.cardContentCleaner : classes.hideDisplay },
             React.createElement(Icons_1.default, { iconName: "CleaningIcon", size: "small" }),
