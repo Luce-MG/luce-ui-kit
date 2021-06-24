@@ -64,7 +64,7 @@ var FormMultiSelect = function (props) {
                             return selected.join(', ');
                         },
                         onChange: onChange
-                    }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root, inputProps: { 'data-testid': { name: name } } }, rest), options.map(function (item) { return (react_1.default.createElement(MenuItem_1.default, { key: item.value, value: item.value },
+                    }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root, inputProps: { 'data-testid': name } }, rest), options.map(function (item) { return (react_1.default.createElement(MenuItem_1.default, { key: item.value, value: item.value },
                     react_1.default.createElement(Checkbox_1.default, { checked: value.includes(item.value) }),
                     react_1.default.createElement(core_1.ListItemText, { primary: item.label }))); })));
             } })));
