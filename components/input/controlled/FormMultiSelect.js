@@ -57,7 +57,7 @@ var FormMultiSelect = function (props) {
         react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : [], render: function (_a) {
                 var _b;
                 var onChange = _a.onChange, value = _a.value;
-                return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, placeholder: "Enter " + label, label: label, SelectProps: {
+                return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, label: label ? label : undefined, placeholder: label ? "Enter " + label : undefined, "data-testid": name, SelectProps: {
                         value: value,
                         multiple: true,
                         renderValue: function (selected) {

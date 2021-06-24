@@ -53,7 +53,7 @@ var FormTextField = function (props) {
     return (react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : '', render: function (_a) {
             var _b;
             var onChange = _a.onChange, value = _a.value;
-            return (react_1.default.createElement(Input_1.default, __assign({ fullWidth: true, value: value, onChange: onChange, label: label, placeholder: "Enter " + label, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest)));
+            return (react_1.default.createElement(Input_1.default, __assign({ fullWidth: true, value: value, onChange: onChange, label: label ? label : undefined, placeholder: label ? "Enter " + label : undefined, "data-testid": name, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root }, rest)));
         } }));
 };
 exports.default = FormTextField;

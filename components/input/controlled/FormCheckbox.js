@@ -34,7 +34,7 @@ var FormCheckbox = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : false, render: function (_a) {
                 var onChange = _a.onChange, value = _a.value;
-                return (react_1.default.createElement(Checkbox_1.default, __assign({ onChange: function (e) { return onChange(e.target.checked); }, checked: value }, rest)));
+                return (react_1.default.createElement(Checkbox_1.default, __assign({ onChange: function (e) { return onChange(e.target.checked); }, checked: value, "data-testid": name }, rest)));
             } })));
 };
 exports.default = FormCheckbox;
