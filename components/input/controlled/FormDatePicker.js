@@ -69,7 +69,7 @@ var FormDatePicker = function (props) {
     return (React.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : null, render: function (_a) {
             var _b;
             var onChange = _a.onChange, value = _a.value;
-            return (React.createElement(Pickers_1.KeyboardDatePicker, __assign({ autoOk: true, value: value, label: label }, rest, { onChange: onChange, fullWidth: true, variant: "inline", InputAdornmentProps: { position: 'end' }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root })));
+            return (React.createElement(Pickers_1.KeyboardDatePicker, __assign({ autoOk: true, value: value, label: label ? label : undefined, "data-testid": name }, rest, { onChange: onChange, fullWidth: true, variant: "inline", InputAdornmentProps: { position: 'end' }, helperText: (_b = errors["" + name]) === null || _b === void 0 ? void 0 : _b.message, error: !!errors["" + name], FormHelperTextProps: formHelperTextProps, className: classes.root })));
         } }));
 };
 exports.default = FormDatePicker;

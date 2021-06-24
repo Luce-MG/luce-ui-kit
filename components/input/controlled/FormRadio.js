@@ -36,7 +36,7 @@ var FormRadio = function (props) {
         react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, label),
         react_1.default.createElement(react_hook_form_1.Controller, { control: control, name: name, defaultValue: defaultValue !== null && defaultValue !== void 0 ? defaultValue : '', render: function (_a) {
                 var onBlur = _a.onBlur, onChange = _a.onChange, value = _a.value;
-                return (react_1.default.createElement(RadioGroup_1.default, __assign({ onChange: onChange, value: value, onBlur: onBlur }, rest), children));
+                return (react_1.default.createElement(RadioGroup_1.default, __assign({ onChange: onChange, "data-testid": name, value: value, onBlur: onBlur }, rest), children));
             } })));
 };
 exports.default = FormRadio;
