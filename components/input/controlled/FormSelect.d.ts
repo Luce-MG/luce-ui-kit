@@ -3,6 +3,7 @@ import { TextFieldProps as Props } from '../Input';
 export declare type SelectOption = {
     value: string;
     label: string;
+    disabled?: boolean;
 };
 export declare type SelectOptions = SelectOption[];
 declare type ReactHookSelectProps = {
