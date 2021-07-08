@@ -34,6 +34,15 @@ exports.settings = {
             }
         }
     },
+    breakpoints: {
+        values: {
+            xs: 480,
+            sm: 767,
+            md: 991,
+            lg: 1280,
+            xl: 1920
+        }
+    },
     palette: {
         common: {
             black: mineShaft
