@@ -59,6 +59,7 @@ var FormMultiSelect = function (props) {
                 var onChange = _a.onChange, value = _a.value;
                 return (react_1.default.createElement(Input_1.default, __assign({ select: true, fullWidth: true, label: label ? label : undefined, placeholder: label ? "Enter " + label : undefined, SelectProps: {
                         value: value,
+                        SelectDisplayProps: { id: name + "SelectArea" },
                         multiple: true,
                         renderValue: function (selected) {
                             return selected.join(', ');
