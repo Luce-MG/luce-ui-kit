@@ -76,20 +76,18 @@ var ResignationCard = function (props) {
         React.createElement(Card_1.default, { elevation: 1 },
             React.createElement(CardContent_1.default, { className: classes.cardContent },
                 React.createElement(Box_1.default, { className: classes.cardContentHeader },
-                    React.createElement(Typography_1.default, { variant: "subtitle2", children: resignedCleaner.name }),
+                    React.createElement(Typography_1.default, { variant: "subtitle2", children: resignedCleaner.firstName + " " + resignedCleaner.lastName }),
                     React.createElement(Tags_1.default, { customVariant: labelVariant, label: tagLabel, sizes: "xs" })),
                 React.createElement(Box_1.default, { className: classes.cardContentBody },
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Phone:" }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.phone }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.contactNumber }),
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Type:" }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.type }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.workerType }),
                     React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Nationality:" }),
                     React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.nationality })),
                 React.createElement(Box_1.default, { className: classes.cardContentFooter },
-                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: resignedCleaner.offboardedDate ? 'Off-Boarded Date' : 'Last Day' }),
-                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.offboardedDate
-                            ? resignedCleaner.offboardedDate
-                            : resignedCleaner.lastDay }))),
+                    React.createElement(Typography_1.default, { className: classes.textColor, variant: "caption", children: "Last Working Day" }),
+                    React.createElement(Typography_1.default, { variant: "caption", children: resignedCleaner.lastWorkingDay }))),
             data && (React.createElement(CardActions_1.default, { onClick: menuOpenPopover, classes: { root: classes.cardActionRoot } },
                 React.createElement(CardPopover_1.default, { data: data }))))));
 };
