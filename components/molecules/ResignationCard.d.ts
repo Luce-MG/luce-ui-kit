@@ -2,12 +2,12 @@ import * as React from 'react';
 import { CardPopoverProps } from '../molecules/CardPopover';
 import { CustomVariant } from '../tags/Tags';
 export interface ResignedCleaner {
-    name: string;
-    phone: string;
-    type: string;
+    firstName: string;
+    lastName: string;
+    contactNumber: string;
+    workerType: string;
     nationality: string;
-    lastDay?: string;
-    offboardedDate?: string;
+    lastWorkingDay: string;
 }
 export declare type ResignationCardProps = {
     resignedCleaner: ResignedCleaner;
