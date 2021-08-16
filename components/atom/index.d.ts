@@ -15,3 +15,4 @@ export * from './Pickers';
 export * from './Table';
 export * from './PopperVisitDetail';
 export * from './Popover';
+export * from './NoCountTablePagination';
