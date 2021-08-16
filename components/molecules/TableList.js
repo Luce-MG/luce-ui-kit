@@ -67,11 +67,12 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var TableList = function (props) {
     var classes = useStyles();
-    var head = props.head, body = props.body, classContainer = props.classContainer, rest = __rest(props, ["head", "body", "classContainer"]);
+    var head = props.head, body = props.body, footer = props.footer, classContainer = props.classContainer, rest = __rest(props, ["head", "body", "footer", "classContainer"]);
     return (React.createElement(Table_1.TableContainer, { className: classContainer, classes: { root: classes.container } },
         React.createElement(Table_1.Table, __assign({ classes: { root: classes.root } }, rest),
-            React.createElement(Table_1.TableHead, { classes: { root: classes.head } }, head),
-            React.createElement(Table_1.TableBody, null, body))));
+            head && React.createElement(Table_1.TableHead, { classes: { root: classes.head } }, head),
+            body && React.createElement(Table_1.TableBody, null, body),
+            footer && React.createElement(Table_1.TableFooter, null, footer))));
 };
 exports.default = TableList;
 //# sourceMappingURL=TableList.js.map

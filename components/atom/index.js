@@ -32,4 +32,5 @@ __exportStar(require("./Pickers"), exports);
 __exportStar(require("./Table"), exports);
 __exportStar(require("./PopperVisitDetail"), exports);
 __exportStar(require("./Popover"), exports);
+__exportStar(require("./NoCountTablePagination"), exports);
 //# sourceMappingURL=index.js.map
