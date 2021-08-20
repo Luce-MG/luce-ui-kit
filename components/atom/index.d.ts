@@ -16,3 +16,4 @@ export * from './Table';
 export * from './PopperVisitDetail';
 export * from './Popover';
 export * from './NoCountTablePagination';
+export * from './BoxRow';
