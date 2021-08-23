@@ -53,7 +53,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var LeaveQuotaCard = function (props) {
-    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accured, accured = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d;
+    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accrued, accrued = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d;
     var title;
     switch (type) {
         case 'medical':
@@ -69,10 +69,10 @@ var LeaveQuotaCard = function (props) {
     return (React.createElement(Card_1.default, { elevation: 0, classes: { root: classes.card } },
         React.createElement(Typography_1.default, { bodyVariants: "smBold", children: title }),
         React.createElement(Box_1.default, { className: classes.cardContent },
-            React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Accured" }),
+            React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Accrued" }),
             React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Taken" }),
             React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Remaining" }),
-            React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: accured }),
+            React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: accrued }),
             React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: taken }),
             React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: remaining }))));
 };
