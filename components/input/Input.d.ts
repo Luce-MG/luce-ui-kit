@@ -7,5 +7,6 @@ export declare type customProps = {
     icon?: keyof typeof IconList;
 };
 export declare type TextFieldProps = Props & customProps;
+export declare const useStyles: (props?: any) => Record<"muiInputFocus" | "muiInputLabelRoot" | "MuiFormHelperTextRoot" | "muiInputLabelFormControl" | "muiInputRoot" | "muiInputRootSmall" | "muiInputRootMedium" | "muiInputRootLarge" | "muiInputmultiline" | "MuiFormHelperTextContained", string>;
 declare const TextField: React.FC<TextFieldProps>;
 export default TextField;

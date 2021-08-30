@@ -44,12 +44,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
 var InputAdornment_1 = __importDefault(require("@material-ui/core/InputAdornment"));
 var TextField_1 = __importDefault(require("@material-ui/core/TextField"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
-var useStyles = styles_1.makeStyles(function (theme) {
+exports.useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         muiInputRoot: {
             borderRadius: 3,
@@ -88,7 +89,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 });
 var TextField = function (props) {
     var theme = styles_1.useTheme();
-    var classes = useStyles(props);
+    var classes = exports.useStyles(props);
     var customSize = props.customSize, readOnly = props.readOnly, icon = props.icon, select = props.select, InputProps = props.InputProps, SelectProps = props.SelectProps, _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, rest = __rest(props, ["customSize", "readOnly", "icon", "select", "InputProps", "SelectProps", "FormHelperTextProps"]);
     var getSizeInputRoot = function () {
         if (customSize === 'small') {
