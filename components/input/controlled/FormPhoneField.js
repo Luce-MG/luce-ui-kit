@@ -59,14 +59,23 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) {
 var FormPhoneField = function (props) {
     var classes = Input_1.useStyles(props);
     var phoneFieldClasses = useStyles(props);
-    var style = props.style, name = props.name, label = props.label, defaultCountry = props.defaultCountry, onlyCountries = props.onlyCountries, defaultValue = props.defaultValue, readOnly = props.readOnly, InputProps = props.InputProps, _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, rest = __rest(props, ["style", "name", "label", "defaultCountry", "onlyCountries", "defaultValue", "readOnly", "InputProps", "FormHelperTextProps"]);
+    var style = props.style, name = props.name, label = props.label, defaultCountry = props.defaultCountry, onlyCountries = props.onlyCountries, defaultValue = props.defaultValue, readOnly = props.readOnly, customSize = props.customSize, InputProps = props.InputProps, _a = props.FormHelperTextProps, FormHelperTextProps = _a === void 0 ? {} : _a, rest = __rest(props, ["style", "name", "label", "defaultCountry", "onlyCountries", "defaultValue", "readOnly", "customSize", "InputProps", "FormHelperTextProps"]);
     var _b = react_hook_form_1.useFormContext(), errors = _b.errors, control = _b.control;
-    var getSizeInputRoot = function () {
-        return classes.muiInputRootMedium;
+    var getSizeInputRoot = function (size) {
+        switch (size) {
+            case 'small':
+                return classes.muiInputRootSmall;
+            case 'medium':
+                return classes.muiInputRootMedium;
+            case 'large':
+                return classes.muiInputRootLarge;
+            default:
+                return classes.muiInputRootMedium;
+        }
     };
     var inputProps = __assign(__assign({ readOnly: readOnly }, InputProps), { classes: {
             root: classes.muiInputRoot + " " + phoneFieldClasses.muiInputRoot,
-            input: getSizeInputRoot(),
+            input: getSizeInputRoot(customSize),
             focused: classes.muiInputFocus,
             multiline: classes.muiInputmultiline
         }, notched: false });
@@ -90,7 +99,7 @@ exports.default = FormPhoneField;
 FormPhoneField.defaultProps = {
     label: 'Enter phone number',
     defaultCountry: 'sg',
-    onlyCountries: ['sg', 'ph'],
+    onlyCountries: ['sg'],
     style: { width: '100%' },
     autoFormat: true,
     readOnly: false

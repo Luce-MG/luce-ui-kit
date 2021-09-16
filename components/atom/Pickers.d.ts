@@ -1,9 +1,11 @@
 import DateFnsUtils from '@date-io/date-fns';
 import { TimePickerProps as MuiTimePickerProps, KeyboardDatePickerProps as MuiKeyboardDatePickerProps, KeyboardTimePickerProps as MuiKeyboardTimePickerProps, MuiPickersUtilsProvider as PickersUtilsProvider } from '@material-ui/pickers';
+import { MaterialUiPickersDate as MaterialUiPickersDateProps } from '@material-ui/pickers/typings/date';
 import * as React from 'react';
 export declare type TimePickerProps = MuiTimePickerProps;
 export declare type KeyboardDatePickerProps = MuiKeyboardDatePickerProps;
 export declare type KeyboardTimePickerProps = MuiKeyboardTimePickerProps;
+export declare type MaterialUiPickersDate = MaterialUiPickersDateProps;
 declare const TimePicker: React.FC<TimePickerProps>;
 declare const KeyboardDatePicker: React.FC<KeyboardDatePickerProps>;
 declare const KeyboardTimePicker: React.FC<KeyboardTimePickerProps>;
