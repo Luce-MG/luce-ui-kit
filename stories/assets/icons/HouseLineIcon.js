@@ -31,9 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgMobilePhoneIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 10 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M7.84.75H2.387c-.94 0-1.704.84-1.704 1.875v12.75c0 1.035.763 1.875 1.704 1.875h5.455c.94 0 1.704-.84 1.704-1.875V2.625C9.545 1.59 8.782.75 7.841.75zM5.114 16.5c-.565 0-1.022-.502-1.022-1.125s.457-1.125 1.022-1.125c.566 0 1.023.502 1.023 1.125S5.68 16.5 5.113 16.5zm3.069-3H2.045V3h6.137v10.5z", fill: "#222" })));
+function SvgHouseLineIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M47.25 47.25V25.274a1.751 1.751 0 00-.573-1.295L29.176 8.07a1.75 1.75 0 00-2.354 0l-17.5 15.91a1.75 1.75 0 00-.572 1.295V47.25M3.5 47.25h49", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M33.249 47.248v-14h-10.5v14", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
 }
-exports.default = SvgMobilePhoneIcon;
-//# sourceMappingURL=MobilePhoneIcon.js.map
+exports.default = SvgHouseLineIcon;
+//# sourceMappingURL=HouseLineIcon.js.map

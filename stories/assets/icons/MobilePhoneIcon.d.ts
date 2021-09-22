@@ -1,3 +1,3 @@
-import React from 'react';
-declare function MobilePhoneIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
-export default MobilePhoneIcon;
+import * as React from 'react';
+declare function SvgMobilePhoneIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+export default SvgMobilePhoneIcon;
