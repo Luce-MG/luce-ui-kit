@@ -1,3 +1,3 @@
-import React from 'react';
-declare function VisaIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
-export default VisaIcon;
+import * as React from 'react';
+declare function SvgVisaIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+export default SvgVisaIcon;
