@@ -110,7 +110,8 @@ var useStyles = styles_1.makeStyles(function (theme) {
         error: function (props) { return (__assign(__assign({ background: theme.palette.error.main, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         assigned: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         changed: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondPurple, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        unassigned: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
+        unassigned: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        replaced: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondAdditional, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
     });
 });
 var TagsChip = function (props) {
