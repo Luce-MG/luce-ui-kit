@@ -111,7 +111,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
         assigned: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         changed: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondPurple, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         unassigned: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        replaced: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondAdditional, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
+        replaced: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondAdditional, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        paid: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondTint, color: theme.palette.success.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        unpaid: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdTint, color: Color_1.default.base.thirdBase }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        stripeProcessing: function (props) { return (__assign(__assign({ background: theme.palette.grey[300], color: theme.palette.grey[700] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        underpaid: function (props) { return (__assign(__assign({ background: Color_1.default.primary[300], color: Color_1.default.primary[700] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
     });
 });
 var TagsChip = function (props) {
