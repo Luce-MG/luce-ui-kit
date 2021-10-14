@@ -5,6 +5,7 @@ interface CleanerContract {
     salary: number;
     periodSalary: string;
     cleanerType: string;
+    endDate?: string;
 }
 export declare type CardCleanerContractProps = {
     contracts: CleanerContract;

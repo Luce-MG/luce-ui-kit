@@ -47,6 +47,9 @@ var useStyles = styles_1.makeStyles(function (theme) {
         nameLabel: {
             marginRight: theme.spacing(1.4)
         },
+        endDateLabel: {
+            marginRight: theme.spacing(1.9)
+        },
         salaryLabel: {
             marginRight: theme.spacing(4.1)
         }
@@ -64,6 +67,9 @@ var CardCleanerContract = function (props) {
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.nameLabel, variant: "overline", children: "Start Date:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: contracts.startDate })),
+                contracts.endDate && (React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
+                    React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.endDateLabel, variant: "overline", children: "End Date:" }),
+                    React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: contracts.endDate }))),
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary }))))));
