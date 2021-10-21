@@ -9,8 +9,9 @@ export declare type StyledDocCard = {
     author: DocumentInterface;
     onClick(docId: number): void;
     onDelete(id: number): void;
-    mandatory: boolean;
-    hideIdAuthor: boolean;
+    mandatory?: boolean;
+    hideIdAuthor?: boolean;
+    hideDeleteBtn?: boolean;
 };
 export declare type CardDocProps = StyledDocCard;
 declare const DocumentCard: React.FC<CardDocProps>;

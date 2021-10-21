@@ -8,6 +8,8 @@ interface Props extends MaterialUiPhoneNumberProps {
     style?: object;
     readOnly?: boolean;
     autoFormat?: boolean;
+    onlyCountries?: string[];
+    defaultCountry?: string;
 }
 export declare type PhoneInputProps = Props & TextFieldProps;
 declare const FormPhoneField: React.FC<PhoneInputProps>;
