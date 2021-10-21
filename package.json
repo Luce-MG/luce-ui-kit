@@ -26,8 +26,7 @@
     "dotenv": "~8.2.0",
     "typescript": "~4.1.5"
   },
-
   "dependencies": {
-  "material-ui-phone-number": "^2.2.6"
-}
+    "material-ui-phone-number": "^2.2.6"
+  }
 }
