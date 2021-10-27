@@ -1,6 +1,6 @@
 import * as React from 'react';
 export declare type LeaveQuotaCardProps = {
-    type: 'annual' | 'medical' | 'nonpaid';
+    type: 'annual' | 'medical' | 'nonpaid' | 'hospital';
     accrued: number;
     taken: number;
     remaining: number;
