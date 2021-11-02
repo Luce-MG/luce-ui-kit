@@ -62,6 +62,9 @@ var LeaveQuotaCard = function (props) {
         case 'nonpaid':
             title = 'Non Paid Leave (in hours)';
             break;
+        case 'hospital':
+            title = 'Hospital Leave (in hours)';
+            break;
         default:
             title = 'Annual Leave (in hours)';
     }
