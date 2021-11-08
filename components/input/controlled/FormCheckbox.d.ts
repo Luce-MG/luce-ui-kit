@@ -1,5 +1,5 @@
-import { CheckboxProps as Props } from '@material-ui/core/Checkbox';
 import React from 'react';
+import { CheckboxProps as Props } from '../../controls/Checkbox';
 declare type ReactHookCheckboxProps = {
     name: string;
 };
