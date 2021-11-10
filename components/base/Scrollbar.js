@@ -8,7 +8,6 @@ var Color_1 = __importDefault(require("./Color"));
 exports.scrollBar = {
     overflow: 'auto',
     transition: '0.3s',
-    scrollBehavior: 'smooth',
     '&::-webkit-scrollbar': {
         opacity: 0,
         width: '0.58em'
