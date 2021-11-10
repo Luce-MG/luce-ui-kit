@@ -20,4 +20,5 @@ Object.defineProperty(exports, "default", { enumerable: true, get: function () {
 __exportStar(require("./GrayscaleBox"), exports);
 __exportStar(require("./Grid"), exports);
 __exportStar(require("./Typography"), exports);
+__exportStar(require("./Scrollbar"), exports);
 //# sourceMappingURL=index.js.map
