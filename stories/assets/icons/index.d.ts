@@ -45,6 +45,7 @@ export { default as HdbIcon } from './HdbIcon';
 export { default as HelpIcon } from './HelpIcon';
 export { default as HideLeftIcon } from './HideLeftIcon';
 export { default as HideRightIcon } from './HideRightIcon';
+export { default as HourlyRatesIcon } from './HourlyRatesIcon';
 export { default as HouseIcon } from './HouseIcon';
 export { default as HouseLineIcon } from './HouseLineIcon';
 export { default as InfoIcon } from './InfoIcon';
