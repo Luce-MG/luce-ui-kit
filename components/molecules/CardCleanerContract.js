@@ -57,6 +57,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var CardCleanerContract = function (props) {
+    var _a;
     var contracts = props.contracts, onClick = props.onClick;
     var classes = useStyles();
     return (React.createElement(core_1.CardActionArea, { onClick: function () { return onClick(contracts.id); }, className: classes.root },
@@ -74,7 +75,7 @@ var CardCleanerContract = function (props) {
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary })),
-                contracts.schedule && (React.createElement(core_1.Box, null,
+                ((_a = contracts.schedule) === null || _a === void 0 ? void 0 : _a.length) && (React.createElement(core_1.Box, null,
                     React.createElement(AccordionScheduleDay_1.default, { sizes: "xs", children: "", schedule: contracts.schedule })))))));
 };
 exports.default = CardCleanerContract;
