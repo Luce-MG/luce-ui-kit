@@ -38,6 +38,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
             boxShadow: theme.shadows[1],
             borderRadius: theme.spacing(0.5)
         },
+        verticalLine: {
+            borderLeft: 'solid 3px #2D9CDB',
+            paddingLeft: theme.spacing(1),
+            borderRadius: '0px'
+        },
         cardHeader: {
             padding: 0,
             marginBottom: theme.spacing(1)
@@ -60,8 +65,13 @@ var CardCleanerContract = function (props) {
     var _a;
     var contracts = props.contracts, onClick = props.onClick;
     var classes = useStyles();
+    var _b = React.useState(false), expanded = _b[0], setExpanded = _b[1];
+    var accordionOpen = function (event) {
+        setExpanded(!expanded);
+        event.stopPropagation();
+    };
     return (React.createElement(core_1.CardActionArea, { onClick: function () { return onClick(contracts.id); }, className: classes.root },
-        React.createElement(core_1.Card, { elevation: 0 },
+        React.createElement(core_1.Card, { className: expanded ? classes.verticalLine : '', elevation: 0 },
             React.createElement(core_1.CardHeader, { className: classes.cardHeader, title: React.createElement(core_1.Box, { display: "flex", justifyContent: "space-between", alignItems: "center" },
                     React.createElement(Typography_1.default, { children: "Contract " + contracts.id, variant: "subtitle2" }),
                     React.createElement(Tags_1.default, { customVariant: "officeCleaning", sizes: "xs", label: contracts.cleanerType })) }),
@@ -75,8 +85,8 @@ var CardCleanerContract = function (props) {
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary })),
-                !!((_a = contracts.schedule) === null || _a === void 0 ? void 0 : _a.length) && (React.createElement(core_1.Box, null,
-                    React.createElement(AccordionScheduleDay_1.default, { sizes: "xs", children: "", schedule: contracts.schedule })))))));
+                !!((_a = contracts.schedule) === null || _a === void 0 ? void 0 : _a.length) && (React.createElement(core_1.Box, { onClick: accordionOpen },
+                    React.createElement(AccordionScheduleDay_1.default, { children: "", marginTop: 1, marginBottom: 0.5, sizes: "small", labelVariant: "overline", schedule: contracts.schedule })))))));
 };
 exports.default = CardCleanerContract;
 //# sourceMappingURL=CardCleanerContract.js.map
