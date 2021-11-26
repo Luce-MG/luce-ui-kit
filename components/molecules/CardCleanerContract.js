@@ -75,7 +75,7 @@ var CardCleanerContract = function (props) {
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary })),
-                ((_a = contracts.schedule) === null || _a === void 0 ? void 0 : _a.length) && (React.createElement(core_1.Box, null,
+                !!((_a = contracts.schedule) === null || _a === void 0 ? void 0 : _a.length) && (React.createElement(core_1.Box, null,
                     React.createElement(AccordionScheduleDay_1.default, { sizes: "xs", children: "", schedule: contracts.schedule })))))));
 };
 exports.default = CardCleanerContract;
