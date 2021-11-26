@@ -25,6 +25,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var AccordionScheduleDay_1 = __importDefault(require("../accordion/AccordionScheduleDay"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Tags_1 = __importDefault(require("../tags/Tags"));
 var useStyles = styles_1.makeStyles(function (theme) {
@@ -56,7 +57,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var CardCleanerContract = function (props) {
-    var contracts = props.contracts, onClick = props.onClick;
+    var contracts = props.contracts, schedule = props.schedule, onClick = props.onClick;
     var classes = useStyles();
     return (React.createElement(core_1.CardActionArea, { onClick: function () { return onClick(contracts.id); }, className: classes.root },
         React.createElement(core_1.Card, { elevation: 0 },
@@ -72,7 +73,9 @@ var CardCleanerContract = function (props) {
                     React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: contracts.endDate }))),
                 React.createElement(core_1.Box, { display: "flex", marginBottom: 0.5 },
                     React.createElement(Typography_1.default, { className: classes.textColor + " " + classes.salaryLabel, variant: "overline", children: "Salary:" }),
-                    React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary }))))));
+                    React.createElement(Typography_1.default, { bodyVariants: "xsMedium", children: "$" + contracts.salary + " / " + contracts.periodSalary })),
+                schedule && (React.createElement(core_1.Box, null,
+                    React.createElement(AccordionScheduleDay_1.default, { sizes: "xs", children: "", schedule: schedule })))))));
 };
 exports.default = CardCleanerContract;
 //# sourceMappingURL=CardCleanerContract.js.map
