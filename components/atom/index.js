@@ -34,4 +34,5 @@ __exportStar(require("./PopperVisitDetail"), exports);
 __exportStar(require("./Popover"), exports);
 __exportStar(require("./NoCountTablePagination"), exports);
 __exportStar(require("./BoxRow"), exports);
+__exportStar(require("./HeadTableSortLabel"), exports);
 //# sourceMappingURL=index.js.map
