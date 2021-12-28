@@ -28,7 +28,6 @@ var React = __importStar(require("react"));
 var Card_1 = require("../atom/Card");
 var Box_1 = __importDefault(require("../base/Box"));
 var Typography_1 = __importDefault(require("../base/Typography"));
-var CardPopover_1 = __importDefault(require("./CardPopover"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         root: {
@@ -62,18 +61,17 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var PayrollCard = function (props) {
-    var id = props.id, year = props.year, month = props.month, amount = props.amount, menuPopover = props.menuPopover;
+    var id = props.id, year = props.year, month = props.month, amount = props.amount, onClick = props.onClick;
     var classes = useStyles();
-    return (React.createElement(Card_1.Card, { "aria-label": "card-payroll-" + id, classes: { root: classes.root } },
-        React.createElement(Card_1.CardContent, { classes: { root: classes.content } },
-            React.createElement(Box_1.default, { display: "flex" },
-                React.createElement(Typography_1.default, { className: classes.spacingRight, variant: "subtitle2" }, month),
-                React.createElement(Typography_1.default, { variant: "subtitle2" }, year)),
-            React.createElement(Typography_1.default, { classes: { root: classes.typography }, variant: "h3" },
-                "$",
-                amount)),
-        React.createElement(Box_1.default, { display: "flex", justifyContent: "flex-end" },
-            React.createElement(CardPopover_1.default, { direction: "row", data: menuPopover }))));
+    return (React.createElement(Card_1.CardActionArea, { onClick: onClick },
+        React.createElement(Card_1.Card, { "aria-label": "card-payroll-" + id, classes: { root: classes.root } },
+            React.createElement(Card_1.CardContent, { classes: { root: classes.content } },
+                React.createElement(Box_1.default, { display: "flex" },
+                    React.createElement(Typography_1.default, { className: classes.spacingRight, variant: "subtitle2" }, month),
+                    React.createElement(Typography_1.default, { variant: "subtitle2" }, year)),
+                React.createElement(Typography_1.default, { classes: { root: classes.typography }, variant: "h3" },
+                    "$",
+                    amount)))));
 };
 exports.default = PayrollCard;
 //# sourceMappingURL=PayrollCard.js.map
