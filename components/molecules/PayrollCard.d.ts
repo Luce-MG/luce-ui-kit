@@ -4,10 +4,7 @@ export declare type PayrollCardProps = {
     month: string;
     year: string;
     amount: number;
-    menuPopover: {
-        label: string;
-        onPress(): void;
-    }[];
+    onClick(): void;
 };
 declare const PayrollCard: React.FC<PayrollCardProps>;
 export default PayrollCard;
