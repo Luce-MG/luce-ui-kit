@@ -47,6 +47,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var BoxRow_1 = __importDefault(require("../atom/BoxRow"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var getPackageTag = function (status) {
     var color = {
@@ -72,25 +73,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
         },
         divider: {
             color: '#ECECEC',
-            margin: '9px 0 16px 0'
+            margin: '8px 0 8px 0'
         },
         packageID: {
             padding: '0 4px 0 16px'
-        },
-        tableHeader: {
-            padding: '0 0 8px 0'
-        },
-        jobCol: {
-            padding: '0 0 8px 19px',
-            width: 63
-        },
-        jobNoCol: {
-            padding: '0 0 8px 26px',
-            width: 63
-        },
-        assignCol: {
-            padding: 0,
-            width: 218
         },
         scheduleTags: {
             '& .MuiChip-label': {
@@ -102,8 +88,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
             height: 18,
             width: 24,
             borderRadius: '2px',
-            textAlign: 'center',
-            marginRight: 5
+            textAlign: 'center'
         },
         packageTags: function (props) { return (__assign({ '& .MuiChip-label': {
                 padding: 0
@@ -113,11 +98,26 @@ var useStyles = styles_1.makeStyles(function (theme) {
             cursor: 'pointer',
             margin: '0 16px 0 0',
             textAlign: 'right'
+        },
+        jobId: {
+            width: 53,
+            marginRight: theme.spacing(2)
+        },
+        assignedColumn: {
+            width: 150,
+            marginRight: theme.spacing(2)
+        },
+        jobSchedule: {
+            width: 190,
+            marginRight: theme.spacing(2)
+        },
+        dateSchedule: {
+            width: 190
         }
     });
 });
 var ClientPackageCards = function (props) {
-    var data = props.data, id = props.id, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, rest = __rest(props, ["data", "id", "status", "invisible", "onViewDetailsClick", "children"]);
+    var data = props.data, id = props.id, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, rest = __rest(props, ["data", "id", "status", "invisible", "onViewDetailsClick", "children", "address"]);
     var classes = useStyles(props);
     return (React.createElement(core_1.Card, __assign({ className: classes.card }, rest),
         React.createElement(core_1.CardContent, { className: classes.cardBody },
@@ -130,17 +130,26 @@ var ClientPackageCards = function (props) {
                     React.createElement(core_1.Link, { underline: "always", onClick: onViewDetailsClick },
                         React.createElement(Typography_1.default, { className: classes.linkStyle, variant: "overline" }, "View Details")))),
             React.createElement(core_1.Divider, { className: classes.divider }),
-            React.createElement(core_1.Box, { display: "flex", className: classes.tableHeader },
-                React.createElement(Typography_1.default, { className: classes.jobCol, bodyVariants: "xsMedium" }, "Job"),
-                React.createElement(Typography_1.default, { className: classes.assignCol, bodyVariants: "xsMedium" }, "Assigned to"),
-                React.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, "Job Schedule")),
-            data.map(function (card, index) { return (React.createElement(core_1.Box, { key: index, display: "flex" },
-                React.createElement(core_1.Box, { className: classes.jobNoCol },
-                    React.createElement(Typography_1.default, { variant: "overline" }, index + 1)),
-                React.createElement(core_1.Box, { className: classes.assignCol },
-                    React.createElement(Typography_1.default, { variant: "overline" }, card.assigned)),
-                React.createElement(core_1.Box, { display: "flex", justifyContent: "space-btween" }, card.schedule.map(function (sessionDay, index) { return (React.createElement(core_1.Box, { key: index },
-                    React.createElement(core_1.Chip, { label: sessionDay, className: classes.scheduleTags }))); })))); }))));
+            React.createElement(core_1.Box, { px: 2, py: 1 },
+                React.createElement(BoxRow_1.default, { direction: "column", gap: 1 },
+                    React.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, "Service Address"),
+                    React.createElement(Typography_1.default, { variant: "overline" }, address)),
+                React.createElement(core_1.Box, { mt: 2 },
+                    React.createElement(BoxRow_1.default, null,
+                        React.createElement(Typography_1.default, { className: classes.jobId, bodyVariants: "xsMedium" }, "Job"),
+                        React.createElement(Typography_1.default, { className: classes.assignedColumn, bodyVariants: "xsMedium" }, "Assigned to"),
+                        React.createElement(Typography_1.default, { className: classes.jobSchedule, bodyVariants: "xsMedium" }, "Job Schedule"),
+                        React.createElement(Typography_1.default, { className: classes.dateSchedule, bodyVariants: "xsMedium" }, "Schedule Date")),
+                    data.map(function (card, index) { return (React.createElement(core_1.Box, { mt: 1, key: index, display: "flex" },
+                        React.createElement(core_1.Box, { className: classes.jobId },
+                            React.createElement(Typography_1.default, { variant: "overline" }, index + 1)),
+                        React.createElement(core_1.Box, { className: classes.assignedColumn },
+                            React.createElement(Typography_1.default, { variant: "overline" }, card.assigned)),
+                        React.createElement(BoxRow_1.default, { className: classes.jobSchedule, gridGap: 4, flexWrap: "wrap", display: "flex", justifyContent: "space-btween" }, card.schedule.map(function (sessionDay, index) { return (React.createElement(core_1.Chip, { key: index, label: sessionDay, className: classes.scheduleTags })); })),
+                        React.createElement(core_1.Box, { className: classes.dateSchedule, display: "flex", gridGap: 4, alignItems: "flex-start" },
+                            React.createElement(Typography_1.default, { variant: "overline" }, card.startDate),
+                            React.createElement(Typography_1.default, { variant: "overline" }, " - "),
+                            React.createElement(Typography_1.default, { variant: "overline" }, card.endDate)))); }))))));
 };
 exports.default = ClientPackageCards;
 //# sourceMappingURL=ClientPackageCard.js.map
