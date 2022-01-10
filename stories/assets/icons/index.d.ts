@@ -97,3 +97,4 @@ export { default as VisibilityIcon } from './VisibilityIcon';
 export { default as VisibilityOffIcon } from './VisibilityOffIcon';
 export { default as WalletIcon } from './WalletIcon';
 export { default as WarningIcon } from './WarningIcon';
+export { default as CopyClipboardIcon } from './CopyClipboardIcon';
