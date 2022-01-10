@@ -19,26 +19,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCount = void 0;
 var React = __importStar(require("react"));
 var Table_1 = require("./Table");
-function getCount(count, rowsPerPage) {
-    if (count % rowsPerPage) {
-        return count;
-    }
-    return count + 1;
-}
-exports.getCount = getCount;
 var NoCountTablePagination = function (props) {
-    var rowsPerPageOptions = props.rowsPerPageOptions, rowsPerPage = props.rowsPerPage, onChangeProps = props.onChange, onChangeRowsPerPageProps = props.onChangeRowsPerPage, count = props.count;
-    var _a = React.useState(0), page = _a[0], setPage = _a[1];
+    var rowsPerPageOptions = props.rowsPerPageOptions, rowsPerPage = props.rowsPerPage, onChangeProps = props.onChange, onChangeRowsPerPageProps = props.onChangeRowsPerPage, count = props.count, page = props.page;
     var onChangePage = function (event, newPage) {
-        setPage(newPage);
         onChangeProps(newPage);
     };
     var onChangeRowsPerPage = function (event) {
         var rows = parseInt(event.target.value, 10);
-        setPage(0);
         if (onChangeRowsPerPageProps) {
             onChangeRowsPerPageProps(rows);
         }
@@ -50,7 +39,7 @@ var NoCountTablePagination = function (props) {
         }
         return from + "-" + to + " of " + (count - 1);
     }
-    return (React.createElement(Table_1.TablePagination, { count: getCount(count, rowsPerPage), page: page, rowsPerPage: rowsPerPage, onChangePage: onChangePage, onChangeRowsPerPage: onChangeRowsPerPage, rowsPerPageOptions: rowsPerPageOptions, labelDisplayedRows: labelDisplayedRows }));
+    return (React.createElement(Table_1.TablePagination, { count: count, page: page, rowsPerPage: rowsPerPage, onChangePage: onChangePage, onChangeRowsPerPage: onChangeRowsPerPage, rowsPerPageOptions: rowsPerPageOptions, labelDisplayedRows: labelDisplayedRows }));
 };
 NoCountTablePagination.defaultProps = {
     rowsPerPageOptions: [5, 10, 25]
