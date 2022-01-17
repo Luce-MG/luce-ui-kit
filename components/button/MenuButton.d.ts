@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { IconName } from '../icons/Icons';
 export interface MenuButton {
     icon?: IconName;
