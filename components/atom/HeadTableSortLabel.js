@@ -63,7 +63,7 @@ var HeadTableSortLabel = function (props) {
     return (react_1.default.createElement(Table_1.TableRow, { className: classes.headRow },
         isCheckboxShow && (react_1.default.createElement(Table_1.TableCell, null,
             react_1.default.createElement(Checkbox_1.default, { onClick: onSelectAllList, checked: selectAllList }))),
-        headCells.map(function (headCell) { return (react_1.default.createElement(Table_1.TableCell, { key: headCell.id, sortDirection: orderBy === headCell.valueName ? order : false }, headCell.isNotSortAble ? (headCell.label) : (react_1.default.createElement(Table_1.TableSortLabel, { active: orderBy === headCell.valueName, direction: orderBy === headCell.valueName ? order : 'asc', onClick: createSortHandler(headCell.valueName) }, headCell.label)))); })));
+        headCells.map(function (headCell, index) { return (react_1.default.createElement(Table_1.TableCell, { key: index, sortDirection: orderBy === headCell.valueName ? order : false }, headCell.isNotSortAble ? (headCell.label) : (react_1.default.createElement(Table_1.TableSortLabel, { active: orderBy === headCell.valueName, direction: orderBy === headCell.valueName ? order : 'asc', onClick: createSortHandler(headCell.valueName) }, headCell.label)))); })));
 };
 exports.default = HeadTableSortLabel;
 //# sourceMappingURL=HeadTableSortLabel.js.map
