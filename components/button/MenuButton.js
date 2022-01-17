@@ -93,7 +93,14 @@ var useStyles = styles_1.makeStyles(function (theme) {
             }
         },
         linkSubMenu: {
-            color: theme.palette.primary.main,
+            color: theme.palette.common.black,
+            textDecoration: 'none',
+            '&:hover': {
+                textDecoration: 'none'
+            }
+        },
+        linkColorInfo: {
+            color: theme.palette.info.main,
             textDecoration: 'none',
             '&:hover': {
                 textDecoration: 'none'
@@ -139,7 +146,7 @@ var MenuButton = function (props) {
                 react_1.default.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon : 'ArrowRightIcon' })),
             react_1.default.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menus ? menu.label : 'Menu' })))));
     };
-    return (react_1.default.createElement(react_1.default.Fragment, null, menus.map(function (menu, index) {
+    return (react_1.default.createElement(core_1.Box, null, menus.map(function (menu, index) {
         return (react_1.default.createElement(core_1.Box, { key: "menu-button-" + index },
             react_1.default.createElement(ListItem_1.default, { onClick: function (event) {
                     if (menu.isExpand) {
@@ -159,7 +166,9 @@ var MenuButton = function (props) {
                             }
                             handleClickLink(event, menuSub.url, menu.isExpand, index);
                         }, classes: { root: classes.collapseItem } },
-                        react_1.default.createElement(core_1.Link, { className: classes.linkSubMenu, href: "/" + menuSub.url },
+                        react_1.default.createElement(core_1.Link, { className: activeRoute === menuSub.url
+                                ? classes.linkColorInfo
+                                : classes.linkSubMenu, href: "/" + menuSub.url },
                             react_1.default.createElement(ListItemText_1.default, { primary: menu.subMenu ? menuSub.label : 'Sub Menu' }))));
                 })))));
     })));
