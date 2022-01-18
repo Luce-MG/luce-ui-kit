@@ -62,11 +62,6 @@ var getPackageTag = function (status) {
 };
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
-        card: {
-            '& .MuiCardContent-root:last-child': {
-                paddingBottom: '8px'
-            }
-        },
         cardBody: {
             width: 603,
             padding: '9px 0 8px 0'
@@ -85,10 +80,11 @@ var useStyles = styles_1.makeStyles(function (theme) {
             color: theme.palette.common.white,
             fontSize: '0.5rem',
             background: '#52798F',
-            height: 18,
-            width: 24,
+            height: 24,
+            width: 'fit-content',
             borderRadius: '2px',
-            textAlign: 'center'
+            textAlign: 'center',
+            padding: '0px 8px'
         },
         packageTags: function (props) { return (__assign({ '& .MuiChip-label': {
                 padding: 0
@@ -100,26 +96,26 @@ var useStyles = styles_1.makeStyles(function (theme) {
             textAlign: 'right'
         },
         jobId: {
-            width: 53,
+            width: '5%',
             marginRight: theme.spacing(2)
         },
         assignedColumn: {
-            width: 150,
+            width: '20%',
             marginRight: theme.spacing(2)
         },
         jobSchedule: {
-            width: 190,
+            width: '50%',
             marginRight: theme.spacing(2)
         },
         dateSchedule: {
-            width: 190
+            width: '25%'
         }
     });
 });
 var ClientPackageCards = function (props) {
     var data = props.data, id = props.id, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, rest = __rest(props, ["data", "id", "status", "invisible", "onViewDetailsClick", "children", "address"]);
     var classes = useStyles(props);
-    return (React.createElement(core_1.Card, __assign({ className: classes.card }, rest),
+    return (React.createElement(core_1.Card, __assign({}, rest),
         React.createElement(core_1.CardContent, { className: classes.cardBody },
             React.createElement(core_1.Box, { display: "flex", justifyContent: "space-between" },
                 React.createElement(core_1.Box, null,
