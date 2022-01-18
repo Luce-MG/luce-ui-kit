@@ -1,16 +1,15 @@
 import React from 'react';
 export interface HeadTableCell {
-    id: string;
-    valueName: keyof any;
+    valueName: string;
     label: string;
-    isNotSortAble: boolean;
+    isNotSortAble?: boolean;
 }
 export declare type Order = 'asc' | 'desc';
 export declare type HeadTableSortLabelProps = {
     headCells: HeadTableCell[];
     order: Order;
     orderBy: string;
-    onRequestSort: (property: keyof any) => void;
+    onRequestSort: (property: string) => void;
     isCheckboxShow?: boolean;
     onSelectAllList?(): void;
     selectAllList?: boolean;
