@@ -132,11 +132,10 @@ var ListItem = function (_a) {
             menu.subMenu &&
                 (isOpen ? (react_1.default.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (react_1.default.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" })))),
         menu.subMenu && (react_1.default.createElement(Collapse_1.default, { in: isOpen, className: classes.collpase }, menu.subMenu.map(function (menuSub, indexSub) {
-            return (react_1.default.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, classes: { root: classes.collapseItem } },
-                react_1.default.createElement(core_1.Link, { className: activeRoute === menuSub.url
-                        ? classes.linkColorInfo
-                        : classes.linkSubMenu, href: "/" + menuSub.url },
-                    react_1.default.createElement(ListItemText_1.default, { primary: menuSub.label }))));
+            return (react_1.default.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, component: core_1.Link, classes: { root: classes.collapseItem }, className: activeRoute === menuSub.url
+                    ? classes.linkColorInfo
+                    : classes.linkSubMenu, href: "/" + menuSub.url },
+                react_1.default.createElement(ListItemText_1.default, { primary: menuSub.label })));
         })))));
 };
 var MenuButton = function (props) {
