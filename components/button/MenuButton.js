@@ -114,6 +114,11 @@ var ListItem = function (_a) {
     var classes = useStyles();
     var _c = react_1.useState(false), isOpen = _c[0], setOpen = _c[1];
     var subMenuActive = react_1.useMemo(function () { return menu.subMenu && menu.subMenu.find(function (menu) { return menu.url === activeRoute; }); }, [activeRoute]);
+    react_1.useEffect(function () {
+        if (!!subMenuActive && !isOpen) {
+            setOpen(true);
+        }
+    }, [!!subMenuActive]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(ListItem_1.default, { button: true, disableRipple: true, component: menu.subMenu ? 'li' : core_1.Link, onClick: function () {
                 if (menu.subMenu) {
@@ -125,8 +130,8 @@ var ListItem = function (_a) {
                 react_1.default.createElement(Icons_1.default, { size: "medium", iconName: (_b = menu.icon) !== null && _b !== void 0 ? _b : 'MenuIcon' })),
             react_1.default.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menu.label }),
             menu.subMenu &&
-                (activeRoute === menu.url || subMenuActive ? (react_1.default.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (react_1.default.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" })))),
-        menu.subMenu && (react_1.default.createElement(Collapse_1.default, { in: !!subMenuActive || isOpen, className: classes.collpase }, menu.subMenu.map(function (menuSub, indexSub) {
+                (isOpen ? (react_1.default.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (react_1.default.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" })))),
+        menu.subMenu && (react_1.default.createElement(Collapse_1.default, { in: isOpen, className: classes.collpase }, menu.subMenu.map(function (menuSub, indexSub) {
             return (react_1.default.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, classes: { root: classes.collapseItem } },
                 react_1.default.createElement(core_1.Link, { className: activeRoute === menuSub.url
                         ? classes.linkColorInfo
