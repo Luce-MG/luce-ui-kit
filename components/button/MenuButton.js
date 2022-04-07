@@ -105,73 +105,38 @@ var useStyles = styles_1.makeStyles(function (theme) {
             '&:hover': {
                 textDecoration: 'none'
             }
-        },
-        linkStyle: {
-            color: theme.palette.common.black,
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            '&:hover': {
-                textDecoration: 'none'
-            }
         }
     });
 });
-var MenuButton = function (props) {
-    var menus = props.menus, _a = props.onClick, onClick = _a === void 0 ? function () { } : _a, _b = props.urlOnClick, urlOnClick = _b === void 0 ? function () { } : _b, activeRoute = props.activeRoute;
+var ListItem = function (_a) {
+    var _b;
+    var menu = _a.menu, activeRoute = _a.activeRoute;
     var classes = useStyles();
-    var _c = react_1.useState(0), menuIndex = _c[0], setMenuIndex = _c[1];
-    var _d = react_1.useState(false), open = _d[0], setOpen = _d[1];
-    react_1.useEffect(function () {
-        if (activeRoute === 'daily' || activeRoute === 'weekly') {
-            setOpen(true);
-        }
-        else {
-            setOpen(false);
-        }
-    }, [activeRoute]);
-    var handleClickLink = function (event, url, expand, index) {
-        onClick(event, index !== null && index !== void 0 ? index : 0),
-            setMenuIndex(index !== null && index !== void 0 ? index : 0),
-            urlOnClick(event, url, expand);
-    };
-    var MenuItemList = function (menu, index) {
-        return (react_1.default.createElement(react_1.default.Fragment, null, menu.isExpand ? (react_1.default.createElement(react_1.default.Fragment, null,
+    var _c = react_1.useState(false), isOpen = _c[0], setOpen = _c[1];
+    var subMenuActive = react_1.useMemo(function () { return menu.subMenu && menu.subMenu.find(function (menu) { return menu.url === activeRoute; }); }, [activeRoute]);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(ListItem_1.default, { button: true, disableRipple: true, component: menu.subMenu ? 'li' : core_1.Link, onClick: function () {
+                if (menu.subMenu) {
+                    setOpen(!isOpen);
+                }
+            }, href: menu.url ? "/" + menu.url : undefined, classes: { root: classes.root, selected: classes.itemSelected } },
+            (activeRoute === menu.url || !!subMenuActive) && (react_1.default.createElement(core_1.Box, { className: classes.lineSelected })),
             react_1.default.createElement(ListItemIcon_1.default, { classes: { root: classes.iconStyle } },
-                react_1.default.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon : 'ArrowRightIcon' })),
-            react_1.default.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menus ? menu.label : 'Menu' }),
-            menu.isExpand &&
-                (open && menuIndex === index ? (react_1.default.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (react_1.default.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" }))))) : (react_1.default.createElement(core_1.Link, { className: classes.linkStyle, href: "/" + menu.url },
-            react_1.default.createElement(ListItemIcon_1.default, { classes: { root: classes.iconStyle } },
-                react_1.default.createElement(Icons_1.default, { size: "medium", iconName: menus && menu.icon ? menu.icon : 'ArrowRightIcon' })),
-            react_1.default.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menus ? menu.label : 'Menu' })))));
-    };
-    return (react_1.default.createElement(core_1.Box, null, menus.map(function (menu, index) {
-        return (react_1.default.createElement(core_1.Box, { key: "menu-button-" + index },
-            react_1.default.createElement(ListItem_1.default, { onClick: function (event) {
-                    if (menu.isExpand) {
-                        setOpen(!open);
-                    }
-                    handleClickLink(event, menu.url, menu.isExpand, index);
-                }, selected: menuIndex === index, button: true, disableRipple: true, classes: { root: classes.root, selected: classes.itemSelected } },
-                react_1.default.createElement(core_1.Box, { className: (activeRoute === menu.url && !open) || (open && menu.isExpand)
-                        ? classes.lineSelected
-                        : '' }),
-                MenuItemList(menu, index)),
-            menu.isExpand && menuIndex === index && (react_1.default.createElement(Collapse_1.default, { in: open, className: classes.collpase }, menu.subMenu &&
-                menu.subMenu.map(function (menuSub, indexSub) {
-                    return (react_1.default.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, onClick: function (event) {
-                            if (menu.isExpand) {
-                                setOpen(open);
-                            }
-                            handleClickLink(event, menuSub.url, menu.isExpand, index);
-                        }, classes: { root: classes.collapseItem } },
-                        react_1.default.createElement(core_1.Link, { className: activeRoute === menuSub.url
-                                ? classes.linkColorInfo
-                                : classes.linkSubMenu, href: "/" + menuSub.url },
-                            react_1.default.createElement(ListItemText_1.default, { primary: menu.subMenu ? menuSub.label : 'Sub Menu' }))));
-                })))));
-    })));
+                react_1.default.createElement(Icons_1.default, { size: "medium", iconName: (_b = menu.icon) !== null && _b !== void 0 ? _b : 'MenuIcon' })),
+            react_1.default.createElement(ListItemText_1.default, { classes: { primary: classes.listTextPrimary }, primary: menu.label }),
+            menu.subMenu &&
+                (activeRoute === menu.url || subMenuActive ? (react_1.default.createElement(Icons_1.default, { iconName: "ArrowBottomIcon", size: "small" })) : (react_1.default.createElement(Icons_1.default, { iconName: "ArrowLeftIcon", size: "small" })))),
+        menu.subMenu && (react_1.default.createElement(Collapse_1.default, { in: !!subMenuActive || isOpen, className: classes.collpase }, menu.subMenu.map(function (menuSub, indexSub) {
+            return (react_1.default.createElement(ListItem_1.default, { key: "sub-menu-" + indexSub, button: true, classes: { root: classes.collapseItem } },
+                react_1.default.createElement(core_1.Link, { className: activeRoute === menuSub.url
+                        ? classes.linkColorInfo
+                        : classes.linkSubMenu, href: "/" + menuSub.url },
+                    react_1.default.createElement(ListItemText_1.default, { primary: menuSub.label }))));
+        })))));
+};
+var MenuButton = function (props) {
+    var menus = props.menus, activeRoute = props.activeRoute;
+    return (react_1.default.createElement(core_1.List, null, menus.map(function (menu, index) { return (react_1.default.createElement(ListItem, { key: index, menu: menu, activeRoute: activeRoute !== null && activeRoute !== void 0 ? activeRoute : '' })); })));
 };
 exports.default = MenuButton;
 //# sourceMappingURL=MenuButton.js.map
