@@ -89,9 +89,9 @@ var SideNav = function (props) {
     return (React.createElement(core_1.Box, null,
         children,
         React.createElement(Drawer_1.default, __assign({ elevation: 2, classes: { paper: classes.paper }, className: classes.root, open: isOpen, onClose: function () { return toggleClick(isOpen); } }, rest),
-            React.createElement(MenuButton_1.default, { menus: menus, onClick: function () { return onClick; }, urlOnClick: urlOnClick, activeRoute: activeRoute }),
+            React.createElement(MenuButton_1.default, { menus: menus, onClick: onClick, urlOnClick: urlOnClick, activeRoute: activeRoute }),
             React.createElement(core_1.Box, null,
-                React.createElement(core_1.Box, { display: "flex", justifyContent: "center", alignItems: "center", className: classes.logOut, onClick: function () { return logOut(); } },
+                React.createElement(core_1.Box, { display: "flex", justifyContent: "center", alignItems: "center", className: classes.logOut, onClick: logOut },
                     React.createElement(Icons_1.default, { iconName: "LogoutIcon" }),
                     React.createElement(core_1.Box, { ml: 1 },
                         React.createElement(Typography_1.default, { variant: "subtitle1", children: "Logout" })))))));
