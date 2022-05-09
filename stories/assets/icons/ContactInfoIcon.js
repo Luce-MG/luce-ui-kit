@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgContactInfoIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M9.319 12.271L7.512 9l-3.448 1.908s-.655 3.067 2.238 6.714c2.893 3.646 7.576 3.373 7.576 3.373L16 17.724l-3.183-1.84-1.293 1.363s-1.12 0-2.42-1.159c-1.302-1.158-1.31-2.59-1.31-2.59l1.525-1.226zM12 4h9M12 8h9M15 12h6", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgContactInfoIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M9.319 12.271 7.512 9l-3.448 1.908s-.655 3.067 2.238 6.714c2.893 3.646 7.576 3.373 7.576 3.373L16 17.724l-3.183-1.84-1.293 1.363s-1.12 0-2.42-1.159c-1.302-1.158-1.31-2.59-1.31-2.59l1.525-1.226ZM12 4h9M12 8h9M15 12h6", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }))); };
 exports.default = SvgContactInfoIcon;
 //# sourceMappingURL=ContactInfoIcon.js.map

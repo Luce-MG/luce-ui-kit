@@ -31,11 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgWarningIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M9 5v5", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
-        React.createElement("circle", { r: 1, transform: "matrix(-1 0 0 1 9 12)", fill: "currentColor" }),
-        React.createElement("circle", { r: 8, transform: "matrix(1 0 0 -1 9 9)", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgWarningIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M9 5v5", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+    React.createElement("circle", { r: 1, transform: "matrix(-1 0 0 1 9 12)", fill: "currentColor" }),
+    React.createElement("circle", { r: 8, transform: "matrix(1 0 0 -1 9 9)", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }))); };
 exports.default = SvgWarningIcon;
 //# sourceMappingURL=WarningIcon.js.map

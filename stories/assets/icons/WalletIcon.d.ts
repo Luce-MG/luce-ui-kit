@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgWalletIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import { SVGProps } from 'react';
+declare const SvgWalletIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgWalletIcon;

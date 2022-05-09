@@ -31,10 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgPeofileCircleMinusIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M12 15a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z", stroke: "currentColor", strokeWidth: 1.5, strokeMiterlimit: 10 }),
-        React.createElement("path", { d: "M5.981 18.691a6.753 6.753 0 0112.038 0M16.5 5.25H21M20.488 9a8.99 8.99 0 11-7.068-5.889", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgPeofileCircleMinusIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M12 15a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z", stroke: "currentColor", strokeWidth: 1.5, strokeMiterlimit: 10 }),
+    React.createElement("path", { d: "M5.981 18.691a6.753 6.753 0 0 1 12.038 0M16.5 5.25H21", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" }),
+    React.createElement("path", { d: "M20.488 9a8.99 8.99 0 1 1-7.068-5.889", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" }))); };
 exports.default = SvgPeofileCircleMinusIcon;
 //# sourceMappingURL=PeofileCircleMinusIcon.js.map

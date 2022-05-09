@@ -31,10 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgPeopleIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M8.25 15a4.875 4.875 0 100-9.75 4.875 4.875 0 000 9.75z", stroke: "currentColor", strokeWidth: 1.5, strokeMiterlimit: 10 }),
-        React.createElement("path", { d: "M14.57 5.433A4.876 4.876 0 1115.893 15M1.5 18.506a8.252 8.252 0 0113.5 0M15.893 15a8.239 8.239 0 016.75 3.505", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgPeopleIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M8.25 15a4.875 4.875 0 1 0 0-9.75 4.875 4.875 0 0 0 0 9.75Z", stroke: "currentColor", strokeWidth: 1.5, strokeMiterlimit: 10 }),
+    React.createElement("path", { d: "M14.57 5.433A4.876 4.876 0 1 1 15.893 15M1.5 18.506a8.252 8.252 0 0 1 13.5 0", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" }),
+    React.createElement("path", { d: "M15.893 15a8.239 8.239 0 0 1 6.75 3.505", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" }))); };
 exports.default = SvgPeopleIcon;
 //# sourceMappingURL=PeopleIcon.js.map

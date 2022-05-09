@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgAirConIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import { SVGProps } from 'react';
+declare const SvgAirConIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgAirConIcon;
