@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgPhoneIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M8.092 5.362L5.682 1 1.086 3.544s-.873 4.09 2.984 8.952c3.857 4.861 10.102 4.498 10.102 4.498L17 12.632l-4.244-2.454-1.724 1.818s-1.492 0-3.227-1.545C6.07 8.906 6.058 6.998 6.058 6.998l2.034-1.636z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgPhoneIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M8.092 5.362 5.682 1 1.086 3.544s-.873 4.09 2.984 8.952c3.857 4.861 10.102 4.498 10.102 4.498L17 12.632l-4.244-2.454-1.724 1.818s-1.492 0-3.227-1.545C6.07 8.906 6.058 6.998 6.058 6.998l2.034-1.636Z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }))); };
 exports.default = SvgPhoneIcon;
 //# sourceMappingURL=PhoneIcon.js.map

@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgKeyIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M14.81 3.189a4.061 4.061 0 00-6.503 4.688l-6.303 6.302L2 15.996 5.525 16v-1.714h1.714v-1.714h1.715v-1.714l1.168-1.167c1.52.76 3.42.507 4.689-.761a4.059 4.059 0 000-5.741z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgKeyIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M14.81 3.189a4.061 4.061 0 0 0-6.503 4.688l-6.303 6.302L2 15.996 5.525 16v-1.714h1.714v-1.714h1.715v-1.714l1.168-1.167c1.52.76 3.42.507 4.689-.761a4.059 4.059 0 0 0 0-5.741Z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }))); };
 exports.default = SvgKeyIcon;
 //# sourceMappingURL=KeyIcon.js.map

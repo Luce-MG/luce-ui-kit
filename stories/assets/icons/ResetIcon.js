@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgResetIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M4.68 13a5.883 5.883 0 100-8.32L3.043 6.32m0 0H7m-3.958 0V2", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgResetIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M4.68 13a5.883 5.883 0 1 0 0-8.32L3.043 6.32m0 0H7m-3.958 0V2", stroke: "currentColor", strokeWidth: 1.6 }))); };
 exports.default = SvgResetIcon;
 //# sourceMappingURL=ResetIcon.js.map

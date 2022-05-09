@@ -31,11 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCooperationIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M52.657 26.64l-5.407 2.704-7-13.406 5.462-2.73a1.75 1.75 0 012.334.755l5.38 10.302a1.75 1.75 0 01-.769 2.375v0zM8.75 29.11l-5.407-2.704a1.75 1.75 0 01-.768-2.375l5.38-10.303a1.75 1.75 0 012.333-.755l5.462 2.731-7 13.405zM47.25 29.344l-3.5 4.094-8.05 8.05a1.749 1.749 0 01-1.661.46l-12.678-3.17a1.75 1.75 0 01-.654-.319L8.75 29.11", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M43.75 33.438l-9.625-7-2.8 2.1a7 7 0 01-8.4 0l-1.186-.889a1.75 1.75 0 01-.187-2.637l8.56-8.561a1.75 1.75 0 011.238-.513h8.9", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M15.876 15.704l11.226-3.273a1.75 1.75 0 011.211.086l7.562 3.421M24.5 46.563l-6.593-1.648a1.75 1.75 0 01-.724-.377L12.25 40.25", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgCooperationIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "m52.657 26.64-5.407 2.704-7-13.406 5.462-2.73a1.75 1.75 0 0 1 2.334.755l5.38 10.302a1.75 1.75 0 0 1-.769 2.375v0ZM8.75 29.11l-5.407-2.704a1.75 1.75 0 0 1-.768-2.375l5.38-10.303a1.75 1.75 0 0 1 2.333-.755l5.462 2.731-7 13.405ZM47.25 29.344l-3.5 4.094-8.05 8.05a1.749 1.749 0 0 1-1.661.46l-12.678-3.17a1.75 1.75 0 0 1-.654-.319L8.75 29.11", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" }),
+    React.createElement("path", { d: "m43.75 33.438-9.625-7-2.8 2.1a7 7 0 0 1-8.4 0l-1.186-.889a1.75 1.75 0 0 1-.187-2.637l8.56-8.561a1.75 1.75 0 0 1 1.238-.513h8.9", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" }),
+    React.createElement("path", { d: "m15.876 15.704 11.226-3.273a1.75 1.75 0 0 1 1.211.086l7.562 3.421M24.5 46.563l-6.593-1.648a1.75 1.75 0 0 1-.724-.377L12.25 40.25", stroke: "currentColor", strokeWidth: 1.3, strokeLinecap: "round", strokeLinejoin: "round" }))); };
 exports.default = SvgCooperationIcon;
 //# sourceMappingURL=CooperationIcon.js.map

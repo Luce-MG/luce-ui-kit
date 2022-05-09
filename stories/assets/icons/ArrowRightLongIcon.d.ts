@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgArrowRightLongIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import { SVGProps } from 'react';
+declare const SvgArrowRightLongIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgArrowRightLongIcon;

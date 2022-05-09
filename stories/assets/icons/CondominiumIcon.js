@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCondominiumIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M16 2H6L5 14l-4 1v7h15V2zM23 15h-7v7h7v-7zM20 17v2M10 5v2M10 9v2M10 13v2M10 17v2M5 17v2M23 10a2 2 0 11-4 0 2 2 0 014 0zM21 12v3", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgCondominiumIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M16 2H6L5 14l-4 1v7h15V2ZM23 15h-7v7h7v-7ZM20 17v2M10 5v2M10 9v2M10 13v2M10 17v2M5 17v2M23 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM21 12v3", stroke: "currentColor", strokeWidth: 1.6 }))); };
 exports.default = SvgCondominiumIcon;
 //# sourceMappingURL=CondominiumIcon.js.map

@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgLoaderOneIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M12 5a7 7 0 00-7 7v3m7 4a7 7 0 007-7V9M5 15l-3-3m3 3l3-3m11-3l-3 3m3-3l3 3", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgLoaderOneIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M12 5a7 7 0 0 0-7 7v3m7 4a7 7 0 0 0 7-7V9M5 15l-3-3m3 3 3-3m11-3-3 3m3-3 3 3", stroke: "currentColor", strokeWidth: 1.6 }))); };
 exports.default = SvgLoaderOneIcon;
 //# sourceMappingURL=LoaderOneIcon.js.map

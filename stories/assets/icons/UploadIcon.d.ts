@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgUploadIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import { SVGProps } from 'react';
+declare const SvgUploadIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgUploadIcon;

@@ -31,11 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgGuaranteeIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M28 50s18-9 18-22.5V11.75L28 5l-18 6.75V27.5C10 41 28 50 28 50z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M28 29a7 7 0 100-14 7 7 0 000 14z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M24.21 27.89L23 37l5-3 5 3-1.21-9.12", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgGuaranteeIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+    React.createElement("path", { d: "M28 50s18-9 18-22.5V11.75L28 5l-18 6.75V27.5C10 41 28 50 28 50Z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+    React.createElement("path", { d: "M28 29a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+    React.createElement("path", { d: "M24.21 27.89 23 37l5-3 5 3-1.21-9.12", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }))); };
 exports.default = SvgGuaranteeIcon;
 //# sourceMappingURL=GuaranteeIcon.js.map
