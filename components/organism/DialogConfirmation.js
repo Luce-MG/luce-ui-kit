@@ -53,15 +53,20 @@ var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         actionBtn: {
             width: '50%'
+        },
+        dialogSize: {
+            '& .MuiDialog-paperWidthXs': {
+                maxWidth: 396
+            }
         }
     });
 });
 var DialogConfirmation = function (props) {
-    var contentText = props.contentText, cancelLabel = props.cancelLabel, confirmLabel = props.confirmLabel, _a = props.onCancel, onCancel = _a === void 0 ? function () { } : _a, _b = props.onConfirm, onConfirm = _b === void 0 ? function () { } : _b, rest = __rest(props, ["contentText", "cancelLabel", "confirmLabel", "onCancel", "onConfirm"]);
+    var contentText = props.contentText, cancelLabel = props.cancelLabel, confirmLabel = props.confirmLabel, isBtnCancelDisabled = props.isBtnCancelDisabled, isBtnConfirmDisabled = props.isBtnConfirmDisabled, maxWidth = props.maxWidth, dialogStyle = props.dialogStyle, _a = props.onCancel, onCancel = _a === void 0 ? function () { } : _a, _b = props.onConfirm, onConfirm = _b === void 0 ? function () { } : _b, rest = __rest(props, ["contentText", "cancelLabel", "confirmLabel", "isBtnCancelDisabled", "isBtnConfirmDisabled", "maxWidth", "dialogStyle", "onCancel", "onConfirm"]);
     var classes = useStyles();
-    return (React.createElement(Dialog_1.default, __assign({ content: React.createElement(core_1.DialogContentText, { variant: "body2" }, contentText ? contentText : 'Are you sure?'), action: React.createElement(React.Fragment, null,
-            React.createElement(Button_1.default, { onClick: function () { return onCancel(); }, variants: "ghost", children: cancelLabel ? cancelLabel : 'No', className: classes.actionBtn }),
-            React.createElement(Button_1.default, { onClick: function () { return onConfirm(); }, variants: "primary", children: confirmLabel ? confirmLabel : 'Yes', className: classes.actionBtn })) }, rest)));
+    return (React.createElement(Dialog_1.default, __assign({ className: dialogStyle ? dialogStyle : classes.dialogSize, maxWidth: maxWidth ? maxWidth : 'xs', content: React.createElement(core_1.DialogContentText, { variant: "body1" }, contentText ? contentText : 'Are you sure?'), action: React.createElement(React.Fragment, null,
+            React.createElement(Button_1.default, { onClick: function () { return onCancel(); }, variants: "ghost", disabled: isBtnCancelDisabled, children: cancelLabel ? cancelLabel : 'No', className: classes.actionBtn }),
+            React.createElement(Button_1.default, { onClick: function () { return onConfirm(); }, variants: "primary", disabled: isBtnConfirmDisabled, children: confirmLabel ? confirmLabel : 'Yes', className: classes.actionBtn })) }, rest)));
 };
 exports.default = DialogConfirmation;
 //# sourceMappingURL=DialogConfirmation.js.map
