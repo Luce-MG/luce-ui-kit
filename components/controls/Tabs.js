@@ -53,6 +53,9 @@ var useStyles = styles_1.makeStyles(function (theme) {
             '& .MuiTab-root': {
                 minHeight: 48,
                 minWidth: 142
+            },
+            '& .MuiTabs-fixed': {
+                overflow: 'auto !important'
             }
         },
         tabSmall: {
