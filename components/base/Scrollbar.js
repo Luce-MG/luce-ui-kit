@@ -6,11 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scrollBar = void 0;
 var Color_1 = __importDefault(require("./Color"));
 exports.scrollBar = {
-    overflow: 'auto',
+    overflow: 'auto !important',
     transition: '0.3s',
     '&::-webkit-scrollbar': {
         opacity: 0,
-        width: '0.58em'
+        width: '0.58em',
+        height: '8px'
     },
     '&:hover': {
         '&::-webkit-scrollbar': {
