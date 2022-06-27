@@ -37,6 +37,7 @@ var Tab_1 = __importDefault(require("@material-ui/core/Tab"));
 var Tabs_1 = __importDefault(require("@material-ui/core/Tabs"));
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var base_1 = require("../base");
 var tabsStyle = {
     textTransform: 'none',
     fontWeight: 500,
@@ -54,9 +55,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
                 minHeight: 48,
                 minWidth: 142
             },
-            '& .MuiTabs-fixed': {
-                overflow: 'auto !important'
-            }
+            '& .MuiTabs-fixed': __assign({}, base_1.scrollBar)
         },
         tabSmall: {
             '& .MuiTab-root': {

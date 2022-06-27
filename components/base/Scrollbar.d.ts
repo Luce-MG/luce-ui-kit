@@ -4,6 +4,7 @@ export declare const scrollBar: {
     '&::-webkit-scrollbar': {
         opacity: number;
         width: string;
+        height: string;
     };
     '&:hover': {
         '&::-webkit-scrollbar': {
