@@ -83,6 +83,7 @@ export { default as QuoteIcon } from './QuoteIcon';
 export { default as ReceiptIcon } from './ReceiptIcon';
 export { default as ResetIcon } from './ResetIcon';
 export { default as SearchIcon } from './SearchIcon';
+export { default as SecondWhatsappIcon } from './SecondWhatsappIcon';
 export { default as StarIcon } from './StarIcon';
 export { default as StarTwoIcon } from './StarTwoIcon';
 export { default as SuccessIcon } from './SuccessIcon';
