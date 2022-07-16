@@ -71,6 +71,8 @@ export { default as OnetimeIcon } from './OnetimeIcon';
 export { default as OptionsIcon } from './OptionsIcon';
 export { default as PaymentIcon } from './PaymentIcon';
 export { default as PeofileCircleMinusIcon } from './PeofileCircleMinusIcon';
+export { default as PeopleFilterIcon } from './PeopleFilterIcon';
+export { default as PeopleFilterTickIcon } from './PeopleFilterTickIcon';
 export { default as PeopleIcon } from './PeopleIcon';
 export { default as PhoneIcon } from './PhoneIcon';
 export { default as PlansIcon } from './PlansIcon';
