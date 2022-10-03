@@ -17,4 +17,5 @@ exports.default = void 0;
 var Loader_1 = require("./Loader");
 Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Loader_1).default; } });
 __exportStar(require("./Loader"), exports);
+__exportStar(require("./LinearProgress"), exports);
 //# sourceMappingURL=index.js.map
