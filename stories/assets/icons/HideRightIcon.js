@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgHideRightIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M6.556 13 11 9m0 0L6.556 5M11 9H3M14.2 3v12", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgHideRightIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M6.556 13L11 9m0 0L6.556 5M11 9H3M14.2 3v12", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgHideRightIcon;
 //# sourceMappingURL=HideRightIcon.js.map

@@ -31,8 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgBookIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M17 21H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h22a2 2 0 0 1 2 2v5M9 15h8", stroke: "currentColor", strokeWidth: 2 }),
-    React.createElement("path", { d: "m26.559 27.43-2.838-4.402-3.127 2.422-.016-10.977 9.172 6.031-3.74 1.288M16 5V1M23 6l1-4M9 6 8 2M16 25v4M9 24l-1 4", stroke: "currentColor", strokeWidth: 2 }))); };
+function SvgBookIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M17 21H5a2 2 0 01-2-2v-8a2 2 0 012-2h22a2 2 0 012 2v5M9 15h8", stroke: "currentColor", strokeWidth: 2 }),
+        React.createElement("path", { d: "M26.559 27.43l-2.838-4.402-3.127 2.422-.016-10.977 9.172 6.031-3.74 1.288M16 5V1M23 6l1-4M9 6L8 2M16 25v4M9 24l-1 4", stroke: "currentColor", strokeWidth: 2 })));
+}
 exports.default = SvgBookIcon;
 //# sourceMappingURL=BookIcon.js.map

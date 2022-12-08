@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgCloseIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "m6 6 5.94 6L6 18M18 6l-5.94 6L18 18", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgCloseIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M6 6l5.94 6L6 18M18 6l-5.94 6L18 18", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgCloseIcon;
 //# sourceMappingURL=CloseIcon.js.map

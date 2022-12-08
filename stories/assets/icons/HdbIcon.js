@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgHdbIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M15.5 2h-7v20h7V2ZM12 5v2M12 9v2M12 13v2M12 17v2M8.5 5h-7v17h7V5ZM5 8v2M5 11v2M5 14v2M5 17v2M22.5 8h-7v14h7V8ZM19 10v2M19 13.5v2M19 17v2", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgHdbIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M15.5 2h-7v20h7V2zM12 5v2M12 9v2M12 13v2M12 17v2M8.5 5h-7v17h7V5zM5 8v2M5 11v2M5 14v2M5 17v2M22.5 8h-7v14h7V8zM19 10v2M19 13.5v2M19 17v2", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgHdbIcon;
 //# sourceMappingURL=HdbIcon.js.map

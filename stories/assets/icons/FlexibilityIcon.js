@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgFlexibilityIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M7 51h42l-.278-5H7.278L7 51ZM14 10H7L5 46h46l-2-36h-7m-28 0V5m0 5h28m0 0V5", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
-    React.createElement("circle", { cx: 28, cy: 28, r: 10.111, stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M28 21.5V28h4.333", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgFlexibilityIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M7 51h42l-.278-5H7.278L7 51zM14 10H7L5 46h46l-2-36h-7m-28 0V5m0 5h28m0 0V5", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 28, cy: 28, r: 10.111, stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M28 21.5V28h4.333", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgFlexibilityIcon;
 //# sourceMappingURL=FlexibilityIcon.js.map

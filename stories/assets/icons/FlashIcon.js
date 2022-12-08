@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgFlashIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 20", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "m7 17 8-7.875-5-.875L11 3l-8 7.875 5 .875L7 17Z", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgFlashIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 20", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M7 17l8-7.875-5-.875L11 3l-8 7.875 5 .875L7 17z", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgFlashIcon;
 //# sourceMappingURL=FlashIcon.js.map

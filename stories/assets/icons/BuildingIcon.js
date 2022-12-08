@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgBuildingIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M12.636 22H2V2h13v6.667", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M6 5v2M6 9v2M6 13v2M6 17v2M14 16v2M14 12v2", stroke: "#000", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M11 9h10v13H11V9Z", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgBuildingIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M12.636 22H2V2h13v6.667", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M6 5v2M6 9v2M6 13v2M6 17v2M14 16v2M14 12v2", stroke: "#000", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M11 9h10v13H11V9z", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgBuildingIcon;
 //# sourceMappingURL=BuildingIcon.js.map

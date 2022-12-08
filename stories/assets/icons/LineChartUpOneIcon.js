@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgLineChartUpOneIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M15.75 15.75H3a.75.75 0 0 1-.75-.75V2.25h1.5v12h12v1.5ZM6.28 12l-1.03-1.008 3.642-3.567a.739.739 0 0 1 1.03 0l1.67 1.636L14.72 6l1.03 1.008-3.642 3.567a.739.739 0 0 1-1.03 0l-1.67-1.636L6.28 12H6.28Z", fill: "currentColor" }))); };
+function SvgLineChartUpOneIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M15.75 15.75H3a.75.75 0 01-.75-.75V2.25h1.5v12h12v1.5zM6.28 12l-1.03-1.008 3.642-3.567a.739.739 0 011.03 0l1.67 1.636L14.72 6l1.03 1.008-3.642 3.567a.739.739 0 01-1.03 0l-1.67-1.636L6.28 12H6.28z", fill: "currentColor" })));
+}
 exports.default = SvgLineChartUpOneIcon;
 //# sourceMappingURL=LineChartUpOneIcon.js.map
