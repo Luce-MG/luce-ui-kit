@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgPlansIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M18 3H6v18h12V3ZM6 18H2V6h4M18 6h4v12h-4", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgPlansIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M18 3H6v18h12V3zM6 18H2V6h4M18 6h4v12h-4", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgPlansIcon;
 //# sourceMappingURL=PlansIcon.js.map

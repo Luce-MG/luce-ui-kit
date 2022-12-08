@@ -1,7 +1,7 @@
 export { default as AccessInfoIcon } from './AccessInfoIcon';
 export { default as AddIcon } from './AddIcon';
 export { default as AddressIcon } from './AddressIcon';
-export { default as AirConIcon } from './AirConIcon';
+export { default as AirConService } from './AirConService';
 export { default as AlertIcon } from './AlertIcon';
 export { default as AllServicesIcon } from './AllServicesIcon';
 export { default as AmexIcon } from './AmexIcon';
@@ -20,6 +20,7 @@ export { default as CalendarAssignIcon } from './CalendarAssignIcon';
 export { default as CalendarIcon } from './CalendarIcon';
 export { default as CalendarOffIcon } from './CalendarOffIcon';
 export { default as CarpetIcon } from './CarpetIcon';
+export { default as ChecklistSelected } from './ChecklistSelected';
 export { default as CleaningIcon } from './CleaningIcon';
 export { default as ClockIcon } from './ClockIcon';
 export { default as CloseIcon } from './CloseIcon';

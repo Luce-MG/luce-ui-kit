@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgUpDownArrowIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 20", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "m13 14-4 4-4-4M13 6 9 2 5 6", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgUpDownArrowIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 20", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M13 14l-4 4-4-4M13 6L9 2 5 6", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgUpDownArrowIcon;
 //# sourceMappingURL=UpDownArrowIcon.js.map

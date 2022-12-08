@@ -31,10 +31,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgCarpetIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M4.5 4.5v-2m0 2h-2m2 0V12m0-7.5h3m12 0h2m-2 0v-2m0 2V12m0-7.5h-3m3 15v2m0-2h2m-2 0h-2m2 0V12m-15 7.5v2m0-2h-2m2 0V12m0 7.5h2m-2-7.5h-2m17 0h2M10.6 6.4a1.4 1.4 0 1 1 2.8 0v2.851a.85.85 0 0 0 .134.459l1.308 2.043a1 1 0 0 1 .158.54V16a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-3.707a1 1 0 0 1 .158-.54l1.308-2.043a.85.85 0 0 0 .134-.459V6.4Z", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M16 23v.8a.8.8 0 0 0 .79-.931L16 23Zm-8 0-.79-.131A.8.8 0 0 0 8 23.8V23Zm2.194-2.2h3.612v-1.6h-3.612v1.6Zm4.795 1.003.222 1.328 1.578-.262-.221-1.33-1.579.264ZM16 22.2H8v1.6h8v-1.6Zm-7.21.931.22-1.328-1.578-.263-.221 1.329 1.578.262Zm5.016-2.331a1.2 1.2 0 0 1 1.183 1.003l1.579-.263a2.8 2.8 0 0 0-2.762-2.34v1.6Zm-3.612-1.6a2.8 2.8 0 0 0-2.762 2.34l1.579.263a1.2 1.2 0 0 1 1.183-1.003v-1.6Z", fill: "currentColor" }),
-    React.createElement("path", { d: "M12 20v-3", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M12 5V1", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" }))); };
+function SvgCarpetIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M4.5 4.5v-2m0 2h-2m2 0V12m0-7.5h3m12 0h2m-2 0v-2m0 2V12m0-7.5h-3m3 15v2m0-2h2m-2 0h-2m2 0V12m-15 7.5v2m0-2h-2m2 0V12m0 7.5h2m-2-7.5h-2m17 0h2M10.6 6.4A1.4 1.4 0 0112 5v0a1.4 1.4 0 011.4 1.4v2.851a.85.85 0 00.134.459l1.308 2.043a1 1 0 01.158.54V16a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3.707a1 1 0 01.158-.54l1.308-2.043a.85.85 0 00.134-.459V6.4z", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M16 23v.8a.8.8 0 00.79-.931L16 23zm-8 0l-.79-.131A.8.8 0 008 23.8V23zm2.194-2.2h3.612v-1.6h-3.612v1.6zm4.795 1.003l.222 1.328 1.578-.262-.221-1.33-1.579.264zM16 22.2H8v1.6h8v-1.6zm-7.21.931l.22-1.328-1.578-.263-.221 1.329 1.578.262zm5.016-2.331a1.2 1.2 0 011.183 1.003l1.579-.263a2.8 2.8 0 00-2.762-2.34v1.6zm-3.612-1.6a2.8 2.8 0 00-2.762 2.34l1.579.263a1.2 1.2 0 011.183-1.003v-1.6z", fill: "currentColor" }),
+        React.createElement("path", { d: "M12 20v-3", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M12 5V1", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" })));
+}
 exports.default = SvgCarpetIcon;
 //# sourceMappingURL=CarpetIcon.js.map

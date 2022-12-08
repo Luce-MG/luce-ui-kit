@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgDurationIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "M2 12C2 6.477 6.477 2 12 2", stroke: "currentColor", strokeWidth: 1.6, strokeDasharray: "2 2" }),
-    React.createElement("path", { d: "M12 6v6l4 4", stroke: "currentColor", strokeWidth: 1.6 }))); };
+function SvgDurationIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M2 12C2 6.477 6.477 2 12 2", stroke: "currentColor", strokeWidth: 1.6, strokeDasharray: "2 2" }),
+        React.createElement("path", { d: "M12 6v6l4 4", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgDurationIcon;
 //# sourceMappingURL=DurationIcon.js.map

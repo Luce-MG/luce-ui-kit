@@ -31,11 +31,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgInsightsIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("mask", { id: "InsightsIcon_svg__a", fill: "#fff" },
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M23.257 18.014a11 11 0 0 0 .296-11.488C20.515 1.266 13.787-.538 8.526 2.5 3.266 5.538 1.462 12.265 4.5 17.526a11 11 0 0 0 10.096 5.488l3.1 5.369 8.66-5-3.1-5.37Z" })),
-    React.createElement("path", { d: "m23.257 18.014-1.343-.87-.533.822.49.848 1.386-.8Zm-8.66 5 1.385-.8-.49-.848-.977.05.081 1.598Zm3.1 5.369-1.386.8.8 1.385 1.385-.8-.8-1.385Zm8.66-5 .8 1.385 1.385-.8-.8-1.385-1.386.8Zm-4.19-16.057a9.4 9.4 0 0 1-.253 9.818l2.686 1.74a12.6 12.6 0 0 0 .338-13.158l-2.771 1.6Zm-12.84-3.44a9.4 9.4 0 0 1 12.84 3.44l2.771-1.6C21.458-.3 13.753-2.365 7.726 1.114l1.6 2.772Zm-3.441 12.84a9.4 9.4 0 0 1 3.44-12.84l-1.6-2.772C1.7 4.594-.365 12.3 3.114 18.326l2.772-1.6Zm8.629 4.69a9.4 9.4 0 0 1-8.63-4.69l-2.77 1.6a12.6 12.6 0 0 0 11.563 6.286l-.163-3.196Zm4.567 6.167-3.1-5.37-2.771 1.6 3.1 5.37 2.77-1.6Zm6.474-5.586-8.66 5 1.6 2.771 8.66-5-1.6-2.771Zm-3.685-3.183 3.1 5.369 2.771-1.6-3.1-5.37-2.77 1.6Z", fill: "currentColor", mask: "url(#InsightsIcon_svg__a)" }),
-    React.createElement("path", { d: "m15.79 23.48 7.274-4.2 2.6 4.503a4.2 4.2 0 0 1-7.275 4.2l-2.6-4.504Z", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "m16.764 17.374-2.59-9.09-3.22.897.798 2.907", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }))); };
+function SvgInsightsIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("mask", { id: "InsightsIcon_svg__a", fill: "#fff" },
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M23.257 18.014a11 11 0 00.296-11.488C20.515 1.266 13.787-.538 8.526 2.5 3.266 5.538 1.462 12.265 4.5 17.526a11 11 0 0010.096 5.488l3.1 5.369 8.66-5-3.1-5.37z" })),
+        React.createElement("path", { d: "M23.257 18.014l-1.343-.87-.533.822.49.848 1.386-.8zm-8.66 5l1.385-.8-.49-.848-.977.05.081 1.598zm3.1 5.369l-1.386.8.8 1.385 1.385-.8-.8-1.385zm8.66-5l.8 1.385 1.385-.8-.8-1.385-1.386.8zm-4.19-16.057a9.4 9.4 0 01-.253 9.818l2.686 1.74a12.6 12.6 0 00.338-13.158l-2.771 1.6zm-12.84-3.44a9.4 9.4 0 0112.84 3.44l2.771-1.6C21.458-.3 13.753-2.365 7.726 1.114l1.6 2.772zm-3.441 12.84a9.4 9.4 0 013.44-12.84l-1.6-2.772C1.7 4.594-.365 12.3 3.114 18.326l2.772-1.6zm8.629 4.69a9.4 9.4 0 01-8.63-4.69l-2.77 1.6a12.6 12.6 0 0011.563 6.286l-.163-3.196zm4.567 6.167l-3.1-5.37-2.771 1.6 3.1 5.37 2.77-1.6zm6.474-5.586l-8.66 5 1.6 2.771 8.66-5-1.6-2.771zm-3.685-3.183l3.1 5.369 2.771-1.6-3.1-5.37-2.77 1.6z", fill: "currentColor", mask: "url(#InsightsIcon_svg__a)" }),
+        React.createElement("path", { d: "M15.79 23.48l7.274-4.2 2.6 4.503a4.2 4.2 0 01-7.275 4.2l-2.6-4.504z", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M16.764 17.374l-2.59-9.09-3.22.897.798 2.907", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
+}
 exports.default = SvgInsightsIcon;
 //# sourceMappingURL=InsightsIcon.js.map

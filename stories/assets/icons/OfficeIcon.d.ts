@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgOfficeIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgOfficeIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgOfficeIcon;

@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgWhatsappIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgWhatsappIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgWhatsappIcon;

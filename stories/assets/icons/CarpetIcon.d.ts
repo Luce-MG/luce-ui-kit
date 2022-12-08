@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgCarpetIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgCarpetIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgCarpetIcon;

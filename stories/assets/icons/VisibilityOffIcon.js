@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgVisibilityOffIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "m25.144 15.913 2.851 4.939M19.273 18.658l.889 5.043M12.716 18.655l-.89 5.044M6.851 15.91 3.986 20.87M4 13.11C6.1 15.71 9.954 19 16 19s9.898-3.29 12-5.89", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }))); };
+function SvgVisibilityOffIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M25.144 15.913l2.851 4.939M19.273 18.658l.889 5.043M12.716 18.655l-.89 5.044M6.851 15.91L3.986 20.87M4 13.11C6.1 15.71 9.954 19 16 19s9.898-3.29 12-5.89", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
+}
 exports.default = SvgVisibilityOffIcon;
 //# sourceMappingURL=VisibilityOffIcon.js.map

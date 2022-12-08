@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgInvoiceIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgInvoiceIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgInvoiceIcon;

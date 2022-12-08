@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgAddressIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M19 9.857C19 15.36 12 21 12 21S5 15.358 5 9.857C5 6.07 8.134 3 12 3s7 3.07 7 6.857Z", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("circle", { cx: 12, cy: 10, r: 2, stroke: "currentColor", strokeWidth: 2 }),
-    React.createElement("path", { d: "M3 21h4M17 21h4", stroke: "currentColor", strokeWidth: 2 }))); };
+function SvgAddressIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M19 9.857C19 15.36 12 21 12 21S5 15.358 5 9.857C5 6.07 8.134 3 12 3s7 3.07 7 6.857z", stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("circle", { cx: 12, cy: 10, r: 2, stroke: "currentColor", strokeWidth: 2 }),
+        React.createElement("path", { d: "M3 21h4M17 21h4", stroke: "currentColor", strokeWidth: 2 })));
+}
 exports.default = SvgAddressIcon;
 //# sourceMappingURL=AddressIcon.js.map

@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgUpDownArrowIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgUpDownArrowIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgUpDownArrowIcon;

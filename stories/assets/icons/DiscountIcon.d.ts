@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgDiscountIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgDiscountIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgDiscountIcon;

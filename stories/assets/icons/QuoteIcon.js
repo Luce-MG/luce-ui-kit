@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgQuoteIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { d: "M10.191 7.947 4.396 6.394a1 1 0 0 0-1.225.707l-1.553 5.796a1 1 0 0 0 .707 1.224l3.571.957a1 1 0 0 1 .493.306l2.18 2.48.518-1.93 1.811-6.762a1 1 0 0 0-.707-1.225ZM22.191 7.947l-5.795-1.553a1 1 0 0 0-1.225.707l-1.553 5.796a1 1 0 0 0 .707 1.224l3.571.957a1 1 0 0 1 .493.306l2.18 2.48.518-1.93 1.811-6.762a1 1 0 0 0-.707-1.225Z", fill: "currentColor" }))); };
+function SvgQuoteIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M10.191 7.947L4.396 6.394a1 1 0 00-1.225.707l-1.553 5.796a1 1 0 00.707 1.224l3.571.957a1 1 0 01.493.306l2.18 2.48.518-1.93 1.811-6.762a1 1 0 00-.707-1.225zM22.191 7.947l-5.795-1.553a1 1 0 00-1.225.707l-1.553 5.796a1 1 0 00.707 1.224l3.571.957a1 1 0 01.493.306l2.18 2.48.518-1.93 1.811-6.762a1 1 0 00-.707-1.225z", fill: "currentColor" })));
+}
 exports.default = SvgQuoteIcon;
 //# sourceMappingURL=QuoteIcon.js.map
