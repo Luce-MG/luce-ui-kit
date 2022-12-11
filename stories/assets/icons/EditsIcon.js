@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgEditsIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M2 16.043h14" }),
-    React.createElement("path", { d: "m6 10.626 7-7M14.736 1.94l-1.2 1.202", stroke: "currentColor", strokeWidth: 2 }),
-    React.createElement("path", { d: "m3.607 12.957 1.122-2.446 1.324 1.325-2.446 1.121Z", fill: "currentColor" }))); };
+function SvgEditsIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M2 16.043h14" }),
+        React.createElement("path", { d: "M6 10.626l7-7M14.736 1.94l-1.2 1.202", stroke: "currentColor", strokeWidth: 2 }),
+        React.createElement("path", { d: "M3.607 12.957l1.122-2.446 1.324 1.325-2.446 1.121z", fill: "currentColor" })));
+}
 exports.default = SvgEditsIcon;
 //# sourceMappingURL=EditsIcon.js.map

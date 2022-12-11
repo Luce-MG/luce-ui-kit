@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgLogoutIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgLogoutIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgLogoutIcon;

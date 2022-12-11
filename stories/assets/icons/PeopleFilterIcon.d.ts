@@ -1,3 +1,3 @@
-import { SVGProps } from 'react';
-declare const SvgPeopleFilterIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgPeopleFilterIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgPeopleFilterIcon;

@@ -25,8 +25,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var styles_1 = require("@material-ui/core/styles");
 var colorManipulator_1 = require("@material-ui/core/styles/colorManipulator");
 var React = __importStar(require("react"));
-var Card_1 = require("../atom/Card");
 var Box_1 = __importDefault(require("../base/Box"));
+var Card_1 = require("../base/Card");
 var Typography_1 = __importDefault(require("../base/Typography"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
