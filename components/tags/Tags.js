@@ -115,7 +115,22 @@ var useStyles = styles_1.makeStyles(function (theme) {
         paid: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondTint, color: theme.palette.success.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         unpaid: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdTint, color: Color_1.default.base.thirdBase }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         stripeProcessing: function (props) { return (__assign(__assign({ background: theme.palette.grey[300], color: theme.palette.grey[700] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        underpaid: function (props) { return (__assign(__assign({ background: Color_1.default.primary[300], color: Color_1.default.primary[700] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); }
+        underpaid: function (props) { return (__assign(__assign({ background: Color_1.default.primary[300], color: Color_1.default.primary[700] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        autocomplete: function (props) { return ({
+            background: theme.palette.grey[500],
+            color: theme.palette.common.black,
+            '& .MuiChip-label': {
+                padding: 0
+            },
+            '& .MuiChip-deleteIcon': {
+                width: 16,
+                height: 16,
+                marginRight: 0,
+                marginLeft: 4
+            },
+            padding: '4px 8px',
+            borderRadius: '4px'
+        }); }
     });
 });
 var TagsChip = function (props) {
