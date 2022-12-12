@@ -1,5 +1,5 @@
 export * from './Box';
-export { default as Colors } from './Color';
+export { default as Color } from './Color';
 export * from './GrayscaleBox';
 export * from './Grid';
 export * from './Typography';
