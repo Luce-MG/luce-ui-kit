@@ -13,10 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Colors = void 0;
+exports.Color = void 0;
 __exportStar(require("./Box"), exports);
 var Color_1 = require("./Color");
-Object.defineProperty(exports, "Colors", { enumerable: true, get: function () { return __importDefault(Color_1).default; } });
+Object.defineProperty(exports, "Color", { enumerable: true, get: function () { return __importDefault(Color_1).default; } });
 __exportStar(require("./GrayscaleBox"), exports);
 __exportStar(require("./Grid"), exports);
 __exportStar(require("./Typography"), exports);
