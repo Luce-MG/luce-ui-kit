@@ -1,4 +1,5 @@
 export * from './Backdrop';
+export * from './BottomDrawer';
 export * from './Breadcrumbs';
 export * from './CircularProgress';
 export * from './Collapse';

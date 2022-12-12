@@ -1,8 +1,10 @@
 export * from './Box';
-export { default } from './Color';
+export { default as Colors } from './Color';
 export * from './GrayscaleBox';
 export * from './Grid';
 export * from './Typography';
 export * from './Scrollbar';
 export * from './Drawer';
 export * from './Card';
+export * from './SwipeableDrawer';
+export * from './AutoComplete';

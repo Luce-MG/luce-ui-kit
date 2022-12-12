@@ -20,7 +20,6 @@ export { default as CalendarAssignIcon } from './CalendarAssignIcon';
 export { default as CalendarIcon } from './CalendarIcon';
 export { default as CalendarOffIcon } from './CalendarOffIcon';
 export { default as CarpetIcon } from './CarpetIcon';
-export { default as ChecklistSelected } from './ChecklistSelected';
 export { default as CleaningIcon } from './CleaningIcon';
 export { default as ClockIcon } from './ClockIcon';
 export { default as CloseIcon } from './CloseIcon';
