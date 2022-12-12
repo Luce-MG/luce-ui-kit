@@ -76,7 +76,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var SkillSetAutoComplete = function (props) {
-    var dataSkillSets = props.dataSkillSets, options = props.options, renderInput = props.renderInput, size = props.size, rest = __rest(props, ["dataSkillSets", "options", "renderInput", "size"]);
+    var dataSkillSets = props.dataSkillSets, size = props.size, rest = __rest(props, ["dataSkillSets", "size"]);
     var classes = useStyles();
     return (React.createElement(AutoComplete_1.Autocomplete, __assign({ multiple: true, className: classes.root, options: dataSkillSets, disableCloseOnSelect: true, getOptionLabel: function (option) { return option.label; }, renderOption: function (option, _a) {
             var selected = _a.selected;
