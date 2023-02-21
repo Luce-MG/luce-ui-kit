@@ -60,7 +60,7 @@ var CardService = function (props) {
             React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" }))),
         React.createElement(Card_1.CardActionArea, { onClick: onClick, disabled: disabled },
             React.createElement(Card_1.CardContent, { classes: { root: classes.content } },
-                React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", align: "center", children: title }),
+                React.createElement(Typography_1.default, { variant: "subtitle1", color: "primary", align: "center", children: title }),
                 React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", align: "center", children: subtitle }))),
         React.createElement(Card_1.CardActions, null, actionButton !== null && actionButton !== void 0 ? actionButton : (React.createElement(Button_1.default, { onClick: onClickAction, fullWidth: true, variants: "ghost", className: classes.fontWeight700, disabled: disabled }, "View Detail")))));
 };

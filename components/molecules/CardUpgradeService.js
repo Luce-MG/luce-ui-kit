@@ -64,9 +64,9 @@ var CardUpgradeService = function (props) {
             React.createElement(Card_1.CardMedia, { className: classes.cardImage, image: imgUrl }),
             React.createElement(Card_1.CardContent, null,
                 React.createElement(Box_1.default, { mb: 2 },
-                    React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", align: "center", children: title }),
+                    React.createElement(Typography_1.default, { variant: "subtitle1", color: "primary", align: "center", children: title }),
                     React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", align: "center", children: subtitle })),
-                React.createElement(Typography_1.default, { align: "center", children: description })))));
+                React.createElement(Typography_1.default, { variant: "body2", color: "primary", align: "center", children: description })))));
 };
 exports.CardUpgradeService = CardUpgradeService;
 //# sourceMappingURL=CardUpgradeService.js.map
