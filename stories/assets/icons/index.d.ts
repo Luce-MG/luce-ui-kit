@@ -79,6 +79,7 @@ export { default as PlansIcon } from './PlansIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as PolishingIcon } from './PolishingIcon';
 export { default as ProfileAddIcon } from './ProfileAddIcon';
+export { default as QuestionCircleIcon } from './QuestionCircleIcon';
 export { default as ProfileEditIcon } from './ProfileEditIcon';
 export { default as ProfileIcon } from './ProfileIcon';
 export { default as QuoteIcon } from './QuoteIcon';
