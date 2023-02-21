@@ -5,8 +5,6 @@ export declare type CardUpgradeServiceProps = {
     description: string;
     imgUrl: string;
     disabled?: boolean;
-    active?: boolean;
-    actionButton?: React.ReactNode;
     isSelected: boolean;
     onClick?(): void;
 };

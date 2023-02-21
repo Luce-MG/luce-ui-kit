@@ -31,10 +31,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgAirConIcon = function (props) { return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-    React.createElement("rect", { x: 1, y: 2, width: 22, height: 14, rx: 2, stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "m5 16 .544-1.633A2 2 0 0 1 7.442 13h9.116a2 2 0 0 1 1.898 1.367L19 16", stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("circle", { cx: 18.5, cy: 6.5, r: 1.5, stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { d: "m7 20 2 2M11 20l2 2M15 20l2 2", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" }))); };
-exports.default = SvgAirConIcon;
-//# sourceMappingURL=AirConIcon.js.map
+function AirconIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("rect", { x: 2.334, y: 4.666, width: 51.333, height: 32.667, rx: 2, stroke: "#1A4D6A", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M11.668 37.332l1.878-5.632a2 2 0 011.897-1.368H40.56a2 2 0 011.897 1.368l1.878 5.632", stroke: "#1A4D6A", strokeWidth: 1.6 }),
+        React.createElement("circle", { cx: 43.168, cy: 15.166, stroke: "#1A4D6A", strokeWidth: 1.6, r: 3.5 }),
+        React.createElement("path", { d: "M16.334 46.666l4.667 4.667M25.668 46.666l4.667 4.667M35 46.666l4.667 4.667", stroke: "#1A4D6A", strokeWidth: 1.6, strokeLinecap: "round" })));
+}
+exports.default = AirconIcon;
+//# sourceMappingURL=AirconIcon.js.map

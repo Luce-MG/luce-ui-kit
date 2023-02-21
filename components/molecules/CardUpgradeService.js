@@ -25,66 +25,48 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardUpgradeService = void 0;
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var Avatar_1 = __importDefault(require("../avatar/Avatar"));
 var Box_1 = __importDefault(require("../base/Box"));
 var Card_1 = require("../base/Card");
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
-var useStyles = styles_1.makeStyles(function () {
-    return styles_1.createStyles({
-        unSelectedCard: {
-            width: '100%',
-            maxWidth: '343px',
-            borderRadius: '8px',
-            position: 'relative',
-            overflow: 'visible'
-        },
-        selectedCard: {
-            width: '100%',
-            maxWidth: '343px',
-            backgroundColor: '#4ea8dc0f',
-            border: 'solid 1px #4EA8DC',
-            borderRadius: '8px',
-            position: 'relative',
-            overflow: 'visible'
-        },
-        cardContent: {
-            textAlign: 'center'
-        },
-        cardImage: {
-            height: '343px',
-            width: '100%',
-            borderRadius: '8px'
-        },
-        cardHeader: {
-            marginBottom: '16px'
-        },
-        descText: {
-            fontSize: '14px',
-            color: '#1A4D6A'
-        },
-        selectedIcon: {
-            position: 'absolute',
-            zIndex: 2,
-            top: '-5px',
-            right: '-5px'
-        },
-        unSelectedIcon: {
-            display: 'none'
-        }
-    });
-});
+var useStyles = styles_1.makeStyles(function (theme) { return ({
+    cardRoot: {
+        position: 'relative',
+        overflow: 'visible',
+        border: 'solid 1px',
+        borderColor: theme.palette.grey[600],
+        borderRadius: theme.spacing(1)
+    },
+    selectedCard: {
+        backgroundColor: styles_1.fade(theme.palette.secondary.main, 0.06),
+        borderColor: theme.palette.secondary.main
+    },
+    cardImage: {
+        height: 160,
+        borderRadius: theme.spacing(1)
+    },
+    avatarRoot: {
+        position: 'absolute',
+        top: -8,
+        right: -8,
+        background: theme.palette.secondary.main,
+        zIndex: 2
+    }
+}); });
 var CardUpgradeService = function (props) {
     var title = props.title, imgUrl = props.imgUrl, subtitle = props.subtitle, description = props.description, onClick = props.onClick, disabled = props.disabled, isSelected = props.isSelected;
     var classes = useStyles();
-    return (React.createElement(Card_1.Card, { className: isSelected ? classes.selectedCard : classes.unSelectedCard },
-        React.createElement(Icons_1.default, { className: isSelected ? classes.selectedIcon : classes.unSelectedIcon, iconName: "TickIcon", size: "small" }),
+    return (React.createElement(Card_1.Card, { classes: { root: classes.cardRoot }, className: isSelected ? classes.selectedCard : '' },
+        isSelected && (React.createElement(Avatar_1.default, { className: classes.avatarRoot, customSize: "small" },
+            React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" }))),
         React.createElement(Card_1.CardActionArea, { onClick: onClick, disabled: disabled },
             React.createElement(Card_1.CardMedia, { className: classes.cardImage, image: imgUrl }),
-            React.createElement(Card_1.CardContent, { className: classes.cardContent },
-                React.createElement(Box_1.default, { className: classes.cardHeader },
-                    React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", children: title }),
-                    React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", children: subtitle })),
-                React.createElement(Typography_1.default, { children: description })))));
+            React.createElement(Card_1.CardContent, null,
+                React.createElement(Box_1.default, { mb: 2 },
+                    React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", align: "center", children: title }),
+                    React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", align: "center", children: subtitle })),
+                React.createElement(Typography_1.default, { align: "center", children: description })))));
 };
 exports.CardUpgradeService = CardUpgradeService;
 //# sourceMappingURL=CardUpgradeService.js.map

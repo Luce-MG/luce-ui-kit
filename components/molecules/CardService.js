@@ -24,73 +24,44 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardService = void 0;
 var styles_1 = require("@material-ui/core/styles");
+var colorManipulator_1 = require("@material-ui/core/styles/colorManipulator");
 var React = __importStar(require("react"));
-var Box_1 = __importDefault(require("../base/Box"));
+var Avatar_1 = __importDefault(require("../avatar/Avatar"));
 var Card_1 = require("../base/Card");
 var Typography_1 = __importDefault(require("../base/Typography"));
 var Button_1 = __importDefault(require("../button/Button"));
 var Icons_1 = __importDefault(require("../icons/Icons"));
-var useStyles = styles_1.makeStyles(function () {
-    return styles_1.createStyles({
-        unSelectedCard: {
-            width: '100%',
-            maxWidth: '343px',
-            borderRadius: '8px',
-            position: 'relative',
-            overflow: 'visible'
-        },
-        selectedCard: {
-            width: '100%',
-            maxWidth: '343px',
-            backgroundColor: '#4ea8dc0f',
-            border: 'solid 1px #4EA8DC',
-            borderRadius: '8px',
-            position: 'relative',
-            overflow: 'visible'
-        },
-        cardContent: {
-            textAlign: 'center'
-        },
-        cardImage: {
-            height: '343px',
-            width: '100%',
-            borderRadius: '8px'
-        },
-        cardActions: {
-            backgroundColor: '#EDF1F4',
-            width: '100%',
-            position: 'relative',
-            zIndex: 2,
-            fontSize: '13px',
-            fontWeight: 700
-        },
-        descText: {
-            fontSize: '14px',
-            color: '#1A4D6A'
-        },
-        selectedIcon: {
-            position: 'absolute',
-            zIndex: 2,
-            top: '-5px',
-            right: '-5px'
-        },
-        unSelectedIcon: {
-            display: 'none'
-        }
-    });
-});
+var useStyles = styles_1.makeStyles(function (theme) { return ({
+    cardRoot: {
+        border: 'solid 1px',
+        borderColor: theme.palette.secondary.main,
+        position: 'relative',
+        overflow: 'visible'
+    },
+    selectedCard: {
+        backgroundColor: colorManipulator_1.fade(theme.palette.secondary.main, 0.06)
+    },
+    fontWeight700: {
+        fontWeight: 700
+    },
+    avatarRoot: {
+        position: 'absolute',
+        top: -8,
+        right: -8,
+        background: theme.palette.secondary.main
+    }
+}); });
 var CardService = function (props) {
-    var title = props.title, subtitle = props.subtitle, onClick = props.onClick, disabled = props.disabled, isSelected = props.isSelected;
+    var title = props.title, subtitle = props.subtitle, disabled = props.disabled, isSelected = props.isSelected, actionButton = props.actionButton, onClick = props.onClick, onClickAction = props.onClickAction;
     var classes = useStyles();
-    return (React.createElement(Card_1.Card, { className: isSelected ? classes.selectedCard : classes.unSelectedCard },
-        React.createElement(Icons_1.default, { className: isSelected ? classes.selectedIcon : classes.unSelectedIcon, iconName: "TickIcon", size: "small" }),
+    return (React.createElement(Card_1.Card, { classes: { root: classes.cardRoot }, className: isSelected ? classes.selectedCard : '' },
+        isSelected && (React.createElement(Avatar_1.default, { className: classes.avatarRoot, customSize: "small" },
+            React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" }))),
         React.createElement(Card_1.CardActionArea, { onClick: onClick, disabled: disabled },
-            React.createElement(Card_1.CardContent, { className: classes.cardContent },
-                React.createElement(Box_1.default, null,
-                    React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", children: title }),
-                    React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", children: subtitle })))),
-        React.createElement(Card_1.CardActions, null,
-            React.createElement(Button_1.default, { onClick: onClick, className: classes.cardActions }, "View Detail"))));
+            React.createElement(Card_1.CardContent, null,
+                React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", align: "center", children: title }),
+                React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", align: "center", children: subtitle }))),
+        React.createElement(Card_1.CardActions, null, actionButton !== null && actionButton !== void 0 ? actionButton : (React.createElement(Button_1.default, { onClick: onClickAction, fullWidth: true, variants: "ghost", className: classes.fontWeight700, disabled: disabled }, "View Detail")))));
 };
 exports.CardService = CardService;
 //# sourceMappingURL=CardService.js.map

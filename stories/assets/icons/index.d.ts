@@ -1,7 +1,7 @@
 export { default as AccessInfoIcon } from './AccessInfoIcon';
 export { default as AddIcon } from './AddIcon';
 export { default as AddressIcon } from './AddressIcon';
-export { default as AirConService } from './AirConService';
+export { default as AirconIcon } from './AirconIcon';
 export { default as AlertIcon } from './AlertIcon';
 export { default as AllServicesIcon } from './AllServicesIcon';
 export { default as AmexIcon } from './AmexIcon';
