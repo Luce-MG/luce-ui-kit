@@ -36,7 +36,8 @@ var useStyles = styles_1.makeStyles(function (theme) { return ({
         border: 'solid 1px',
         borderColor: theme.palette.secondary.main,
         position: 'relative',
-        overflow: 'visible'
+        overflow: 'visible',
+        padding: theme.spacing(1)
     },
     selectedCard: {
         backgroundColor: colorManipulator_1.fade(theme.palette.secondary.main, 0.06)
