@@ -31,12 +31,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function AirconIcon(props) {
+function SvgAirconIcon(props) {
     return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React.createElement("rect", { x: 2.334, y: 4.666, width: 51.333, height: 32.667, rx: 2, stroke: "#1A4D6A", strokeWidth: 1.6 }),
         React.createElement("path", { d: "M11.668 37.332l1.878-5.632a2 2 0 011.897-1.368H40.56a2 2 0 011.897 1.368l1.878 5.632", stroke: "#1A4D6A", strokeWidth: 1.6 }),
         React.createElement("circle", { cx: 43.168, cy: 15.166, stroke: "#1A4D6A", strokeWidth: 1.6, r: 3.5 }),
         React.createElement("path", { d: "M16.334 46.666l4.667 4.667M25.668 46.666l4.667 4.667M35 46.666l4.667 4.667", stroke: "#1A4D6A", strokeWidth: 1.6, strokeLinecap: "round" })));
 }
-exports.default = AirconIcon;
+exports.default = SvgAirconIcon;
 //# sourceMappingURL=AirconIcon.js.map
