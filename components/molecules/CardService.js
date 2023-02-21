@@ -36,9 +36,9 @@ var useStyles = styles_1.makeStyles(function (theme) { return ({
         border: 'solid 1px',
         borderColor: theme.palette.secondary.main,
         position: 'relative',
-        overflow: 'visible',
-        padding: theme.spacing(1)
+        overflow: 'visible'
     },
+    content: { padding: theme.spacing(1) },
     selectedCard: {
         backgroundColor: colorManipulator_1.fade(theme.palette.secondary.main, 0.06)
     },
@@ -59,7 +59,7 @@ var CardService = function (props) {
         isSelected && (React.createElement(Avatar_1.default, { className: classes.avatarRoot, customSize: "small" },
             React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" }))),
         React.createElement(Card_1.CardActionArea, { onClick: onClick, disabled: disabled },
-            React.createElement(Card_1.CardContent, null,
+            React.createElement(Card_1.CardContent, { classes: { root: classes.content } },
                 React.createElement(Typography_1.default, { bodyVariants: "lgMedium", color: "primary", align: "center", children: title }),
                 React.createElement(Typography_1.default, { bodyVariants: "xsBold", color: "secondary", align: "center", children: subtitle }))),
         React.createElement(Card_1.CardActions, null, actionButton !== null && actionButton !== void 0 ? actionButton : (React.createElement(Button_1.default, { onClick: onClickAction, fullWidth: true, variants: "ghost", className: classes.fontWeight700, disabled: disabled }, "View Detail")))));
