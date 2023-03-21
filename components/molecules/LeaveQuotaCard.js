@@ -53,7 +53,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var LeaveQuotaCard = function (props) {
-    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accrued, accrued = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d;
+    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accrued, accrued = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d, _e = props.customTitle, customTitle = _e === void 0 ? '' : _e;
     var title;
     switch (type) {
         case 'medical':
@@ -64,6 +64,9 @@ var LeaveQuotaCard = function (props) {
             break;
         case 'hospital':
             title = 'Hospital Leave (in hours)';
+            break;
+        case 'custom':
+            title = customTitle;
             break;
         default:
             title = 'Annual Leave (in hours)';
