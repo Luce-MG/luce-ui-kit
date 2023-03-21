@@ -22,11 +22,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Box_1 = __importDefault(require("@material-ui/core/Box"));
 var Card_1 = __importDefault(require("@material-ui/core/Card"));
 var styles_1 = require("@material-ui/core/styles");
 var colorManipulator_1 = require("@material-ui/core/styles/colorManipulator");
 var React = __importStar(require("react"));
+var BoxRow_1 = __importDefault(require("../atom/BoxRow"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
@@ -37,13 +37,6 @@ var useStyles = styles_1.makeStyles(function (theme) {
             padding: theme.spacing(2),
             background: colorManipulator_1.fade(theme.palette.primary.main, 0.03)
         },
-        cardContent: {
-            marginTop: theme.spacing(2),
-            display: 'grid',
-            gridTemplateColumns: 'min-content min-content min-content',
-            gridColumnGap: theme.spacing(3),
-            gridRowGap: theme.spacing(0.5)
-        },
         cardContentLabel: {
             color: colorManipulator_1.fade(theme.palette.primary.main, 0.7)
         },
@@ -53,7 +46,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var LeaveQuotaCard = function (props) {
-    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accrued, accrued = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d, _e = props.customTitle, customTitle = _e === void 0 ? '' : _e;
+    var _a = props.type, type = _a === void 0 ? 'annual' : _a, _b = props.accrued, accrued = _b === void 0 ? 0 : _b, _c = props.taken, taken = _c === void 0 ? 0 : _c, _d = props.remaining, remaining = _d === void 0 ? 0 : _d, customTitle = props.customTitle, isHideAccuredLabel = props.isHideAccuredLabel, isHideRemainingdLabel = props.isHideRemainingdLabel, isHideTakenLabel = props.isHideTakenLabel;
     var title;
     switch (type) {
         case 'medical':
@@ -65,22 +58,22 @@ var LeaveQuotaCard = function (props) {
         case 'hospital':
             title = 'Hospital Leave (in hours)';
             break;
-        case 'custom':
-            title = customTitle;
-            break;
         default:
             title = 'Annual Leave (in hours)';
     }
     var classes = useStyles();
     return (React.createElement(Card_1.default, { elevation: 0, classes: { root: classes.card } },
-        React.createElement(Typography_1.default, { bodyVariants: "smBold", children: title }),
-        React.createElement(Box_1.default, { className: classes.cardContent },
-            React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Accrued" }),
-            React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Taken" }),
-            React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Remaining" }),
-            React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: accrued }),
-            React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: taken }),
-            React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: remaining }))));
+        customTitle ? (React.createElement(Typography_1.default, { bodyVariants: "smBold", children: customTitle })) : (React.createElement(Typography_1.default, { bodyVariants: "smBold", children: title })),
+        React.createElement(BoxRow_1.default, { gap: 0.5, mt: 1 },
+            !isHideAccuredLabel && (React.createElement(BoxRow_1.default, { direction: "column" },
+                React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Accrued" }),
+                React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: accrued }))),
+            !isHideTakenLabel && (React.createElement(BoxRow_1.default, { direction: "column" },
+                React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Taken" }),
+                React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: taken }))),
+            !isHideRemainingdLabel && (React.createElement(BoxRow_1.default, { direction: "column" },
+                React.createElement(Typography_1.default, { className: classes.cardContentLabel, bodyVariants: "xxsMedium", children: "Remaining" }),
+                React.createElement(Typography_1.default, { className: classes.cardContentNumber, variant: "h5", children: remaining }))))));
 };
 exports.default = LeaveQuotaCard;
 //# sourceMappingURL=LeaveQuotaCard.js.map
