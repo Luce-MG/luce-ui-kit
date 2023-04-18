@@ -3,6 +3,7 @@ import * as React from 'react';
 export declare type BodyVariants = 'lg' | 'lgMedium' | 'lgBold' | 'mdBold' | 'smBold' | 'xsMedium' | 'xsBold' | 'xxsMedium';
 export declare type StyledTypography = {
     bodyVariants?: BodyVariants;
+    component?: React.ElementType;
 };
 export declare type TypographyProps = Props & StyledTypography;
 declare const Typography: React.FC<TypographyProps>;
