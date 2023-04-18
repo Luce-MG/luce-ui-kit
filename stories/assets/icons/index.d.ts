@@ -30,7 +30,6 @@ export { default as CooperationIcon } from './CooperationIcon';
 export { default as CopyClipboardIcon } from './CopyClipboardIcon';
 export { default as CouponIcon } from './CouponIcon';
 export { default as ChemicalWashIcon } from './ChemicalWashIcon';
-export { default as ChemicalOverhaulIcon } from './ChemicalOverhaulIcon';
 export { default as CondenserWashIcon } from './CondenserWashIcon';
 export { default as RepairDiagnosticIcon } from './RepairDiagnosticIcon';
 export { default as PackageLoveIcon } from './PackageLoveIcon';
