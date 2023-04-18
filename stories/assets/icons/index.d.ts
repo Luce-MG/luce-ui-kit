@@ -33,6 +33,7 @@ export { default as ChemicalWashIcon } from './ChemicalWashIcon';
 export { default as CHemicalOverhaulIcon } from './CHemicalOverhaulIcon';
 export { default as CondenserWashIcon } from './CondenserWashIcon';
 export { default as RepairDiagnosticIcon } from './RepairDiagnosticIcon';
+export { default as PackageLoveIcon } from './PackageLoveIcon';
 export { default as DiscountIcon } from './DiscountIcon';
 export { default as DiscoverIcon } from './DiscoverIcon';
 export { default as DocumentIcon } from './DocumentIcon';
