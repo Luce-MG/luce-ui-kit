@@ -33,10 +33,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 function SvgAirconIcon(props) {
     return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 28 28", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("rect", { x: 1.428, y: 2.571, width: 25.143, height: 16, rx: 2, stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { d: "M6 18.571l.687-2.06a2 2 0 011.897-1.368h10.832a2 2 0 011.897 1.367L22 18.571", stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("circle", { cx: 21.428, cy: 7.714, stroke: "currentColor", strokeWidth: 1.6, r: 1.714 }),
-        React.createElement("path", { d: "M8.286 23.143l2.285 2.285M12.857 23.143l2.286 2.285M17.428 23.143l2.286 2.285", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" })));
+        React.createElement("rect", { x: 1.428, y: 2.571, width: 25.143, height: 16, rx: 2, stroke: "currentColor" }),
+        React.createElement("path", { d: "M6 18.571l.687-2.06a2 2 0 011.897-1.368h10.832a2 2 0 011.897 1.367L22 18.571", stroke: "currentColor" }),
+        React.createElement("circle", { cx: 21.428, cy: 7.714, stroke: "currentColor", r: 1.714 }),
+        React.createElement("path", { d: "M8.286 23.143l2.285 2.285M12.857 23.143l2.286 2.285M17.428 23.143l2.286 2.285", stroke: "currentColor", strokeLinecap: "round" })));
 }
 exports.default = SvgAirconIcon;
 //# sourceMappingURL=AirconIcon.js.map
