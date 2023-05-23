@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -64,19 +75,19 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var ServiceTypeCard = function (props) {
-    var isSelected = props.isSelected, onClick = props.onClick, iconName = props.iconName, label = props.label;
+    var isSelected = props.isSelected, onClick = props.onClick, iconName = props.iconName, label = props.label, iconProps = props.iconProps, cardProps = props.cardProps, className = props.className;
     var classes = useStyles();
     var Button;
     if (isSelected) {
         Button = (React.createElement(Avatar_1.default, { className: classes.avatarRoot, customSize: "small" },
             React.createElement(Icons_1.default, { iconName: "TickIcon", size: "small" })));
     }
-    return (React.createElement(Card_1.default, { classes: { root: classes.cardRoot }, className: isSelected ? classes.selected : classes.default },
+    return (React.createElement(Card_1.default, __assign({}, cardProps, { classes: { root: classes.cardRoot }, className: "ServiceTypeCard " + (isSelected ? classes.selected : classes.default) + " " + className }),
         Button,
         React.createElement(CardActionArea_1.default, { onClick: function () {
                 onClick();
             }, classes: { root: classes.cardActionAreaRoot } },
-            React.createElement(Icons_1.default, { iconName: iconName, size: "extraLarge" }),
+            React.createElement(Icons_1.default, __assign({ iconName: iconName, size: "extraLarge" }, iconProps)),
             React.createElement(Typography_1.default, { className: classes.typographyRoot, bodyVariants: "lgMedium" }, label))));
 };
 exports.default = ServiceTypeCard;
