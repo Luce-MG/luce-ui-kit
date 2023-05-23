@@ -7,8 +7,8 @@ export declare type ServiceTypeCardProps = {
     iconName: keyof typeof IconList;
     label: string;
     className?: string;
-    iconProps?: IconsProps;
-    cardProps?: CardProps;
+    iconProps?: Partial<IconsProps>;
+    cardProps?: Partial<CardProps>;
 };
 declare const ServiceTypeCard: React.FC<ServiceTypeCardProps>;
 export default ServiceTypeCard;
