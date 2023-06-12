@@ -91,7 +91,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
                 padding: 0
             }, color: theme.palette.common.white, borderRadius: '2px', height: 'auto', fontWeight: 700, fontSize: '0.5rem', lineHeight: '1.5em', alignItems: 'center', padding: '3px 6px', margin: '0 0 0 15px' }, getPackageTag(props.status))); },
         linkStyle: {
-            color: 'red',
+            color: '#3384FD',
             cursor: 'pointer',
             margin: '0 16px 0 0',
             textAlign: 'right'
