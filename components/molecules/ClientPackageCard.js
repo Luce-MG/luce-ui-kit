@@ -70,8 +70,9 @@ var useStyles = styles_1.makeStyles(function (theme) {
             color: '#ECECEC',
             margin: '8px 0 8px 0'
         },
-        packageID: {
-            padding: '0 4px 0 16px'
+        packageCode: {
+            padding: '0 4px 0 18px',
+            color: '#52798F'
         },
         scheduleTags: {
             '& .MuiChip-label': {
@@ -90,7 +91,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
                 padding: 0
             }, color: theme.palette.common.white, borderRadius: '2px', height: 'auto', fontWeight: 700, fontSize: '0.5rem', lineHeight: '1.5em', alignItems: 'center', padding: '3px 6px', margin: '0 0 0 15px' }, getPackageTag(props.status))); },
         linkStyle: {
-            color: '#3384FD',
+            color: 'red',
             cursor: 'pointer',
             margin: '0 16px 0 0',
             textAlign: 'right'
@@ -113,14 +114,15 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var ClientPackageCards = function (props) {
-    var data = props.data, id = props.id, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, rest = __rest(props, ["data", "id", "status", "invisible", "onViewDetailsClick", "children", "address"]);
+    var data = props.data, id = props.id, code = props.code, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, rest = __rest(props, ["data", "id", "code", "status", "invisible", "onViewDetailsClick", "children", "address"]);
     var classes = useStyles(props);
     return (React.createElement(core_1.Card, __assign({}, rest),
         React.createElement(core_1.CardContent, { className: classes.cardBody },
             React.createElement(core_1.Box, { display: "flex", justifyContent: "space-between" },
                 React.createElement(core_1.Box, null,
                     React.createElement(core_1.Badge, { color: "error", variant: "dot", invisible: invisible },
-                        React.createElement(Typography_1.default, { className: classes.packageID, bodyVariants: "xsMedium" }, "Package #" + props.id)),
+                        React.createElement(Typography_1.default, { className: classes.packageCode, bodyVariants: "xsBold" }, props.code),
+                        React.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, "- Package #" + props.id)),
                     React.createElement(core_1.Chip, { className: classes.packageTags, label: props.status })),
                 React.createElement(core_1.Box, null,
                     React.createElement(core_1.Link, { underline: "always", onClick: onViewDetailsClick },
@@ -141,7 +143,7 @@ var ClientPackageCards = function (props) {
                             React.createElement(Typography_1.default, { variant: "overline" }, index + 1)),
                         React.createElement(core_1.Box, { className: classes.assignedColumn },
                             React.createElement(Typography_1.default, { variant: "overline" }, card.assigned)),
-                        React.createElement(BoxRow_1.default, { className: classes.jobSchedule, gridGap: 4, flexWrap: "wrap", display: "flex", justifyContent: "space-btween" }, card.schedule.map(function (sessionDay, index) { return (React.createElement(core_1.Chip, { key: index, label: sessionDay, className: classes.scheduleTags })); })),
+                        React.createElement(BoxRow_1.default, { className: classes.jobSchedule, gridGap: 4, flexWrap: "wrap", display: "flex", justifyContent: "space-between" }, card.schedule.map(function (sessionDay, index) { return (React.createElement(core_1.Chip, { key: index, label: sessionDay, className: classes.scheduleTags })); })),
                         React.createElement(core_1.Box, { className: classes.dateSchedule, display: "flex", gridGap: 4, alignItems: "flex-start" },
                             React.createElement(Typography_1.default, { variant: "overline" }, card.startDate),
                             React.createElement(Typography_1.default, { variant: "overline" }, " - "),
