@@ -108,3 +108,4 @@ export { default as VisibilityOffIcon } from './VisibilityOffIcon';
 export { default as WalletIcon } from './WalletIcon';
 export { default as WarningIcon } from './WarningIcon';
 export { default as WhatsappIcon } from './WhatsappIcon';
+export { default as PackageIcon } from './PackageIcon';
