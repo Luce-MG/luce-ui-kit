@@ -101,6 +101,7 @@ export { default as TooManyIcon } from './TooManyIcon';
 export { default as TrashIcon } from './TrashIcon';
 export { default as UpDownArrowIcon } from './UpDownArrowIcon';
 export { default as UploadIcon } from './UploadIcon';
+export { default as UpholsteryIcon } from './UpholsteryIcon';
 export { default as VisaIcon } from './VisaIcon';
 export { default as VisibilityDisabledIcon } from './VisibilityDisabledIcon';
 export { default as VisibilityIcon } from './VisibilityIcon';
