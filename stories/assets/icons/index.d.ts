@@ -112,3 +112,6 @@ export { default as WalletIcon } from './WalletIcon';
 export { default as WarningIcon } from './WarningIcon';
 export { default as WhatsappIcon } from './WhatsappIcon';
 export { default as PackageIcon } from './PackageIcon';
+export { default as AllServicesBlankIcon } from './AllServicesBlankIcon';
+export { default as AllServicesRoundedIcon } from './AllServicesRoundedIcon';
+export { default as PinRoundedLocationIcon } from './PinRoundedLocationIcon';
