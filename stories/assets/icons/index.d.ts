@@ -69,6 +69,7 @@ export { default as MasterCardIcon } from './MasterCardIcon';
 export { default as MenuIcon } from './MenuIcon';
 export { default as MinusIcon } from './MinusIcon';
 export { default as MobilePhoneIcon } from './MobilePhoneIcon';
+export { default as NailIcon } from './NailIcon';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as OfficeIcon } from './OfficeIcon';
 export { default as OnefaceIcon } from './OnefaceIcon';
