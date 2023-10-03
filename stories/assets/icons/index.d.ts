@@ -116,3 +116,7 @@ export { default as PackageIcon } from './PackageIcon';
 export { default as AllServicesBlankIcon } from './AllServicesBlankIcon';
 export { default as AllServicesRoundedIcon } from './AllServicesRoundedIcon';
 export { default as PinRoundedLocationIcon } from './PinRoundedLocationIcon';
+export { default as ManiPediIcon } from './ManiPediIcon';
+export { default as ManicureIcon } from './ManicureIcon';
+export { default as PedicureIcon } from './PedicureIcon';
+export { default as LayersIcon } from './LayersIcon';
