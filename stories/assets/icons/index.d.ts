@@ -120,3 +120,4 @@ export { default as ManiPediIcon } from './ManiPediIcon';
 export { default as ManicureIcon } from './ManicureIcon';
 export { default as PedicureIcon } from './PedicureIcon';
 export { default as LayersIcon } from './LayersIcon';
+export { default as GiftIcon } from './GiftIcon';
