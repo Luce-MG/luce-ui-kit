@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCommentIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M7.311 18.876l-3.078 2.588A.75.75 0 013 20.89V6a.75.75 0 01.75-.75h16.5A.75.75 0 0121 6v12a.75.75 0 01-.75.75H7.657l-.346.126zM9 10.5h6M9 13.5h6", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgCommentIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.5, d: "m7.311 18.876-3.078 2.588A.75.75 0 0 1 3 20.89V6a.75.75 0 0 1 .75-.75h16.5A.75.75 0 0 1 21 6v12a.75.75 0 0 1-.75.75H7.657l-.346.126ZM9 10.5h6M9 13.5h6" }))); };
 exports.default = SvgCommentIcon;
 //# sourceMappingURL=CommentIcon.js.map

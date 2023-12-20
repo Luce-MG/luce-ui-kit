@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgFreshIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M14.2 14h-.4A7.674 7.674 0 017 20.8v.4a7.674 7.674 0 016.8 6.8h.4a7.674 7.674 0 016.8-6.8v-.4a7.674 7.674 0 01-6.8-6.8zM26.115 11h-.23A4.385 4.385 0 0122 14.885v.23A4.385 4.385 0 0125.885 19h.23A4.385 4.385 0 0130 15.115v-.23A4.385 4.385 0 0126.115 11zM7.115 5h-.23A4.385 4.385 0 013 8.885v.23A4.385 4.385 0 016.885 13h.23A4.385 4.385 0 0111 9.115v-.23A4.385 4.385 0 017.115 5z", stroke: "currentColor", strokeWidth: 2 })));
-}
+var SvgFreshIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 32 32" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 2, d: "M14.2 14h-.4A7.674 7.674 0 0 1 7 20.8v.4a7.674 7.674 0 0 1 6.8 6.8h.4a7.674 7.674 0 0 1 6.8-6.8v-.4a7.674 7.674 0 0 1-6.8-6.8ZM26.115 11h-.23A4.385 4.385 0 0 1 22 14.885v.23A4.385 4.385 0 0 1 25.885 19h.23A4.385 4.385 0 0 1 30 15.115v-.23A4.385 4.385 0 0 1 26.115 11ZM7.115 5h-.23A4.385 4.385 0 0 1 3 8.885v.23A4.385 4.385 0 0 1 6.885 13h.23A4.385 4.385 0 0 1 11 9.115v-.23A4.385 4.385 0 0 1 7.115 5Z" }))); };
 exports.default = SvgFreshIcon;
 //# sourceMappingURL=FreshIcon.js.map

@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgQuestionCircleIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12zm20 0a9 9 0 11-18 0 9 9 0 0118 0zm-9 4.998a1 1 0 100-2 1 1 0 000 2zM11 14h2c0-.798.125-.945.947-1.356C15.375 11.93 16 11.202 16 9.5 16 7.32 14.284 6 12 6a4 4 0 00-4 4h2a2 2 0 012-2c1.277 0 2 .556 2 1.5 0 .798-.125.945-.947 1.356C11.625 11.57 11 12.298 11 14z", fill: "currentColor" })));
-}
+var SvgQuestionCircleIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { fill: "currentColor", fillRule: "evenodd", d: "M1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1 1 5.925 1 12Zm20 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 4.998a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM11 14h2c0-.798.125-.945.947-1.356C15.375 11.93 16 11.202 16 9.5 16 7.32 14.284 6 12 6a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2c1.277 0 2 .556 2 1.5 0 .798-.125.945-.947 1.356C11.625 11.57 11 12.298 11 14Z", clipRule: "evenodd" }))); };
 exports.default = SvgQuestionCircleIcon;
 //# sourceMappingURL=QuestionCircleIcon.js.map

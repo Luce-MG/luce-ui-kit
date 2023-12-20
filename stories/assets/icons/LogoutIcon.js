@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgLogoutIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M19 21h-9a2 2 0 01-2-2v-4h2v4h9V5h-9v4H8V5a2 2 0 012-2h9a2 2 0 012 2v14a2 2 0 01-2 2zm-7-5v-3H3v-2h9V8l5 4-5 4z", fill: "currentColor" })));
-}
+var SvgLogoutIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { fill: "currentColor", d: "M19 21h-9a2 2 0 0 1-2-2v-4h2v4h9V5h-9v4H8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2Zm-7-5v-3H3v-2h9V8l5 4-5 4Z" }))); };
 exports.default = SvgLogoutIcon;
 //# sourceMappingURL=LogoutIcon.js.map

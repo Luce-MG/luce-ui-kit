@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgProfileIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("circle", { cx: 12, cy: 8, r: 4, stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { d: "M19 21a7 7 0 10-14 0", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgProfileIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("circle", { cx: 12, cy: 8, r: 4, stroke: "currentColor", strokeWidth: 1.6 }),
+    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M19 21a7 7 0 1 0-14 0" }))); };
 exports.default = SvgProfileIcon;
 //# sourceMappingURL=ProfileIcon.js.map

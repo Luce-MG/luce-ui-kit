@@ -31,9 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgUploadIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M9.001 17V9M12.501 11.5L9.001 8 5.5 11.5M14.292 15a8 8 0 10-10.583 0", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgUploadIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 18 18" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M9.001 17V9M12.501 11.5 9.001 8 5.5 11.5" }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M14.292 15a8 8 0 1 0-10.583 0" }))); };
 exports.default = SvgUploadIcon;
 //# sourceMappingURL=UploadIcon.js.map

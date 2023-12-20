@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgWalletIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M12.92 2.25a1.225 1.225 0 00-.264.035l-9.14 2.408A1.701 1.701 0 002.25 6.328v7.734c0 .926.762 1.688 1.688 1.688h10.124c.926 0 1.688-.762 1.688-1.688V6.75c0-.925-.762-1.688-1.688-1.688H6.54l6.399-1.687V4.5h1.124V3.375c0-.633-.538-1.134-1.142-1.125zM3.938 6.188h10.124c.319 0 .563.244.563.562v7.313a.553.553 0 01-.563.562H3.938a.553.553 0 01-.563-.563V6.75c0-.318.244-.563.563-.563zm8.718 3.375a.844.844 0 100 1.687.844.844 0 000-1.688z", fill: "currentColor" })));
-}
+var SvgWalletIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 18 18" }, props),
+    React.createElement("path", { fill: "currentColor", d: "M12.92 2.25a1.225 1.225 0 0 0-.264.035l-9.14 2.408A1.701 1.701 0 0 0 2.25 6.328v7.734c0 .926.762 1.688 1.688 1.688h10.124c.926 0 1.688-.762 1.688-1.688V6.75c0-.925-.762-1.688-1.688-1.688H6.54l6.399-1.687V4.5h1.124V3.375c0-.633-.538-1.134-1.142-1.125ZM3.938 6.188h10.124c.319 0 .563.244.563.562v7.313a.553.553 0 0 1-.563.562H3.938a.553.553 0 0 1-.563-.563V6.75c0-.318.244-.563.563-.563Zm8.718 3.375a.844.844 0 1 0 0 1.687.844.844 0 0 0 0-1.688Z" }))); };
 exports.default = SvgWalletIcon;
 //# sourceMappingURL=WalletIcon.js.map

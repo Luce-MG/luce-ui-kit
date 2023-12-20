@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgArrowRightLongIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M13.845 6L20 12m0 0l-6.155 6M20 12H4", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgArrowRightLongIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M13.845 6 20 12m0 0-6.155 6M20 12H4" }))); };
 exports.default = SvgArrowRightLongIcon;
 //# sourceMappingURL=ArrowRightLongIcon.js.map

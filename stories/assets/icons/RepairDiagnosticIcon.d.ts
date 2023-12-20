@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgRepairDiagnosticIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import type { SVGProps } from 'react';
+declare const SvgRepairDiagnosticIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgRepairDiagnosticIcon;

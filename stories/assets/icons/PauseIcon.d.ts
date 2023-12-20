@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgPauseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import type { SVGProps } from 'react';
+declare const SvgPauseIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgPauseIcon;

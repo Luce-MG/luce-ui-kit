@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgTrashIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M8.8 7.52h1.28v10.24H8.8V7.52zM11.36 7.52h1.28v10.24h-1.28V7.52zM13.92 7.52h1.28v10.24h-1.28V7.52zM3.68 3.68h16.64v1.28H3.68V3.68zM15.2 3.68h-1.28v-.64c0-.384-.256-.64-.64-.64h-2.56c-.384 0-.64.256-.64.64v.64H8.8v-.64c0-1.088.832-1.92 1.92-1.92h2.56c1.088 0 1.92.832 1.92 1.92v.64z", fill: "currentColor" }),
-        React.createElement("path", { d: "M15.84 21.6H8.16c-1.024 0-1.92-.832-2.048-1.856L4.96 4.384l1.28-.128 1.152 15.36c0 .384.384.704.768.704h7.68c.384 0 .704-.32.768-.704l1.152-15.36 1.28.128-1.152 15.36c-.128 1.024-1.024 1.856-2.048 1.856z", fill: "currentColor" })));
-}
+var SvgTrashIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { fill: "currentColor", d: "M8.8 7.52h1.28v10.24H8.8V7.52ZM11.36 7.52h1.28v10.24h-1.28V7.52ZM13.92 7.52h1.28v10.24h-1.28V7.52ZM3.68 3.68h16.64v1.28H3.68V3.68ZM15.2 3.68h-1.28v-.64c0-.384-.256-.64-.64-.64h-2.56c-.384 0-.64.256-.64.64v.64H8.8v-.64c0-1.088.832-1.92 1.92-1.92h2.56c1.088 0 1.92.832 1.92 1.92v.64Z" }),
+    React.createElement("path", { fill: "currentColor", d: "M15.84 21.6H8.16c-1.024 0-1.92-.832-2.048-1.856L4.96 4.384l1.28-.128 1.152 15.36c0 .384.384.704.768.704h7.68c.384 0 .704-.32.768-.704l1.152-15.36 1.28.128-1.152 15.36c-.128 1.024-1.024 1.856-2.048 1.856Z" }))); };
 exports.default = SvgTrashIcon;
 //# sourceMappingURL=TrashIcon.js.map

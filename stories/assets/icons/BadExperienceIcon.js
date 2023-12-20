@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgBadExperienceIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M36.855 10h4.883a4.266 4.266 0 012.827 1.003A4.14 4.14 0 0146 13.6v12.6a4.14 4.14 0 01-1.435 2.597 4.266 4.266 0 01-2.827 1.002h-4.883m-12.803 3.6v7.2c0 1.432.578 2.806 1.607 3.818A5.532 5.532 0 0029.539 46l7.316-16.2V10H16.224a3.694 3.694 0 00-2.411.857 3.586 3.586 0 00-1.248 2.204l-2.524 16.2a3.544 3.544 0 00.104 1.543c.148.501.405.965.753 1.359s.778.708 1.262.922a3.708 3.708 0 001.54.315h10.352z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
-}
+var SvgBadExperienceIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M36.855 10h4.883a4.266 4.266 0 0 1 2.827 1.003A4.14 4.14 0 0 1 46 13.6v12.6a4.14 4.14 0 0 1-1.435 2.597 4.266 4.266 0 0 1-2.827 1.002h-4.883m-12.803 3.6v7.2c0 1.432.578 2.806 1.607 3.818A5.532 5.532 0 0 0 29.539 46l7.316-16.2V10H16.224a3.694 3.694 0 0 0-2.411.857 3.586 3.586 0 0 0-1.248 2.204l-2.524 16.2a3.544 3.544 0 0 0 .104 1.543c.148.501.405.965.753 1.359s.778.708 1.262.922a3.708 3.708 0 0 0 1.54.315h10.352Z" }))); };
 exports.default = SvgBadExperienceIcon;
 //# sourceMappingURL=BadExperienceIcon.js.map

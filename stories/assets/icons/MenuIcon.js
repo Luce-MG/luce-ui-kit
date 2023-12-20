@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgMenuIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 23 20", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { fill: "currentColor", d: "M1 3.25h20.172v2.2H1zM1 8.75h20.172v2.2H1zM1 14.25h20.172v2.2H1z" })));
-}
+var SvgMenuIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 23 20" }, props),
+    React.createElement("path", { fill: "currentColor", d: "M1 3.25h20.172v2.2H1zM1 8.75h20.172v2.2H1zM1 14.25h20.172v2.2H1z" }))); };
 exports.default = SvgMenuIcon;
 //# sourceMappingURL=MenuIcon.js.map

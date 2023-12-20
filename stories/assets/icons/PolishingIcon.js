@@ -31,11 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgPolishingIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M21 15.5v-2.246a1 1 0 00-.725-.961L7 8.5m0 0H3a1 1 0 00-1 1v8m5-9L4.3 2M12 19H7M5 12h3", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" }),
-        React.createElement("circle", { cx: 4, cy: 20, r: 3, stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { d: "M12 19a5 5 0 015-5v0a5 5 0 015 5v1H12v-1zM11 23h12", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgPolishingIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeWidth: 1.6, d: "M21 15.5v-2.246a1 1 0 0 0-.725-.961L7 8.5m0 0H3a1 1 0 0 0-1 1v8m5-9L4.3 2M12 19H7M5 12h3" }),
+    React.createElement("circle", { cx: 4, cy: 20, r: 3, stroke: "currentColor", strokeWidth: 1.6 }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M12 19a5 5 0 0 1 10 0v1H12v-1ZM11 23h12" }))); };
 exports.default = SvgPolishingIcon;
 //# sourceMappingURL=PolishingIcon.js.map

@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgMobilePhoneIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 10 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M7.84.75H2.387c-.94 0-1.704.84-1.704 1.875v12.75c0 1.035.763 1.875 1.704 1.875h5.455c.94 0 1.704-.84 1.704-1.875V2.625C9.545 1.59 8.782.75 7.841.75zM5.114 16.5c-.565 0-1.022-.502-1.022-1.125s.457-1.125 1.022-1.125c.566 0 1.023.502 1.023 1.125S5.68 16.5 5.113 16.5zm3.069-3H2.045V3h6.137v10.5z", fill: "currentColor" })));
-}
+var SvgMobilePhoneIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 10 18" }, props),
+    React.createElement("path", { fill: "currentColor", d: "M7.84.75H2.387c-.94 0-1.704.84-1.704 1.875v12.75c0 1.035.763 1.875 1.704 1.875h5.455c.94 0 1.704-.84 1.704-1.875V2.625C9.545 1.59 8.782.75 7.841.75ZM5.114 16.5c-.565 0-1.022-.502-1.022-1.125s.457-1.125 1.022-1.125c.566 0 1.023.502 1.023 1.125S5.68 16.5 5.113 16.5Zm3.069-3H2.045V3h6.137v10.5Z" }))); };
 exports.default = SvgMobilePhoneIcon;
 //# sourceMappingURL=MobilePhoneIcon.js.map

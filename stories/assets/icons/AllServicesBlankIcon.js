@@ -31,13 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgAllServicesBlankIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("g", { clipPath: "url(#AllServicesBlankIcon_svg__clip0_21614_96484)", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" },
-            React.createElement("path", { d: "M2 2h5v5H2zM2 11h5v5H2zM11 2h5v5h-5zM11 11h5v5h-5z" })),
-        React.createElement("defs", null,
-            React.createElement("clipPath", { id: "AllServicesBlankIcon_svg__clip0_21614_96484" },
-                React.createElement("path", { fill: "#fff", d: "M0 0h18v18H0z" })))));
-}
+var SvgAllServicesBlankIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 18 18" }, props),
+    React.createElement("g", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, clipPath: "url(#AllServicesBlankIcon_svg__a)" },
+        React.createElement("path", { d: "M2 2h5v5H2zM2 11h5v5H2zM11 2h5v5h-5zM11 11h5v5h-5z" })),
+    React.createElement("defs", null,
+        React.createElement("clipPath", { id: "AllServicesBlankIcon_svg__a" },
+            React.createElement("path", { fill: "#fff", d: "M0 0h18v18H0z" }))))); };
 exports.default = SvgAllServicesBlankIcon;
 //# sourceMappingURL=AllServicesBlankIcon.js.map

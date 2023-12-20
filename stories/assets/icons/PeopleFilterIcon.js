@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgPeopleFilterIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 23", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M21.165 2.833H9.832l4.327 6.498v3.597l2.798 2.183-.086-5.78 4.294-6.498zM10.756 11.444a2.756 2.756 0 11-5.51 0 2.756 2.756 0 015.51 0zM13.335 22.11c0-2.454-2.388-4.444-5.334-4.444-2.945 0-5.333 1.99-5.333 4.444", stroke: "#222", strokeWidth: 1.6 })));
-}
+var SvgPeopleFilterIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 23" }, props),
+    React.createElement("path", { stroke: "#222", strokeWidth: 1.6, d: "M21.165 2.833H9.832l4.327 6.498v3.597l2.798 2.183-.086-5.78 4.294-6.498ZM10.756 11.444a2.756 2.756 0 1 1-5.51 0 2.756 2.756 0 0 1 5.51 0ZM13.335 22.11c0-2.454-2.388-4.444-5.334-4.444-2.945 0-5.333 1.99-5.333 4.444" }))); };
 exports.default = SvgPeopleFilterIcon;
 //# sourceMappingURL=PeopleFilterIcon.js.map

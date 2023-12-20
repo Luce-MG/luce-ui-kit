@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgEmailIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M15.2 12c0 2.401-1.734 4.2-3.7 4.2-1.966 0-3.7-1.799-3.7-4.2 0-2.401 1.734-4.2 3.7-4.2 1.966 0 3.7 1.799 3.7 4.2z", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M15.5 8c-.4 6.8 0 8.5 2 8.5 3 0 3.5-3 3.5-5.5 0-4.97-4.03-8-9-8a9 9 0 000 18c2.5 0 4-1 4-1", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgEmailIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M15.2 12c0 2.401-1.734 4.2-3.7 4.2-1.966 0-3.7-1.799-3.7-4.2 0-2.401 1.734-4.2 3.7-4.2 1.966 0 3.7 1.799 3.7 4.2Z" }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M15.5 8c-.4 6.8 0 8.5 2 8.5 3 0 3.5-3 3.5-5.5 0-4.97-4.03-8-9-8a9 9 0 0 0 0 18c2.5 0 4-1 4-1" }))); };
 exports.default = SvgEmailIcon;
 //# sourceMappingURL=EmailIcon.js.map
