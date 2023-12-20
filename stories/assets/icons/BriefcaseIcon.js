@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgBriefcaseIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M15.188 5.063H2.813a.563.563 0 00-.562.562v9c0 .31.252.563.562.563h12.375c.311 0 .563-.252.563-.563v-9a.563.563 0 00-.563-.563z", stroke: "currentColor", strokeWidth: 1.2, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M11.813 5.063V3.938a1.125 1.125 0 00-1.126-1.126H7.313a1.125 1.125 0 00-1.125 1.126v1.124M15.751 8.881a13.438 13.438 0 01-6.75 1.806c-2.37.004-4.699-.619-6.75-1.805M8.156 8.438h1.688", stroke: "currentColor", strokeWidth: 1.2, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgBriefcaseIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 18 18" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.2, d: "M15.188 5.063H2.813a.563.563 0 0 0-.562.562v9c0 .31.252.563.562.563h12.375c.311 0 .563-.252.563-.563v-9a.563.563 0 0 0-.563-.563Z" }),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.2, d: "M11.813 5.063V3.938a1.125 1.125 0 0 0-1.126-1.126H7.313a1.125 1.125 0 0 0-1.125 1.126v1.124M15.751 8.881a13.438 13.438 0 0 1-6.75 1.806c-2.37.004-4.699-.619-6.75-1.805M8.156 8.438h1.688" }))); };
 exports.default = SvgBriefcaseIcon;
 //# sourceMappingURL=BriefcaseIcon.js.map

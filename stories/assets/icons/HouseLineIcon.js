@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgHouseLineIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M47.25 47.25V25.274a1.751 1.751 0 00-.573-1.295L29.176 8.07a1.75 1.75 0 00-2.354 0l-17.5 15.91a1.75 1.75 0 00-.572 1.295V47.25M3.5 47.25h49", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M33.249 47.248v-14h-10.5v14", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgHouseLineIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M47.25 47.25V25.274a1.751 1.751 0 0 0-.573-1.295L29.176 8.07a1.75 1.75 0 0 0-2.354 0l-17.5 15.91a1.75 1.75 0 0 0-.572 1.295V47.25M3.5 47.25h49" }),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M33.249 47.248v-14h-10.5v14" }))); };
 exports.default = SvgHouseLineIcon;
 //# sourceMappingURL=HouseLineIcon.js.map

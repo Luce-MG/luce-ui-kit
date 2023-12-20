@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCleaningIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 25", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M1 8.727h13m-13 0l.712 13.38A2 2 0 003.709 24h9.479L14 8.727m-13 0C1 5.564 3.91 3 7.5 3S14 5.564 14 8.727", stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { d: "M4.5 12.444V9h6v3.444m-6 0V14m0-1.556h3m3 0V14m0-1.556h-3m0 0V14M18 1l-1.5 20m0 0h-3.58m3.58 0h4.04a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H11", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgCleaningIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 25" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M1 8.727h13m-13 0 .712 13.38A2 2 0 0 0 3.709 24h9.479L14 8.727m-13 0C1 5.564 3.91 3 7.5 3S14 5.564 14 8.727" }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M4.5 12.444V9h6v3.444m-6 0V14m0-1.556h3m3 0V14m0-1.556h-3m0 0V14M18 1l-1.5 20m0 0h-3.58m3.58 0h4.04a1.5 1.5 0 1 1 0 3H11" }))); };
 exports.default = SvgCleaningIcon;
 //# sourceMappingURL=CleaningIcon.js.map

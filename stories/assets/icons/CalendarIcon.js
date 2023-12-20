@@ -31,12 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCalendarIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M7 4V1", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "square" }),
-        React.createElement("path", { d: "M2 5a1 1 0 011-1h18a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V5z", stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { d: "M10.5 8.5h-3v3h3v-3zM16.5 8.5h-3v3h3v-3zM10.5 14.5h-3v3h3v-3zM16.5 14.5h-3v3h3v-3z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M17 4V1", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "square" })));
-}
+var SvgCalendarIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "square", strokeWidth: 1.6, d: "M7 4V1" }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M2 5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5Z" }),
+    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M10.5 8.5h-3v3h3v-3ZM16.5 8.5h-3v3h3v-3ZM10.5 14.5h-3v3h3v-3ZM16.5 14.5h-3v3h3v-3Z" }),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "square", strokeWidth: 1.6, d: "M17 4V1" }))); };
 exports.default = SvgCalendarIcon;
 //# sourceMappingURL=CalendarIcon.js.map

@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgCopyClipboardIcon(props) {
-    return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none" }, props),
-        React.createElement("path", { d: "M21 3H11v5h10V3z", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }),
-        React.createElement("path", { d: "M21 5h4a1 1 0 011 1v21a1 1 0 01-1 1H7a1 1 0 01-1-1V6a1 1 0 011-1h4M12 19h8M12 15h8", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
-}
+var SvgCopyClipboardIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 32 32" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M21 3H11v5h10V3Z" }),
+    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M21 5h4a1 1 0 0 1 1 1v21a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4M12 19h8M12 15h8" }))); };
 exports.default = SvgCopyClipboardIcon;
 //# sourceMappingURL=CopyClipboardIcon.js.map

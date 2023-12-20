@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgFilterIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M20 4H4l6.109 9.526V18.8l3.95 3.2-.122-8.474L20 4z", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgFilterIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M20 4H4l6.109 9.526V18.8l3.95 3.2-.122-8.474L20 4Z" }))); };
 exports.default = SvgFilterIcon;
 //# sourceMappingURL=FilterIcon.js.map

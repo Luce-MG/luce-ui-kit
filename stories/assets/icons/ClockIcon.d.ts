@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgClockIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import type { SVGProps } from 'react';
+declare const SvgClockIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgClockIcon;

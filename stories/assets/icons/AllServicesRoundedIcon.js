@@ -31,13 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgAllServicesRoundedIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("g", { clipPath: "url(#AllServicesRoundedIcon_svg__clip0_21614_96485)" },
-            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M6.5 11a4.5 4.5 0 110-9 4.5 4.5 0 010 9zM2 17.5a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0zm11 0a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0zm0-11a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0zM17.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM9 6.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM17.5 20a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM9 17.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z", fill: "currentColor" })),
-        React.createElement("defs", null,
-            React.createElement("clipPath", { id: "AllServicesRoundedIcon_svg__clip0_21614_96485" },
-                React.createElement("path", { fill: "#fff", d: "M0 0h24v24H0z" })))));
-}
+var SvgAllServicesRoundedIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("g", { clipPath: "url(#AllServicesRoundedIcon_svg__a)" },
+        React.createElement("path", { fill: "currentColor", fillRule: "evenodd", d: "M6.5 11a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9ZM2 17.5a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0Zm11 0a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0Zm0-11a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0ZM17.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM17.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM9 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z", clipRule: "evenodd" })),
+    React.createElement("defs", null,
+        React.createElement("clipPath", { id: "AllServicesRoundedIcon_svg__a" },
+            React.createElement("path", { fill: "#fff", d: "M0 0h24v24H0z" }))))); };
 exports.default = SvgAllServicesRoundedIcon;
 //# sourceMappingURL=AllServicesRoundedIcon.js.map

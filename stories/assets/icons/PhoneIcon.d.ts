@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare function SvgPhoneIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
+import type { SVGProps } from 'react';
+declare const SvgPhoneIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export default SvgPhoneIcon;

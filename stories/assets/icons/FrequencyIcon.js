@@ -31,9 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgFrequencyIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("path", { d: "M45.11 7H13.667a2 2 0 00-2 2v19m-.777 21h31.444a2 2 0 002-2V25.667M11.666 28L21 21m-9.334 7l-9.333-7m42 4.667l9.333 7m-9.333-7l-9.333 7", stroke: "currentColor", strokeWidth: 1.6 })));
-}
+var SvgFrequencyIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M45.11 7H13.667a2 2 0 0 0-2 2v19m-.777 21h31.444a2 2 0 0 0 2-2V25.667M11.666 28 21 21m-9.334 7-9.333-7m42 4.667 9.333 7m-9.333-7-9.333 7" }))); };
 exports.default = SvgFrequencyIcon;
 //# sourceMappingURL=FrequencyIcon.js.map

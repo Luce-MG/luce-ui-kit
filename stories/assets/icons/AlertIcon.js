@@ -31,10 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-function SvgAlertIcon(props) {
-    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React.createElement("circle", { cx: 12, cy: 12, r: 9, stroke: "currentColor", strokeWidth: 1.6 }),
-        React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M11.8 8v5M11.8 14v2" })));
-}
+var SvgAlertIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
+    React.createElement("circle", { cx: 12, cy: 12, r: 9, stroke: "currentColor", strokeWidth: 1.6 }),
+    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M11.8 8v5M11.8 14v2" }))); };
 exports.default = SvgAlertIcon;
 //# sourceMappingURL=AlertIcon.js.map
