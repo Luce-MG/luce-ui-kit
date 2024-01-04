@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgLineChartUpIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("path", { fill: "currentColor", d: "M21 21H4a1 1 0 0 1-1-1V3h2v16h16v2ZM8.373 16 7 14.656 11.856 9.9a.985.985 0 0 1 1.373 0l2.227 2.181L19.627 8 21 9.344 16.144 14.1a.985.985 0 0 1-1.373 0l-2.228-2.182L8.374 16h-.001Z" }))); };
+function SvgLineChartUpIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M21 21H4a1 1 0 01-1-1V3h2v16h16v2zM8.373 16L7 14.656 11.856 9.9a.985.985 0 011.373 0l2.227 2.181L19.627 8 21 9.344 16.144 14.1a.985.985 0 01-1.373 0l-2.228-2.182L8.374 16h-.001z", fill: "currentColor" })));
+}
 exports.default = SvgLineChartUpIcon;
 //# sourceMappingURL=LineChartUpIcon.js.map

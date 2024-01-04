@@ -31,12 +31,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgPackageIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 25" }, props),
-    React.createElement("g", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, clipPath: "url(#PackageIcon_svg__a)" },
-        React.createElement("path", { d: "m12.89 1.95 8 4A2 2 0 0 1 22 7.74v9.53a1.999 1.999 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.74a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0v0Z" }),
-        React.createElement("path", { d: "M2.32 6.66 12 11.5l9.68-4.84M12 23.26V11.5M7 4l10 5" })),
-    React.createElement("defs", null,
-        React.createElement("clipPath", { id: "PackageIcon_svg__a" },
-            React.createElement("path", { fill: "currentColor", d: "M0 .5h24v24H0z" }))))); };
+function SvgPackageIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 25", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("g", { clipPath: "url(#PackageIcon_svg__clip0_20171_197521)", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" },
+            React.createElement("path", { d: "M12.89 1.95l8 4A2 2 0 0122 7.74v9.53a1.999 1.999 0 01-1.11 1.79l-8 4a2 2 0 01-1.79 0l-8-4a2 2 0 01-1.1-1.8V7.74a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0v0z" }),
+            React.createElement("path", { d: "M2.32 6.66L12 11.5l9.68-4.84M12 23.26V11.5M7 4l10 5" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "PackageIcon_svg__clip0_20171_197521" },
+                React.createElement("path", { fill: "currentColor", transform: "translate(0 .5)", d: "M0 0h24v24H0z" })))));
+}
 exports.default = SvgPackageIcon;
 //# sourceMappingURL=PackageIcon.js.map

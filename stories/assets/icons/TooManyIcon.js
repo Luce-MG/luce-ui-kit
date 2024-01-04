@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgTooManyIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M27 17H5V7h24v7" }),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M27 14h24v10H27zM18 41H5V31h10m14 8v-6M18 39h24v10H18z" }),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "M39 24v9H15V23h12" }))); };
+function SvgTooManyIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M27 17H5V7h24v7", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round", d: "M27 14h24v10H27zM18 41H5V31h10m14 8v-6M18 39h24v10H18z" }),
+        React.createElement("path", { d: "M39 24v9H15V23h12", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
+}
 exports.default = SvgTooManyIcon;
 //# sourceMappingURL=TooManyIcon.js.map

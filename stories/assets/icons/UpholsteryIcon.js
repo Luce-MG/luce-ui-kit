@@ -31,8 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgUpholsteryIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 32 32" }, props),
-    React.createElement("path", { stroke: "#fff", strokeLinecap: "round", strokeWidth: 1.6, d: "M28 20.666v-2.994c0-.595-.395-1.118-.968-1.282l-17.7-5.057m0 0H4c-.736 0-1.333.597-1.333 1.333v10.667m6.667-12-3.6-8.666m10.266 22.666H9.333M6.666 16h4" }),
-    React.createElement("path", { stroke: "#fff", strokeWidth: 1.6, d: "M5.334 30.666a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM16 25.333a6.667 6.667 0 0 1 13.333 0v1.334H16v-1.334ZM14.666 30.666h16" }))); };
+function SvgUpholsteryIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M28 20.666v-2.994c0-.595-.395-1.118-.968-1.282l-17.7-5.057m0 0H4c-.736 0-1.333.597-1.333 1.333v10.667m6.667-12l-3.6-8.666m10.266 22.666H9.333M6.666 16h4", stroke: "#fff", strokeWidth: 1.6, strokeLinecap: "round" }),
+        React.createElement("path", { d: "M5.334 30.666a4 4 0 100-8 4 4 0 000 8zM16 25.333a6.667 6.667 0 0113.333 0v1.334H16v-1.334zM14.666 30.666h16", stroke: "#fff", strokeWidth: 1.6 })));
+}
 exports.default = SvgUpholsteryIcon;
 //# sourceMappingURL=UpholsteryIcon.js.map

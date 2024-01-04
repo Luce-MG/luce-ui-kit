@@ -31,8 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgCouponIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 32 32" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "m3.333 15.466 1.733-10.4 10.4-1.733L29.332 17.2 17.199 29.332 3.333 15.466Z" }),
-    React.createElement("circle", { cx: 10.777, cy: 10.777, r: 2.141, stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6 }))); };
+function SvgCouponIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M3.333 15.466l1.733-10.4 10.4-1.733L29.332 17.2 17.199 29.332 3.333 15.466z", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 10.777, cy: 10.777, r: 2.141, stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
+}
 exports.default = SvgCouponIcon;
 //# sourceMappingURL=CouponIcon.js.map

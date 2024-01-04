@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgOptionsIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("circle", { cx: 5, cy: 12, r: 2, fill: "currentColor", transform: "rotate(-90 5 12)" }),
-    React.createElement("circle", { cx: 12, cy: 12, r: 2, fill: "currentColor", transform: "rotate(-90 12 12)" }),
-    React.createElement("circle", { cx: 19, cy: 12, r: 2, fill: "currentColor", transform: "rotate(-90 19 12)" }))); };
+function SvgOptionsIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("circle", { cx: 5, cy: 12, r: 2, transform: "rotate(-90 5 12)", fill: "currentColor" }),
+        React.createElement("circle", { cx: 12, cy: 12, r: 2, transform: "rotate(-90 12 12)", fill: "currentColor" }),
+        React.createElement("circle", { cx: 19, cy: 12, r: 2, transform: "rotate(-90 19 12)", fill: "currentColor" })));
+}
 exports.default = SvgOptionsIcon;
 //# sourceMappingURL=OptionsIcon.js.map

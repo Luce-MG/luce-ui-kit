@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgGiftIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 25 24" }, props),
-    React.createElement("path", { fill: "currentColor", fillRule: "evenodd", d: "M5.997 7C5.669 6.463 5.5 5.803 5.5 5c0-1.583 1.19-3 3-3 1.812 0 3.273 1.214 4 3.114.727-1.9 2.188-3.114 4-3.114 1.81 0 3 1.417 3 3 0 .803-.169 1.463-.497 2H20.5a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2v7a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2v-7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.497ZM11.5 9h-7v2h7V9Zm9 2h-7V9h7v2Zm-9 9v-7h-5v7h5Zm7 0h-5v-7h5v7ZM8.5 4c-.62 0-1 .452-1 1 0 1.253 1.017 1.85 3.43 1.974C10.66 5.112 9.661 4 8.5 4ZM14 6.974C14.268 5.112 15.267 4 16.43 4c.62 0 1 .452 1 1 0 1.253-1.018 1.85-3.43 1.974Z", clipRule: "evenodd" }))); };
+function SvgGiftIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 25 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M5.997 7C5.669 6.463 5.5 5.803 5.5 5c0-1.583 1.19-3 3-3 1.812 0 3.273 1.214 4 3.114.727-1.9 2.188-3.114 4-3.114 1.81 0 3 1.417 3 3 0 .803-.169 1.463-.497 2H20.5a2 2 0 012 2v2a2 2 0 01-2 2v7a2 2 0 01-2 2h-12a2 2 0 01-2-2v-7a2 2 0 01-2-2V9a2 2 0 012-2h1.497zM11.5 9h-7v2h7V9zm9 2h-7V9h7v2zm-9 9v-7h-5v7h5zm7 0h-5v-7h5v7zM8.5 4c-.62 0-1 .452-1 1 0 1.253 1.017 1.85 3.43 1.974C10.66 5.112 9.661 4 8.5 4zM14 6.974C14.268 5.112 15.267 4 16.43 4c.62 0 1 .452 1 1 0 1.253-1.018 1.85-3.43 1.974z", fill: "currentColor" })));
+}
 exports.default = SvgGiftIcon;
 //# sourceMappingURL=GiftIcon.js.map

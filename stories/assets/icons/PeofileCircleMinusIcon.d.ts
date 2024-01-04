@@ -1,3 +1,3 @@
-import type { SVGProps } from 'react';
-declare const SvgPeofileCircleMinusIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgPeofileCircleMinusIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgPeofileCircleMinusIcon;
