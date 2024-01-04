@@ -88,6 +88,7 @@ export { default as PauseIcon } from './PauseIcon';
 export { default as PaymentIcon } from './PaymentIcon';
 export { default as PedicureIcon } from './PedicureIcon';
 export { default as PeofileCircleMinusIcon } from './PeofileCircleMinusIcon';
+export { default as PeopleAttendances } from './PeopleAttendances';
 export { default as PeopleFilterIcon } from './PeopleFilterIcon';
 export { default as PeopleFilterTickIcon } from './PeopleFilterTickIcon';
 export { default as PeopleIcon } from './PeopleIcon';
