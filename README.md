@@ -1,0 +1,1 @@
+- Becarefull when updating the ui kit, make sure to not delete the package dependecies and yarn lock
