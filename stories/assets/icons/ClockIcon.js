@@ -31,8 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgClockIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 18 18" }, props),
-    React.createElement("circle", { cx: 9, cy: 9, r: 7, stroke: "currentColor", strokeWidth: 1.6 }),
-    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M9 4.5V9h3" }))); };
+function SvgClockIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("circle", { cx: 9, cy: 9, r: 7, stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M9 4.5V9h3", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgClockIcon;
 //# sourceMappingURL=ClockIcon.js.map

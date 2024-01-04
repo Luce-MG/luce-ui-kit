@@ -31,13 +31,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgPeopleFilterTickIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 26 26" }, props),
-    React.createElement("path", { stroke: "#222", strokeWidth: 1.6, d: "M21.165 2.833H9.832l4.327 6.498v3.597l2.798 2.183-.086-5.78 4.294-6.498ZM10.756 11.444a2.756 2.756 0 1 1-5.51 0 2.756 2.756 0 0 1 5.51 0ZM13.335 22.11c0-2.454-2.388-4.444-5.334-4.444-2.945 0-5.333 1.99-5.333 4.444" }),
-    React.createElement("g", { clipPath: "url(#PeopleFilterTickIcon_svg__a)" },
-        React.createElement("rect", { width: 10, height: 10, x: 16, y: 16, fill: "#4EA8DC", rx: 5 }),
-        React.createElement("path", { stroke: "#fff", d: "m19 20.59 1.765 1.91L24 19" })),
-    React.createElement("defs", null,
-        React.createElement("clipPath", { id: "PeopleFilterTickIcon_svg__a" },
-            React.createElement("rect", { width: 10, height: 10, x: 16, y: 16, fill: "#fff", rx: 5 }))))); };
+function SvgPeopleFilterTickIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 26 26", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M21.165 2.833H9.832l4.327 6.498v3.597l2.798 2.183-.086-5.78 4.294-6.498zM10.756 11.444a2.756 2.756 0 11-5.51 0 2.756 2.756 0 015.51 0zM13.335 22.11c0-2.454-2.388-4.444-5.334-4.444-2.945 0-5.333 1.99-5.333 4.444", stroke: "#222", strokeWidth: 1.6 }),
+        React.createElement("g", { clipPath: "url(#PeopleFilterTickIcon_svg__clip0_15814_139066)" },
+            React.createElement("rect", { x: 16, y: 16, width: 10, height: 10, rx: 5, fill: "#4EA8DC" }),
+            React.createElement("path", { d: "M19 20.59l1.765 1.91L24 19", stroke: "#fff" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "PeopleFilterTickIcon_svg__clip0_15814_139066" },
+                React.createElement("rect", { x: 16, y: 16, width: 10, height: 10, rx: 5, fill: "#fff" })))));
+}
 exports.default = SvgPeopleFilterTickIcon;
 //# sourceMappingURL=PeopleFilterTickIcon.js.map

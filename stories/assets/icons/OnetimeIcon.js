@@ -31,9 +31,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgOnetimeIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M41.287 22.813h8.75v-8.75" }),
-    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.8, d: "M41.611 41.612a19.25 19.25 0 1 1 0-27.224l7.425 7.425" }),
-    React.createElement("path", { fill: "currentColor", d: "M28.17 37c.22 0 .431-.133.587-.37.156-.236.243-.557.243-.891V20.26c0-.334-.087-.655-.243-.892-.156-.236-.367-.369-.587-.369a2.26 2.26 0 0 0-.913.29l-1.66.782c-.164.056-.312.192-.42.388a1.55 1.55 0 0 0-.177.697c.004.29.083.566.22.769.136.202.32.316.51.316a.856.856 0 0 0 .357-.101l1.253-.53V35.74c0 .334.088.655.243.892.156.236.367.369.587.369Z" }))); };
+function SvgOnetimeIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M41.287 22.813h8.75v-8.75", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M41.611 41.612a19.25 19.25 0 110-27.224l7.425 7.425", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M28.17 37c.22 0 .431-.133.587-.37.156-.236.243-.557.243-.891V20.26c0-.334-.087-.655-.243-.892-.156-.236-.367-.369-.587-.369a2.26 2.26 0 00-.913.29l-1.66.782c-.164.056-.312.192-.42.388a1.55 1.55 0 00-.177.697c.004.29.083.566.22.769.136.202.32.316.51.316a.856.856 0 00.357-.101l1.253-.53V35.74c0 .334.088.655.243.892.156.236.367.369.587.369z", fill: "currentColor" })));
+}
 exports.default = SvgOnetimeIcon;
 //# sourceMappingURL=OnetimeIcon.js.map

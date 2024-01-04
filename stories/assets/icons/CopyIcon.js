@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgCopyIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 16 19" }, props),
-    React.createElement("path", { fill: "#1A4D6A", fillRule: "evenodd", d: "M14.667 7.916v7.917c0 .912-.565 1.583-1.333 1.583H6.667c-.768 0-1.333-.67-1.333-1.583v-3.167H2.667c-.768 0-1.333-.67-1.333-1.583V3.166c0-.912.565-1.583 1.333-1.583h6.667c.768 0 1.333.671 1.333 1.583v3.167h2.667c.768 0 1.333.671 1.333 1.583ZM9.334 6.333V3.166H2.667v7.917h2.667V7.916c0-.912.565-1.583 1.333-1.583h2.667Zm4 1.583H6.667v7.917h6.667V7.916Z", clipRule: "evenodd" }))); };
+function SvgCopyIcon(props) {
+    return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", viewBox: "0 0 16 19", fill: "none" }, props),
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.667 7.916v7.917c0 .912-.565 1.583-1.333 1.583H6.667c-.768 0-1.333-.67-1.333-1.583v-3.167H2.667c-.768 0-1.333-.67-1.333-1.583V3.166c0-.912.565-1.583 1.333-1.583h6.667c.768 0 1.333.671 1.333 1.583v3.167h2.667c.768 0 1.333.671 1.333 1.583zM9.334 6.333V3.166H2.667v7.917h2.667V7.916c0-.912.565-1.583 1.333-1.583h2.667zm4 1.583H6.667v7.917h6.667V7.916z", fill: "#1A4D6A" })));
+}
 exports.default = SvgCopyIcon;
 //# sourceMappingURL=CopyIcon.js.map

@@ -31,11 +31,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgDiscountIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 56 56" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "m9.777 27.752 2.71-16.264 16.265-2.711 21.686 21.685-9.488 9.488" }),
-    React.createElement("circle", { cx: 20, cy: 19, r: 2, stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6 }),
-    React.createElement("circle", { cx: 15.806, cy: 34.39, r: 3.627, stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6 }),
-    React.createElement("circle", { cx: 30.312, cy: 45.27, r: 3.627, stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6 }),
-    React.createElement("path", { stroke: "currentColor", strokeLinejoin: "round", strokeWidth: 1.6, d: "m25.648 30.763-5.006 18.683" }))); };
+function SvgDiscountIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 56 56", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M9.777 27.752l2.71-16.264 16.265-2.711 21.686 21.685-9.488 9.488", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 20, cy: 19, r: 2, stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 15.806, cy: 34.39, r: 3.627, stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 30.312, cy: 45.27, r: 3.627, stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M25.648 30.763l-5.006 18.683", stroke: "currentColor", strokeWidth: 1.6, strokeLinejoin: "round" })));
+}
 exports.default = SvgDiscountIcon;
 //# sourceMappingURL=DiscountIcon.js.map

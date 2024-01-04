@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgReceiptIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.5, d: "M7.125 9.75h9.75M7.125 12.75h9.75M3 19.5V5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 .75.75V19.5L18 18l-3 1.5-3-1.5-3 1.5L6 18l-3 1.5Z" }))); };
+function SvgReceiptIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M7.125 9.75h9.75M7.125 12.75h9.75M3 19.5V5.25a.75.75 0 01.75-.75h16.5a.75.75 0 01.75.75V19.5L18 18l-3 1.5-3-1.5-3 1.5L6 18l-3 1.5z", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" })));
+}
 exports.default = SvgReceiptIcon;
 //# sourceMappingURL=ReceiptIcon.js.map

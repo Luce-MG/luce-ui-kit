@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgTickIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "m3.5 13 6 6 11-11" }))); };
+function SvgTickIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M3.5 13l6 6 11-11", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgTickIcon;
 //# sourceMappingURL=TickIcon.js.map

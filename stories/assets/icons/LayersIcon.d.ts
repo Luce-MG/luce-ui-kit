@@ -1,3 +1,3 @@
-import type { SVGProps } from 'react';
-declare const SvgLayersIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgLayersIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgLayersIcon;

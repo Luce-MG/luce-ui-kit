@@ -31,9 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgProfileAddIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeMiterlimit: 10, strokeWidth: 1.6, d: "M12 15a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z" }),
-    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M5.981 18.691a6.753 6.753 0 0 1 12.038 0M16.5 5.25H21M18.75 3v4.5" }),
-    React.createElement("path", { stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.6, d: "M20.889 10.58a8.99 8.99 0 1 1-7.469-7.469" }))); };
+function SvgProfileAddIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M12 15a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z", stroke: "currentColor", strokeWidth: 1.6, strokeMiterlimit: 10 }),
+        React.createElement("path", { d: "M5.981 18.691a6.753 6.753 0 0112.038 0M16.5 5.25H21M18.75 3v4.5M20.889 10.58a8.99 8.99 0 11-7.469-7.469", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" })));
+}
 exports.default = SvgProfileAddIcon;
 //# sourceMappingURL=ProfileAddIcon.js.map

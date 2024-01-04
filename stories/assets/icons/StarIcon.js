@@ -31,7 +31,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgStarIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "m12 4 3.132 4.69 5.428 1.529-3.493 4.427.223 5.635L12 18.328 6.71 20.28l.223-5.635L3.44 10.22l5.428-1.53L12 4Z" }))); };
+function SvgStarIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("path", { d: "M12 4l3.132 4.69 5.428 1.529-3.493 4.427.223 5.635L12 18.328 6.71 20.28l.223-5.635L3.44 10.22l5.428-1.53L12 4z", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgStarIcon;
 //# sourceMappingURL=StarIcon.js.map

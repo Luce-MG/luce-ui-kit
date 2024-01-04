@@ -31,8 +31,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
-var SvgLockIcon = function (props) { return (React.createElement("svg", __assign({ xmlns: "http://www.w3.org/2000/svg", width: "1em", height: "1em", fill: "none", viewBox: "0 0 24 24" }, props),
-    React.createElement("rect", { width: 14.4, height: 10.4, x: 4.8, y: 10.8, stroke: "currentColor", strokeWidth: 1.6, rx: 1.2 }),
-    React.createElement("path", { stroke: "currentColor", strokeWidth: 1.6, d: "M16 11V7a4 4 0 1 0-8 0v4M11.8 14v4" }))); };
+function SvgLockIcon(props) {
+    return (React.createElement("svg", __assign({ width: "1em", height: "1em", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React.createElement("rect", { x: 4.8, y: 10.8, width: 14.4, height: 10.4, rx: 1.2, stroke: "currentColor", strokeWidth: 1.6 }),
+        React.createElement("path", { d: "M16 11V7a4 4 0 00-4-4v0a4 4 0 00-4 4v4M11.8 14v4", stroke: "currentColor", strokeWidth: 1.6 })));
+}
 exports.default = SvgLockIcon;
 //# sourceMappingURL=LockIcon.js.map

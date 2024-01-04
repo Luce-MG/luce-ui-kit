@@ -1,3 +1,3 @@
-import type { SVGProps } from 'react';
-declare const SvgInstagramLogoIcon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+import * as React from 'react';
+declare function SvgInstagramLogoIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element;
 export default SvgInstagramLogoIcon;
