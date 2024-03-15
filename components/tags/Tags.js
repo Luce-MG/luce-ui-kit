@@ -102,8 +102,10 @@ var useStyles = styles_1.makeStyles(function (theme) {
     return styles_1.createStyles({
         primary: function (props) { return (__assign(__assign({ background: Color_1.default.base.firstBase, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         secondary: function (props) { return (__assign(__assign({ background: Color_1.default.primary[400], color: theme.palette.primary.main }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        officeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondBlue, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
-        homeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondGreen, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        officeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.primary, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        homeCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.cta, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        airconCleaning: function (props) { return (__assign(__assign({ background: Color_1.default.base.secondBlue, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
+        homeBeauty: function (props) { return (__assign(__assign({ background: Color_1.default.base.thirdTint, color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         percentage: function (props) { return (__assign(__assign({ background: Color_1.default.base.firstTint, color: Color_1.default.primary[800] }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         hourlyRate: function (props) { return (__assign(__assign({ background: Color_1.default.primary[700], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
         casual: function (props) { return (__assign(__assign({ background: theme.palette.grey[800], color: theme.palette.common.white }, LabelStyle), getSize(props.sizes ? props.sizes : 'medium'))); },
