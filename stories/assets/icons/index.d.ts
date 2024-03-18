@@ -10,6 +10,7 @@ export { default as AmexIcon } from './AmexIcon';
 export { default as ArrowBottomIcon } from './ArrowBottomIcon';
 export { default as ArrowFillRightIcon } from './ArrowFillRightIcon';
 export { default as ArrowLeftIcon } from './ArrowLeftIcon';
+export { default as ArrowLeftLongIcon } from './ArrowLeftLongIcon';
 export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as ArrowRightLongIcon } from './ArrowRightLongIcon';
 export { default as ArrowTopIcon } from './ArrowTopIcon';
