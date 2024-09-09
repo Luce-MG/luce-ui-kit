@@ -116,6 +116,7 @@ export { default as TextMessageLogoIcon } from './TextMessageLogoIcon';
 export { default as TickIcon } from './TickIcon';
 export { default as TimeOffIcon } from './TimeOffIcon';
 export { default as TooManyIcon } from './TooManyIcon';
+export { default as TransitIcon } from './TransitIcon';
 export { default as TrashIcon } from './TrashIcon';
 export { default as UpDownArrowIcon } from './UpDownArrowIcon';
 export { default as UpholsteryIcon } from './UpholsteryIcon';
