@@ -34,10 +34,7 @@ var NoCountTablePagination = function (props) {
     };
     function labelDisplayedRows(_a) {
         var from = _a.from, to = _a.to, count = _a.count;
-        if ((count - 1) % rowsPerPage) {
-            return from + "-" + to + " of " + count;
-        }
-        return from + "-" + to + " of " + (count - 1);
+        return from + "-" + to + " of " + count;
     }
     return (React.createElement(Table_1.TablePagination, { count: count, page: page, rowsPerPage: rowsPerPage, onChangePage: onChangePage, onChangeRowsPerPage: onChangeRowsPerPage, rowsPerPageOptions: rowsPerPageOptions, labelDisplayedRows: labelDisplayedRows }));
 };
