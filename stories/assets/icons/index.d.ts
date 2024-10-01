@@ -51,6 +51,7 @@ export { default as FreshIcon } from './FreshIcon';
 export { default as FulltimeIcon } from './FulltimeIcon';
 export { default as GiftIcon } from './GiftIcon';
 export { default as GuaranteeIcon } from './GuaranteeIcon';
+export { default as HandymanIcon } from './HandymanIcon';
 export { default as HdbIcon } from './HdbIcon';
 export { default as HelpIcon } from './HelpIcon';
 export { default as HideLeftIcon } from './HideLeftIcon';
