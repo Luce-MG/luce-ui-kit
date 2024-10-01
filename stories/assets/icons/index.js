@@ -112,6 +112,8 @@ var GiftIcon_1 = require("./GiftIcon");
 Object.defineProperty(exports, "GiftIcon", { enumerable: true, get: function () { return __importDefault(GiftIcon_1).default; } });
 var GuaranteeIcon_1 = require("./GuaranteeIcon");
 Object.defineProperty(exports, "GuaranteeIcon", { enumerable: true, get: function () { return __importDefault(GuaranteeIcon_1).default; } });
+var HandymanIcon_1 = require("./HandymanIcon");
+Object.defineProperty(exports, "HandymanIcon", { enumerable: true, get: function () { return __importDefault(HandymanIcon_1).default; } });
 var HdbIcon_1 = require("./HdbIcon");
 Object.defineProperty(exports, "HdbIcon", { enumerable: true, get: function () { return __importDefault(HdbIcon_1).default; } });
 var HelpIcon_1 = require("./HelpIcon");
