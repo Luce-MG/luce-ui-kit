@@ -134,3 +134,4 @@ export { default as WhatsappLogoIcon } from './WhatsappLogoIcon';
 export { default as WorkerAttendances } from './WorkerAttendances';
 export { default as MessengerLogoIcon } from './MessengerLogoIcon';
 export { default as CameraIcon } from './CameraIcon';
+export { default as CarWashIcon } from './CarWashIcon';
