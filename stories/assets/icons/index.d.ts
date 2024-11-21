@@ -138,3 +138,4 @@ export { default as WhatsappIcon } from './WhatsappIcon';
 export { default as WhatsappLogoIcon } from './WhatsappLogoIcon';
 export { default as WhatsappOutlineIcon } from './WhatsappOutlineIcon';
 export { default as WorkerAttendances } from './WorkerAttendances';
+export { default as PetCareIcon } from './PetCareIcon';
