@@ -44,6 +44,7 @@ export { default as DiscoverIcon } from './DiscoverIcon';
 export { default as DocumentIcon } from './DocumentIcon';
 export { default as DurationIcon } from './DurationIcon';
 export { default as EditsIcon } from './EditsIcon';
+export { default as ElderCareIcon } from './ElderCareIcon';
 export { default as EmailIcon } from './EmailIcon';
 export { default as FacebookLogoIcon } from './FacebookLogoIcon';
 export { default as FilterIcon } from './FilterIcon';
