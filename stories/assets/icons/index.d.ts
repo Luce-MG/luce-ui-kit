@@ -99,6 +99,7 @@ export { default as PeofileCircleMinusIcon } from './PeofileCircleMinusIcon';
 export { default as PeopleFilterIcon } from './PeopleFilterIcon';
 export { default as PeopleFilterTickIcon } from './PeopleFilterTickIcon';
 export { default as PeopleIcon } from './PeopleIcon';
+export { default as PestControlIcon } from './PestControlIcon';
 export { default as PhoneIcon } from './PhoneIcon';
 export { default as PinRoundedLocationIcon } from './PinRoundedLocationIcon';
 export { default as PlansIcon } from './PlansIcon';
