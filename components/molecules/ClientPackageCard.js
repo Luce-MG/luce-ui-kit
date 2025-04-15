@@ -47,6 +47,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
+var button_1 = __importDefault(require("./../button"));
 var BoxRow_1 = __importDefault(require("../atom/BoxRow"));
 var Typography_1 = __importDefault(require("../base/Typography"));
 var getPackageTag = function (status) {
@@ -114,7 +115,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
     });
 });
 var ClientPackageCards = function (props) {
-    var data = props.data, id = props.id, code = props.code, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, rest = __rest(props, ["data", "id", "code", "status", "invisible", "onViewDetailsClick", "children", "address"]);
+    var data = props.data, id = props.id, code = props.code, status = props.status, invisible = props.invisible, onViewDetailsClick = props.onViewDetailsClick, children = props.children, address = props.address, onCopyPackageDetailsClick = props.onCopyPackageDetailsClick, rest = __rest(props, ["data", "id", "code", "status", "invisible", "onViewDetailsClick", "children", "address", "onCopyPackageDetailsClick"]);
     var classes = useStyles(props);
     return (React.createElement(core_1.Card, __assign({}, rest),
         React.createElement(core_1.CardContent, { className: classes.cardBody },
@@ -124,9 +125,11 @@ var ClientPackageCards = function (props) {
                         React.createElement(Typography_1.default, { className: classes.packageCode, bodyVariants: "xsBold" }, props.code),
                         React.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, "- Package #" + props.id)),
                     React.createElement(core_1.Chip, { className: classes.packageTags, label: props.status })),
-                React.createElement(core_1.Box, null,
-                    React.createElement(core_1.Link, { underline: "always", onClick: onViewDetailsClick },
-                        React.createElement(Typography_1.default, { className: classes.linkStyle, variant: "overline" }, "View Details")))),
+                React.createElement(core_1.Box, { display: "flex", alignItems: "center" },
+                    React.createElement(button_1.default, { onClick: onCopyPackageDetailsClick, variants: "primary", customSize: "xs" }, "Copy Package Details"),
+                    React.createElement(core_1.Box, { ml: 1 },
+                        React.createElement(core_1.Link, { underline: "always", onClick: onViewDetailsClick },
+                            React.createElement(Typography_1.default, { className: classes.linkStyle, variant: "overline" }, "View Details"))))),
             React.createElement(core_1.Divider, { className: classes.divider }),
             React.createElement(core_1.Box, { px: 2, py: 1 },
                 React.createElement(BoxRow_1.default, { direction: "column", gap: 1 },
