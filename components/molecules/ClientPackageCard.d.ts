@@ -12,6 +12,7 @@ export declare type ClientPackageCardProps = {
     invisible: boolean;
     address: string;
     onViewDetailsClick(): void;
+    onCopyPackageDetailsClick(): void;
     code: string;
 };
 declare const ClientPackageCards: React.FC<ClientPackageCardProps>;
