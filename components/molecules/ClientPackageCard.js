@@ -47,9 +47,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var styles_1 = require("@material-ui/core/styles");
 var React = __importStar(require("react"));
-var button_1 = __importDefault(require("./../button"));
 var BoxRow_1 = __importDefault(require("../atom/BoxRow"));
 var Typography_1 = __importDefault(require("../base/Typography"));
+var button_1 = __importDefault(require("./../button"));
 var getPackageTag = function (status) {
     var color = {
         background: '#27AE60'

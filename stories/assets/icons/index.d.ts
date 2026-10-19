@@ -42,6 +42,7 @@ export { default as CouponIcon } from './CouponIcon';
 export { default as DiscountIcon } from './DiscountIcon';
 export { default as DiscoverIcon } from './DiscoverIcon';
 export { default as DocumentIcon } from './DocumentIcon';
+export { default as DownloadIcon } from './DownloadIcon';
 export { default as DurationIcon } from './DurationIcon';
 export { default as EditsIcon } from './EditsIcon';
 export { default as ElderCareIcon } from './ElderCareIcon';

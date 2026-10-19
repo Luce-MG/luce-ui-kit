@@ -38,6 +38,7 @@ __exportStar(require("./components/tooltips"), exports);
 __exportStar(require("./components/alert"), exports);
 __exportStar(require("./components/snackbar"), exports);
 __exportStar(require("./components/loader"), exports);
+__exportStar(require("./lib/dashboard"), exports);
 exports.ThemeProvider = __importStar(require("./themes/ThemeProvider"));
 __exportStar(require("./themes/default"), exports);
 //# sourceMappingURL=index.js.map
