@@ -34,4 +34,17 @@ __exportStar(require("./SideNav"), exports);
 __exportStar(require("./CardNoteClient"), exports);
 __exportStar(require("./TableList"), exports);
 __exportStar(require("./PackageJobVisitDetail"), exports);
+__exportStar(require("./DashboardPagination"), exports);
+__exportStar(require("./DashboardDownloadButton"), exports);
+__exportStar(require("./DashboardDateRangeField"), exports);
+__exportStar(require("./DashboardFilterField"), exports);
+__exportStar(require("./DashboardPanel"), exports);
+__exportStar(require("./DashboardReportCard"), exports);
+__exportStar(require("./DashboardSelectField"), exports);
+__exportStar(require("./DashboardTextField"), exports);
+__exportStar(require("./DashboardTotals"), exports);
+// DashboardChart is left out on purpose: it loads Plotly (about 1 MB), and in
+// the compiled ui-kit (CommonJS) its lazy import becomes a require, so any
+// root import would pull Plotly into the app bundle. Import it by path, e.g.
+// '@luce/ui-kit/components/molecules/DashboardChart', from a lazy route.
 //# sourceMappingURL=index.js.map

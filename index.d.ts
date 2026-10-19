@@ -13,5 +13,6 @@ export * from './components/tooltips';
 export * from './components/alert';
 export * from './components/snackbar';
 export * from './components/loader';
+export * from './lib/dashboard';
 export * as ThemeProvider from './themes/ThemeProvider';
 export * from './themes/default';
