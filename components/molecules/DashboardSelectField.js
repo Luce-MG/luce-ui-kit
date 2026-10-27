@@ -58,11 +58,20 @@ var SELECT_ALL = {
     label: 'Select all'
 };
 var useStyles = ThemeProvider_1.makeStyles({
+    // Wide enough for "All items are selected." or a long name before the
+    // ellipsis; the search input next to the summary keeps only a sliver, so
+    // the summary gets the width.
     select: {
-        width: 240
+        width: 300,
+        '& .MuiAutocomplete-inputRoot .MuiAutocomplete-input': {
+            flexGrow: 0,
+            width: 24,
+            minWidth: 24
+        }
     },
     summary: {
-        flex: 1,
+        flex: '1 1 auto',
+        minWidth: 0,
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
