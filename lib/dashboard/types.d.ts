@@ -3,6 +3,7 @@ export declare const DashboardColumnType: {
     IDENTIFIER: string;
     NUMBER: string;
     CURRENCY: string;
+    PERCENT: string;
     DATE: string;
 };
 export declare const DashboardChartType: {

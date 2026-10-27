@@ -74,6 +74,10 @@ var PROVISIONAL_LABEL = ' (provisional)';
 var valueFormat = function (type) {
     return type === dashboard_1.DashboardColumnType.CURRENCY ? ',.2f' : ',.2~f';
 };
+// A percent column's values are already multiplied by 100 by the backend.
+var valueSuffix = function (type) {
+    return type === dashboard_1.DashboardColumnType.PERCENT ? '%' : '';
+};
 // Monthly series carry the first of each month; showing the day would only
 // add noise to the axis and the tooltip.
 var isMonthly = function (series) {
@@ -87,11 +91,11 @@ function hoverTemplate(chart, columnsByKey, xFormat) {
     var tooltipLines = chart.tooltipColumns.map(function (key, index) {
         var _a;
         var column = columnsByKey[key];
-        return ((_a = column === null || column === void 0 ? void 0 : column.label) !== null && _a !== void 0 ? _a : key) + ": %{customdata[" + index + "]:" + valueFormat(column === null || column === void 0 ? void 0 : column.type) + "}";
+        return ((_a = column === null || column === void 0 ? void 0 : column.label) !== null && _a !== void 0 ? _a : key) + ": %{customdata[" + index + "]:" + valueFormat(column === null || column === void 0 ? void 0 : column.type) + "}" + valueSuffix(column === null || column === void 0 ? void 0 : column.type);
     });
     return __spreadArrays([
         ((_a = xColumn === null || xColumn === void 0 ? void 0 : xColumn.label) !== null && _a !== void 0 ? _a : chart.x) + ": %{x" + xFormat + "}%{text}",
-        ((_b = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _b !== void 0 ? _b : chart.y) + ": %{y:" + valueFormat(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) + "}"
+        ((_b = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _b !== void 0 ? _b : chart.y) + ": %{y:" + valueFormat(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) + "}" + valueSuffix(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type)
     ], tooltipLines).join('<br>');
 }
 // The Tooljet tooltip of a stacked chart: the x in bold, each series' value,
@@ -181,7 +185,7 @@ var DashboardChart = function (_a) {
     // list), so the chart redraws only when what it draws changes.
     var drawn = JSON.stringify([chart, columns, series, referenceLines]);
     react_1.useEffect(function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var element = container.current;
         if (!element)
             return;
@@ -232,6 +236,7 @@ var DashboardChart = function (_a) {
             yaxis: {
                 title: { text: (_d = (_c = chart.yTitle) !== null && _c !== void 0 ? _c : yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _d !== void 0 ? _d : chart.y },
                 tickformat: ',~s',
+                ticksuffix: valueSuffix((_e = columnsByKey[chart.y]) === null || _e === void 0 ? void 0 : _e.type) || undefined,
                 rangemode: 'tozero'
             },
             shapes: referenceLines.map(function (value) { return ({
@@ -291,7 +296,9 @@ var DashboardChart = function (_a) {
             });
         });
     };
-    var downloadOptions = __spreadArrays((onDownloadCsv ? [{ label: 'Download CSV', onClick: onDownloadCsv }] : []), [
+    var downloadOptions = __spreadArrays((onDownloadCsv
+        ? [{ label: 'Download CSV', onClick: onDownloadCsv }]
+        : []), [
         { label: 'Download PNG', onClick: downloadImage }
     ]);
     return (react_1.default.createElement(Box_1.default, null,

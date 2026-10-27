@@ -26,6 +26,7 @@ var COLUMN_WIDTHS = (_a = {},
     _a[dashboard_1.DashboardColumnType.DATE] = 130,
     _a[dashboard_1.DashboardColumnType.NUMBER] = 120,
     _a[dashboard_1.DashboardColumnType.CURRENCY] = 150,
+    _a[dashboard_1.DashboardColumnType.PERCENT] = 120,
     _a);
 var TEXT_COLUMN_MIN_WIDTH = 180;
 var BODY_MAX_HEIGHT = 720;
