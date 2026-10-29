@@ -58,6 +58,7 @@ var loadPlotly = function () {
     return plotly;
 };
 var CHART_HEIGHT = 420;
+var DAY_MS = 24 * 60 * 60 * 1000;
 // The first two match the Tooljet charts (orange, then blue).
 var SERIES_COLORS = [
     '#E87B37',
@@ -132,6 +133,31 @@ function stackedHoverText(series, names, chart, columnsByKey, formatX) {
         ];
     }));
 }
+// One tooltip per x for overlaid bars, as in the mockup: the x in bold, the
+// back series, what is left of it once the front is taken out, then the
+// front series in its color with its share of the back. Every series of an x
+// carries the same block.
+function overlayHoverText(series, names, colors, chart, columnsByKey, formatX) {
+    var _a, _b, _c;
+    var back = series[0], front = series[1];
+    var type = (_b = (_a = columnsByKey[chart.y]) === null || _a === void 0 ? void 0 : _a.type) !== null && _b !== void 0 ? _b : dashboard_1.DashboardColumnType.NUMBER;
+    var cell = function (value) { return dashboard_1.formatDashboardCell(value, type); };
+    return Object.fromEntries(((_c = back === null || back === void 0 ? void 0 : back.x) !== null && _c !== void 0 ? _c : []).map(function (x, index) {
+        var _a, _b;
+        var total = (_a = back.y[index]) !== null && _a !== void 0 ? _a : 0;
+        var part = (_b = front === null || front === void 0 ? void 0 : front.y[index]) !== null && _b !== void 0 ? _b : 0;
+        var share = total ? ((100 * part) / total).toFixed(1) : '0.0';
+        return [
+            x,
+            [
+                "<b>" + formatX(x) + "</b>",
+                names[0] + ": " + cell(total),
+                "Not " + names[1].toLowerCase() + ": " + cell(total - part),
+                "<span style=\"color:" + colors[1] + "\">" + names[1] + ": " + cell(part) + " (" + share + "%)</span>"
+            ].join('<br>')
+        ];
+    }));
+}
 // A line cannot change style part way, so a series with provisional points is
 // drawn twice: solid over the settled points, and dotted from the last settled
 // point through the provisional ones, with hollow markers on the latter.
@@ -198,21 +224,34 @@ var DashboardChart = function (_a) {
         var yLabel = (_b = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _b !== void 0 ? _b : chart.y;
         // Split bars stack, as in Tooljet: each bar shows the x's total.
         var stacked = chart.type === dashboard_1.DashboardChartType.BAR && !!chart.splitBy;
+        // Overlaid bars share one bar per x, the overlay drawn in front.
+        var overlay = chart.type === dashboard_1.DashboardChartType.BAR && !!chart.overlay;
+        // On a daily axis Plotly sizes bars by the gap between points, so a few
+        // days spread over a month become bars weeks wide. Pin one bar to its
+        // day. Grouped series keep Plotly's width to sit side by side.
+        var barWidth = isDateAxis && !monthly && (stacked || overlay || series.length === 1)
+            ? 0.8 * DAY_MS
+            : undefined;
         var names = series.map(function (item) { var _a; return (_a = item.name) !== null && _a !== void 0 ? _a : yLabel; });
+        var colors = series.map(function (_item, index) { var _a, _b; return (_b = (_a = chart.colors) === null || _a === void 0 ? void 0 : _a[index]) !== null && _b !== void 0 ? _b : SERIES_COLORS[index % SERIES_COLORS.length]; });
         var formatX = function (x) {
-            return monthly ? date_fns_1.format(date_fns_1.parseISO(x), 'MMM yyyy') : x;
+            return isDateAxis
+                ? date_fns_1.format(date_fns_1.parseISO(x), monthly ? 'MMM yyyy' : 'EEE, dd MMM yyyy')
+                : x;
         };
         var hoverText = stacked
             ? stackedHoverText(series, names, chart, columnsByKey, formatX)
-            : {};
+            : overlay
+                ? overlayHoverText(series, names, colors, chart, columnsByKey, formatX)
+                : {};
         var traces = series.flatMap(function (item, index) {
             var name = names[index];
-            var color = SERIES_COLORS[index % SERIES_COLORS.length];
+            var color = colors[index];
             if (chart.type !== dashboard_1.DashboardChartType.BAR) {
                 return lineTraces(item, name, color, template);
             }
-            var trace = barTrace(item, name, color, template);
-            return stacked
+            var trace = __assign(__assign({}, barTrace(item, name, color, template)), { width: barWidth });
+            return stacked || overlay
                 ? [
                     __assign(__assign({}, trace), { text: item.x.map(function (x) { return hoverText[x]; }), hovertemplate: '%{text}<extra></extra>' })
                 ]
@@ -222,9 +261,20 @@ var DashboardChart = function (_a) {
             autosize: true,
             height: CHART_HEIGHT,
             margin: { t: 24, r: 24, b: 40, l: 72 },
-            barmode: stacked ? 'stack' : 'group',
+            barmode: stacked ? 'stack' : overlay ? 'overlay' : 'group',
             bargap: 0.2,
-            hovermode: stacked ? 'x unified' : 'closest',
+            // Every part of a stacked bar carries the whole bar's tooltip, so one
+            // hover shows it once; a unified hover would repeat it per part.
+            hovermode: 'closest',
+            // A light card with dark text, not a box in the series' color.
+            hoverlabel: overlay
+                ? {
+                    bgcolor: '#FFFFFF',
+                    bordercolor: '#DDE3DF',
+                    font: { color: '#17201C', size: 13 },
+                    align: 'left'
+                }
+                : undefined,
             // Tooljet's stacked charts carry no legend; the tooltip names each part.
             showlegend: !stacked && series.length > 1,
             legend: { orientation: 'h', y: -0.18 },
@@ -302,7 +352,10 @@ var DashboardChart = function (_a) {
         { label: 'Download PNG', onClick: downloadImage }
     ]);
     return (react_1.default.createElement(Box_1.default, null,
-        react_1.default.createElement(Box_1.default, { display: "flex", justifyContent: "flex-end", mb: 1 },
+        react_1.default.createElement(Box_1.default, { display: "flex", alignItems: "flex-start", mb: 1 },
+            react_1.default.createElement(Box_1.default, { flex: 1 }, chart.description && (react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(Typography_1.default, { bodyVariants: "smBold" }, chart.title),
+                react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", color: "textSecondary" }, chart.description)))),
             react_1.default.createElement(DashboardDownloadButton_1.default, { options: downloadOptions, disabled: series.length === 0, downloading: downloading })),
         series.length === 0 && (react_1.default.createElement(Box_1.default, { py: 6, textAlign: "center" },
             react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium" }, "No data for the selected filters"))),
