@@ -27,6 +27,17 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) { return ({
         color: dashboard_1.DASHBOARD_COLORS.subtle
     }
 }); });
+var decimalFormatter = new Intl.NumberFormat('en-SG', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+});
+// Totals carry no column type, so an amount like 2,293,667.90 would lose its
+// trailing zero: a total with decimals always shows two, a count stays whole.
+var formatTotal = function (value) {
+    return value !== null && Number.isFinite(value) && !Number.isInteger(value)
+        ? decimalFormatter.format(value)
+        : dashboard_1.formatDashboardNumber(value);
+};
 // The totals over the whole filtered set, in one bordered strip.
 var DashboardTotals = function (_a) {
     var totals = _a.totals;
@@ -35,7 +46,7 @@ var DashboardTotals = function (_a) {
         return null;
     return (react_1.default.createElement(Box_1.default, { className: classes.strip }, totals.map(function (total) { return (react_1.default.createElement(Box_1.default, { key: total.key, className: classes.cell },
         react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.label }, total.label),
-        react_1.default.createElement(Typography_1.default, { bodyVariants: "mdBold" }, dashboard_1.formatDashboardNumber(total.value)))); })));
+        react_1.default.createElement(Typography_1.default, { bodyVariants: "mdBold" }, formatTotal(total.value)))); })));
 };
 exports.DashboardTotals = DashboardTotals;
 exports.default = exports.DashboardTotals;
