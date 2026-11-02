@@ -25,6 +25,9 @@ export interface DashboardChartConfig {
     yTitle?: string | null;
     splitBy?: string | null;
     tooltipColumns: string[];
+    overlay?: string | null;
+    colors?: string[];
+    description?: string | null;
 }
 export interface DashboardChartSeries {
     key: string;
