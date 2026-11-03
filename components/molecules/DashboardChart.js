@@ -105,17 +105,17 @@ function plainHoverTemplate(chart, columnsByKey, isDateAxis, monthly) {
     return "(%{x" + xFormat + "}, %{y:" + yFormat + ")%{text}";
 }
 function hoverTemplate(chart, columnsByKey, xFormat) {
-    var _a, _b;
-    var xColumn = columnsByKey[chart.x];
+    var _a;
     var yColumn = columnsByKey[chart.y];
     var tooltipLines = chart.tooltipColumns.map(function (key, index) {
         var _a;
         var column = columnsByKey[key];
         return ((_a = column === null || column === void 0 ? void 0 : column.label) !== null && _a !== void 0 ? _a : key) + ": %{customdata[" + index + "]:" + valueFormat(column === null || column === void 0 ? void 0 : column.type) + "}" + valueSuffix(column === null || column === void 0 ? void 0 : column.type);
     });
+    // The x as a bold header, as in the stacked tooltip.
     return __spreadArrays([
-        ((_a = xColumn === null || xColumn === void 0 ? void 0 : xColumn.label) !== null && _a !== void 0 ? _a : chart.x) + ": %{x" + xFormat + "}%{text}",
-        ((_b = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _b !== void 0 ? _b : chart.y) + ": %{y:" + valueFormat(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) + "}" + valueSuffix(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type)
+        "<b>%{x" + xFormat + "}</b>%{text}",
+        ((_a = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _a !== void 0 ? _a : chart.y) + ": %{y:" + valueFormat(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) + "}" + valueSuffix(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type)
     ], tooltipLines).join('<br>');
 }
 // The tooltip of a stacked chart, once per x under the x the hover label
@@ -350,22 +350,22 @@ var DashboardChart = function (_a) {
             // hover; every other chart shows the tooltip of the bar under the cursor.
             hovermode: stacked ? 'x unified' : 'closest',
             // A light card with dark text, not a box in the series' color.
-            hoverlabel: overlay
-                ? {
-                    bgcolor: '#FFFFFF',
-                    bordercolor: '#DDE3DF',
-                    font: { color: '#17201C', size: 13 },
-                    align: 'left'
-                }
-                : undefined,
+            hoverlabel: {
+                bgcolor: '#FFFFFF',
+                bordercolor: '#DDE3DF',
+                font: { color: '#17201C', size: 13 },
+                align: 'left'
+            },
             // As Tooljet's Revenue chart: a legend whenever more than one series is drawn.
             showlegend: drawnSeries.length > 1,
             legend: { orientation: 'h', y: -0.18 },
             xaxis: {
                 type: isDateAxis ? 'date' : 'category',
                 tickformat: isDateAxis ? (monthly ? '%b %Y' : '%d %b %Y') : undefined,
-                // Whole months: Plotly's own spacing can put two ticks in one month.
+                // Whole months, anchored on the 1st: Plotly's own spacing can put two
+                // ticks in one month, or a tick beside the previous month's label.
                 dtick: monthly ? monthTick : undefined,
+                tick0: monthly ? '2000-01-01' : undefined,
                 hoverformat: isDateAxis ? (monthly ? '%b %Y' : '%d %b %Y') : undefined
             },
             yaxis: {
