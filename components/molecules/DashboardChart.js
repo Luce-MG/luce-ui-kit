@@ -68,7 +68,17 @@ var SERIES_COLORS = [
     '#FDD835',
     '#00ACC1',
     '#6D4C41',
-    '#D81B60'
+    '#D81B60',
+    // A second set, as distinct from the first as from each other, for charts
+    // with one line per department (up to 15 on the CER page).
+    '#3949AB',
+    '#B71C1C',
+    '#9E9D24',
+    '#00695C',
+    '#F48FB1',
+    '#607D8B',
+    '#FFB300',
+    '#CE93D8'
 ];
 var REFERENCE_LINE_COLOR = '#E53935';
 var PROVISIONAL_LABEL = ' (provisional)';
