@@ -59,10 +59,14 @@ var SELECT_ALL = {
 };
 var useStyles = ThemeProvider_1.makeStyles({
     // Wide enough for "All items are selected." or a long name before the
-    // ellipsis; the search input next to the summary keeps only a sliver, so
-    // the summary gets the width.
+    // ellipsis.
     select: {
-        width: 300,
+        width: 300
+    },
+    // Multiple choice only: the search input next to the summary keeps a
+    // sliver, so the summary gets the width. A single choice box shows its
+    // value in that input, so there it keeps its full width.
+    multipleSelect: {
         '& .MuiAutocomplete-inputRoot .MuiAutocomplete-input': {
             flexGrow: 0,
             width: 24,
@@ -136,7 +140,7 @@ var DashboardSelectField = function (_a) {
         onChange(chosen.map(function (option) { return option.value; }));
     };
     return (react_1.default.createElement(DashboardFilterField_1.default, { label: label },
-        react_1.default.createElement(Autocomplete_1.default, { multiple: true, disableCloseOnSelect: true, className: className, options: __spreadArrays([SELECT_ALL], options), value: ticked, getOptionLabel: optionLabel, getOptionSelected: sameOption, onChange: function (_event, chosen, reason) {
+        react_1.default.createElement(Autocomplete_1.default, { multiple: true, disableCloseOnSelect: true, className: clsx_1.default(className, classes.multipleSelect), options: __spreadArrays([SELECT_ALL], options), value: ticked, getOptionLabel: optionLabel, getOptionSelected: sameOption, onChange: function (_event, chosen, reason) {
                 return handleChange(chosen, reason);
             }, renderTags: function () { return (react_1.default.createElement("span", { className: classes.summary }, summary)); }, renderOption: function (option, _a) {
                 var selected = _a.selected;
