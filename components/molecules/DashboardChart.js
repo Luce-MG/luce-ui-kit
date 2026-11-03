@@ -68,7 +68,17 @@ var SERIES_COLORS = [
     '#FDD835',
     '#00ACC1',
     '#6D4C41',
-    '#D81B60'
+    '#D81B60',
+    // A second set, as distinct from the first as from each other, for charts
+    // with one line per department (up to 15 on the CER page).
+    '#3949AB',
+    '#B71C1C',
+    '#9E9D24',
+    '#00695C',
+    '#F48FB1',
+    '#607D8B',
+    '#FFB300',
+    '#CE93D8'
 ];
 var REFERENCE_LINE_COLOR = '#E53935';
 var PROVISIONAL_LABEL = ' (provisional)';
@@ -85,16 +95,15 @@ var isMonthly = function (series) {
     return series.length > 0 &&
         series.every(function (item) { return item.x.every(function (x) { return /^\d{4}-\d{2}-01/.test(x); }); });
 };
-var MAX_MONTHLY_TICKS = 12;
-// Months from the first to the last point of a monthly chart, both included.
-var monthSpan = function (series) {
-    var xs = series.flatMap(function (item) { return item.x; }).sort();
-    if (xs.length === 0)
-        return 0;
-    var _a = xs[0].split('-').map(Number), firstYear = _a[0], firstMonth = _a[1];
-    var _b = xs[xs.length - 1].split('-').map(Number), lastYear = _b[0], lastMonth = _b[1];
-    return (lastYear - firstYear) * 12 + lastMonth - firstMonth + 1;
-};
+// Tooljet's tooltip of a one-series chart without tooltip columns: Plotly's
+// plain "(x, y)", e.g. "(Nov 18, 2026, 275)".
+function plainHoverTemplate(chart, columnsByKey, isDateAxis, monthly) {
+    var _a;
+    var xFormat = isDateAxis ? (monthly ? '|%b %Y' : '|%b %d, %Y') : '';
+    var yType = (_a = columnsByKey[chart.y]) === null || _a === void 0 ? void 0 : _a.type;
+    var yFormat = valueFormat(yType) + "}" + valueSuffix(yType);
+    return "(%{x" + xFormat + "}, %{y:" + yFormat + ")%{text}";
+}
 function hoverTemplate(chart, columnsByKey, xFormat) {
     var _a;
     var yColumn = columnsByKey[chart.y];
@@ -109,10 +118,10 @@ function hoverTemplate(chart, columnsByKey, xFormat) {
         ((_a = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _a !== void 0 ? _a : chart.y) + ": %{y:" + valueFormat(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) + "}" + valueSuffix(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type)
     ], tooltipLines).join('<br>');
 }
-// The Tooljet tooltip of a stacked chart: the x in bold, each series' value,
-// the total, then each series' tooltip columns, in whole numbers. Every
-// series of an x carries the same block.
-function stackedHoverText(series, names, chart, columnsByKey, formatX) {
+// The tooltip of a stacked chart, once per x under the x the hover label
+// already heads it with: the total, each part only when more than one part
+// has a value at that x, then each series' tooltip columns, in whole numbers.
+function stackedHoverText(series, names, colors, chart, columnsByKey) {
     var _a, _b;
     var yLabel = (_b = (_a = columnsByKey[chart.y]) === null || _a === void 0 ? void 0 : _a.label) !== null && _b !== void 0 ? _b : chart.y;
     var xs = Array.from(new Set(series.flatMap(function (item) { return item.x; }))).sort();
@@ -130,16 +139,27 @@ function stackedHoverText(series, names, chart, columnsByKey, formatX) {
                 return names[seriesIndex] + " " + ((_b = (_a = columnsByKey[key]) === null || _a === void 0 ? void 0 : _a.label) !== null && _b !== void 0 ? _b : key) + ": " + whole(item.x.includes(x) ? tooltipAt(item, x, index) : 0);
             });
         });
+        var parts = values
+            .map(function (value, seriesIndex) { return ({
+            value: value,
+            name: names[seriesIndex],
+            color: colors[seriesIndex]
+        }); })
+            .filter(function (_a) {
+            var value = _a.value;
+            return value !== 0;
+        });
+        var partLines = parts.length > 1
+            ? parts.map(function (_a) {
+                var name = _a.name, value = _a.value, color = _a.color;
+                return "<span style=\"color:" + color + "\">&#9632;</span> " + name + ": " + whole(value);
+            })
+            : [];
         return [
             x,
             __spreadArrays([
-                "<b>" + formatX(x) + "</b>"
-            ], series.map(function (_item, seriesIndex) {
-                return names[seriesIndex] + " " + yLabel + ": " + whole(values[seriesIndex]);
-            }), [
-                "Total " + yLabel + ": " + whole(total),
-                ''
-            ], tooltipLines).join('<br>')
+                "Total " + yLabel + ": " + whole(total)
+            ], partLines, (tooltipLines.length > 0 ? __spreadArrays([''], tooltipLines) : [])).join('<br>')
         ];
     }));
 }
@@ -183,7 +203,7 @@ function lineTraces(item, name, color, template) {
         text: text,
         name: name,
         legendgroup: name,
-        hovertemplate: template
+        hovertemplate: template + "<extra></extra>"
     };
     var solid = __assign(__assign({}, base), { y: item.y.map(function (y, index) { return (provisional[index] ? null : y); }), line: { color: color, width: 2 }, marker: { color: color, size: 7 } });
     if (!provisional.some(Boolean))
@@ -210,7 +230,7 @@ function barTrace(item, name, color, template) {
         text: item.x.map(function () { return ''; }),
         textposition: 'none',
         name: name,
-        hovertemplate: template,
+        hovertemplate: template + "<extra></extra>",
         marker: { color: color }
     };
 }
@@ -221,7 +241,7 @@ var DashboardChart = function (_a) {
     // list), so the chart redraws only when what it draws changes.
     var drawn = JSON.stringify([chart, columns, series, referenceLines]);
     react_1.useEffect(function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d;
         var element = container.current;
         if (!element)
             return;
@@ -229,9 +249,14 @@ var DashboardChart = function (_a) {
         var isDateAxis = ((_a = columnsByKey[chart.x]) === null || _a === void 0 ? void 0 : _a.type) === dashboard_1.DashboardColumnType.DATE;
         var monthly = isDateAxis && isMonthly(series);
         var xFormat = isDateAxis ? (monthly ? '|%b %Y' : '|%d %b %Y') : '';
-        var template = hoverTemplate(chart, columnsByKey, xFormat);
+        var template = series.length <= 1 && chart.tooltipColumns.length === 0
+            ? plainHoverTemplate(chart, columnsByKey, isDateAxis, monthly)
+            : hoverTemplate(chart, columnsByKey, xFormat);
         var yColumn = columnsByKey[chart.y];
         var yLabel = (_b = yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _b !== void 0 ? _b : chart.y;
+        var maxValue = Math.max.apply(Math, __spreadArrays([0], series.flatMap(function (item) { return item.y.map(function (y) { return Math.abs(y !== null && y !== void 0 ? y : 0); }); })));
+        var months = new Set(series.flatMap(function (item) { return item.x; })).size;
+        var monthTick = months <= 12 ? 'M1' : months <= 24 ? 'M2' : 'M3';
         // Split bars stack, as in Tooljet: each bar shows the x's total.
         var stacked = chart.type === dashboard_1.DashboardChartType.BAR && !!chart.splitBy;
         // Overlaid bars share one bar per x, the overlay drawn in front.
@@ -242,43 +267,88 @@ var DashboardChart = function (_a) {
         var barWidth = isDateAxis && !monthly && (stacked || overlay || series.length === 1)
             ? 0.8 * DAY_MS
             : undefined;
-        var names = series.map(function (item) { var _a; return (_a = item.name) !== null && _a !== void 0 ? _a : yLabel; });
-        var colors = series.map(function (_item, index) { var _a, _b; return (_b = (_a = chart.colors) === null || _a === void 0 ? void 0 : _a[index]) !== null && _b !== void 0 ? _b : SERIES_COLORS[index % SERIES_COLORS.length]; });
+        // A stacked part that is 0 at every x (e.g. Hardware on a tab without
+        // hardware) is left out of the bars and the tooltip. Each part keeps its
+        // colour, whichever parts are shown.
+        var shown = series
+            .map(function (item, index) { return ({ item: item, index: index }); })
+            .filter(function (_a) {
+            var item = _a.item;
+            return !stacked || item.y.some(function (y) { return (y !== null && y !== void 0 ? y : 0) !== 0; });
+        });
+        var drawnSeries = shown.length > 0 ? shown : [{ item: series[0], index: 0 }];
+        var names = drawnSeries.map(function (_a) {
+            var _b;
+            var item = _a.item;
+            return (_b = item === null || item === void 0 ? void 0 : item.name) !== null && _b !== void 0 ? _b : yLabel;
+        });
+        var colors = drawnSeries.map(function (_a) {
+            var _b, _c;
+            var index = _a.index;
+            return (_c = (_b = chart.colors) === null || _b === void 0 ? void 0 : _b[index]) !== null && _c !== void 0 ? _c : SERIES_COLORS[index % SERIES_COLORS.length];
+        });
         var formatX = function (x) {
             return isDateAxis
                 ? date_fns_1.format(date_fns_1.parseISO(x), monthly ? 'MMM yyyy' : 'EEE, dd MMM yyyy')
                 : x;
         };
         var hoverText = stacked
-            ? stackedHoverText(series, names, chart, columnsByKey, formatX)
+            ? stackedHoverText(drawnSeries.map(function (_a) {
+                var item = _a.item;
+                return item;
+            }), names, colors, chart, columnsByKey)
             : overlay
                 ? overlayHoverText(series, names, colors, chart, columnsByKey, formatX)
                 : {};
-        var traces = series.flatMap(function (item, index) {
+        var bars = drawnSeries.flatMap(function (_a, index) {
+            var item = _a.item;
+            if (!item)
+                return [];
             var name = names[index];
             var color = colors[index];
-            // The side box naming the series only helps when there are several;
-            // with one it repeats the value's own label.
-            var hover = template + "<extra>" + (series.length > 1 ? name : '') + "</extra>";
+            // The tooltip has no side label; with several series it names the
+            // series on its first line.
+            var seriesTemplate = series.length > 1 ? "<b>" + name + "</b><br>" + template : template;
             if (chart.type !== dashboard_1.DashboardChartType.BAR) {
-                return lineTraces(item, name, color, hover);
+                return lineTraces(item, name, color, seriesTemplate);
             }
-            var trace = __assign(__assign({}, barTrace(item, name, color, hover)), { width: barWidth });
-            return stacked || overlay
-                ? [
+            var trace = __assign(__assign({}, barTrace(item, name, color, seriesTemplate)), { width: barWidth });
+            if (overlay) {
+                return [
                     __assign(__assign({}, trace), { text: item.x.map(function (x) { return hoverText[x]; }), hovertemplate: '%{text}<extra></extra>' })
-                ]
+                ];
+            }
+            // A bar's own hovertemplate would win over hoverinfo 'skip'.
+            return stacked
+                ? [__assign(__assign({}, trace), { hovertemplate: undefined, hoverinfo: 'skip' })]
                 : [trace];
         });
+        // A stacked chart's tooltip comes from one invisible trace, so the hover
+        // label carries the block once rather than once per part.
+        var xs = Object.keys(hoverText).sort();
+        var hoverTrace = {
+            // A zero-height bar: a scatter would pad the axis around its markers.
+            type: 'bar',
+            x: xs,
+            y: xs.map(function () { return 0; }),
+            width: barWidth,
+            text: xs.map(function (x) { return hoverText[x]; }),
+            textposition: 'none',
+            hovertemplate: '%{text}<extra></extra>',
+            // Transparent rather than opacity 0, so the hover label shows no swatch.
+            marker: { color: 'rgba(0, 0, 0, 0)' },
+            showlegend: false
+        };
+        var traces = stacked ? __spreadArrays(bars, [hoverTrace]) : bars;
         var layout = {
             autosize: true,
             height: CHART_HEIGHT,
             margin: { t: 24, r: 24, b: 40, l: 72 },
             barmode: stacked ? 'stack' : overlay ? 'overlay' : 'group',
             bargap: 0.2,
-            // Every part of a stacked bar carries the whole bar's tooltip, so one
-            // hover shows it once; a unified hover would repeat it per part.
-            hovermode: 'closest',
+            // A stacked chart's one tooltip block is headed by the x of a unified
+            // hover; every other chart shows the tooltip of the bar under the cursor.
+            hovermode: stacked ? 'x unified' : 'closest',
             // A light card with dark text, not a box in the series' color.
             hoverlabel: {
                 bgcolor: '#FFFFFF',
@@ -286,24 +356,23 @@ var DashboardChart = function (_a) {
                 font: { color: '#17201C', size: 13 },
                 align: 'left'
             },
-            // Tooljet's stacked charts carry no legend; the tooltip names each part.
-            showlegend: !stacked && series.length > 1,
+            // As Tooljet's Revenue chart: a legend whenever more than one series is drawn.
+            showlegend: drawnSeries.length > 1,
             legend: { orientation: 'h', y: -0.18 },
             xaxis: {
                 type: isDateAxis ? 'date' : 'category',
-                // Over a few months Plotly ticks every half month, so each month is
-                // labelled twice and a point on the 1st sits beside the previous
-                // month's label. Tick on the 1st of each month instead; longer ranges
-                // keep Plotly's own spacing (it already ticks on month starts there).
-                dtick: monthly && monthSpan(series) <= MAX_MONTHLY_TICKS ? 'M1' : undefined,
-                tick0: monthly ? '2000-01-01' : undefined,
                 tickformat: isDateAxis ? (monthly ? '%b %Y' : '%d %b %Y') : undefined,
+                // Whole months, anchored on the 1st: Plotly's own spacing can put two
+                // ticks in one month, or a tick beside the previous month's label.
+                dtick: monthly ? monthTick : undefined,
+                tick0: monthly ? '2000-01-01' : undefined,
                 hoverformat: isDateAxis ? (monthly ? '%b %Y' : '%d %b %Y') : undefined
             },
             yaxis: {
                 title: { text: (_d = (_c = chart.yTitle) !== null && _c !== void 0 ? _c : yColumn === null || yColumn === void 0 ? void 0 : yColumn.label) !== null && _d !== void 0 ? _d : chart.y },
-                tickformat: ',~s',
-                ticksuffix: valueSuffix((_e = columnsByKey[chart.y]) === null || _e === void 0 ? void 0 : _e.type) || undefined,
+                // SI prefixes shorten thousands (6k) but turn 0.8 into "800m".
+                tickformat: maxValue >= 1000 ? ',~s' : ',~f',
+                ticksuffix: valueSuffix(yColumn === null || yColumn === void 0 ? void 0 : yColumn.type) || undefined,
                 rangemode: 'tozero'
             },
             shapes: referenceLines.map(function (value) { return ({
