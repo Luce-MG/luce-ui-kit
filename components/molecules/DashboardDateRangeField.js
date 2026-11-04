@@ -34,6 +34,10 @@ var ISO_DATE = 'yyyy-MM-dd';
 var useStyles = ThemeProvider_1.makeStyles({
     picker: {
         width: 160
+    },
+    fullWidthPicker: {
+        flex: '1 1 0',
+        minWidth: 0
     }
 });
 var toDate = function (value) {
@@ -46,10 +50,11 @@ var toDate = function (value) {
 // so it works whichever provider the page has.
 var DashboardDateRangeField = function (_a) {
     var _b, _c;
-    var label = _a.label, values = _a.values, onChange = _a.onChange;
+    var label = _a.label, values = _a.values, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, onChange = _a.onChange;
     var classes = useStyles();
     var controlClasses = DashboardFilterField_1.useDashboardControlStyles();
-    var _d = values[0], from = _d === void 0 ? '' : _d, _e = values[1], to = _e === void 0 ? '' : _e;
+    var pickerClassName = clsx_1.default(controlClasses.control, fullWidth ? classes.fullWidthPicker : classes.picker);
+    var _e = values[0], from = _e === void 0 ? '' : _e, _f = values[1], to = _f === void 0 ? '' : _f;
     // A half typed date is invalid; it is ignored rather than stored, so the
     // picker keeps the text being typed.
     var setEnd = function (index, date) {
@@ -61,8 +66,8 @@ var DashboardDateRangeField = function (_a) {
     };
     return (react_1.default.createElement(pickers_1.MuiPickersUtilsProvider, { utils: date_fns_1.default },
         react_1.default.createElement(DashboardFilterField_1.default, { label: label },
-            react_1.default.createElement(pickers_1.KeyboardDatePicker, { className: clsx_1.default(controlClasses.control, classes.picker), inputVariant: "outlined", size: "small", format: ISO_DATE, placeholder: "From", value: toDate(from), onChange: function (date) { return setEnd(0, date); }, maxDate: (_b = toDate(to)) !== null && _b !== void 0 ? _b : undefined, views: ['date'] }),
-            react_1.default.createElement(pickers_1.KeyboardDatePicker, { className: clsx_1.default(controlClasses.control, classes.picker), inputVariant: "outlined", size: "small", format: ISO_DATE, placeholder: "To", value: toDate(to), onChange: function (date) { return setEnd(1, date); }, minDate: (_c = toDate(from)) !== null && _c !== void 0 ? _c : undefined, views: ['date'] }))));
+            react_1.default.createElement(pickers_1.KeyboardDatePicker, { className: pickerClassName, inputVariant: "outlined", size: "small", format: ISO_DATE, placeholder: "From", value: toDate(from), onChange: function (date) { return setEnd(0, date); }, maxDate: (_b = toDate(to)) !== null && _b !== void 0 ? _b : undefined, views: ['date'] }),
+            react_1.default.createElement(pickers_1.KeyboardDatePicker, { className: pickerClassName, inputVariant: "outlined", size: "small", format: ISO_DATE, placeholder: "To", value: toDate(to), onChange: function (date) { return setEnd(1, date); }, minDate: (_c = toDate(from)) !== null && _c !== void 0 ? _c : undefined, views: ['date'] }))));
 };
 exports.DashboardDateRangeField = DashboardDateRangeField;
 exports.default = exports.DashboardDateRangeField;

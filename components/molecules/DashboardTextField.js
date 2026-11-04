@@ -31,17 +31,21 @@ var DashboardFilterField_1 = __importStar(require("./DashboardFilterField"));
 var useStyles = ThemeProvider_1.makeStyles({
     input: {
         width: 200
+    },
+    fullWidth: {
+        flex: '1 1 0',
+        minWidth: 0
     }
 });
 // A free text filter, for a filter without options.
 var DashboardTextField = function (_a) {
-    var label = _a.label, values = _a.values, _b = _a.multiple, multiple = _b === void 0 ? false : _b, _c = _a.range, range = _c === void 0 ? false : _c, _d = _a.numeric, numeric = _d === void 0 ? false : _d, onChange = _a.onChange;
+    var label = _a.label, values = _a.values, _b = _a.multiple, multiple = _b === void 0 ? false : _b, _c = _a.range, range = _c === void 0 ? false : _c, _d = _a.numeric, numeric = _d === void 0 ? false : _d, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, onChange = _a.onChange;
     var classes = useStyles();
     var controlClasses = DashboardFilterField_1.useDashboardControlStyles();
-    var className = clsx_1.default(controlClasses.control, classes.input);
+    var className = clsx_1.default(controlClasses.control, fullWidth ? classes.fullWidth : classes.input);
     var inputType = numeric ? 'number' : 'text';
     if (range) {
-        var _e = values[0], from_1 = _e === void 0 ? '' : _e, _f = values[1], to_1 = _f === void 0 ? '' : _f;
+        var _f = values[0], from_1 = _f === void 0 ? '' : _f, _g = values[1], to_1 = _g === void 0 ? '' : _g;
         return (react_1.default.createElement(DashboardFilterField_1.default, { label: label },
             react_1.default.createElement(TextField_1.default, { className: className, variant: "outlined", size: "small", type: inputType, placeholder: "From", value: from_1, onChange: function (event) { return onChange([event.target.value, to_1]); } }),
             react_1.default.createElement(TextField_1.default, { className: className, variant: "outlined", size: "small", type: inputType, placeholder: "To", value: to_1, onChange: function (event) { return onChange([from_1, event.target.value]); } })));

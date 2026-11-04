@@ -5,6 +5,7 @@ export interface DashboardSelectFieldProps {
     options: DashboardFilterOption[];
     values: string[];
     multiple: boolean;
+    fullWidth?: boolean;
     onChange(values: string[]): void;
 }
 export declare const DashboardSelectField: React.FC<DashboardSelectFieldProps>;

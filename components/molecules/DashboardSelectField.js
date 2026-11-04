@@ -63,6 +63,9 @@ var useStyles = ThemeProvider_1.makeStyles({
     select: {
         width: 300
     },
+    fullWidth: {
+        width: '100%'
+    },
     // Multiple choice only: the search input next to the summary keeps a
     // sliver, so the summary gets the width. A single choice box shows its
     // value in that input, so there it keeps its full width.
@@ -95,10 +98,10 @@ var useStyles = ThemeProvider_1.makeStyles({
 // is a checkbox list: any subset can be ticked, Select all ticks or unticks
 // everything, and the box sums up the choice.
 var DashboardSelectField = function (_a) {
-    var label = _a.label, options = _a.options, values = _a.values, multiple = _a.multiple, onChange = _a.onChange;
+    var label = _a.label, options = _a.options, values = _a.values, multiple = _a.multiple, _b = _a.fullWidth, fullWidth = _b === void 0 ? false : _b, onChange = _a.onChange;
     var classes = useStyles();
     var controlClasses = DashboardFilterField_1.useDashboardControlStyles();
-    var className = clsx_1.default(controlClasses.control, classes.select);
+    var className = clsx_1.default(controlClasses.control, fullWidth ? classes.fullWidth : classes.select);
     // Same rule as the table, so a dropdown reads like the column it filters.
     var enumLabels = dashboard_1.isDashboardEnumColumn(options.map(function (option) { return ({ label: option.label }); }), 'label');
     var optionLabel = function (option) {
