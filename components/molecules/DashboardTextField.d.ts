@@ -5,6 +5,7 @@ export interface DashboardTextFieldProps {
     multiple?: boolean;
     range?: boolean;
     numeric?: boolean;
+    fullWidth?: boolean;
     onChange(values: string[]): void;
 }
 export declare const DashboardTextField: React.FC<DashboardTextFieldProps>;

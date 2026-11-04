@@ -47,15 +47,56 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) { return ({
         '&:hover': {
             background: dashboard_1.DASHBOARD_COLORS.primaryHover
         }
+    },
+    sideBody: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: theme.spacing(4)
+    },
+    sidePanel: {
+        width: 360,
+        flexShrink: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: theme.spacing(3)
+    },
+    sidePanelButton: {
+        width: '100%'
+    },
+    sideContent: {
+        flex: '1 1 auto',
+        minWidth: 0,
+        '& > * + *': {
+            marginTop: theme.spacing(3)
+        }
+    },
+    sideTotals: {
+        display: 'flex',
+        justifyContent: 'flex-end'
     }
 }); });
 // One dashboard as a card, laid out like the Tooljet pages: the title above,
 // then the filters with Generate Data, a hint row, the totals, and the charts
 // and table passed as children.
 var DashboardSection = function (_a) {
-    var title = _a.title, filters = _a.filters, filterValues = _a.filterValues, onChangeFilter = _a.onChangeFilter, onGenerate = _a.onGenerate, _b = _a.generating, generating = _b === void 0 ? false : _b, _c = _a.blockingLabels, blockingLabels = _c === void 0 ? [] : _c, hint = _a.hint, meta = _a.meta, _d = _a.totals, totals = _d === void 0 ? [] : _d, children = _a.children;
+    var title = _a.title, filters = _a.filters, filterValues = _a.filterValues, onChangeFilter = _a.onChangeFilter, onGenerate = _a.onGenerate, _b = _a.generating, generating = _b === void 0 ? false : _b, _c = _a.blockingLabels, blockingLabels = _c === void 0 ? [] : _c, hint = _a.hint, meta = _a.meta, _d = _a.totals, totals = _d === void 0 ? [] : _d, _e = _a.layout, layout = _e === void 0 ? 'top' : _e, children = _a.children;
     var classes = useStyles();
     var blocked = blockingLabels.length > 0;
+    var hintText = blocked ? (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.error }, "Fill in: " + blockingLabels.join(', '))) : (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.hint }, hint));
+    if (layout === 'side') {
+        return (react_1.default.createElement(Box_1.default, { className: classes.section },
+            react_1.default.createElement(Typography_1.default, { variant: "h4", className: classes.title }, title),
+            react_1.default.createElement(Box_1.default, { className: classes.card },
+                react_1.default.createElement(Box_1.default, { className: classes.sideBody },
+                    react_1.default.createElement(Box_1.default, { className: classes.sidePanel },
+                        react_1.default.createElement(DashboardFilterBar_1.default, { filters: filters, values: filterValues, onChange: onChangeFilter, direction: "column" }),
+                        hintText,
+                        react_1.default.createElement(Button_1.default, { variants: "primary", className: classes.generateButton + " " + classes.sidePanelButton, disabled: blocked || generating, onClick: onGenerate }, "Generate Data"),
+                        meta && (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.meta }, meta))),
+                    react_1.default.createElement(Box_1.default, { className: classes.sideContent }, children)),
+                totals.length > 0 && (react_1.default.createElement(Box_1.default, { className: classes.sideTotals },
+                    react_1.default.createElement(DashboardTotals_1.default, { totals: totals }))))));
+    }
     return (react_1.default.createElement(Box_1.default, { className: classes.section },
         react_1.default.createElement(Typography_1.default, { variant: "h4", className: classes.title }, title),
         react_1.default.createElement(Box_1.default, { className: classes.card },
@@ -65,7 +106,7 @@ var DashboardSection = function (_a) {
                     react_1.default.createElement(DashboardFilterField_1.default, { label: "" },
                         react_1.default.createElement(Button_1.default, { variants: "primary", className: classes.generateButton, disabled: blocked || generating, onClick: onGenerate }, "Generate Data"))),
                 react_1.default.createElement(BoxRow_1.default, { justifyContent: "space-between", align: "center", mt: 1.5 },
-                    blocked ? (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.error }, "Fill in: " + blockingLabels.join(', '))) : (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.hint }, hint)),
+                    hintText,
                     meta && (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.meta }, meta)))),
             totals.length > 0 && react_1.default.createElement(DashboardTotals_1.default, { totals: totals }),
             children)));

@@ -11,6 +11,7 @@ export interface DashboardSectionProps {
     hint?: string;
     meta?: string;
     totals?: DashboardAggregate[];
+    layout?: 'top' | 'side';
     children?: React.ReactNode;
 }
 export declare const DashboardSection: React.FC<DashboardSectionProps>;

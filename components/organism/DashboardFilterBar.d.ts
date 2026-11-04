@@ -4,6 +4,7 @@ export interface DashboardFilterBarProps {
     filters: DashboardFilter[];
     values: DashboardFilterValues;
     onChange(key: string, values: string[]): void;
+    direction?: 'row' | 'column';
 }
 export declare const DashboardFilterBar: React.FC<DashboardFilterBarProps>;
 export default DashboardFilterBar;
