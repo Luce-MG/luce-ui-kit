@@ -9,5 +9,6 @@ export declare const DASHBOARD_COLORS: {
     accent: string;
     primary: string;
     primaryHover: string;
+    favourite: string;
 };
 export declare const DASHBOARD_CONTROL_HEIGHT = 40;
