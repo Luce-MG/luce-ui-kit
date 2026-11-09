@@ -66,6 +66,7 @@ export interface DashboardAggregate {
     value: number | null;
 }
 export interface DashboardReport {
+    key?: string;
     title: string;
     description: string;
     category: string;

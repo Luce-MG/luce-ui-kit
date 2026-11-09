@@ -104,12 +104,18 @@ var useStyles = ThemeProvider_1.makeStyles(function (theme) { return ({
         marginTop: theme.spacing(4)
     },
     sectionTitle: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: theme.spacing(0.5),
         marginBottom: theme.spacing(1.5),
         fontSize: 12,
         fontWeight: 600,
         letterSpacing: 1,
         textTransform: 'uppercase',
         color: dashboard_1.DASHBOARD_COLORS.subtle
+    },
+    favouriteIcon: {
+        color: dashboard_1.DASHBOARD_COLORS.favourite
     },
     grid: {
         display: 'grid',
@@ -135,14 +141,16 @@ var matchesSearch = function (report, search) {
     return terms.every(function (term) { return haystack.includes(term); });
 };
 // The dashboards page: the reports as cards grouped by category, with a
-// search, a sort and category chips. It all runs on the given list, nothing
-// is fetched.
+// search, a sort and category chips. Starred reports are listed again in a
+// Favourites section on top, which follows the search and the sort and is
+// hidden while a category chip is picked. It all runs on the given list,
+// nothing is fetched.
 var DashboardHub = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? 'Reports' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Find a dashboard by name or browse by category.' : _c, reports = _a.reports, categories = _a.categories, onOpen = _a.onOpen;
+    var _b = _a.title, title = _b === void 0 ? 'Reports' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Find a dashboard by name or browse by category.' : _c, reports = _a.reports, categories = _a.categories, onOpen = _a.onOpen, _d = _a.favorites, favorites = _d === void 0 ? [] : _d, onToggleFavorite = _a.onToggleFavorite;
     var classes = useStyles();
-    var _d = react_1.useState(''), search = _d[0], setSearch = _d[1];
-    var _e = react_1.useState('ASC'), sort = _e[0], setSort = _e[1];
-    var _f = react_1.useState(null), category = _f[0], setCategory = _f[1];
+    var _e = react_1.useState(''), search = _e[0], setSearch = _e[1];
+    var _f = react_1.useState('ASC'), sort = _f[0], setSort = _f[1];
+    var _g = react_1.useState(null), category = _g[0], setCategory = _g[1];
     // Category counts follow the search, so a chip says what clicking it shows.
     var searched = react_1.useMemo(function () {
         var sorted = reports
@@ -165,6 +173,15 @@ var DashboardHub = function (_a) {
         reports: visible.filter(function (report) { return report.category === name; })
     }); })
         .filter(function (section) { return section.reports.length > 0; });
+    var favouriteReports = category
+        ? []
+        : searched.filter(function (report) { return report.key && favorites.includes(report.key); });
+    var renderCard = function (report) {
+        var key = report.key;
+        return (react_1.default.createElement(DashboardReportCard_1.default, { key: report.path, report: report, onOpen: onOpen, favorite: Boolean(key && favorites.includes(key)), onToggleFavorite: key && onToggleFavorite
+                ? function (favorite) { return onToggleFavorite(key, favorite); }
+                : undefined }));
+    };
     return (react_1.default.createElement(Box_1.default, { className: classes.page },
         react_1.default.createElement(Typography_1.default, { variant: "h4", className: classes.title }, title),
         react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.subtitle }, subtitle),
@@ -180,9 +197,14 @@ var DashboardHub = function (_a) {
             chips.map(function (name) { return (react_1.default.createElement(ButtonBase_1.default, { key: name, className: clsx_1.default(classes.chip, category === name && classes.chipActive), onClick: function () { return setCategory(category === name ? null : name); } },
                 name,
                 react_1.default.createElement("span", { className: classes.chipCount }, countOf(name)))); })),
+        favouriteReports.length > 0 && (react_1.default.createElement(Box_1.default, { className: classes.section },
+            react_1.default.createElement(Box_1.default, { className: classes.sectionTitle },
+                react_1.default.createElement(Icons_1.default, { iconName: "StarIcon", size: "small", fill: "currentColor", className: classes.favouriteIcon }),
+                "Favourites"),
+            react_1.default.createElement(Box_1.default, { className: classes.grid }, favouriteReports.map(renderCard)))),
         sections.map(function (section) { return (react_1.default.createElement(Box_1.default, { key: section.name, className: classes.section },
             react_1.default.createElement(Box_1.default, { className: classes.sectionTitle }, section.name),
-            react_1.default.createElement(Box_1.default, { className: classes.grid }, section.reports.map(function (report) { return (react_1.default.createElement(DashboardReportCard_1.default, { key: report.path, report: report, onOpen: onOpen })); })))); }),
+            react_1.default.createElement(Box_1.default, { className: classes.grid }, section.reports.map(renderCard)))); }),
         visible.length === 0 && (react_1.default.createElement(Typography_1.default, { bodyVariants: "xsMedium", className: classes.empty }, search
             ? "No report matches \"" + search + "\""
             : 'There is no report you can open yet'))));
