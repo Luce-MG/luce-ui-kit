@@ -141,10 +141,10 @@ var matchesSearch = function (report, search) {
     return terms.every(function (term) { return haystack.includes(term); });
 };
 // The dashboards page: the reports as cards grouped by category, with a
-// search, a sort and category chips. Starred reports are listed again in a
-// Favourites section on top, which follows the search and the sort and is
-// hidden while a category chip is picked. It all runs on the given list,
-// nothing is fetched.
+// search, a sort and category chips. Starred reports move to a Favourites
+// section on top, which follows the search and the sort. While a category chip
+// is picked that section is hidden and the starred reports show in their
+// category again. It all runs on the given list, nothing is fetched.
 var DashboardHub = function (_a) {
     var _b = _a.title, title = _b === void 0 ? 'Reports' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Find a dashboard by name or browse by category.' : _c, reports = _a.reports, categories = _a.categories, onOpen = _a.onOpen, _d = _a.favorites, favorites = _d === void 0 ? [] : _d, onToggleFavorite = _a.onToggleFavorite;
     var classes = useStyles();
@@ -167,15 +167,17 @@ var DashboardHub = function (_a) {
     var countOf = function (name) {
         return searched.filter(function (report) { return report.category === name; }).length;
     };
-    var sections = categories
-        .map(function (name) { return ({
-        name: name,
-        reports: visible.filter(function (report) { return report.category === name; })
-    }); })
-        .filter(function (section) { return section.reports.length > 0; });
     var favouriteReports = category
         ? []
         : searched.filter(function (report) { return report.key && favorites.includes(report.key); });
+    var sections = categories
+        .map(function (name) { return ({
+        name: name,
+        reports: visible.filter(function (report) {
+            return report.category === name && !favouriteReports.includes(report);
+        })
+    }); })
+        .filter(function (section) { return section.reports.length > 0; });
     var renderCard = function (report) {
         var key = report.key;
         return (react_1.default.createElement(DashboardReportCard_1.default, { key: report.path, report: report, onOpen: onOpen, favorite: Boolean(key && favorites.includes(key)), onToggleFavorite: key && onToggleFavorite
