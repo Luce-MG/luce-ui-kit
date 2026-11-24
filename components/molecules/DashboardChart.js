@@ -133,11 +133,35 @@ function stackedHoverText(series, names, colors, chart, columnsByKey) {
     return Object.fromEntries(xs.map(function (x) {
         var values = series.map(function (item) { return valueAt(item, x); });
         var total = values.reduce(function (sum, value) { return sum + value; }, 0);
-        var tooltipLines = chart.tooltipColumns.flatMap(function (key, index) {
-            return series.map(function (item, seriesIndex) {
-                var _a, _b;
-                return names[seriesIndex] + " " + ((_b = (_a = columnsByKey[key]) === null || _a === void 0 ? void 0 : _a.label) !== null && _b !== void 0 ? _b : key) + ": " + whole(item.x.includes(x) ? tooltipAt(item, x, index) : 0);
+        // A tooltip column is listed per series, but a column that only one
+        // series carries (a deduction that belongs to completed work) would
+        // otherwise print a line of 0 for every other series. Lines worth
+        // nothing are dropped, and the series name with them once a single
+        // series is left to name.
+        var lineFor = function (key, index) {
+            var _a, _b;
+            var label = (_b = (_a = columnsByKey[key]) === null || _a === void 0 ? void 0 : _a.label) !== null && _b !== void 0 ? _b : key;
+            var carried = series
+                .map(function (item, seriesIndex) { return ({
+                name: names[seriesIndex],
+                value: item.x.includes(x) ? tooltipAt(item, x, index) : 0
+            }); })
+                .filter(function (_a) {
+                var value = _a.value;
+                return value !== 0;
             });
+            if (carried.length === 0) {
+                return [];
+            }
+            return carried.length === 1
+                ? [label + ": " + whole(carried[0].value)]
+                : carried.map(function (_a) {
+                    var name = _a.name, value = _a.value;
+                    return name + " " + label + ": " + whole(value);
+                });
+        };
+        var tooltipLines = chart.tooltipColumns.flatMap(function (key, index) {
+            return key === chart.netOf ? [] : lineFor(key, index);
         });
         var parts = values
             .map(function (value, seriesIndex) { return ({
@@ -155,11 +179,33 @@ function stackedHoverText(series, names, colors, chart, columnsByKey) {
                 return "<span style=\"color:" + color + "\">&#9632;</span> " + name + ": " + whole(value);
             })
             : [];
+        // With netOf the tooltip reads from the top down: the net figure, what it
+        // is made of and its tooltip columns, then the gross total and the
+        // measure taken off it in a block of their own.
+        var netIndex = chart.netOf
+            ? chart.tooltipColumns.indexOf(chart.netOf)
+            : -1;
+        var taken = netIndex < 0
+            ? 0
+            : series.reduce(function (sum, item) {
+                return sum + (item.x.includes(x) ? tooltipAt(item, x, netIndex) : 0);
+            }, 0);
+        if (netIndex < 0) {
+            return [
+                x,
+                __spreadArrays([
+                    "Total " + yLabel + ": " + whole(total)
+                ], partLines, (tooltipLines.length > 0 ? __spreadArrays([''], tooltipLines) : [])).join('<br>')
+            ];
+        }
         return [
             x,
             __spreadArrays([
+                "Net " + yLabel + ": " + whole(total - taken)
+            ], partLines, (tooltipLines.length > 0 ? __spreadArrays([''], tooltipLines) : []), [
+                '',
                 "Total " + yLabel + ": " + whole(total)
-            ], partLines, (tooltipLines.length > 0 ? __spreadArrays([''], tooltipLines) : [])).join('<br>')
+            ], lineFor(chart.netOf, netIndex)).join('<br>')
         ];
     }));
 }
