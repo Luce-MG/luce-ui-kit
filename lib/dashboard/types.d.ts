@@ -26,6 +26,7 @@ export interface DashboardChartConfig {
     splitBy?: string | null;
     tooltipColumns: string[];
     overlay?: string | null;
+    netOf?: string | null;
     colors?: string[];
     description?: string | null;
 }
